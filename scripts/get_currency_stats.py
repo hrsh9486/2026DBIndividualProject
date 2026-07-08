@@ -275,3 +275,4 @@ if __name__ == "__main__":
     write_json(build_raw_data_json(inr_df), "raw_fx_data.json")
 
     print(f"\nDone. All JSON files written to ./{OUTPUT_DIR}/")
+    
