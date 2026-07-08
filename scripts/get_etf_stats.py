@@ -13,6 +13,7 @@ from datetime import datetime, timezone
 import yfinance as yf
 import pandas as pd
 import numpy as np
+import helper
 
 
 
@@ -37,35 +38,6 @@ ETFS = {
     "Bovespa_Brazil": "^BVSP",
     "EM_ETF": "EEM",      
 }
-
-# -----------------------------------------------------------------------
-# HELPERS
-# -----------------------------------------------------------------------
-
-def metadata(source="yfinance", period="10y", extra=None):
-    meta = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "source": source,
-        "period": period,
-    }
-    if extra:
-        meta.update(extra)
-    return meta
-
-
-def write_json(obj, filename):
-    path = os.path.join(OUTPUT_DIR, filename)
-    with open(path, "w") as f:
-        json.dump(obj, f, indent=2, default=str)
-    print(f"  wrote {path}")
-
-
-def clean_float(x, decimals=4):
-    """Round and convert NaN -> None so it serializes as JSON null."""
-    if x is None or (isinstance(x, float) and np.isnan(x)):
-        return None
-    return round(float(x), decimals)
-
 
 # -----------------------------------------------------------------------
 # 1. FETCH DATA
@@ -364,7 +336,7 @@ if __name__ == "__main__":
     
     print("\nBuilding etf_analysis.json")
     etf_analysis_obj = build_json(prices_df, returns_df, summary, rankings)
-    write_json(etf_analysis_obj, "etf_analysis.json")
+    helper.write_json(etf_analysis_obj, "etf_analysis.json", OUTPUT_DIR)
     print(f"\nDone. All JSON files written to ./{OUTPUT_DIR}/")
     
 

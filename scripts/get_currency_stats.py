@@ -13,6 +13,7 @@ from datetime import datetime, timezone
 import yfinance as yf
 import pandas as pd
 import numpy as np
+import helper
 
 OUTPUT_DIR = "data"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -41,36 +42,6 @@ EVENT_WINDOWS = {
     "2020_COVID": ("2020-02-01", "2020-06-30"),
     "2022_Fed_Hiking": ("2022-01-01", "2022-12-31"),
 }
-
-
-# -----------------------------------------------------------------------
-# HELPERS
-# -----------------------------------------------------------------------
-
-def metadata(source="yfinance", period="10y", extra=None):
-    meta = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "source": source,
-        "period": period,
-    }
-    if extra:
-        meta.update(extra)
-    return meta
-
-
-def write_json(obj, filename):
-    path = os.path.join(OUTPUT_DIR, filename)
-    with open(path, "w") as f:
-        json.dump(obj, f, indent=2, default=str)
-    print(f"  wrote {path}")
-
-
-def clean_float(x, decimals=4):
-    """Round and convert NaN -> None so it serializes as JSON null."""
-    if x is None or (isinstance(x, float) and np.isnan(x)):
-        return None
-    return round(float(x), decimals)
-
 
 # -----------------------------------------------------------------------
 # 1. FETCH DATA
@@ -104,10 +75,10 @@ def build_rebased_json(df, base=100):
     for date, row in indexed.iterrows():
         record = {"date": date.strftime("%Y-%m-%d")}
         for col in indexed.columns:
-            record[col] = clean_float(row[col], 2)
+            record[col] = helper.clean_float(row[col], 2)
         records.append(record)
     return {
-        "metadata": metadata(extra={"base_value": base, "pairs": list(df.columns)}),
+        "metadata": helper.metadata(extra={"base_value": base, "pairs": list(df.columns)}),
         "data": records,
     }
 
@@ -120,11 +91,11 @@ def build_volatility_json(df):
     daily_returns = df.pct_change().dropna()
     ann_vol = (daily_returns.std() * np.sqrt(252) * 100).sort_values(ascending=False)
     records = [
-        {"pair": pair, "annualized_volatility_pct": clean_float(val, 2)}
+        {"pair": pair, "annualized_volatility_pct": helper.clean_float(val, 2)}
         for pair, val in ann_vol.items()
     ]
     return {
-        "metadata": metadata(extra={"calculation": "std(daily_returns) * sqrt(252) * 100"}),
+        "metadata": helper.metadata(extra={"calculation": "std(daily_returns) * sqrt(252) * 100"}),
         "data": records,
     }
 
@@ -151,11 +122,11 @@ def build_decomposition_json(inr_df, usd_cross_df, pairs_to_compare):
             "usd_cross_pair": usd_pair,
             "start_date": start_date.strftime("%Y-%m-%d"),
             "end_date": end_date.strftime("%Y-%m-%d"),
-            "inr_pair_pct_change": clean_float(pct_change[inr_pair], 2),
-            "usd_cross_pct_change": clean_float(pct_change[usd_pair], 2),
+            "inr_pair_pct_change": helper.clean_float(pct_change[inr_pair], 2),
+            "usd_cross_pct_change": helper.clean_float(pct_change[usd_pair], 2),
         })
     return {
-        "metadata": metadata(extra={
+        "metadata": helper.metadata(extra={
             "note": "Compares cumulative % change of an INR cross vs the equivalent USD cross "
                     "to separate rupee-driven moves from other-currency-driven moves."
         }),
@@ -180,17 +151,17 @@ def build_correlation_json(fx_series, fx_label="USD_INR", equity_ticker="^NSEI",
     window = 60
     rolling_corr = returns[fx_label].rolling(window).corr(returns[equity_label]).dropna()
     rolling_records = [
-        {"date": date.strftime("%Y-%m-%d"), "rolling_correlation": clean_float(val, 3)}
+        {"date": date.strftime("%Y-%m-%d"), "rolling_correlation": helper.clean_float(val, 3)}
         for date, val in rolling_corr.items()
     ]
 
     return {
-        "metadata": metadata(extra={
+        "metadata": helper.metadata(extra={
             "fx_pair": fx_label,
             "equity_index": equity_label,
             "rolling_window_days": window,
         }),
-        "overall_correlation": clean_float(corr, 3),
+        "overall_correlation": helper.clean_float(corr, 3),
         "rolling_correlation": rolling_records,
     }
 
@@ -213,10 +184,10 @@ def build_event_window_json(df, windows=EVENT_WINDOWS):
                     "start_date": start,
                     "end_date": end,
                     "pair": pair,
-                    "pct_change": clean_float(pct_change[pair], 2),
+                    "pct_change": helper.clean_float(pct_change[pair], 2),
                 })
     return {
-        "metadata": metadata(extra={"windows": {k: list(v) for k, v in windows.items()}}),
+        "metadata": helper.metadata(extra={"windows": {k: list(v) for k, v in windows.items()}}),
         "data": results,
     }
 
@@ -230,10 +201,10 @@ def build_raw_data_json(df):
     for date, row in df.iterrows():
         record = {"date": date.strftime("%Y-%m-%d")}
         for col in df.columns:
-            record[col] = clean_float(row[col], 4)
+            record[col] = helper.clean_float(row[col], 4)
         records.append(record)
     return {
-        "metadata": metadata(extra={"pairs": list(df.columns)}),
+        "metadata": helper.metadata(extra={"pairs": list(df.columns)}),
         "data": records,
     }
 
@@ -250,10 +221,10 @@ if __name__ == "__main__":
     usd_cross_df = fetch_fx_data(CROSS_VS_USD)
 
     print("\nBuilding rebased_performance.json...")
-    write_json(build_rebased_json(inr_df), "rebased_performance.json")
+    helper.write_json(build_rebased_json(inr_df), "rebased_performance.json", OUTPUT_DIR)
 
     print("\nBuilding volatility_summary.json...")
-    write_json(build_volatility_json(inr_df), "volatility_summary.json")
+    helper.write_json(build_volatility_json(inr_df), "volatility_summary.json", OUTPUT_DIR)
 
     print("\nBuilding cross_decomposition.json...")
     pairs_to_compare = [
@@ -262,17 +233,17 @@ if __name__ == "__main__":
         ("JPY_INR", "USD_JPY"),
         ("CHF_INR", "USD_CHF"),
     ]
-    write_json(build_decomposition_json(inr_df, usd_cross_df, pairs_to_compare),
-               "cross_decomposition.json")
+    helper.write_json(build_decomposition_json(inr_df, usd_cross_df, pairs_to_compare),
+               "cross_decomposition.json", OUTPUT_DIR)
 
     print("\nBuilding correlation_summary.json...")
-    write_json(build_correlation_json(inr_df["USD_INR"]), "correlation_summary.json")
+    helper.write_json(build_correlation_json(inr_df["USD_INR"]), "correlation_summary.json", OUTPUT_DIR)
 
     print("\nBuilding event_windows.json...")
-    write_json(build_event_window_json(inr_df), "event_windows.json")
+    helper.write_json(build_event_window_json(inr_df), "event_windows.json", OUTPUT_DIR)
 
     print("\nBuilding raw_fx_data.json...")
-    write_json(build_raw_data_json(inr_df), "raw_fx_data.json")
+    helper.write_json(build_raw_data_json(inr_df), "raw_fx_data.json", OUTPUT_DIR)
 
     print(f"\nDone. All JSON files written to ./{OUTPUT_DIR}/")
     
