@@ -7,41 +7,12 @@ structured JSON files suitable for charting libraries like Recharts,
 Chart.js, or D3 in a React app.
 """
 
-import json
-import os
-from datetime import datetime, timezone
 import yfinance as yf
 import pandas as pd
 import numpy as np
 import helper
+from config import OUTPUT_DIR, INR_PAIRS, CROSS_VS_USD, EVENT_WINDOWS
 
-OUTPUT_DIR = "data"
-os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-# -----------------------------------------------------------------------
-# CONFIG
-# -----------------------------------------------------------------------
-
-INR_PAIRS = {
-    "USD_INR": "INR=X",
-    "GBP_INR": "GBPINR=X",
-    "EUR_INR": "EURINR=X",
-    "JPY_INR": "JPYINR=X",
-    "CHF_INR": "CHFINR=X",
-}
-
-CROSS_VS_USD = {
-    "EUR_USD": "EURUSD=X",
-    "GBP_USD": "GBPUSD=X",
-    "USD_JPY": "USDJPY=X",
-    "USD_CHF": "USDCHF=X",
-}
-
-EVENT_WINDOWS = {
-    "2018_Rate_Hikes": ("2018-01-01", "2018-12-31"),
-    "2020_COVID": ("2020-02-01", "2020-06-30"),
-    "2022_Fed_Hiking": ("2022-01-01", "2022-12-31"),
-}
 
 # -----------------------------------------------------------------------
 # 1. FETCH DATA
@@ -214,6 +185,7 @@ def build_raw_data_json(df):
 # -----------------------------------------------------------------------
 
 if __name__ == "__main__":
+    OUTPUT_DIR = OUTPUT_DIR + "/currency/"
     print("Fetching INR pairs (10y, daily)...")
     inr_df = fetch_fx_data(INR_PAIRS)
 
