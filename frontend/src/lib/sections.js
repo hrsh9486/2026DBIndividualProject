@@ -30,7 +30,7 @@ export const SECTIONS = [
     number: "04",
     label: "Demographics & Human Capital",
     blurb: "Working-age population, dependency ratio, LFPR, literacy",
-    status: "pending",
+    status: "live",
   },
   {
     id: "gov-spending",

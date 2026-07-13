@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 import Sidebar from "./components/layout/Sidebar";
 import TickerStrip from "./components/layout/TickerStrip";
+import DashboardErrorBoundary from "./components/DashboardErrorBoundary";
 import CurrencyDashboard from "./sections/currency/CurrencyDashboard";
 import EquityDashboard from "./sections/equity/EquityDashboard";
+import DemographicsDashboard from "./sections/demographics/DemographicsDashboard";
 import PendingSection from "./sections/placeholder/PendingSection";
 import { SECTIONS, getSection } from "./lib/sections";
 
@@ -12,6 +14,7 @@ import { SECTIONS, getSection } from "./lib/sections";
 const LIVE_DASHBOARDS = {
   currency: CurrencyDashboard,
   equity: EquityDashboard,
+  demographics: DemographicsDashboard,
 };
 
 function SectionRoute() {
@@ -31,7 +34,13 @@ function SectionRoute() {
         <h1 className="text-xl font-semibold mt-0.5">{section.label}</h1>
         <p className="text-sm text-[var(--color-text-muted)] mt-1">{section.blurb}</p>
       </div>
-      {LiveDashboard ? <LiveDashboard /> : <PendingSection section={section} />}
+      {LiveDashboard ? (
+        <DashboardErrorBoundary key={section.id}>
+          <LiveDashboard />
+        </DashboardErrorBoundary>
+      ) : (
+        <PendingSection section={section} />
+      )}
     </div>
   );
 }
