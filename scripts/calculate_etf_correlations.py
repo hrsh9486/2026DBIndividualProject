@@ -1,5 +1,5 @@
 """
-correlation.py
+calculate_etf_correlations.py
 
 Correlation analysis for Indian ETFs against global ETFs.
 
@@ -145,7 +145,7 @@ def correlation_stability(
 
             })
 
-    return pd.DataFrame(rows)
+    return pd.DataFrame(rows).dropna()
 
 
 # ============================================================================
@@ -169,7 +169,7 @@ def average_global_correlations(
     Average correlation for each global market across all Indian markets.
     """
 
-    return correlation_matrix.mean(axis=0)
+    return correlation_matrix.mean(axis=0).dropna()
 
 
 # ============================================================================
@@ -201,7 +201,7 @@ def strongest_global_market(
 
         })
 
-    return pd.DataFrame(rows)
+    return pd.DataFrame(rows).dropna()
 
 
 def weakest_global_market(
@@ -229,7 +229,7 @@ def weakest_global_market(
 
         })
 
-    return pd.DataFrame(rows)
+    return pd.DataFrame(rows).dropna()
 
 
 # ============================================================================
@@ -327,7 +327,7 @@ def rolling_correlation_volatility(
 
             })
 
-    return pd.DataFrame(rows)
+    return pd.DataFrame(rows).dropna()
 
 
 # ============================================================================
@@ -359,4 +359,4 @@ def latest_rolling_correlations(
 
             })
 
-    return pd.DataFrame(rows)
+    return pd.DataFrame(rows).dropna()

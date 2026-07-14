@@ -8,14 +8,14 @@ export const SECTIONS = [
     id: "equity",
     number: "01",
     label: "Equity Markets",
-    blurb: "Nifty 50, Sensex, sector indices, global benchmark comparisons",
+    blurb: "Indian ETF performance against global peers",
     status: "live",
   },
   {
     id: "currency",
     number: "02",
     label: "Currency",
-    blurb: "INR multi-currency performance, volatility, and stress episodes",
+    blurb: "Comparision of INR vs major global currencies",
     status: "live",
   },
   {
@@ -28,8 +28,8 @@ export const SECTIONS = [
   {
     id: "demographics",
     number: "04",
-    label: "Demographics & Human Capital",
-    blurb: "Working-age population, dependency ratio, LFPR, literacy",
+    label: "Population & Demographics",
+    blurb: "Working-age population, urbanisation, access to electricity, literacy rate",
     status: "live",
   },
   {

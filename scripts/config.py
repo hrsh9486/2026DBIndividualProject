@@ -2,6 +2,16 @@ OUTPUT_DIR = "data"
 # os.makedirs(OUTPUT_DIR, exist_ok=True)
 TRADING_DAYS = 252
 
+# World Bank API request config
+WB_BASE = "https://api.worldbank.org/v2"
+REQUEST_TIMEOUT = 20
+RETRY_ATTEMPTS = 3
+RETRY_BACKOFF_SECONDS = 2
+START_YEAR = 1991
+COUNTRY_CODE = "IND"
+PEER_CODES = ["CHN", "VNM", "IDN", "BGD"]  # China+1 comparators
+ALL_COUNTRIES = [COUNTRY_CODE] + PEER_CODES
+
 INDIAN_MARKETS = {
     "Nifty 50": "^NSEI",
     "Sensex": "^BSESN",

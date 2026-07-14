@@ -10,6 +10,7 @@ Chart.js, or D3 in a React app.
 import yfinance as yf
 import pandas as pd
 import numpy as np
+import os
 import helper
 from config import OUTPUT_DIR, INR_PAIRS, CROSS_VS_USD, EVENT_WINDOWS
 
@@ -184,8 +185,9 @@ def build_raw_data_json(df):
 # 8. MAIN
 # -----------------------------------------------------------------------
 
-if __name__ == "__main__":
-    OUTPUT_DIR = OUTPUT_DIR + "/currency/"
+def main():
+    currency_output_dir = os.path.join(OUTPUT_DIR, "currency")
+
     print("Fetching INR pairs (10y, daily)...")
     inr_df = fetch_fx_data(INR_PAIRS)
 
@@ -193,10 +195,10 @@ if __name__ == "__main__":
     usd_cross_df = fetch_fx_data(CROSS_VS_USD)
 
     print("\nBuilding rebased_performance.json...")
-    helper.write_json(build_rebased_json(inr_df), "rebased_performance.json", OUTPUT_DIR)
+    helper.write_json(build_rebased_json(inr_df), "rebased_performance.json", currency_output_dir)
 
     print("\nBuilding volatility_summary.json...")
-    helper.write_json(build_volatility_json(inr_df), "volatility_summary.json", OUTPUT_DIR)
+    helper.write_json(build_volatility_json(inr_df), "volatility_summary.json", currency_output_dir)
 
     print("\nBuilding cross_decomposition.json...")
     pairs_to_compare = [
@@ -206,16 +208,19 @@ if __name__ == "__main__":
         ("CHF_INR", "USD_CHF"),
     ]
     helper.write_json(build_decomposition_json(inr_df, usd_cross_df, pairs_to_compare),
-               "cross_decomposition.json", OUTPUT_DIR)
+               "cross_decomposition.json", currency_output_dir)
 
     print("\nBuilding correlation_summary.json...")
-    helper.write_json(build_correlation_json(inr_df["USD_INR"]), "correlation_summary.json", OUTPUT_DIR)
+    helper.write_json(build_correlation_json(inr_df["USD_INR"]), "correlation_summary.json", currency_output_dir)
 
     print("\nBuilding event_windows.json...")
-    helper.write_json(build_event_window_json(inr_df), "event_windows.json", OUTPUT_DIR)
+    helper.write_json(build_event_window_json(inr_df), "event_windows.json", currency_output_dir)
 
     print("\nBuilding raw_fx_data.json...")
-    helper.write_json(build_raw_data_json(inr_df), "raw_fx_data.json", OUTPUT_DIR)
+    helper.write_json(build_raw_data_json(inr_df), "raw_fx_data.json", currency_output_dir)
 
-    print(f"\nDone. All JSON files written to ./{OUTPUT_DIR}/")
-    
+    print(f"\nDone. All JSON files written to ./{currency_output_dir}/")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,6 +1,17 @@
-from config import TRADING_DAYS
-import pandas as pd
+"""
+calculate_etf_stats.py
+
+Shared ETF return and risk statistics used by the ETF analysis bucket.
+The functions return plain pandas objects or JSON-ready dictionaries,
+but do not write files themselves.
+"""
+
+from __future__ import annotations
+
 import numpy as np
+import pandas as pd
+
+from config import TRADING_DAYS
 
 # -----------------------------------------------------------------------
 # METHODS TO CALCULATE RAW FINANCIAL STATISTICS
@@ -166,10 +177,3 @@ def rolling_sharpe(
             for c in sharpe.columns
         },
     }
-
-
-# ==========================================================
-# CALCULATE CORRELATIONS
-# ==========================================================
-
-

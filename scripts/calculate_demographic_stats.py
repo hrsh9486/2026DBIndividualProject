@@ -15,46 +15,52 @@ Outputs (written to OUTPUT_DIR):
   - demographics_summary.json       Latest-value snapshot across all indicators
                                      with peer comparison (China, Vietnam, Indonesia, Bangladesh)
 
-Run:
-    python demographics_human_capital.py
 """
 
-import json
 import math
 import os
 import time
 from datetime import datetime, timezone
+import pandas as pd
 
 import requests
+import helper
+from config import OUTPUT_DIR, WB_BASE, REQUEST_TIMEOUT, RETRY_ATTEMPTS, RETRY_BACKOFF_SECONDS, START_YEAR, COUNTRY_CODE, PEER_CODES
 
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
 
-WB_BASE = "https://api.worldbank.org/v2"
-
-COUNTRY_CODE = "IND"
-PEER_CODES = ["CHN", "VNM", "IDN", "BGD"]  # China+1 comparators
-ALL_COUNTRIES = [COUNTRY_CODE] + PEER_CODES
-
-START_YEAR = 1991
-END_YEAR = datetime.now().year
-
-OUTPUT_DIR = os.path.join("data", "demographics")
+END_YEAR = pd.Timestamp.now().year
+OUTPUT_DIR = os.path.join(OUTPUT_DIR, "demographics")
 
 # World Bank indicator codes for this bucket
 INDICATORS = {
     "urban_population_pct": "SP.URB.TOTL.IN.ZS",       # Urban population (% of total)
     "adult_literacy_rate": "SE.ADT.LITR.ZS",            # Adult literacy rate (% ages 15+)
-    "electricity_access_pct": "EG.ELC.ACCS.ZS",         # Access to electricity (% of population)
     "labor_force_participation": "SL.TLF.CACT.ZS",      # Labor force participation rate (% ages 15+)
     "age_dependency_ratio": "SP.POP.DPND",              # Age dependency ratio (% of working-age pop)
     "working_age_share_pct": "SP.POP.1564.TO.ZS",       # Population ages 15-64 (% of total)
+    "youth_unemployment_rate": "SL.UEM.1524.ZS",
+    "female_to_male_lfpr_ration": "SL.TLF.CACT.FM.NE.ZS",
+    "school_enrollment_gross_secondary": "SE.SEC.ENRR",
+    "school_enrollment_gross_tertiary": "SE.TER.ENRR",
+    "pct_gdb_secondary_expenditure": "SE.XPD.SECO.PC.ZS",
 }
 
-REQUEST_TIMEOUT = 20
-RETRY_ATTEMPTS = 3
-RETRY_BACKOFF_SECONDS = 2
+
+
+SINGLE_SERIES_SPECS = [
+    ("urban_population_pct", INDICATORS["urban_population_pct"], "urban_population.json", "Urban Population (% of total)"),
+    ("adult_literacy_rate", INDICATORS["adult_literacy_rate"], "literacy_rate.json", "Adult Literacy Rate (% ages 15+)"),
+    ("labor_force_participation", INDICATORS["labor_force_participation"], "labor_force_participation.json", "Labor Force Participation Rate (% ages 15+)"),
+    ("working_age_share_pct", INDICATORS["working_age_share_pct"], "working_age_share_pct.json", "Working Age Population Share  (% ages 15-64)"),
+    ("youth_unemployment_rate", INDICATORS["youth_unemployment_rate"], "youth_unemployment_rate.json", "Youth Unemployment Rate (% ages 15-24)"),
+    ("female_to_male_lfpr_ration", INDICATORS["female_to_male_lfpr_ration"], "female_to_male_lfpr_ration.json", "Female to Male LFPR Ratio (% ages 15+)"),
+    ("school_enrollment_gross_secondary", INDICATORS["school_enrollment_gross_secondary"], "school_enrollment_gross_secondary.json", "Secondary Education Enrollment (% of total)"),
+    ("school_enrollment_gross_tertiary", INDICATORS["school_enrollment_gross_tertiary"], "school_enrollment_gross_tertiary.json", "Tertiary Education Enrollment (% of total)"),
+    ("pct_gdb_secondary_expenditure", INDICATORS["pct_gdb_secondary_expenditure"], "pct_gdb_secondary_expenditure.json", "Government expenditure on Secondary Education (% of GDP)"),
+]
 
 
 # ---------------------------------------------------------------------------
@@ -129,13 +135,6 @@ def ensure_output_dir():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
-def write_json(filename, payload):
-    path = os.path.join(OUTPUT_DIR, filename)
-    with open(path, "w") as f:
-        json.dump(payload, f, indent=2)
-    print(f"  wrote {path}")
-
-
 def build_metadata():
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -151,7 +150,7 @@ def build_metadata():
 # Pipeline steps
 # ---------------------------------------------------------------------------
 
-def build_single_series_output(indicator_key, indicator_code, filename, label):
+def build_single_series_output(indicator_code, filename, label):
     """For indicators reported primarily as India's own time series (with peers for context)."""
     print(f"Fetching {label} ({indicator_code}) ...")
 
@@ -171,7 +170,7 @@ def build_single_series_output(indicator_key, indicator_code, filename, label):
         },
     }
 
-    write_json(filename, output)
+    helper.write_json(output, filename, OUTPUT_DIR)
     return output
 
 
@@ -208,7 +207,7 @@ def build_dependency_ratio_output():
         "latest": merged[-1] if merged else None,
     }
 
-    write_json("dependency_ratio.json", output)
+    helper.write_json(output, "dependency_ratio.json", OUTPUT_DIR)
     return output
 
 
@@ -239,7 +238,7 @@ def build_summary(all_outputs):
             "india_latest": dep_output.get("latest"),
         }
 
-    write_json("demographics_summary.json", summary)
+    helper.write_json(summary, "demographics_summary.json", OUTPUT_DIR)
     return summary
 
 
@@ -253,22 +252,8 @@ def main():
     outputs = {}
 
     # I've commented these out because fetching is really slow for some reason - uncomment if you need to rebuild specific jsons
-    outputs["urban_population_pct"] = build_single_series_output(
-        "urban_population_pct", INDICATORS["urban_population_pct"],
-        "urban_population.json", "Urban Population (% of total)",
-    )
-    outputs["adult_literacy_rate"] = build_single_series_output(
-        "adult_literacy_rate", INDICATORS["adult_literacy_rate"],
-        "literacy_rate.json", "Adult Literacy Rate (% ages 15+)",
-    )
-    outputs["electricity_access_pct"] = build_single_series_output(
-        "electricity_access_pct", INDICATORS["electricity_access_pct"],
-        "electricity_access.json", "Access to Electricity (% of population)",
-    )
-    outputs["labor_force_participation"] = build_single_series_output(
-        "labor_force_participation", INDICATORS["labor_force_participation"],
-        "labor_force_participation.json", "Labor Force Participation Rate (% ages 15+)",
-    )
+    for key, indicator_code, filename, label in SINGLE_SERIES_SPECS:
+        outputs[key] = build_single_series_output(indicator_code, filename, label)
     outputs["dependency_ratio"] = build_dependency_ratio_output()
 
     build_summary(outputs)

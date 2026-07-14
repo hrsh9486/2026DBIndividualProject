@@ -3,7 +3,7 @@ import Panel from "../../components/Panel";
 import { LoadingBlock, ErrorBlock } from "../../components/DataState";
 import { getCountryKeys, mergeCountrySeries, countryLabel } from "../../lib/demographics";
 
-const PEER_COLORS = ["#4FB8A8", "#7FA6D9", "#D9635A", "#B08AD9", "#E0A96D"];
+const PEER_COLORS = ["#4FB8A8", "#7FA6D9", "#D9635A", "#B08AD9", "#62e45b"];
 
 export default function CountryTimeSeriesChart({ data, loading, error, visibleCountries }) {
   if (loading) return <Panel title="Loading…"><LoadingBlock label="Loading indicator" /></Panel>;
