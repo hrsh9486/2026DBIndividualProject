@@ -3,3 +3,5 @@ pandas
 matplotlib
 yfinance
 wbgapi
+requests
+jsonschema>=4.10

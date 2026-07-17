@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/annual_country_series.schema.json",
+  "title": "Annual Country Comparison Series",
+  "description": "Annual indicator output for India and ISO-alpha-3 comparator countries. Adapted from the existing WBI-oriented schema.",
+  "type": "object",
+  "required": [
+    "metadata",
+    "india",
+    "peers"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "generated_at",
+        "source",
+        "country",
+        "peers",
+        "start_year",
+        "end_year",
+        "indicator_code",
+        "label",
+        "unit",
+        "frequency",
+        "is_derived"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/source"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "country": {
+          "const": "IND"
+        },
+        "peers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "uniqueItems": true
+        },
+        "start_year": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2100
+        },
+        "end_year": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2100
+        },
+        "indicator_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "frequency": {
+          "const": "annual"
+        },
+        "is_derived": {
+          "type": "boolean"
+        },
+        "methodology": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "india": {
+      "$ref": "#/$defs/yearValueSeries"
+    },
+    "peers": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[A-Z]{3}$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/yearValueSeries"
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "yearValueSeries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "year",
+          "value"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "year": {
+            "type": "integer",
+            "minimum": 1900,
+            "maximum": 2100
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

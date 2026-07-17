@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/demographics_series.schema.json",
+  "title": "Demographics/Working-Population/Education Time Series",
+  "description": "Schema for pipeline outputs shaped like { metadata, india, peers } — used across the demographics, working-population, and education buckets.",
+  "type": "object",
+  "required": ["metadata", "india", "peers"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "generated_at",
+        "source",
+        "country",
+        "peers",
+        "start_year",
+        "end_year",
+        "indicator_code",
+        "label"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "generated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of when the pipeline generated this file."
+        },
+        "source": {
+          "type": "string",
+          "description": "Data provider, e.g. 'World Bank Open Data API'."
+        },
+        "country": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$",
+          "description": "ISO alpha-3 code of the primary country (India = IND)."
+        },
+        "peers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "description": "ISO alpha-3 codes of comparator countries, in display order."
+        },
+        "start_year": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2100
+        },
+        "end_year": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2100
+        },
+        "indicator_code": {
+          "type": "string",
+          "description": "Source indicator code, e.g. World Bank series code (SL.TLF.CACT.FM.NE.ZS)."
+        },
+        "label": {
+          "type": "string",
+          "description": "Human-readable indicator name for chart titles/subtitles."
+        },
+        "note": {
+          "type": "string",
+          "description": "Optional interpretive note (e.g. explaining a derived/composite indicator)."
+        }
+      }
+    },
+    "india": {
+      "$ref": "#/$defs/yearValueSeries"
+    },
+    "peers": {
+      "type": "object",
+      "description": "Keyed by ISO alpha-3 country code; each value is a year/value series.",
+      "propertyNames": {
+        "pattern": "^[A-Z]{3}$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/yearValueSeries"
+      }
+    }
+  },
+  "$defs": {
+    "yearValueSeries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["year", "value"],
+        "additionalProperties": false,
+        "properties": {
+          "year": {
+            "type": "integer",
+            "minimum": 1900,
+            "maximum": 2100
+          },
+          "value": {
+            "type": ["number", "null"],
+            "description": "Null when the source has no data for that year (never omit the year)."
+          }
+        }
+      }
+    }
+  }
+}

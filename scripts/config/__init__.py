@@ -1,16 +1,26 @@
-OUTPUT_DIR = "data"
-# os.makedirs(OUTPUT_DIR, exist_ok=True)
+"""Runtime configuration shared by source-specific pipeline jobs."""
+
+from pathlib import Path
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DATA_DIR = PROJECT_ROOT / "data"
+RAW_DATA_DIR = DATA_DIR / "raw"
+PROCESSED_DATA_DIR = DATA_DIR / "processed"
+SCHEMA_DIR = PROJECT_ROOT / "schemas"
+
+# Backwards-compatible name used by the existing scripts.
+OUTPUT_DIR = str(DATA_DIR)
 TRADING_DAYS = 252
 
-# World Bank API request config
 WB_BASE = "https://api.worldbank.org/v2"
 REQUEST_TIMEOUT = 20
 RETRY_ATTEMPTS = 3
 RETRY_BACKOFF_SECONDS = 2
 START_YEAR = 1991
 COUNTRY_CODE = "IND"
-PEER_CODES = ["CHN", "VNM", "IDN", "BGD"]  # China+1 comparators
-ALL_COUNTRIES = [COUNTRY_CODE] + PEER_CODES
+PEER_CODES = ["CHN", "VNM", "IDN", "BGD"]
+ALL_COUNTRIES = [COUNTRY_CODE, *PEER_CODES]
 
 INDIAN_MARKETS = {
     "Nifty 50": "^NSEI",
@@ -23,7 +33,7 @@ GLOBAL_MARKETS = {
     "FTSE100": "^FTSE",
     "HangSeng_China": "^HSI",
     "Bovespa_Brazil": "^BVSP",
-    "EM_ETF": "EEM",      
+    "EM_ETF": "EEM",
 }
 
 INR_PAIRS = {

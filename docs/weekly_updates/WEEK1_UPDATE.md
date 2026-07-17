@@ -17,7 +17,6 @@ relevant. Good amount of exploration done with various libraries and I have acce
 ---
 
 ## Features & Accomplishments Developed This Week
-*What actually got built, fixed, or merged over the last 7 days?*
 * [X] **Exploration/Form opinion** - *This was quite easy for me, I had strong views to this prior to starting.*
 * [X] **Exploration/Understand what data I have** - *Explored yFinance, FRED, World bank API to see what was available in notebooks.*
 * [X] **Exploration/Form plan** - *Listed metrics that I'm interested in exploring across a few different categories.*
@@ -27,7 +26,6 @@ relevant. Good amount of exploration done with various libraries and I have acce
 ---
 
 ## Roadblocks & Key Questions
-*What slowed you down, where are you stuck, or what architectural decisions are keeping you up?*
 
 ### Current Blockers
 1. **N/A** *Too early at the moment*
@@ -40,9 +38,8 @@ relevant. Good amount of exploration done with various libraries and I have acce
 ---
 
 ## Plan for Next Week
-*Actionable goals for the upcoming sprint. Keep it realistic to prevent burnout.*
-* [ ] **Continue producing ETF statistics** There's a couple other statistics I'd like to produce.
-* [ ] **Start on World Bank API** Begin looking at non-financial metrics
-* [ ] **Experiment with a frontend** Am I going to present my data as just a website?
+* **Continue producing ETF statistics** There's a couple other statistics I'd like to produce.
+* **Start on World Bank API** Begin looking at non-financial metrics
+* **Experiment with a frontend** Am I going to present my data as just a website?
 
 ---

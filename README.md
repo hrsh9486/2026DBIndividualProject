@@ -1,6 +1,38 @@
 # 2026DBIndividualProject
 Analysis of India's position as a emerging global financial leader
 
+## Data pipeline
+
+The pipeline follows the source-boundary architecture documented in
+`docs/planning/`:
+
+```text
+config/indicators.py      indicator definitions and output contracts
+extractors/               provider-specific network and raw landing logic
+models/                   canonical provider-neutral records
+transforms/               deterministic reusable calculations
+builders/                 contract-specific payload assembly
+validators/               quality gates and Draft 2020-12 JSON Schema checks
+exporters/                validated atomic publication
+data/raw/<source>/        immutable retrieved payloads
+data/processed/<bucket>/  schema-valid frontend artifacts
+```
+
+Run a subset of the World Bank registry with:
+
+```bash
+python3 scripts/build_world_bank_series.py labour_force_participation working_age_share_pct
+```
+
+Build the market-performance bundle with:
+
+```bash
+python3 scripts/build_yfinance_markets.py
+```
+
+Each job validates before replacing a processed artifact. A failed source,
+quality gate, or schema check leaves the last valid JSON untouched.
+
 
 
 
