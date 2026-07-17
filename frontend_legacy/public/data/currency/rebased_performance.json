@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-01T09:00:00Z",
+    "base_date": "2025-01-01",
+    "base_value": 100,
+    "source": "yfinance",
+    "pairs": ["USDINR", "GBPINR", "EURINR", "JPYINR", "CHFINR"]
+  },
+  "series": [
+    { "date": "2025-01-01", "USDINR": 100.0, "GBPINR": 100.0, "EURINR": 100.0, "JPYINR": 100.0, "CHFINR": 100.0 },
+    { "date": "2025-04-01", "USDINR": 101.2, "GBPINR": 99.4,  "EURINR": 100.8, "JPYINR": 97.6,  "CHFINR": 102.3 },
+    { "date": "2025-07-01", "USDINR": 102.8, "GBPINR": 98.1,  "EURINR": 101.5, "JPYINR": 95.2,  "CHFINR": 104.9 },
+    { "date": "2025-10-01", "USDINR": 103.5, "GBPINR": 100.6, "EURINR": 102.9, "JPYINR": 93.8,  "CHFINR": 106.1 },
+    { "date": "2026-01-01", "USDINR": 104.9, "GBPINR": 102.2, "EURINR": 103.4, "JPYINR": 91.5,  "CHFINR": 107.8 },
+    { "date": "2026-04-01", "USDINR": 105.6, "GBPINR": 101.7, "EURINR": 104.0, "JPYINR": 90.2,  "CHFINR": 108.9 },
+    { "date": "2026-07-01", "USDINR": 106.3, "GBPINR": 103.1, "EURINR": 105.2, "JPYINR": 88.7,  "CHFINR": 110.2 }
+  ]
+}

@@ -1,0 +1,28 @@
+import { useState } from "react";
+import type { Indicator, StaticDataAsset } from "../data/types";
+import { useIndicatorData } from "../hooks/useIndicatorData";
+import { assertAdapterMatchesSchema } from "../data/runtimeGuards";
+import ChartView from "./ChartView";
+import DataStatusBadge from "./DataStatusBadge";
+import InsightRail from "./InsightRail";
+import SourcePanel from "./SourcePanel";
+import { ErrorPanel, LoadingPanel } from "./StatePanel";
+
+export default function MetricPanel({ indicator, assets }: { indicator: Indicator; assets: Record<string, StaticDataAsset> }) {
+  const [viewId, setViewId] = useState(indicator.default_view);
+  const view = indicator.views.find((candidate) => candidate.id === viewId) ?? indicator.views[0];
+  const asset = assets[view.asset_id];
+  const query = useIndicatorData(asset);
+  if (!asset) return <ErrorPanel message={`Missing catalogue asset ${view.asset_id}`} />;
+
+  return <article id={indicator.id} className="metric-panel">
+    <header className="metric-header"><div><span>{asset.expected_frequency} · {asset.schema.replaceAll("_", " ")}</span><h2>{indicator.title}</h2><p>{indicator.summary}</p></div>{query.data && <DataStatusBadge generatedAt={String(query.data.metadata.generated_at)} staleAfterDays={asset.stale_after_days} />}</header>
+    {indicator.views.length > 1 && <div className="view-tabs">{indicator.views.map((candidate) => <button key={candidate.id} className={candidate.id === view.id ? "active" : ""} onClick={() => setViewId(candidate.id)}>{candidate.label}</button>)}</div>}
+    {query.isLoading && <LoadingPanel />}
+    {query.error && <ErrorPanel message={query.error.message} />}
+    {query.data && (() => {
+      assertAdapterMatchesSchema(view.presentation.component, asset.schema);
+      return <><div className="analysis-grid"><section className="chart-card"><div className="chart-title"><div><span>Time series</span><h3>{String(query.data.metadata.label ?? indicator.title)}</h3></div><b>{String(query.data.metadata.unit ?? view.presentation.market_field ?? "Index")}</b></div><ChartView payload={query.data} presentation={view.presentation} /></section><aside className="ranking-card"><div className="rail-heading"><span>Latest reading</span><h3>Comparison</h3></div><InsightRail payload={query.data} presentation={view.presentation} /></aside></div><SourcePanel payload={query.data} /></>;
+    })()}
+  </article>;
+}

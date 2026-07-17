@@ -1,6 +1,13 @@
 """Pipeline quality gates."""
 
-from .quality import DataQualityError, validate_records
+from .quality import DataQualityError, validate_correlation, validate_dated_rows, validate_records
 from .schema import SchemaValidationError, validate_payload
 
-__all__ = ["DataQualityError", "SchemaValidationError", "validate_payload", "validate_records"]
+__all__ = [
+    "DataQualityError",
+    "SchemaValidationError",
+    "validate_correlation",
+    "validate_dated_rows",
+    "validate_payload",
+    "validate_records",
+]

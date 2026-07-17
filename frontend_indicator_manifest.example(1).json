@@ -1,0 +1,1522 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-07-17T12:00:00Z",
+  "assets": {
+    "market-performance": {
+      "schema": "market_performance",
+      "expected_frequency": "daily",
+      "stale_after_days": 3,
+      "description": "Indian and global benchmark price, return and risk bundle.",
+      "data_path": "/data/equities/market-performance.json",
+      "schema_path": "/data/schemas/market_performance.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "nifty-valuations": {
+      "schema": "dated_multi_series",
+      "expected_frequency": "monthly",
+      "stale_after_days": 40,
+      "data_path": "/data/equities/nifty-valuations.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "institutional-flows": {
+      "schema": "dated_multi_series",
+      "expected_frequency": "monthly",
+      "stale_after_days": 40,
+      "data_path": "/data/equities/institutional-flows.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "reer-world-bank": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/currency/reer-world-bank.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "reer-rbi": {
+      "schema": "dated_multi_series",
+      "expected_frequency": "monthly",
+      "stale_after_days": 60,
+      "availability": "planned",
+      "data_path": "/data/currency/reer-rbi.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "fx-reserves": {
+      "schema": "dated_multi_series",
+      "expected_frequency": "monthly",
+      "stale_after_days": 45,
+      "data_path": "/data/currency/fx-reserves.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "gdp-india": {
+      "schema": "dated_multi_series",
+      "expected_frequency": "quarterly",
+      "stale_after_days": 120,
+      "data_path": "/data/macro/gdp-india.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "gdp-peers": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/macro/gdp-peers.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "twin-deficits": {
+      "schema": "dated_multi_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/macro/twin-deficits.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "government-capex": {
+      "schema": "dated_multi_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/macro/government-capex.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "cpi-inflation": {
+      "schema": "dated_multi_series",
+      "expected_frequency": "monthly",
+      "stale_after_days": 60,
+      "data_path": "/data/macro/cpi-inflation.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "credit-growth": {
+      "schema": "dated_multi_series",
+      "expected_frequency": "quarterly",
+      "stale_after_days": 120,
+      "data_path": "/data/macro/credit-growth.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "central-government-debt": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/macro/central-government-debt.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "lfpr": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/workforce/lfpr.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "lfpr-gender-ratio": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/workforce/lfpr-gender-ratio.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "working-age-share": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/workforce/working-age-share.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "youth-unemployment": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/workforce/youth-unemployment.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "non-agricultural-employment": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/workforce/non-agricultural-employment.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "tertiary-ger-world-bank": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/education/tertiary-ger-world-bank.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "tertiary-ger-aishe": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "availability": "planned",
+      "data_path": "/data/education/tertiary-ger-aishe.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "graduate-unemployment": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/education/graduate-unemployment.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "services-export-share": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/trade/services-export-share.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "technology-exports": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/trade/technology-exports.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "fdi-inflows": {
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "data_path": "/data/trade/fdi-inflows.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "upi-formalisation": {
+      "schema": "dated_multi_series",
+      "expected_frequency": "monthly",
+      "stale_after_days": 60,
+      "data_path": "/data/formalisation/upi-formalisation.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    },
+    "rolling-correlations": {
+      "schema": "dated_multi_series",
+      "expected_frequency": "daily",
+      "stale_after_days": 3,
+      "data_path": "/data/equities/rolling-correlations.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17"
+    }
+  },
+  "sections": [
+    {
+      "id": "equities",
+      "label": "Equities",
+      "order": 1,
+      "indicators": [
+        {
+          "id": "equity-market-performance",
+          "title": "India vs. global equity-index performance",
+          "summary": "Compare normalised returns and core risk statistics across Indian and global benchmarks.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Performance",
+              "asset_id": "market-performance",
+              "presentation": {
+                "component": "market-performance",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "NIFTY_50",
+                  "SENSEX",
+                  "NIFTY_BANK",
+                  "SP500"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "index",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "summary_fields": [
+                  {
+                    "key": "total_return",
+                    "label": "Total return",
+                    "format": {
+                      "style": "percent",
+                      "scale": 100,
+                      "decimals": 1
+                    }
+                  },
+                  {
+                    "key": "cagr",
+                    "label": "CAGR",
+                    "format": {
+                      "style": "percent",
+                      "scale": 100,
+                      "decimals": 1
+                    }
+                  },
+                  {
+                    "key": "annualized_volatility",
+                    "label": "Annualised volatility",
+                    "format": {
+                      "style": "percent",
+                      "scale": 100,
+                      "decimals": 1
+                    }
+                  },
+                  {
+                    "key": "sharpe_ratio",
+                    "label": "Sharpe ratio",
+                    "format": {
+                      "style": "ratio",
+                      "scale": 1,
+                      "decimals": 2
+                    }
+                  },
+                  {
+                    "key": "max_drawdown",
+                    "label": "Maximum drawdown",
+                    "format": {
+                      "style": "percent",
+                      "scale": 100,
+                      "decimals": 1
+                    }
+                  }
+                ],
+                "market_field": "normalized_value"
+              }
+            },
+            {
+              "id": "rolling-correlation",
+              "label": "Rolling correlation",
+              "asset_id": "rolling-correlations",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "NIFTY_50_SP500"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
+                },
+                "zero_line": true,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "series": [
+                  {
+                    "key": "NIFTY_50_SP500",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "ratio",
+                      "scale": 1,
+                      "decimals": 2
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "index-pe-valuation",
+          "title": "Index P/E vs. 10-year rolling average",
+          "summary": "Compare current valuation with the index's own rolling history.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Valuation",
+              "asset_id": "nifty-valuations",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "pe_ratio",
+                  "pe_10y_average",
+                  "premium_discount_pct"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
+                },
+                "zero_line": true,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "series": [
+                  {
+                    "key": "pe_ratio",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "ratio",
+                      "scale": 1,
+                      "decimals": 2
+                    }
+                  },
+                  {
+                    "key": "pe_10y_average",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "ratio",
+                      "scale": 1,
+                      "decimals": 2
+                    }
+                  },
+                  {
+                    "key": "premium_discount_pct",
+                    "axis": "right",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "implied-index-earnings",
+          "title": "Implied index earnings growth",
+          "summary": "Show implied trailing index earnings and year-on-year growth derived from index level and P/E.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Earnings",
+              "asset_id": "nifty-valuations",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "implied_eps",
+                  "implied_eps_yoy_pct"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
+                },
+                "zero_line": true,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "series": [
+                  {
+                    "key": "implied_eps",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "number",
+                      "scale": 1,
+                      "decimals": 2
+                    }
+                  },
+                  {
+                    "key": "implied_eps_yoy_pct",
+                    "axis": "right",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "institutional-flows",
+          "title": "DII vs. FII/FPI net equity flows",
+          "summary": "Compare domestic and foreign net equity flows and their rolling totals.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Net flows",
+              "asset_id": "institutional-flows",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "dii_net_flow",
+                  "fpi_net_flow"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
+                },
+                "zero_line": true,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "series": [
+                  {
+                    "key": "dii_net_flow",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "currency",
+                      "scale": 1,
+                      "decimals": 1,
+                      "currency": "INR"
+                    }
+                  },
+                  {
+                    "key": "fpi_net_flow",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "currency",
+                      "scale": 1,
+                      "decimals": 1,
+                      "currency": "INR"
+                    }
+                  },
+                  {
+                    "key": "domestic_offset_ratio",
+                    "axis": "right",
+                    "visible": false,
+                    "format": {
+                      "style": "ratio",
+                      "scale": 1,
+                      "decimals": 2
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "currency",
+      "label": "Currency",
+      "order": 2,
+      "indicators": [
+        {
+          "id": "reer",
+          "title": "Real Effective Exchange Rate",
+          "summary": "Track external price competitiveness against history and peers.",
+          "default_view": "international",
+          "views": [
+            {
+              "id": "international",
+              "label": "International comparison",
+              "asset_id": "reer-world-bank",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "index",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            },
+            {
+              "id": "india-monthly",
+              "label": "India monthly",
+              "asset_id": "reer-rbi",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "reer_index"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "series": [
+                  {
+                    "key": "reer_index",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "index",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "fx-reserves-import-cover",
+          "title": "Foreign-exchange reserves and import cover",
+          "summary": "Pair the reserve stock with months of import cover.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Resilience",
+              "asset_id": "fx-reserves",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "fx_reserves_usd",
+                  "import_cover_months"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "series": [
+                  {
+                    "key": "fx_reserves_usd",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "currency",
+                      "scale": 1,
+                      "decimals": 1,
+                      "currency": "USD"
+                    }
+                  },
+                  {
+                    "key": "import_cover_months",
+                    "axis": "right",
+                    "visible": true,
+                    "format": {
+                      "style": "months",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "macro",
+      "label": "Macro",
+      "order": 3,
+      "indicators": [
+        {
+          "id": "gdp-growth",
+          "title": "Real, nominal and real per-capita GDP growth",
+          "summary": "Separate real expansion, price effects and population growth.",
+          "default_view": "india-quarterly",
+          "views": [
+            {
+              "id": "india-quarterly",
+              "label": "India quarterly",
+              "asset_id": "gdp-india",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "real_gdp_growth",
+                  "nominal_gdp_growth",
+                  "real_gdp_per_capita_growth"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
+                },
+                "zero_line": true,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "series": [
+                  {
+                    "key": "real_gdp_growth",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  },
+                  {
+                    "key": "nominal_gdp_growth",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  },
+                  {
+                    "key": "real_gdp_per_capita_growth",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "id": "international",
+              "label": "International comparison",
+              "asset_id": "gdp-peers",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "twin-deficits",
+          "title": "Fiscal and current-account balances",
+          "summary": "Show the fiscal and external balances using one sign convention and one common frequency.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Twin deficits",
+              "asset_id": "twin-deficits",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "fiscal_deficit_pct_gdp",
+                  "current_account_balance_pct_gdp"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
+                },
+                "zero_line": true,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "series": [
+                  {
+                    "key": "fiscal_deficit_pct_gdp",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  },
+                  {
+                    "key": "current_account_balance_pct_gdp",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "government-capex",
+          "title": "Central government CapEx share",
+          "summary": "Compare capital expenditure with total spending while preserving budget vintages.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "CapEx share",
+              "asset_id": "government-capex",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "capex_actual_pct",
+                  "capex_revised_pct",
+                  "capex_budget_pct"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
+                },
+                "zero_line": false,
+                "show_status": true,
+                "show_source": true,
+                "show_methodology": true,
+                "series": [
+                  {
+                    "key": "capex_actual_pct",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  },
+                  {
+                    "key": "capex_revised_pct",
+                    "axis": "left",
+                    "visible": false,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  },
+                  {
+                    "key": "capex_budget_pct",
+                    "axis": "left",
+                    "visible": false,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "cpi-inflation",
+          "title": "Headline vs. core CPI inflation",
+          "summary": "Compare broad consumer inflation with CPI excluding food and fuel.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Inflation",
+              "asset_id": "cpi-inflation",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "headline_cpi_yoy",
+                  "core_cpi_yoy"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
+                },
+                "zero_line": true,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "series": [
+                  {
+                    "key": "headline_cpi_yoy",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  },
+                  {
+                    "key": "core_cpi_yoy",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "credit-vs-gdp",
+          "title": "Non-food credit growth vs. nominal GDP growth",
+          "summary": "Compare credit growth with nominal economic growth and their spread.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Credit and GDP",
+              "asset_id": "credit-growth",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "non_food_credit_yoy",
+                  "nominal_gdp_yoy",
+                  "credit_growth_gap"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
+                },
+                "zero_line": true,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "series": [
+                  {
+                    "key": "non_food_credit_yoy",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  },
+                  {
+                    "key": "nominal_gdp_yoy",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  },
+                  {
+                    "key": "credit_growth_gap",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "central-government-debt",
+          "title": "Central government debt",
+          "summary": "Track central-government debt relative to GDP with peer comparison.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Debt comparison",
+              "asset_id": "central-government-debt",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workforce",
+      "label": "Workforce",
+      "order": 4,
+      "indicators": [
+        {
+          "id": "lfpr",
+          "title": "Labour Force Participation Rate",
+          "summary": "Measure the working-age population that is employed or seeking work.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "lfpr",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "lfpr-gender-ratio",
+          "title": "Female-to-male LFPR ratio",
+          "summary": "Track the gender gap in labour-market participation.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "lfpr-gender-ratio",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "working-age-share",
+          "title": "Working-age population share",
+          "summary": "Track the population share in its main productive years.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "working-age-share",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "youth-unemployment",
+          "title": "Youth unemployment rate",
+          "summary": "Measure labour-market difficulty for young entrants.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "youth-unemployment",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "non-agricultural-employment",
+          "title": "Non-agricultural employment share",
+          "summary": "Track structural movement away from agricultural employment.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "non-agricultural-employment",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "label": "Education",
+      "order": 5,
+      "indicators": [
+        {
+          "id": "tertiary-ger",
+          "title": "Tertiary Gross Enrolment Ratio",
+          "summary": "Measure participation in higher education and the future skilled-worker pipeline.",
+          "default_view": "international",
+          "views": [
+            {
+              "id": "international",
+              "label": "International comparison",
+              "asset_id": "tertiary-ger-world-bank",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            },
+            {
+              "id": "india-aishe",
+              "label": "India detail",
+              "asset_id": "tertiary-ger-aishe",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              },
+              "note": "Kept separate from the World Bank series; do not splice sources."
+            }
+          ]
+        },
+        {
+          "id": "graduate-unemployment",
+          "title": "Graduate-and-above unemployment rate",
+          "summary": "Measure whether higher educational attainment converts into employment.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "India",
+              "asset_id": "graduate-unemployment",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trade",
+      "label": "Trade",
+      "order": 6,
+      "indicators": [
+        {
+          "id": "services-export-share",
+          "title": "Services share of total goods-and-services exports",
+          "summary": "Track whether export growth is being driven more by services or merchandise.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "services-export-share",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "technology-exports",
+          "title": "Medium- and high-technology exports",
+          "summary": "Track movement toward more sophisticated manufacturing exports.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "technology-exports",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "fdi-inflows",
+          "title": "FDI net inflows",
+          "summary": "Measure long-term foreign investment relative to economic size.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "fdi-inflows",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formalisation",
+      "label": "Formalisation",
+      "order": 7,
+      "indicators": [
+        {
+          "id": "upi-formalisation",
+          "title": "UPI transactions and economic scale",
+          "summary": "Track digital-payment adoption per person and transaction value relative to GDP.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "UPI adoption",
+              "asset_id": "upi-formalisation",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "transactions_per_capita",
+                  "transaction_value_pct_gdp"
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
+                },
+                "zero_line": false,
+                "show_status": false,
+                "show_source": true,
+                "show_methodology": true,
+                "series": [
+                  {
+                    "key": "transactions_per_capita",
+                    "axis": "left",
+                    "visible": true,
+                    "format": {
+                      "style": "number",
+                      "scale": 1,
+                      "decimals": 2
+                    }
+                  },
+                  {
+                    "key": "transaction_value_pct_gdp",
+                    "axis": "right",
+                    "visible": true,
+                    "format": {
+                      "style": "percent",
+                      "scale": 1,
+                      "decimals": 1
+                    }
+                  },
+                  {
+                    "key": "average_transaction_value",
+                    "axis": "right",
+                    "visible": false,
+                    "format": {
+                      "style": "currency",
+                      "scale": 1,
+                      "decimals": 1,
+                      "currency": "INR"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "public_data_root": "/data"
+}

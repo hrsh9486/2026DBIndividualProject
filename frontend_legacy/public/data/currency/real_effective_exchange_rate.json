@@ -1,0 +1,752 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-17T09:20:16.708828+00:00",
+    "source": "World Bank Indicators API",
+    "country": "IND",
+    "peers": [
+      "CHN",
+      "VNM",
+      "IDN",
+      "BGD"
+    ],
+    "start_year": 1991,
+    "end_year": 2026,
+    "indicator_code": "PX.REX.REER",
+    "label": "Real effective exchange rate",
+    "unit": "index",
+    "frequency": "annual",
+    "is_derived": false
+  },
+  "india": [
+    {
+      "year": 1991,
+      "value": null
+    },
+    {
+      "year": 1992,
+      "value": null
+    },
+    {
+      "year": 1993,
+      "value": null
+    },
+    {
+      "year": 1994,
+      "value": null
+    },
+    {
+      "year": 1995,
+      "value": null
+    },
+    {
+      "year": 1996,
+      "value": null
+    },
+    {
+      "year": 1997,
+      "value": null
+    },
+    {
+      "year": 1998,
+      "value": null
+    },
+    {
+      "year": 1999,
+      "value": null
+    },
+    {
+      "year": 2000,
+      "value": null
+    },
+    {
+      "year": 2001,
+      "value": null
+    },
+    {
+      "year": 2002,
+      "value": null
+    },
+    {
+      "year": 2003,
+      "value": null
+    },
+    {
+      "year": 2004,
+      "value": null
+    },
+    {
+      "year": 2005,
+      "value": null
+    },
+    {
+      "year": 2006,
+      "value": null
+    },
+    {
+      "year": 2007,
+      "value": null
+    },
+    {
+      "year": 2008,
+      "value": null
+    },
+    {
+      "year": 2009,
+      "value": null
+    },
+    {
+      "year": 2010,
+      "value": null
+    },
+    {
+      "year": 2011,
+      "value": null
+    },
+    {
+      "year": 2012,
+      "value": null
+    },
+    {
+      "year": 2013,
+      "value": null
+    },
+    {
+      "year": 2014,
+      "value": null
+    },
+    {
+      "year": 2015,
+      "value": null
+    },
+    {
+      "year": 2016,
+      "value": null
+    },
+    {
+      "year": 2017,
+      "value": null
+    },
+    {
+      "year": 2018,
+      "value": null
+    },
+    {
+      "year": 2019,
+      "value": null
+    },
+    {
+      "year": 2020,
+      "value": null
+    },
+    {
+      "year": 2021,
+      "value": null
+    },
+    {
+      "year": 2022,
+      "value": null
+    },
+    {
+      "year": 2023,
+      "value": null
+    },
+    {
+      "year": 2024,
+      "value": null
+    },
+    {
+      "year": 2025,
+      "value": null
+    },
+    {
+      "year": 2026,
+      "value": null
+    }
+  ],
+  "peers": {
+    "CHN": [
+      {
+        "year": 1991,
+        "value": 88.1922460499811
+      },
+      {
+        "year": 1992,
+        "value": 84.2566542267833
+      },
+      {
+        "year": 1993,
+        "value": 89.5077341470627
+      },
+      {
+        "year": 1994,
+        "value": 70.2142986752433
+      },
+      {
+        "year": 1995,
+        "value": 78.2290580274682
+      },
+      {
+        "year": 1996,
+        "value": 86.032319706827
+      },
+      {
+        "year": 1997,
+        "value": 92.6406700425545
+      },
+      {
+        "year": 1998,
+        "value": 97.4851225700367
+      },
+      {
+        "year": 1999,
+        "value": 92.1826549329255
+      },
+      {
+        "year": 2000,
+        "value": 92.1675736605722
+      },
+      {
+        "year": 2001,
+        "value": 96.0971795361352
+      },
+      {
+        "year": 2002,
+        "value": 93.9941539602139
+      },
+      {
+        "year": 2003,
+        "value": 88.0205028997858
+      },
+      {
+        "year": 2004,
+        "value": 85.6048425446005
+      },
+      {
+        "year": 2005,
+        "value": 84.7065714848337
+      },
+      {
+        "year": 2006,
+        "value": 86.0337830716584
+      },
+      {
+        "year": 2007,
+        "value": 89.1885550423734
+      },
+      {
+        "year": 2008,
+        "value": 96.8298184002403
+      },
+      {
+        "year": 2009,
+        "value": 100.883213666495
+      },
+      {
+        "year": 2010,
+        "value": 100.0
+      },
+      {
+        "year": 2011,
+        "value": 102.840824169933
+      },
+      {
+        "year": 2012,
+        "value": 108.887002336216
+      },
+      {
+        "year": 2013,
+        "value": 114.810440938741
+      },
+      {
+        "year": 2014,
+        "value": 118.434932696757
+      },
+      {
+        "year": 2015,
+        "value": 129.95720059254
+      },
+      {
+        "year": 2016,
+        "value": 123.799021613572
+      },
+      {
+        "year": 2017,
+        "value": 120.208002000555
+      },
+      {
+        "year": 2018,
+        "value": 121.679585572893
+      },
+      {
+        "year": 2019,
+        "value": 120.957398898817
+      },
+      {
+        "year": 2020,
+        "value": 123.407684762158
+      },
+      {
+        "year": 2021,
+        "value": 127.222435048548
+      },
+      {
+        "year": 2022,
+        "value": 125.861860039735
+      },
+      {
+        "year": 2023,
+        "value": 115.882131197704
+      },
+      {
+        "year": 2024,
+        "value": 113.019052393098
+      },
+      {
+        "year": 2025,
+        "value": 109.01812504271
+      },
+      {
+        "year": 2026,
+        "value": null
+      }
+    ],
+    "VNM": [
+      {
+        "year": 1991,
+        "value": null
+      },
+      {
+        "year": 1992,
+        "value": null
+      },
+      {
+        "year": 1993,
+        "value": null
+      },
+      {
+        "year": 1994,
+        "value": null
+      },
+      {
+        "year": 1995,
+        "value": null
+      },
+      {
+        "year": 1996,
+        "value": null
+      },
+      {
+        "year": 1997,
+        "value": null
+      },
+      {
+        "year": 1998,
+        "value": null
+      },
+      {
+        "year": 1999,
+        "value": null
+      },
+      {
+        "year": 2000,
+        "value": null
+      },
+      {
+        "year": 2001,
+        "value": null
+      },
+      {
+        "year": 2002,
+        "value": null
+      },
+      {
+        "year": 2003,
+        "value": null
+      },
+      {
+        "year": 2004,
+        "value": null
+      },
+      {
+        "year": 2005,
+        "value": null
+      },
+      {
+        "year": 2006,
+        "value": null
+      },
+      {
+        "year": 2007,
+        "value": null
+      },
+      {
+        "year": 2008,
+        "value": null
+      },
+      {
+        "year": 2009,
+        "value": null
+      },
+      {
+        "year": 2010,
+        "value": null
+      },
+      {
+        "year": 2011,
+        "value": null
+      },
+      {
+        "year": 2012,
+        "value": null
+      },
+      {
+        "year": 2013,
+        "value": null
+      },
+      {
+        "year": 2014,
+        "value": null
+      },
+      {
+        "year": 2015,
+        "value": null
+      },
+      {
+        "year": 2016,
+        "value": null
+      },
+      {
+        "year": 2017,
+        "value": null
+      },
+      {
+        "year": 2018,
+        "value": null
+      },
+      {
+        "year": 2019,
+        "value": null
+      },
+      {
+        "year": 2020,
+        "value": null
+      },
+      {
+        "year": 2021,
+        "value": null
+      },
+      {
+        "year": 2022,
+        "value": null
+      },
+      {
+        "year": 2023,
+        "value": null
+      },
+      {
+        "year": 2024,
+        "value": null
+      },
+      {
+        "year": 2025,
+        "value": null
+      },
+      {
+        "year": 2026,
+        "value": null
+      }
+    ],
+    "IDN": [
+      {
+        "year": 1991,
+        "value": null
+      },
+      {
+        "year": 1992,
+        "value": null
+      },
+      {
+        "year": 1993,
+        "value": null
+      },
+      {
+        "year": 1994,
+        "value": null
+      },
+      {
+        "year": 1995,
+        "value": null
+      },
+      {
+        "year": 1996,
+        "value": null
+      },
+      {
+        "year": 1997,
+        "value": null
+      },
+      {
+        "year": 1998,
+        "value": null
+      },
+      {
+        "year": 1999,
+        "value": null
+      },
+      {
+        "year": 2000,
+        "value": null
+      },
+      {
+        "year": 2001,
+        "value": null
+      },
+      {
+        "year": 2002,
+        "value": null
+      },
+      {
+        "year": 2003,
+        "value": null
+      },
+      {
+        "year": 2004,
+        "value": null
+      },
+      {
+        "year": 2005,
+        "value": null
+      },
+      {
+        "year": 2006,
+        "value": null
+      },
+      {
+        "year": 2007,
+        "value": null
+      },
+      {
+        "year": 2008,
+        "value": null
+      },
+      {
+        "year": 2009,
+        "value": null
+      },
+      {
+        "year": 2010,
+        "value": null
+      },
+      {
+        "year": 2011,
+        "value": null
+      },
+      {
+        "year": 2012,
+        "value": null
+      },
+      {
+        "year": 2013,
+        "value": null
+      },
+      {
+        "year": 2014,
+        "value": null
+      },
+      {
+        "year": 2015,
+        "value": null
+      },
+      {
+        "year": 2016,
+        "value": null
+      },
+      {
+        "year": 2017,
+        "value": null
+      },
+      {
+        "year": 2018,
+        "value": null
+      },
+      {
+        "year": 2019,
+        "value": null
+      },
+      {
+        "year": 2020,
+        "value": null
+      },
+      {
+        "year": 2021,
+        "value": null
+      },
+      {
+        "year": 2022,
+        "value": null
+      },
+      {
+        "year": 2023,
+        "value": null
+      },
+      {
+        "year": 2024,
+        "value": null
+      },
+      {
+        "year": 2025,
+        "value": null
+      },
+      {
+        "year": 2026,
+        "value": null
+      }
+    ],
+    "BGD": [
+      {
+        "year": 1991,
+        "value": null
+      },
+      {
+        "year": 1992,
+        "value": null
+      },
+      {
+        "year": 1993,
+        "value": null
+      },
+      {
+        "year": 1994,
+        "value": null
+      },
+      {
+        "year": 1995,
+        "value": null
+      },
+      {
+        "year": 1996,
+        "value": null
+      },
+      {
+        "year": 1997,
+        "value": null
+      },
+      {
+        "year": 1998,
+        "value": null
+      },
+      {
+        "year": 1999,
+        "value": null
+      },
+      {
+        "year": 2000,
+        "value": null
+      },
+      {
+        "year": 2001,
+        "value": null
+      },
+      {
+        "year": 2002,
+        "value": null
+      },
+      {
+        "year": 2003,
+        "value": null
+      },
+      {
+        "year": 2004,
+        "value": null
+      },
+      {
+        "year": 2005,
+        "value": null
+      },
+      {
+        "year": 2006,
+        "value": null
+      },
+      {
+        "year": 2007,
+        "value": null
+      },
+      {
+        "year": 2008,
+        "value": null
+      },
+      {
+        "year": 2009,
+        "value": null
+      },
+      {
+        "year": 2010,
+        "value": null
+      },
+      {
+        "year": 2011,
+        "value": null
+      },
+      {
+        "year": 2012,
+        "value": null
+      },
+      {
+        "year": 2013,
+        "value": null
+      },
+      {
+        "year": 2014,
+        "value": null
+      },
+      {
+        "year": 2015,
+        "value": null
+      },
+      {
+        "year": 2016,
+        "value": null
+      },
+      {
+        "year": 2017,
+        "value": null
+      },
+      {
+        "year": 2018,
+        "value": null
+      },
+      {
+        "year": 2019,
+        "value": null
+      },
+      {
+        "year": 2020,
+        "value": null
+      },
+      {
+        "year": 2021,
+        "value": null
+      },
+      {
+        "year": 2022,
+        "value": null
+      },
+      {
+        "year": 2023,
+        "value": null
+      },
+      {
+        "year": 2024,
+        "value": null
+      },
+      {
+        "year": 2025,
+        "value": null
+      },
+      {
+        "year": 2026,
+        "value": null
+      }
+    ]
+  }
+}

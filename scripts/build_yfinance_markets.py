@@ -6,11 +6,11 @@ import logging
 from datetime import datetime, timezone
 
 import pandas as pd
-import yfinance as yf
 
 from config import PROCESSED_DATA_DIR
 from config.indicators import Contract
 from exporters import publish_json
+from extractors.yfinance import fetch_close_prices
 from transforms import build_market_bundle
 
 
@@ -33,19 +33,12 @@ MARKETS = {
 
 def fetch_prices(period: str = "10y", interval: str = INTERVAL) -> pd.DataFrame:
     """Source-specific Yahoo extraction; calculations are performed elsewhere."""
-    columns = {}
-    for key, definition in MARKETS.items():
-        history = yf.Ticker(definition["ticker"]).history(period=period, interval=interval)
-        if history.empty:
-            LOGGER.warning("No Yahoo data for %s (%s)", key, definition["ticker"])
-            continue
-        columns[key] = history["Close"]
-        LOGGER.info("%s: extracted %d price rows", key, len(history))
-    if not columns:
-        raise RuntimeError("Yahoo Finance returned no market data")
-    prices = pd.DataFrame(columns)
-    prices.index = pd.to_datetime(prices.index, utc=True).tz_localize(None)
-    return prices.groupby(prices.index.date).last().sort_index()
+    return fetch_close_prices(
+        {key: definition["ticker"] for key, definition in MARKETS.items()},
+        dataset="market_performance",
+        period=period,
+        interval=interval,
+    )
 
 
 def build_payload(prices: pd.DataFrame, *, interval: str = INTERVAL) -> dict:

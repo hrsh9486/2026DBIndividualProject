@@ -30,6 +30,15 @@ Build the market-performance bundle with:
 python3 scripts/build_yfinance_markets.py
 ```
 
+Promote validated processed artifacts into the frontend without deleting any
+existing files:
+
+```bash
+python3 scripts/promote_processed_data.py
+# or promote one artifact
+python3 scripts/promote_processed_data.py currency/real_effective_exchange_rate.json
+```
+
 Each job validates before replacing a processed artifact. A failed source,
 quality gate, or schema check leaves the last valid JSON untouched.
 
@@ -38,80 +47,48 @@ quality gate, or schema check leaves the last valid JSON untouched.
 
 # Frontend
 
-React + Vite + Tailwind v4 + Recharts frontend for the India economic
-research project. Scaffolded for all 7 analytical buckets; **Currency**
-is wired up end-to-end as the working example.
+The current frontend is a TypeScript React application in `frontend/`.
+`frontend_legacy/` is retained for reference but is not used by the build.
 
-## Run it
+The browser has no application API. It loads `public/data/catalogue.json`,
+resolves an indicator view to a static artifact, runtime-checks its schema
+discriminator, and sends it through one of three schema-specific adapters.
+
+```text
+catalogue.json
+  -> annual_country_series -> country comparison
+  -> dated_multi_series    -> multi-series chart
+  -> market_performance    -> market chart and summaries
+```
+
+Run locally:
 
 ```bash
+cd frontend
 npm install
 npm run dev
 ```
 
-Open http://localhost:5173.
+Verify a production build:
 
-## How data flows in
-
-Each script writes JSON into `public/data/<section>/<file>.json`. The
-frontend fetches those as static files client-side — no backend.
-
-```
-public/data/
-  currency/
-    rebased_performance.json
-    volatility_summary.json
-    correlation_summary.json
-    cross_decomposition.json
-    event_windows.json
+```bash
+npm run validate:data
+npx tsc --noEmit
+npm run lint
+npm run build
 ```
 
-`raw_fx_data.json` isn't consumed by any component yet (too granular for
-a chart) — copy it in too if you want to build something against it later.
+`npm run build` validates the catalogue against its manifest schema, checks
+every view-to-asset reference and adapter pairing, validates all published
+artifacts against their declared Draft 2020-12 schemas, checks duplicate
+periods and metadata coverage, and only then runs Vite.
 
-The sample JSON in this repo matches the shape your
-`inr_currency_analysis.py` script produces, so you can just point the
-script's output path at `public/data/currency/` and the charts will pick
-up real numbers instead of the samples.
+To publish newly processed artifacts to their stable frontend paths:
 
-`src/lib/dataLoader.js` has two hooks:
-- `useJson(section, file)` — fetch one file, get `{ data, loading, error }`
-- `useJsonBundle(section, [files])` — fetch several in parallel
+```bash
+python3 scripts/promote_processed_data.py
+```
 
-Both handle loading/error states so every panel shows a skeleton or a
-clear error instead of crashing on missing/malformed JSON.
-
-## Adding a new bucket
-
-1. Add real data under `public/data/<section-id>/`.
-2. Build components in `src/sections/<section-id>/` (copy the `currency/`
-   folder as a starting point — same panel/chart/table patterns).
-3. In `src/App.jsx`, extend the `status === "live"` check to route your
-   new section's dashboard component instead of `PendingSection`.
-4. Flip `status: "pending"` → `"live"` in `src/lib/sections.js` — this
-   also updates the sidebar's status dot automatically.
-
-All 7 buckets, their IDs, and blurbs live in one place:
-`src/lib/sections.js`. That's the single source of truth for the sidebar
-nav and routing.
-
-## Design notes
-
-- Dark, data-dense "terminal" aesthetic — IBM Plex Sans for UI text,
-  IBM Plex Mono for anything numeric (tickers, tables, axes).
-- Palette: deep ink background, marigold as the primary accent (used
-  sparingly — headline series, active nav state), teal for
-  secondary/positive, muted brick for negative/alerts.
-- The top ticker strip is real for USD/INR (computed from the rebased
-  series) and explicitly labeled "pending" for buckets without data yet,
-  rather than faking numbers.
-- Sidebar bucket numbering (01–07) is a real fixed taxonomy, not
-  decoration — it mirrors the 7-bucket framework from the project scope.
-
-## Stack
-
-- Vite + React 19
-- Tailwind CSS v4 (CSS-first config via `@theme` in `src/index.css` —
-  no `tailwind.config.js` needed)
-- Recharts for line/bar charts
-- React Router for section navigation
+The frontend stack is React 19, TypeScript, Vite, TanStack Query, React Router,
+Recharts and AJV. Presentation and percentage scaling are controlled by the
+catalogue rather than inferred in React components.

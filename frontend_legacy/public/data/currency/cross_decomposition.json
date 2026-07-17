@@ -1,0 +1,9 @@
+{
+  "metadata": { "generated_at": "2026-07-01T09:00:00Z", "method": "INR_leg_vs_dollar_leg" },
+  "pairs": [
+    { "pair": "GBPINR", "inr_contribution_pct": 58, "gbp_contribution_pct": 42 },
+    { "pair": "EURINR", "inr_contribution_pct": 63, "gbp_contribution_pct": 37 },
+    { "pair": "JPYINR", "inr_contribution_pct": 71, "gbp_contribution_pct": 29 },
+    { "pair": "CHFINR", "inr_contribution_pct": 55, "gbp_contribution_pct": 45 }
+  ]
+}

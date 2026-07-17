@@ -7,12 +7,13 @@ structured JSON files suitable for charting libraries like Recharts,
 Chart.js, or D3 in a React app.
 """
 
-import yfinance as yf
 import pandas as pd
 import numpy as np
 import os
 import helper
 from config import OUTPUT_DIR, INR_PAIRS, CROSS_VS_USD, EVENT_WINDOWS
+from extractors.yfinance import fetch_close_prices
+from validators import validate_correlation, validate_dated_rows
 
 
 # -----------------------------------------------------------------------
@@ -20,20 +21,12 @@ from config import OUTPUT_DIR, INR_PAIRS, CROSS_VS_USD, EVENT_WINDOWS
 # -----------------------------------------------------------------------
 
 def fetch_fx_data(tickers, period="10y", interval="1d"):
-    data = {}
-    for label, symbol in tickers.items():
-        try:
-            hist = yf.Ticker(symbol).history(period=period, interval=interval)
-            if not hist.empty:
-                data[label] = hist["Close"]
-                print(f"  fetched {label} ({symbol}): {len(hist)} rows")
-            else:
-                print(f"  WARNING: no data for {label} ({symbol})")
-        except Exception as e:
-            print(f"  ERROR fetching {label} ({symbol}): {e}")
-    df = pd.DataFrame(data)
-    df.index = pd.to_datetime(df.index).tz_localize(None)
-    return df.dropna(how="all")
+    return fetch_close_prices(
+        tickers,
+        dataset="currency",
+        period=period,
+        interval=interval,
+    ).dropna(how="all")
 
 
 # -----------------------------------------------------------------------
@@ -49,6 +42,7 @@ def build_rebased_json(df, base=100):
         for col in indexed.columns:
             record[col] = helper.clean_float(row[col], 2)
         records.append(record)
+    validate_dated_rows(records, required_series=df.columns)
     return {
         "metadata": helper.metadata(extra={"base_value": base, "pairs": list(df.columns)}),
         "data": records,
@@ -112,12 +106,15 @@ def build_decomposition_json(inr_df, usd_cross_df, pairs_to_compare):
 
 def build_correlation_json(fx_series, fx_label="USD_INR", equity_ticker="^NSEI",
                             equity_label="Nifty50", period="10y"):
-    equity_hist = yf.Ticker(equity_ticker).history(period=period, interval="1d")["Close"]
-    equity_hist.index = pd.to_datetime(equity_hist.index).tz_localize(None)
+    equity_hist = fetch_close_prices(
+        {equity_label: equity_ticker},
+        dataset="currency_equity_correlation",
+        period=period,
+    )[equity_label]
     combined = pd.concat([fx_series, equity_hist], axis=1).dropna()
     combined.columns = [fx_label, equity_label]
     returns = combined.pct_change().dropna()
-    corr = returns[fx_label].corr(returns[equity_label])
+    corr = validate_correlation(helper.clean_float(returns[fx_label].corr(returns[equity_label]), 3))
 
     # also compute rolling correlation for a time-series chart
     window = 60
@@ -133,7 +130,7 @@ def build_correlation_json(fx_series, fx_label="USD_INR", equity_ticker="^NSEI",
             "equity_index": equity_label,
             "rolling_window_days": window,
         }),
-        "overall_correlation": helper.clean_float(corr, 3),
+        "overall_correlation": corr,
         "rolling_correlation": rolling_records,
     }
 
@@ -175,6 +172,7 @@ def build_raw_data_json(df):
         for col in df.columns:
             record[col] = helper.clean_float(row[col], 4)
         records.append(record)
+    validate_dated_rows(records, required_series=df.columns)
     return {
         "metadata": helper.metadata(extra={"pairs": list(df.columns)}),
         "data": records,

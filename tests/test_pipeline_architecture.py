@@ -11,6 +11,7 @@ from builders import build_annual_country_payload  # noqa: E402
 from config.indicators import Contract, get_indicator  # noqa: E402
 from models import CanonicalRecord  # noqa: E402
 from validators import DataQualityError, validate_payload, validate_records  # noqa: E402
+from validators import validate_correlation, validate_dated_rows  # noqa: E402
 
 try:
     import pandas as pd
@@ -69,6 +70,15 @@ class RegistryAndAnnualContractTests(unittest.TestCase):
         )
         with self.assertRaises(DataQualityError):
             validate_records([record, record])
+
+    def test_dated_quality_gates_reject_duplicates_and_bad_correlations(self):
+        with self.assertRaises(DataQualityError):
+            validate_dated_rows([
+                {"date": "2025-01-01", "USD_INR": 85.0},
+                {"date": "2025-01-01", "USD_INR": 85.1},
+            ])
+        with self.assertRaises(DataQualityError):
+            validate_correlation(1.01)
 
 
 class MarketContractTests(unittest.TestCase):

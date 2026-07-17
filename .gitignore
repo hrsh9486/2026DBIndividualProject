@@ -1,6 +1,6 @@
 # Artifacts and other metadata
 venv/
-data/
+/data/
 .ipynb_checkpoints/
 .csv
 .png

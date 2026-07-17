@@ -60,7 +60,7 @@ export default function CountryTimeSeriesChart({ data, loading, error, visibleCo
                 stroke={key === indiaKey ? "#D9A441" : PEER_COLORS[i % PEER_COLORS.length]}
                 strokeWidth={key === indiaKey ? 2.5 : 1.5}
                 dot={false}
-                connectNulls
+                connectNulls={false}
               />
             ))}
           </LineChart>
