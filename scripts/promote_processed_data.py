@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from config import PROCESSED_DATA_DIR, PROJECT_ROOT
+from config.focused_indicators import FOCUSED_BUNDLES
 from config.indicators import Contract, INDICATORS
 from exporters import write_json_atomic
 from validators import validate_payload
@@ -45,6 +46,10 @@ def artifact_routes() -> dict[Path, PromotionRoute]:
         for spec in INDICATORS.values()
         if spec.key in PUBLIC_PATHS
     }
+    routes.update({
+        Path(spec.output_path): PromotionRoute(spec.contract, Path(spec.output_path))
+        for spec in FOCUSED_BUNDLES.values()
+    })
     routes[Path("equity/market_performance.json")] = PromotionRoute(
         Contract.MARKET_PERFORMANCE,
         Path("equities/market-performance.json"),

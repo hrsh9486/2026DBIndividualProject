@@ -24,6 +24,29 @@ Run a subset of the World Bank registry with:
 python3 scripts/build_world_bank_series.py labour_force_participation working_age_share_pct
 ```
 
+Build, quality-check and promote all seven focused India research lenses with:
+
+```bash
+python3 scripts/build_focused_pipeline.py --frontend-build
+```
+
+Individual lens keys can be supplied for targeted refreshes. For example:
+
+```bash
+python3 scripts/build_focused_pipeline.py human_capital capital_resilience
+```
+
+The focused jobs retain immutable dated source snapshots, map provider data to
+canonical records, validate semantic quality constraints, publish processed JSON
+atomically, promote only schema-valid artifacts, and regenerate the frontend
+catalogue. Government investment runs before private investment because the
+private lens uses the validated public-CapEx series as a lagged comparator.
+
+Some official sources expose only partial histories. The catalogue reports these
+honestly: GST is not yet included in the digital bundle, RBI OBICUS is not yet
+included in the private-investment bundle, and NSE's current-day FII/DII endpoint
+is accumulated prospectively before rolling 12-month measures are enabled.
+
 Build the market-performance bundle with:
 
 ```bash

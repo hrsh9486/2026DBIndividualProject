@@ -15,6 +15,7 @@ class Contract(str, Enum):
     ANNUAL_COUNTRY_SERIES = "annual_country_series.schema.json"
     DATED_MULTI_SERIES = "dated_multi_series.schema.json"
     MARKET_PERFORMANCE = "market_performance.schema.json"
+    EVENT_STUDY = "event_study.schema.json"
 
 
 @dataclass(frozen=True, slots=True)

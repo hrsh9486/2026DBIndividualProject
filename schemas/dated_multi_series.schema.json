@@ -134,6 +134,18 @@
         "unit": {
           "type": "string"
         },
+        "is_derived": {
+          "type": "boolean",
+          "default": false
+        },
+        "methodology": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_note": {
+          "type": "string",
+          "minLength": 1
+        },
         "values": {
           "type": "array",
           "items": {
