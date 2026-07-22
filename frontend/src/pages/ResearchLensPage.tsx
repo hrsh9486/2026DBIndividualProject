@@ -16,8 +16,12 @@ export default function ResearchLensPage() {
   if (error || !data) return <ErrorPanel message={error?.message ?? "Catalogue unavailable"} />;
   const section = data.sections.find((candidate) => candidate.id === sectionId);
   if (!section) return <Navigate to="/" replace />;
+  const available = section.indicators.filter((indicator) => {
+    const view = indicator.views.find((candidate) => candidate.id === indicator.default_view) ?? indicator.views[0];
+    return data.assets[view.asset_id]?.availability !== "planned";
+  }).length;
   return <div className="lens-page">
-    <header className="lens-header"><span>Research lens {String(section.order).padStart(2, "0")}</span><h1>{section.label}</h1><p>{section.indicators.length} published metric{section.indicators.length === 1 ? "" : "s"}. Scroll to compare the available evidence.</p></header>
+    <header className="lens-header"><span>Research lens {String(section.order).padStart(2, "0")}</span><h1>{section.label}</h1><p>{available} of {section.indicators.length} metric{section.indicators.length === 1 ? "" : "s"} currently available. Scroll through definitions and evidence.</p></header>
     <nav className="lens-jump" aria-label={`${section.label} metrics`}>{section.indicators.map((indicator, index) => <a key={indicator.id} href={`#${indicator.id}`}><span>{String(index + 1).padStart(2, "0")}</span>{indicator.title}</a>)}</nav>
     <div className="metric-stack">{section.indicators.map((indicator) => <MetricPanel key={indicator.id} indicator={indicator} assets={data.assets} />)}</div>
   </div>;

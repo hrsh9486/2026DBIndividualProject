@@ -65,7 +65,15 @@ export interface AnnualCountryPayload {
 export interface DatedValue { date: string; value: number | null; status?: string; period_label?: string }
 export interface DatedPayload {
   metadata: Record<string, unknown> & { generated_at: string; source: Array<{ name: string }>; label: string; series_order: string[] };
-  series: Record<string, { label: string; entity: string; unit: string; values: DatedValue[] }>;
+  series: Record<string, {
+    label: string;
+    entity: string;
+    unit: string;
+    is_derived?: boolean;
+    methodology?: string;
+    source_note?: string;
+    values: DatedValue[];
+  }>;
 }
 
 export interface MarketPoint {

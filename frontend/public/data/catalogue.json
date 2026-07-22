@@ -1,54 +1,1916 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-07-17T14:30:00Z",
+  "generated_at": "2026-07-21T16:57:13.803792+00:00",
   "public_data_root": "/data",
   "assets": {
-    "market-performance": { "data_path": "/data/equities/market-performance.json", "schema_path": "/data/schemas/market_performance.schema.json", "schema": "market_performance", "expected_frequency": "daily", "stale_after_days": 5, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active", "description": "Indian and global market performance with risk and return measures." },
-    "reer-world-bank": { "data_path": "/data/currency/reer-world-bank.json", "schema_path": "/data/schemas/annual_country_series.schema.json", "schema": "annual_country_series", "expected_frequency": "annual", "stale_after_days": 450, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active", "description": "Annual real effective exchange rate for India and peers." },
-    "central-government-debt": { "data_path": "/data/macro/central-government-debt.json", "schema_path": "/data/schemas/annual_country_series.schema.json", "schema": "annual_country_series", "expected_frequency": "annual", "stale_after_days": 450, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active" },
-    "urban-population": { "data_path": "/data/workforce/urban-population.json", "schema_path": "/data/schemas/annual_country_series.schema.json", "schema": "annual_country_series", "expected_frequency": "annual", "stale_after_days": 450, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active" },
-    "lfpr": { "data_path": "/data/workforce/lfpr.json", "schema_path": "/data/schemas/annual_country_series.schema.json", "schema": "annual_country_series", "expected_frequency": "annual", "stale_after_days": 450, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active" },
-    "lfpr-gender-ratio": { "data_path": "/data/workforce/lfpr-gender-ratio.json", "schema_path": "/data/schemas/annual_country_series.schema.json", "schema": "annual_country_series", "expected_frequency": "annual", "stale_after_days": 450, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active" },
-    "working-age-share": { "data_path": "/data/workforce/working-age-share.json", "schema_path": "/data/schemas/annual_country_series.schema.json", "schema": "annual_country_series", "expected_frequency": "annual", "stale_after_days": 450, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active" },
-    "adult-literacy": { "data_path": "/data/education/adult-literacy.json", "schema_path": "/data/schemas/annual_country_series.schema.json", "schema": "annual_country_series", "expected_frequency": "annual", "stale_after_days": 450, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active" },
-    "secondary-enrolment": { "data_path": "/data/education/secondary-enrolment.json", "schema_path": "/data/schemas/annual_country_series.schema.json", "schema": "annual_country_series", "expected_frequency": "annual", "stale_after_days": 450, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active" },
-    "tertiary-enrolment": { "data_path": "/data/education/tertiary-enrolment.json", "schema_path": "/data/schemas/annual_country_series.schema.json", "schema": "annual_country_series", "expected_frequency": "annual", "stale_after_days": 450, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active" },
-    "secondary-education-spending": { "data_path": "/data/education/secondary-education-spending.json", "schema_path": "/data/schemas/annual_country_series.schema.json", "schema": "annual_country_series", "expected_frequency": "annual", "stale_after_days": 450, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active" },
-    "technology-exports": { "data_path": "/data/trade/technology-exports.json", "schema_path": "/data/schemas/annual_country_series.schema.json", "schema": "annual_country_series", "expected_frequency": "annual", "stale_after_days": 450, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active" },
-    "fdi-inflows": { "data_path": "/data/trade/fdi-inflows.json", "schema_path": "/data/schemas/annual_country_series.schema.json", "schema": "annual_country_series", "expected_frequency": "annual", "stale_after_days": 450, "cache_strategy": "revalidate", "version": "2026-07-17", "availability": "active" }
+    "market-performance": {
+      "data_path": "/data/equities/market-performance.json",
+      "schema_path": "/data/schemas/market_performance.schema.json",
+      "schema": "market_performance",
+      "expected_frequency": "daily",
+      "stale_after_days": 5,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active",
+      "description": "Indian and global market performance with risk and return measures."
+    },
+    "reer-world-bank": {
+      "data_path": "/data/currency/reer-world-bank.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active",
+      "description": "Annual real effective exchange rate for India and peers."
+    },
+    "central-government-debt": {
+      "data_path": "/data/macro/central-government-debt.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active"
+    },
+    "urban-population": {
+      "data_path": "/data/workforce/urban-population.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active"
+    },
+    "lfpr": {
+      "data_path": "/data/workforce/lfpr.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active"
+    },
+    "lfpr-gender-ratio": {
+      "data_path": "/data/workforce/lfpr-gender-ratio.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active"
+    },
+    "working-age-share": {
+      "data_path": "/data/workforce/working-age-share.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active"
+    },
+    "adult-literacy": {
+      "data_path": "/data/education/adult-literacy.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active"
+    },
+    "secondary-enrolment": {
+      "data_path": "/data/education/secondary-enrolment.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active"
+    },
+    "tertiary-enrolment": {
+      "data_path": "/data/education/tertiary-enrolment.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active"
+    },
+    "secondary-education-spending": {
+      "data_path": "/data/education/secondary-education-spending.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active"
+    },
+    "technology-exports": {
+      "data_path": "/data/trade/technology-exports.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active"
+    },
+    "fdi-inflows": {
+      "data_path": "/data/trade/fdi-inflows.json",
+      "schema_path": "/data/schemas/annual_country_series.schema.json",
+      "schema": "annual_country_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-17",
+      "availability": "active"
+    },
+    "digital-integration": {
+      "data_path": "/data/digital-integration/upi-and-tax-capacity.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "schema": "dated_multi_series",
+      "expected_frequency": "mixed",
+      "stale_after_days": 120,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-21",
+      "availability": "partial",
+      "description": "Is digital-payment adoption occurring alongside deeper participation and stronger tax capacity?"
+    },
+    "government-investment": {
+      "data_path": "/data/government-investment/capex-and-execution.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "schema": "dated_multi_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-21",
+      "availability": "active",
+      "description": "Is central-government spending shifting toward productive assets, and are budget plans delivered?"
+    },
+    "private-investment": {
+      "data_path": "/data/private-investment/investment-and-capacity.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "schema": "dated_multi_series",
+      "expected_frequency": "mixed",
+      "stale_after_days": 120,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-21",
+      "availability": "partial",
+      "description": "Is public infrastructure investment associated with firms expanding productive capacity?"
+    },
+    "fiscal-capacity": {
+      "data_path": "/data/fiscal-capacity/debt-and-interest-burden.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "schema": "dated_multi_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-21",
+      "availability": "active",
+      "description": "Can general-government investment be sustained without debt service crowding out future spending?"
+    },
+    "external-competitiveness": {
+      "data_path": "/data/external-competitiveness/reer-and-current-account.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "schema": "dated_multi_series",
+      "expected_frequency": "mixed",
+      "stale_after_days": 120,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-21",
+      "availability": "active",
+      "description": "Is domestic growth occurring without persistent deterioration in external competitiveness?"
+    },
+    "human-capital": {
+      "data_path": "/data/human-capital/education-and-employment.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "schema": "dated_multi_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-21",
+      "availability": "active",
+      "description": "Is higher-education expansion translating into productive employment?"
+    },
+    "capital-resilience": {
+      "data_path": "/data/capital-resilience/institutional-flows.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "schema": "dated_multi_series",
+      "expected_frequency": "monthly",
+      "stale_after_days": 45,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-21",
+      "availability": "partial",
+      "description": "Has domestic institutional investment reduced market sensitivity to foreign portfolio outflows?"
+    }
   },
   "sections": [
-    { "id": "equities", "label": "Equities", "order": 1, "indicators": [
-      { "id": "market-performance", "title": "India vs global equity performance", "summary": "Compare Indian benchmarks with major global markets on a normalized basis and inspect the underlying risk-return bundle.", "default_view": "normalized", "views": [
-        { "id": "normalized", "label": "Normalized performance", "asset_id": "market-performance", "presentation": { "component": "market-performance", "chart_type": "line", "x_axis": "date", "market_field": "normalized_value", "default_visible": ["NIFTY_50", "SP_500", "FTSE_100"], "value_format": { "style": "index", "scale": 1, "decimals": 1 }, "summary_fields": [{ "key": "total_return", "label": "Total return", "format": { "style": "percent", "scale": 100, "decimals": 1 } }], "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": false, "show_source": true, "show_methodology": true } },
-        { "id": "drawdown", "label": "Drawdown", "asset_id": "market-performance", "presentation": { "component": "market-performance", "chart_type": "line", "x_axis": "date", "market_field": "drawdown", "default_visible": ["NIFTY_50", "SP_500"], "value_format": { "style": "percent", "scale": 100, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": true, "show_source": true, "show_methodology": true } }
-      ] }
-    ] },
-    { "id": "currency", "label": "Currency", "order": 2, "indicators": [
-      { "id": "reer", "title": "Real Effective Exchange Rate", "summary": "Track India’s external price competitiveness against its own history and peer economies without treating one level as proof of misvaluation.", "default_view": "world-bank", "views": [
-        { "id": "world-bank", "label": "World Bank annual", "asset_id": "reer-world-bank", "presentation": { "component": "country-comparison-line", "chart_type": "line", "x_axis": "year", "default_visible": ["IND", "CHN", "VNM"], "value_format": { "style": "index", "scale": 1, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": false, "show_source": true, "show_methodology": true } }
-      ] }
-    ] },
-    { "id": "macro", "label": "Macro", "order": 3, "indicators": [
-      { "id": "central-government-debt", "title": "Central government debt", "summary": "Compare central-government debt relative to GDP while retaining the exact coverage definition.", "default_view": "main", "views": [
-        { "id": "main", "label": "Country comparison", "asset_id": "central-government-debt", "presentation": { "component": "country-comparison-line", "chart_type": "line", "x_axis": "year", "default_visible": ["IND", "CHN"], "value_format": { "style": "percent", "scale": 1, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": true, "show_source": true, "show_methodology": true } }
-      ] }
-    ] },
-    { "id": "workforce", "label": "Workforce", "order": 4, "indicators": [
-      { "id": "lfpr", "title": "Labour force participation", "summary": "Measure the share of working-age people who are employed or actively seeking work.", "default_view": "main", "views": [{ "id": "main", "label": "Country comparison", "asset_id": "lfpr", "presentation": { "component": "country-comparison-line", "chart_type": "line", "x_axis": "year", "default_visible": ["IND", "CHN", "VNM"], "value_format": { "style": "percent", "scale": 1, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": false, "show_source": true, "show_methodology": true } }] },
-      { "id": "lfpr-gender-ratio", "title": "Female-to-male LFPR ratio", "summary": "Track the gender gap in economic participation across India and peer economies.", "default_view": "main", "views": [{ "id": "main", "label": "Country comparison", "asset_id": "lfpr-gender-ratio", "presentation": { "component": "country-comparison-line", "chart_type": "line", "x_axis": "year", "default_visible": ["IND", "CHN", "VNM"], "value_format": { "style": "percent", "scale": 1, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": false, "show_source": true, "show_methodology": true } }] },
-      { "id": "working-age-share", "title": "Working-age population share", "summary": "Track demographic capacity in the population’s main productive years.", "default_view": "main", "views": [{ "id": "main", "label": "Country comparison", "asset_id": "working-age-share", "presentation": { "component": "country-comparison-line", "chart_type": "line", "x_axis": "year", "default_visible": ["IND", "CHN", "VNM"], "value_format": { "style": "percent", "scale": 1, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": false, "show_source": true, "show_methodology": true } }] },
-      { "id": "urban-population", "title": "Urban population", "summary": "Follow the structural shift toward urban settlement as a share of total population.", "default_view": "main", "views": [{ "id": "main", "label": "Country comparison", "asset_id": "urban-population", "presentation": { "component": "country-comparison-line", "chart_type": "line", "x_axis": "year", "default_visible": ["IND", "CHN", "VNM"], "value_format": { "style": "percent", "scale": 1, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": false, "show_source": true, "show_methodology": true } }] }
-    ] },
-    { "id": "education", "label": "Education", "order": 5, "indicators": [
-      { "id": "adult-literacy", "title": "Adult literacy rate", "summary": "Compare foundational human-capital attainment across India and peers.", "default_view": "main", "views": [{ "id": "main", "label": "Country comparison", "asset_id": "adult-literacy", "presentation": { "component": "country-comparison-line", "chart_type": "line", "x_axis": "year", "default_visible": ["IND", "CHN"], "value_format": { "style": "percent", "scale": 1, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": false, "show_source": true, "show_methodology": true } }] },
-      { "id": "secondary-enrolment", "title": "Secondary gross enrolment", "summary": "Measure participation in secondary education relative to the official age cohort.", "default_view": "main", "views": [{ "id": "main", "label": "Country comparison", "asset_id": "secondary-enrolment", "presentation": { "component": "country-comparison-line", "chart_type": "line", "x_axis": "year", "default_visible": ["IND", "CHN", "VNM"], "value_format": { "style": "percent", "scale": 1, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": false, "show_source": true, "show_methodology": true } }] },
-      { "id": "tertiary-enrolment", "title": "Tertiary gross enrolment", "summary": "Track participation in higher education and the future skilled-worker pipeline.", "default_view": "main", "views": [{ "id": "main", "label": "World Bank comparison", "asset_id": "tertiary-enrolment", "presentation": { "component": "country-comparison-line", "chart_type": "line", "x_axis": "year", "default_visible": ["IND", "CHN", "VNM"], "value_format": { "style": "percent", "scale": 1, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": false, "show_source": true, "show_methodology": true } }] },
-      { "id": "secondary-education-spending", "title": "Secondary education expenditure", "summary": "Compare government expenditure per secondary student across peer economies.", "default_view": "main", "views": [{ "id": "main", "label": "Country comparison", "asset_id": "secondary-education-spending", "presentation": { "component": "country-comparison-line", "chart_type": "line", "x_axis": "year", "default_visible": ["IND", "CHN", "VNM"], "value_format": { "style": "percent", "scale": 1, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": false, "show_source": true, "show_methodology": true } }] }
-    ] },
-    { "id": "trade", "label": "Trade", "order": 6, "indicators": [
-      { "id": "technology-exports", "title": "Medium- and high-technology exports", "summary": "Track movement toward more sophisticated manufacturing exports.", "default_view": "main", "views": [{ "id": "main", "label": "Country comparison", "asset_id": "technology-exports", "presentation": { "component": "country-comparison-line", "chart_type": "line", "x_axis": "year", "default_visible": ["IND", "CHN", "VNM"], "value_format": { "style": "percent", "scale": 1, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": false, "show_source": true, "show_methodology": true } }] },
-      { "id": "fdi-inflows", "title": "FDI net inflows", "summary": "Measure long-term foreign corporate investment relative to economic size.", "default_view": "main", "views": [{ "id": "main", "label": "Country comparison", "asset_id": "fdi-inflows", "presentation": { "component": "country-comparison-line", "chart_type": "line", "x_axis": "year", "default_visible": ["IND", "CHN", "VNM"], "value_format": { "style": "percent", "scale": 1, "decimals": 1 }, "controls": { "date_range": true, "entity_toggle": true, "series_toggle": false }, "zero_line": true, "show_source": true, "show_methodology": true } }] }
-    ] }
-  ]
+    {
+      "id": "digital-integration",
+      "label": "Digital integration and tax capacity",
+      "order": 1,
+      "indicators": [
+        {
+          "id": "upi-transactions-per-capita",
+          "title": "UPI transactions per capita",
+          "summary": "Monthly UPI transaction count divided by calendar-year population.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "digital-integration",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "upi_transactions_per_capita"
+                ],
+                "value_format": {
+                  "style": "number",
+                  "scale": 1,
+                  "decimals": 2
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Annual population denominators make within-year changes entirely transaction-driven."
+            }
+          ]
+        },
+        {
+          "id": "upi-value-pct-gdp",
+          "title": "UPI value as share of GDP",
+          "summary": "Trailing twelve-month UPI value relative to nominal GDP in current INR.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "digital-integration",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "upi_value_pct_gdp"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "UPI value includes transfers and is not value added; early months lack a 12-month window."
+            }
+          ]
+        },
+        {
+          "id": "average-upi-transaction-value",
+          "title": "Average UPI transaction value",
+          "summary": "Average value of reported UPI transactions.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "digital-integration",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "average_upi_transaction_value"
+                ],
+                "value_format": {
+                  "style": "currency",
+                  "scale": 1,
+                  "decimals": 0,
+                  "currency": "INR"
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Mix shifts between person-to-person and merchant payments affect the average."
+            }
+          ]
+        },
+        {
+          "id": "gst-growth-gap",
+          "title": "GST revenue growth minus nominal GDP growth",
+          "summary": "Annual gross GST growth less nominal GDP growth.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "digital-integration",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "gst_growth_gap"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Tax-rate, enforcement, refund and import changes also affect GST receipts."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "government-investment",
+      "label": "Government investment and execution",
+      "order": 2,
+      "indicators": [
+        {
+          "id": "actual-capex-pct-gdp",
+          "title": "Actual central-government capital expenditure",
+          "summary": "Direct central-government capital expenditure as a share of nominal GDP.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "government-investment",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "actual_capex_pct_gdp"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Excludes broader effective CapEx unless separately labelled."
+            }
+          ]
+        },
+        {
+          "id": "actual-capex-pct-total-expenditure",
+          "title": "Actual CapEx share of expenditure",
+          "summary": "Actual capital expenditure as a share of actual total expenditure.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "government-investment",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "actual_capex_pct_total_expenditure"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Accounting classification does not measure asset quality."
+            }
+          ]
+        },
+        {
+          "id": "capex-execution-ratio",
+          "title": "CapEx execution ratio",
+          "summary": "Actual capital expenditure relative to the original Budget Estimate.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "government-investment",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "capex_execution_ratio"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "A ratio above 100 may reflect supplemental spending rather than superior execution."
+            }
+          ]
+        },
+        {
+          "id": "capex-budget-estimate",
+          "title": "Capital expenditure — Budget Estimate",
+          "summary": "Original central-government capital expenditure plan.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "government-investment",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "capex_budget_estimate"
+                ],
+                "value_format": {
+                  "style": "number",
+                  "scale": 1,
+                  "decimals": 0,
+                  "prefix": "₹",
+                  "suffix": " cr"
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Budget estimates are plans, not delivered spending."
+            }
+          ]
+        },
+        {
+          "id": "capex-revised-estimate",
+          "title": "Capital expenditure — Revised Estimate",
+          "summary": "In-year revised central-government capital expenditure plan.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "government-investment",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "capex_revised_estimate"
+                ],
+                "value_format": {
+                  "style": "number",
+                  "scale": 1,
+                  "decimals": 0,
+                  "prefix": "₹",
+                  "suffix": " cr"
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Revised estimates remain estimates."
+            }
+          ]
+        },
+        {
+          "id": "capex-actual",
+          "title": "Capital expenditure — Actual",
+          "summary": "Out-turn central-government capital expenditure.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "government-investment",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "capex_actual"
+                ],
+                "value_format": {
+                  "style": "number",
+                  "scale": 1,
+                  "decimals": 0,
+                  "prefix": "₹",
+                  "suffix": " cr"
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Latest actuals lag budget estimates."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "private-investment",
+      "label": "Private investment and crowding-in",
+      "order": 3,
+      "indicators": [
+        {
+          "id": "private-corporate-gfcf-pct-gdp",
+          "title": "Private corporate GFCF",
+          "summary": "Private corporate fixed investment relative to nominal GDP.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "private-investment",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "private_corporate_gfcf_pct_gdp"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Institutional-sector revisions and base-year changes create breaks."
+            }
+          ]
+        },
+        {
+          "id": "private-share-total-gfcf",
+          "title": "Private corporate share of GFCF",
+          "summary": "Private corporate share of total fixed-capital formation.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "private-investment",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "private_share_total_gfcf"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "This is not the whole private sector if household investment is excluded."
+            }
+          ]
+        },
+        {
+          "id": "manufacturing-capacity-utilisation",
+          "title": "Manufacturing capacity utilisation",
+          "summary": "Unadjusted aggregate manufacturing capacity utilisation.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "private-investment",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "manufacturing_capacity_utilisation"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "OBICUS is a voluntary survey and does not cover the entire manufacturing universe."
+            }
+          ]
+        },
+        {
+          "id": "public-capex-lagged",
+          "title": "Public CapEx, lagged one year",
+          "summary": "Actual central-government CapEx/GDP shifted forward one year for visual comparison.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "private-investment",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "public_capex_lagged"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "A chosen lag is descriptive and not a causal estimate."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fiscal-capacity",
+      "label": "Fiscal capacity and debt sustainability",
+      "order": 4,
+      "indicators": [
+        {
+          "id": "general-government-debt-pct-gdp",
+          "title": "General-government debt",
+          "summary": "General-government debt stock relative to GDP.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "fiscal-capacity",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "general_government_debt_pct_gdp"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Coverage must remain consistent across vintages."
+            }
+          ]
+        },
+        {
+          "id": "interest-payments-pct-revenue",
+          "title": "Interest payments as share of revenue",
+          "summary": "Central-government interest payments relative to revenue receipts.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "fiscal-capacity",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "interest_payments_pct_revenue"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Central-government burden is narrower than general-government debt."
+            }
+          ]
+        },
+        {
+          "id": "interest-payments-pct-expenditure",
+          "title": "Interest payments as share of expenditure",
+          "summary": "Interest payments relative to total expenditure.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "fiscal-capacity",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "interest_payments_pct_expenditure"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Changes in total expenditure alter the ratio independently of interest costs."
+            }
+          ]
+        },
+        {
+          "id": "primary-balance-pct-gdp",
+          "title": "Primary balance",
+          "summary": "Primary balance using negative values for deficits.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "fiscal-capacity",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "primary_balance_pct_gdp"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Sign convention must be retained in presentation."
+            }
+          ]
+        },
+        {
+          "id": "central-government-debt-pct-gdp",
+          "title": "Central-government debt",
+          "summary": "Central-government debt as a secondary decomposition series.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "fiscal-capacity",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "central_government_debt_pct_gdp"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Not comparable to general-government debt."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "external-competitiveness",
+      "label": "External competitiveness and resilience",
+      "order": 5,
+      "indicators": [
+        {
+          "id": "reer-index",
+          "title": "Trade-weighted REER",
+          "summary": "RBI trade-weighted real effective exchange-rate index.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "external-competitiveness",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "reer_index"
+                ],
+                "value_format": {
+                  "style": "index",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "RBI may revise weights and base periods."
+            }
+          ]
+        },
+        {
+          "id": "reer-deviation-pct",
+          "title": "REER deviation from five-year average",
+          "summary": "Percentage deviation from the trailing 60-month mean.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "external-competitiveness",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "reer_deviation_pct"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "The historical mean is a reference, not fair value."
+            }
+          ]
+        },
+        {
+          "id": "current-account-pct-gdp",
+          "title": "Current-account balance",
+          "summary": "Current-account balance as a share of GDP; deficits are negative.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "external-competitiveness",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "current_account_pct_gdp"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Quarterly GDP and balance-of-payments revisions must use matching vintages."
+            }
+          ]
+        },
+        {
+          "id": "non-oil-export-growth",
+          "title": "Non-oil merchandise export growth",
+          "summary": "Year-on-year growth in non-oil merchandise exports.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "external-competitiveness",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "non_oil_export_growth"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Classification and price effects influence nominal export growth."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "human-capital",
+      "label": "Human-capital and employment conversion",
+      "order": 6,
+      "indicators": [
+        {
+          "id": "tertiary-ger",
+          "title": "Tertiary Gross Enrolment Ratio",
+          "summary": "Participation in tertiary education among the official age cohort.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "human-capital",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "tertiary_ger"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "AISHE revisions and institution coverage must be preserved."
+            }
+          ]
+        },
+        {
+          "id": "educated-unemployment",
+          "title": "Secondary-and-above unemployment rate",
+          "summary": "Published unemployment rate among people aged 15+ with secondary-or-higher education using usual status.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "human-capital",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "educated_unemployment"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "The published aggregate is broader than graduate unemployment; it excludes people outside the labour force and can rise with participation."
+            }
+          ]
+        },
+        {
+          "id": "regular-salaried-employment-share",
+          "title": "Regular wage or salaried employment share",
+          "summary": "Share of employed people aged 15+ in regular wage or salaried work.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "human-capital",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "regular_salaried_employment_share"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Regular salaried work is not synonymous with formal or high-quality employment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "capital-resilience",
+      "label": "Domestic capital buffer against global shocks",
+      "order": 7,
+      "indicators": [
+        {
+          "id": "dii-net-flow",
+          "title": "DII net equity flow",
+          "summary": "Monthly sum of official daily net DII equity activity.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "capital-resilience",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "dii_net_flow"
+                ],
+                "value_format": {
+                  "style": "number",
+                  "scale": 1,
+                  "decimals": 0,
+                  "prefix": "₹",
+                  "suffix": " cr"
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Exchange activity definitions and coverage must remain stable."
+            }
+          ]
+        },
+        {
+          "id": "fpi-net-flow",
+          "title": "FII/FPI net equity flow",
+          "summary": "Monthly sum of official daily net FII/FPI equity activity.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "capital-resilience",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "fpi_net_flow"
+                ],
+                "value_format": {
+                  "style": "number",
+                  "scale": 1,
+                  "decimals": 0,
+                  "prefix": "₹",
+                  "suffix": " cr"
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "NSE activity is not identical to NSDL custodial flow data."
+            }
+          ]
+        },
+        {
+          "id": "dii-rolling-12m",
+          "title": "DII rolling 12-month flow",
+          "summary": "Trailing 12-month cumulative DII flow.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "capital-resilience",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "dii_rolling_12m"
+                ],
+                "value_format": {
+                  "style": "number",
+                  "scale": 1,
+                  "decimals": 0,
+                  "prefix": "₹",
+                  "suffix": " cr"
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Early observations lack a full window."
+            }
+          ]
+        },
+        {
+          "id": "fpi-rolling-12m",
+          "title": "FPI rolling 12-month flow",
+          "summary": "Trailing 12-month cumulative FPI flow.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "capital-resilience",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "fpi_rolling_12m"
+                ],
+                "value_format": {
+                  "style": "number",
+                  "scale": 1,
+                  "decimals": 0,
+                  "prefix": "₹",
+                  "suffix": " cr"
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Early observations lack a full window."
+            }
+          ]
+        },
+        {
+          "id": "dii-offset-ratio",
+          "title": "DII offset ratio",
+          "summary": "Domestic buying divided by the magnitude of foreign selling in FPI selling months; null otherwise.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Time series",
+              "asset_id": "capital-resilience",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "dii_offset_ratio"
+                ],
+                "value_format": {
+                  "style": "ratio",
+                  "scale": 1,
+                  "decimals": 2
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Ratios above one do not imply that DII caused market stability."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "equities",
+      "label": "Equities",
+      "order": 8,
+      "indicators": [
+        {
+          "id": "market-performance",
+          "title": "India vs global equity performance",
+          "summary": "Compare Indian benchmarks with major global markets on a normalized basis and inspect the underlying risk-return bundle.",
+          "default_view": "normalized",
+          "views": [
+            {
+              "id": "normalized",
+              "label": "Normalized performance",
+              "asset_id": "market-performance",
+              "presentation": {
+                "component": "market-performance",
+                "chart_type": "line",
+                "x_axis": "date",
+                "market_field": "normalized_value",
+                "default_visible": [
+                  "NIFTY_50",
+                  "SP_500",
+                  "FTSE_100"
+                ],
+                "value_format": {
+                  "style": "index",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "summary_fields": [
+                  {
+                    "key": "total_return",
+                    "label": "Total return",
+                    "format": {
+                      "style": "percent",
+                      "scale": 100,
+                      "decimals": 1
+                    }
+                  }
+                ],
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              }
+            },
+            {
+              "id": "drawdown",
+              "label": "Drawdown",
+              "asset_id": "market-performance",
+              "presentation": {
+                "component": "market-performance",
+                "chart_type": "line",
+                "x_axis": "date",
+                "market_field": "drawdown",
+                "default_visible": [
+                  "NIFTY_50",
+                  "SP_500"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 100,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "currency",
+      "label": "Currency",
+      "order": 9,
+      "indicators": [
+        {
+          "id": "reer",
+          "title": "Real Effective Exchange Rate",
+          "summary": "Track India’s external price competitiveness against its own history and peer economies without treating one level as proof of misvaluation.",
+          "default_view": "world-bank",
+          "views": [
+            {
+              "id": "world-bank",
+              "label": "World Bank annual",
+              "asset_id": "reer-world-bank",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND",
+                  "CHN",
+                  "VNM"
+                ],
+                "value_format": {
+                  "style": "index",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "macro",
+      "label": "Macro",
+      "order": 10,
+      "indicators": [
+        {
+          "id": "central-government-debt",
+          "title": "Central government debt",
+          "summary": "Compare central-government debt relative to GDP while retaining the exact coverage definition.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "central-government-debt",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND",
+                  "CHN"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workforce",
+      "label": "Workforce",
+      "order": 11,
+      "indicators": [
+        {
+          "id": "lfpr",
+          "title": "Labour force participation",
+          "summary": "Measure the share of working-age people who are employed or actively seeking work.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "lfpr",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND",
+                  "CHN",
+                  "VNM"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "lfpr-gender-ratio",
+          "title": "Female-to-male LFPR ratio",
+          "summary": "Track the gender gap in economic participation across India and peer economies.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "lfpr-gender-ratio",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND",
+                  "CHN",
+                  "VNM"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "working-age-share",
+          "title": "Working-age population share",
+          "summary": "Track demographic capacity in the population’s main productive years.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "working-age-share",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND",
+                  "CHN",
+                  "VNM"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "urban-population",
+          "title": "Urban population",
+          "summary": "Follow the structural shift toward urban settlement as a share of total population.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "urban-population",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND",
+                  "CHN",
+                  "VNM"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "label": "Education",
+      "order": 12,
+      "indicators": [
+        {
+          "id": "adult-literacy",
+          "title": "Adult literacy rate",
+          "summary": "Compare foundational human-capital attainment across India and peers.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "adult-literacy",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND",
+                  "CHN"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "secondary-enrolment",
+          "title": "Secondary gross enrolment",
+          "summary": "Measure participation in secondary education relative to the official age cohort.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "secondary-enrolment",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND",
+                  "CHN",
+                  "VNM"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "tertiary-enrolment",
+          "title": "Tertiary gross enrolment",
+          "summary": "Track participation in higher education and the future skilled-worker pipeline.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "World Bank comparison",
+              "asset_id": "tertiary-enrolment",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND",
+                  "CHN",
+                  "VNM"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "secondary-education-spending",
+          "title": "Secondary education expenditure",
+          "summary": "Compare government expenditure per secondary student across peer economies.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "secondary-education-spending",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND",
+                  "CHN",
+                  "VNM"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trade",
+      "label": "Trade",
+      "order": 13,
+      "indicators": [
+        {
+          "id": "technology-exports",
+          "title": "Medium- and high-technology exports",
+          "summary": "Track movement toward more sophisticated manufacturing exports.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "technology-exports",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND",
+                  "CHN",
+                  "VNM"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "fdi-inflows",
+          "title": "FDI net inflows",
+          "summary": "Measure long-term foreign corporate investment relative to economic size.",
+          "default_view": "main",
+          "views": [
+            {
+              "id": "main",
+              "label": "Country comparison",
+              "asset_id": "fdi-inflows",
+              "presentation": {
+                "component": "country-comparison-line",
+                "chart_type": "line",
+                "x_axis": "year",
+                "default_visible": [
+                  "IND",
+                  "CHN",
+                  "VNM"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": true,
+                  "series_toggle": false
+                },
+                "zero_line": true,
+                "show_source": true,
+                "show_methodology": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "roadmap_total": 44
 }

@@ -42,6 +42,11 @@
       "type": "string",
       "pattern": "^/",
       "description": "Browser-visible root for static data files, for example '/data'. The corresponding source directory is normally '<project>/public/data'."
+    },
+    "roadmap_total": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Total metric definitions represented by the delivery roadmap."
     }
   },
   "$defs": {

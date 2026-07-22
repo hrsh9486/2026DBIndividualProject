@@ -1,0 +1,110 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-21T16:57:05.622509+00:00",
+    "source": [
+      {
+        "name": "NSE FII/FPI and DII trading activity",
+        "url": "https://www.nseindia.com/api/fiidiiTradeReact",
+        "retrieved_at": "2026-07-21T16:57:05.619863+00:00"
+      }
+    ],
+    "frequency": "monthly",
+    "start_date": "2026-07-21",
+    "end_date": "2026-07-21",
+    "indicator_code": "DOMESTIC_CAPITAL_BUFFER",
+    "label": "Domestic capital buffer against global shocks",
+    "default_unit": "mixed",
+    "series_order": [
+      "dii_net_flow",
+      "fpi_net_flow",
+      "dii_rolling_12m",
+      "fpi_rolling_12m",
+      "dii_offset_ratio"
+    ],
+    "is_derived": true,
+    "methodology": "Each run archives NSE's current provisional daily observation. Monthly sums, rolling 12-month flows and the DII offset ratio are calculated only from the accumulated official archive.",
+    "note": "Partial accumulating bundle: NSE's public endpoint exposes today's provisional activity, not a historical daily download. Twelve-month measures remain null until twelve consecutive archived months exist. Institutional buying may reduce disruption without improving fundamentals and does not equal retail participation."
+  },
+  "series": {
+    "dii_net_flow": {
+      "label": "DII net equity flow",
+      "entity": "IND",
+      "unit": "INR_crore",
+      "is_derived": true,
+      "values": [
+        {
+          "date": "2026-07-21",
+          "value": -656.88,
+          "status": "provisional",
+          "period_label": "Jul 2026"
+        }
+      ],
+      "methodology": "sum daily net values by calendar month",
+      "source_note": "Exchange activity definitions and coverage must remain stable."
+    },
+    "fpi_net_flow": {
+      "label": "FII/FPI net equity flow",
+      "entity": "IND",
+      "unit": "INR_crore",
+      "is_derived": true,
+      "values": [
+        {
+          "date": "2026-07-21",
+          "value": 1650.16,
+          "status": "provisional",
+          "period_label": "Jul 2026"
+        }
+      ],
+      "methodology": "sum daily net values by calendar month",
+      "source_note": "NSE activity is not identical to NSDL custodial flow data."
+    },
+    "dii_rolling_12m": {
+      "label": "DII rolling 12-month flow",
+      "entity": "IND",
+      "unit": "INR_crore",
+      "is_derived": true,
+      "values": [
+        {
+          "date": "2026-07-21",
+          "value": null,
+          "status": "provisional",
+          "period_label": "Jul 2026"
+        }
+      ],
+      "methodology": "rolling_sum(dii_net_flow, 12)",
+      "source_note": "Early observations lack a full window."
+    },
+    "fpi_rolling_12m": {
+      "label": "FPI rolling 12-month flow",
+      "entity": "IND",
+      "unit": "INR_crore",
+      "is_derived": true,
+      "values": [
+        {
+          "date": "2026-07-21",
+          "value": null,
+          "status": "provisional",
+          "period_label": "Jul 2026"
+        }
+      ],
+      "methodology": "rolling_sum(fpi_net_flow, 12)",
+      "source_note": "Early observations lack a full window."
+    },
+    "dii_offset_ratio": {
+      "label": "DII offset ratio",
+      "entity": "IND",
+      "unit": "ratio",
+      "is_derived": true,
+      "values": [
+        {
+          "date": "2026-07-21",
+          "value": null,
+          "status": "provisional",
+          "period_label": "Jul 2026"
+        }
+      ],
+      "methodology": "max(dii_net_flow, 0) / abs(fpi_net_flow) when fpi_net_flow < 0",
+      "source_note": "Ratios above one do not imply that DII caused market stability."
+    }
+  }
+}
