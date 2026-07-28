@@ -1,14 +1,27 @@
 {
   "metadata": {
-    "generated_at": "2026-07-21T16:06:02.306262+00:00",
+    "generated_at": "2026-07-22T14:56:08.495032+00:00",
     "source": [
       {
         "name": "National Payments Corporation of India",
         "url": "https://www.npci.org.in/product/upi/product-statistics",
-        "retrieved_at": "2026-07-21T16:06:02.132526+00:00"
+        "retrieved_at": "2026-07-22T14:56:01.113364+00:00"
       },
       {
         "name": "World Bank Indicators API"
+      },
+      {
+        "name": "pib-gst-history",
+        "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/jul/doc202471346101.pdf",
+        "retrieved_at": "2026-07-22T14:56:01.485083+00:00"
+      },
+      {
+        "name": "gst-march-2025",
+        "url": "https://tutorial.gst.gov.in/downloads/news/approved_monthly_gst_data_for_publishing_mar_2025.pdf",
+        "retrieved_at": "2026-07-22T14:56:06.152621+00:00"
+      },
+      {
+        "name": "RBI Handbook Table 1 (NSO nominal GDP)"
       }
     ],
     "frequency": "mixed",
@@ -24,8 +37,8 @@
       "gst_growth_gap"
     ],
     "is_derived": true,
-    "methodology": "UPI measures use official monthly volume/value with annual population and GDP denominators; no missing observations are interpolated.",
-    "note": "Partial bundle: GST evidence is pending. UPI use and GST receipts are associated measures, not proof that digital payments cause formalisation."
+    "methodology": "UPI measures use official monthly volume/value with calendar-year population and GDP denominators. The GST gap compares fiscal-year gross-receipts growth with matching fiscal-year nominal-GDP growth. No missing observations are interpolated.",
+    "note": "UPI use and GST receipts are associated measures, not proof that digital payments cause formalisation."
   },
   "series": {
     "upi_transactions_per_capita": {
@@ -1908,9 +1921,34 @@
       "entity": "IND",
       "unit": "percentage_points",
       "is_derived": true,
-      "values": [],
-      "methodology": "gst_yoy_pct - nominal_gdp_yoy_pct",
-      "source_note": "Tax-rate, enforcement, refund and import changes also affect GST receipts."
+      "values": [
+        {
+          "date": "2022-03-31",
+          "value": 11.576899530967566,
+          "status": "actual",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": 7.95979566397984,
+          "status": "actual",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": -0.39210642874682833,
+          "status": "provisional",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": -0.33280003659239554,
+          "status": "provisional",
+          "period_label": "FY2024-25"
+        }
+      ],
+      "methodology": "gross_gst_revenue_yoy_pct - nominal_gdp_yoy_pct",
+      "source_note": "Tax-rate, enforcement, refunds, imports and collection timing also affect gross GST receipts."
     }
   }
 }

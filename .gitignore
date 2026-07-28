@@ -4,7 +4,7 @@ venv/
 .ipynb_checkpoints/
 .csv
 .png
-*/__pycache__/
+__pycache__
 .pyc
 
 # Logs

@@ -319,16 +319,19 @@ STYLES = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 
 LENS_DETAILS = {
     "digital_integration": {
-        "status": "Partial — UPI metrics are populated; GST evidence remains planned.",
+        "status": "Active — all four registered UPI and GST series have observations.",
         "sources": [
             ("NPCI UPI Product Statistics", "Monthly period, banks live, UPI volume (million transactions), and value (₹ crore). Banks live is retained in raw evidence but is not yet a published series.", "https://www.npci.org.in/product/upi/product-statistics"),
             ("NPCI structured product-statistics APIs", "Product/tab metadata and paginated monthly observations by financial-year range.", "https://www.npci.org.in/api/product-statistic/tabs"),
             ("World Bank Indicators API — SP.POP.TOTL", "Annual India population used as the monthly per-capita denominator.", "https://api.worldbank.org/v2/country/IND/indicator/SP.POP.TOTL?format=json"),
             ("World Bank Indicators API — NY.GDP.MKTP.CN", "Annual nominal GDP in current local currency used for the payment-turnover ratio.", "https://api.worldbank.org/v2/country/IND/indicator/NY.GDP.MKTP.CN?format=json"),
+            ("Ministry of Finance / PIB GST history", "Fiscal-year gross GST revenue for FY2020–21 through FY2023–24, reported in lakh crore.", "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/jul/doc202471346101.pdf"),
+            ("GST Portal March 2025 collection report", "Exact provisional gross GST totals for FY2023–24 and FY2024–25, including CGST, SGST, IGST and cess.", "https://tutorial.gst.gov.in/downloads/news/approved_monthly_gst_data_for_publishing_mar_2025.pdf"),
+            ("RBI Handbook, Table 1", "Matching fiscal-year nominal GDP at current prices, with RBI/NSO observation status retained.", "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23175"),
         ],
-        "method": "The NPCI extractor first obtains the official tab definitions, then requests every advertised year range and page. It stores the returned metadata and observations as checksum-addressed raw JSON. Calendar-year World Bank denominators are joined without interpolation. Missing denominator years remain null.",
-        "interpretation": "Together the series describe the intensity and ticket size of digital payments and the turnover of the network relative to the economy. They do not count unique users, distinguish person-to-person from merchant payments, or identify a causal effect on formalisation or tax compliance.",
-        "special": "UPI value as a percentage of GDP is a turnover-to-value-added comparison. Payments can circulate the same rupee many times; 86.8% therefore does not mean that UPI ‘produced’ or ‘covered’ 86.8% of GDP.",
+        "method": "The NPCI extractor first obtains the official tab definitions, then requests every advertised year range and page. Calendar-year World Bank denominators are joined without interpolation. For tax capacity, official PDFs are checksum-archived and parsed; fiscal-year gross-GST YoY growth is calculated and matching fiscal-year nominal-GDP YoY growth is subtracted. Exact GST Portal totals supersede rounded PIB totals where both cover the same year, and the provisional label is retained.",
+        "interpretation": "UPI series describe payment intensity, ticket size and network turnover relative to the economy. The GST growth gap says whether gross receipts grew faster or slower than nominal GDP in percentage points; it is not a tax-buoyancy estimate because it does not control for rate, base, import, refund, enforcement or timing changes. None of these series identifies a causal effect on formalisation.",
+        "special": "UPI value/GDP is a turnover-to-value-added comparison: payments can circulate the same rupee many times. The GST gap is a difference between two growth rates, so +2 means GST grew two percentage points faster than nominal GDP, not that GST revenue equals 2% of GDP.",
     },
     "government_investment": {
         "status": "Active — all six registered series have observations.",
@@ -341,15 +344,15 @@ LENS_DETAILS = {
         "special": "An execution ratio above 100% means actual expenditure exceeded the original BE. It may reflect supplementary appropriations or reclassification; it is not automatically evidence of superior administrative efficiency.",
     },
     "private_investment": {
-        "status": "Partial — national-accounts and lagged public-CapEx series are populated; RBI OBICUS capacity utilisation remains planned.",
+        "status": "Active — national-accounts, lagged public-CapEx and RBI OBICUS capacity-utilisation series are populated.",
         "sources": [
             ("MoSPI new GDP series, base year 2022–23", "Statement 1.1B nominal GDP; Statement 7.1B total GFCF, private non-financial corporation GFCF, and private financial corporation GFCF.", "https://mospi.gov.in/uploads/release_calendar/1772190058170_Press_Note_on_New_Series_of_GDP_Estimates_with_Base_Year_2022-23_27022026.pdf"),
             ("Government-investment processed bundle", "Actual central-government CapEx/GDP, shifted one fiscal year forward for visual comparison.", "https://www.indiabudget.gov.in/"),
-            ("RBI OBICUS", "Planned: quarterly aggregate manufacturing capacity utilisation.", "https://www.rbi.org.in/Scripts/QuarterlyPublications.aspx?head=Order%20Books%2C%20Inventories%20and%20Capacity%20Utilisation%20Survey"),
+            ("RBI OBICUS", "Quarterly number of responding companies plus unadjusted and seasonally adjusted aggregate manufacturing capacity utilisation. The published series uses the unadjusted aggregate.", "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23808"),
         ],
-        "method": "Private corporate GFCF is constructed as private non-financial corporation GFCF plus private financial corporation GFCF. It is divided by nominal GDP or total GFCF from the same release and base-year system. The public-CapEx comparison is an explicit one-fiscal-year lag; it is not fitted or selected by a causal model.",
-        "interpretation": "These measures show how much fixed-capital formation is attributed to private corporations and its share of economy-wide investment. They exclude household-sector investment and should not be described as the entire private sector. A visual association with lagged public CapEx is a hypothesis-generating comparison, not a crowding-in estimate.",
-        "special": "Base-year revisions can change levels, historical growth and institutional allocation. Numerators and denominators are therefore kept within the same MoSPI vintage rather than mixed across releases.",
+        "method": "Private corporate GFCF is constructed as private non-financial corporation GFCF plus private financial corporation GFCF. It is divided by nominal GDP or total GFCF from the same release and base-year system. The public-CapEx comparison is an explicit one-fiscal-year lag. The OBICUS extractor discovers RBI's latest quarterly publication, selects Table 1 by title and exact headers, and publishes the unadjusted capacity-utilisation column with fiscal-quarter boundaries.",
+        "interpretation": "The investment ratios show how much fixed-capital formation is attributed to private corporations and its share of economy-wide investment. OBICUS adds a survey measure of how intensively responding manufacturers use installed capacity. It is not the investment rate, and changes may reflect demand or production schedules rather than new capacity. A visual association with lagged public CapEx remains hypothesis-generating, not causal.",
+        "special": "MoSPI numerators and denominators stay within one base-year vintage. OBICUS is a voluntary survey, its respondent count changes by quarter, and the published unadjusted series can contain seasonality; the seasonally adjusted column is retained in extraction evidence but is not silently substituted.",
     },
     "fiscal_capacity": {
         "status": "Active — all five registered series have observations with actual, revised and budget statuses retained.",
@@ -384,7 +387,7 @@ LENS_DETAILS = {
         "special": "The planning concept initially referred to graduate unemployment. The stable published PLFS series available in the selected report is secondary-and-above. The registry was renamed to match the evidence instead of publishing a more attractive but false label.",
     },
     "capital_resilience": {
-        "status": "Partial — one archived NSE trading day is available; monthly history, rolling windows and shock-event estimates require continued daily accumulation.",
+        "status": "Partial — two archived NSE trading days are available; rolling windows and shock-event estimates require continued daily accumulation.",
         "sources": [
             ("NSE FII/FPI & DII trading activity report", "Current trading date; DII and FII/FPI gross purchases, gross sales and net activity in ₹ crore.", "https://www.nseindia.com/reports/fii-dii"),
             ("NSE report API", "Structured current-day provisional observations used after establishing the NSE web session.", "https://www.nseindia.com/api/fiidiiTradeReact"),
@@ -579,11 +582,11 @@ def add_pipeline(doc: DocxBuilder) -> None:
 
     doc.add_heading("Acquisition patterns by source type", 2)
     doc.add_heading("Structured APIs: NPCI, World Bank and NSE", 3)
-    doc.add_paragraph("NPCI discovery metadata identifies product tabs, year ranges and filters before observations are requested. The World Bank API supplies machine-readable annual denominators. NSE requires a browser-like session established from its official report page before the current-day JSON endpoint is called. Pagination/range completeness, response categories and numerical identities are validated rather than assumed.")
+    doc.add_paragraph("NPCI discovery metadata identifies product tabs, year ranges and filters before observations are requested. The World Bank API supplies machine-readable annual denominators; a transient API failure may reuse the newest immutable raw snapshot with an explicit runtime warning. NSE requires a browser-like session established from its official report page before the current-day JSON endpoint is called. Pagination/range completeness, response categories and numerical identities are validated rather than assumed.")
     doc.add_heading("RBI Handbook HTML tables", 3)
-    doc.add_paragraph("The RBI extractor discovers official table links from the Handbook and parses the substantive HTML table. A dependency-free XLSX reader also exists, but live unattended builds use the official HTML representation because the rbidocs workbook host may block automated retrieval. Table number, headers, units and row identity are part of the extraction contract.")
+    doc.add_paragraph("The RBI Handbook extractor discovers official table links and parses substantive HTML tables. OBICUS uses the same evidence-first pattern against RBI's quarterly-publication index, then selects Table 1 Capacity Utilisation by title and exact headers. A dependency-free XLSX reader also exists, but live unattended builds use official HTML where the rbidocs workbook host may block automated retrieval. Table identity, headers, units and row identity are extraction contracts.")
     doc.add_heading("Official statistical and Budget PDFs", 3)
-    doc.add_paragraph("The raw PDF is checksum-archived first. pdftotext -layout creates a stable positional text representation for parsing. The extractor looks for exact statement/table labels and expected year columns, then applies table-specific rules. A visually plausible number from the wrong row is considered a hard extraction error, not an acceptable approximation.")
+    doc.add_paragraph("The raw PDF is checksum-archived first. pdftotext -layout creates a stable positional text representation for parsing. Extractors look for exact statement/table labels and expected year columns, then apply table-specific rules. The GST adapter additionally reconciles a rounded historical PIB series with exact provisional totals from the GST Portal. A visually plausible number from the wrong row is a hard extraction error, not an acceptable approximation.")
 
     doc.add_heading("Raw evidence and reproducibility", 2)
     for item in [
@@ -791,14 +794,14 @@ def add_operations(doc: DocxBuilder) -> None:
     )
 
     doc.add_heading("Testing posture", 2)
-    doc.add_paragraph("At the implementation snapshot, the backend suite reported 26 passing tests and one skipped optional pandas/yfinance test. The frontend TypeScript/Vite build and static-data validation also passed. Tests cover canonical periods/status, registry contracts, formulas and rolling-window behaviour, schema validation, exporter atomicity, focused builders/catalogue logic and source-specific parsing fixtures. A successful test run does not replace a data-review check for revisions or economic plausibility.")
+    doc.add_paragraph("At the implementation snapshot, the backend suite reported 28 passing tests and one skipped optional pandas/yfinance test. The frontend TypeScript/Vite build and static-data validation also passed. Tests cover canonical periods/status, registry contracts, formulas and rolling-window behaviour, schema validation, exporter atomicity, focused builders/catalogue logic, and source-specific GST/OBICUS parsing fixtures. A successful test run does not replace a data-review check for revisions or economic plausibility.")
 
     doc.add_heading("Recommended operating cadence", 2)
     for item in [
         "Daily: archive NSE FII/FPI and DII current-day activity after the trading report is available; alert on missing category or accounting mismatch.",
         "Monthly: rebuild NPCI UPI, RBI monthly REER/trade and accumulated institutional-flow bundles; review source revisions and staleness.",
-        "Quarterly: rebuild RBI balance-of-payments/GDP and, once implemented, OBICUS capacity utilisation.",
-        "Annual/release-driven: rebuild Budget vintages, RBI fiscal/debt, MoSPI national accounts, AISHE and PLFS after official releases.",
+        "Quarterly: rebuild RBI balance-of-payments/GDP and OBICUS capacity utilisation after each official release.",
+        "Annual/release-driven: rebuild Budget vintages, RBI fiscal/debt, MoSPI national accounts, GST fiscal-year totals, AISHE and PLFS after official releases.",
         "Before deployment: run backend tests, promote only valid artifacts, synchronise the catalogue and require a clean frontend build.",
         "After a definition or base-year change: update registry wording, parser/transform, tests, artifact methodology and this document together.",
     ]:
@@ -810,13 +813,12 @@ def add_gaps(doc: DocxBuilder) -> None:
     doc.table(
         ["Priority", "Missing capability", "Completion criterion"],
         [
-            ["1", "GST gross-receipts series and gst_growth_gap", "An official, reproducible GST series with clear period/vintage semantics joined to matching nominal GDP; digital lens becomes active."],
-            ["2", "RBI OBICUS manufacturing capacity utilisation", "Official quarterly series, immutable raw snapshots, parser tests and populated capacity series; private lens becomes active."],
-            ["3", "Historical institutional-flow archive", "Scheduled daily NSE collection has enough consecutive months for complete 12-month windows; month-completeness is explicit."],
-            ["4", "Shock-event analysis", "The configured 2018 EM sell-off, COVID-19 and 2022 tightening windows can be populated from adequate flow/market history and validated against event_study.schema.json."],
-            ["5", "Frontend performance", "Route/chart code splitting or other bundle reduction removes the large-chunk warning without weakening validation."],
-            ["6", "Legacy review", "Manually verify retained World Bank/market assets, decide which remain analytically useful, then migrate or delete only with explicit approval."],
-            ["7", "Automated document freshness", "Generate the DOCX in a release/documentation job and fail when registry series lack architecture notes."],
+            ["1", "Historical institutional-flow archive", "Scheduled daily NSE collection has enough consecutive months for complete 12-month windows; month-completeness is explicit."],
+            ["2", "Shock-event analysis", "The configured 2018 EM sell-off, COVID-19 and 2022 tightening windows can be populated from adequate flow/market history and validated against event_study.schema.json."],
+            ["3", "Longer official GST and OBICUS history", "Additional compatible official vintages extend the short current histories without mixing definitions or overwriting source status."],
+            ["4", "Frontend performance", "Route/chart code splitting or other bundle reduction removes the large-chunk warning without weakening validation."],
+            ["5", "Legacy review", "Manually verify retained World Bank/market assets, decide which remain analytically useful, then migrate or delete only with explicit approval."],
+            ["6", "Automated document freshness", "Generate the DOCX in a release/documentation job and fail when registry series lack architecture notes."],
         ],
         widths=[900, 3100, 5000],
     )

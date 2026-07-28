@@ -8,6 +8,7 @@ import { countryName, formatValue } from "../lib/format";
 import EntityControls from "./EntityControls";
 
 const COLORS = ["#d45132", "#176b87", "#6b7a3d", "#7b5c9a", "#c18b2f", "#4d6670"];
+const MAX_VISIBLE_POINT_MARKERS = 250;
 
 export default function ChartView({ payload, presentation }: { payload: StaticPayload; presentation: Presentation }) {
   const initialKeys = "india" in payload
@@ -33,6 +34,13 @@ export default function ChartView({ payload, presentation }: { payload: StaticPa
 
   const active = visible.filter((key) => keys.includes(key));
   const plotted = active.length ? active : keys.slice(0, 1);
+  const pointCounts = useMemo(
+    () => Object.fromEntries(keys.map((key) => [
+      key,
+      rows.reduce((count, row) => count + (typeof row[key] === "number" ? 1 : 0), 0),
+    ])),
+    [keys, rows],
+  );
   const toggle = (key: string) => setVisible((current) => current.includes(key) ? current.filter((item) => item !== key) : [...current, key]);
 
   return <div>
@@ -46,7 +54,21 @@ export default function ChartView({ payload, presentation }: { payload: StaticPa
           {presentation.zero_line && <ReferenceLine y={0} stroke="#9b9489" />}
           <Tooltip contentStyle={{ background: "#fffdf8", border: "1px solid #cec6b9", borderRadius: 2 }} formatter={(value, name) => [formatValue(Number(value), presentation.value_format), labels[String(name)] ?? name]} />
           <Legend formatter={(key) => labels[String(key)] ?? key} />
-          {plotted.map((key, index) => <Line key={key} dataKey={key} name={key} type="monotone" connectNulls={false} stroke={COLORS[index % COLORS.length]} strokeWidth={key === "IND" ? 2.8 : 1.8} dot={false} activeDot={{ r: 4 }} />)}
+          {plotted.map((key, index) => {
+            const color = COLORS[index % COLORS.length];
+            const showPoints = pointCounts[key] <= MAX_VISIBLE_POINT_MARKERS;
+            return <Line
+              key={key}
+              dataKey={key}
+              name={key}
+              type="monotone"
+              connectNulls={false}
+              stroke={color}
+              strokeWidth={key === "IND" ? 2.8 : 1.8}
+              dot={showPoints ? { r: 2.5, fill: "#fffdf8", stroke: color, strokeWidth: 1.5 } : false}
+              activeDot={{ r: 4 }}
+            />;
+          })}
         </LineChart>
       </ResponsiveContainer>
     </div>

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-07-21T16:57:13.803792+00:00",
+  "generated_at": "2026-07-22T14:57:06.642159+00:00",
   "public_data_root": "/data",
   "assets": {
     "market-performance": {
@@ -142,8 +142,8 @@
       "expected_frequency": "mixed",
       "stale_after_days": 120,
       "cache_strategy": "revalidate",
-      "version": "2026-07-21",
-      "availability": "partial",
+      "version": "2026-07-22",
+      "availability": "active",
       "description": "Is digital-payment adoption occurring alongside deeper participation and stronger tax capacity?"
     },
     "government-investment": {
@@ -153,7 +153,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-07-21",
+      "version": "2026-07-22",
       "availability": "active",
       "description": "Is central-government spending shifting toward productive assets, and are budget plans delivered?"
     },
@@ -164,8 +164,8 @@
       "expected_frequency": "mixed",
       "stale_after_days": 120,
       "cache_strategy": "revalidate",
-      "version": "2026-07-21",
-      "availability": "partial",
+      "version": "2026-07-22",
+      "availability": "active",
       "description": "Is public infrastructure investment associated with firms expanding productive capacity?"
     },
     "fiscal-capacity": {
@@ -175,7 +175,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-07-21",
+      "version": "2026-07-22",
       "availability": "active",
       "description": "Can general-government investment be sustained without debt service crowding out future spending?"
     },
@@ -186,7 +186,7 @@
       "expected_frequency": "mixed",
       "stale_after_days": 120,
       "cache_strategy": "revalidate",
-      "version": "2026-07-21",
+      "version": "2026-07-22",
       "availability": "active",
       "description": "Is domestic growth occurring without persistent deterioration in external competitiveness?"
     },
@@ -197,7 +197,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-07-21",
+      "version": "2026-07-22",
       "availability": "active",
       "description": "Is higher-education expansion translating into productive employment?"
     },
@@ -208,7 +208,7 @@
       "expected_frequency": "monthly",
       "stale_after_days": 45,
       "cache_strategy": "revalidate",
-      "version": "2026-07-21",
+      "version": "2026-07-22",
       "availability": "partial",
       "description": "Has domestic institutional investment reduced market sensitivity to foreign portfolio outflows?"
     }
@@ -328,7 +328,7 @@
         {
           "id": "gst-growth-gap",
           "title": "GST revenue growth minus nominal GDP growth",
-          "summary": "Annual gross GST growth less nominal GDP growth.",
+          "summary": "Annual gross GST-revenue growth less matching fiscal-year nominal-GDP growth.",
           "default_view": "main",
           "views": [
             {
@@ -356,7 +356,7 @@
                 "show_source": true,
                 "show_methodology": true
               },
-              "note": "Tax-rate, enforcement, refund and import changes also affect GST receipts."
+              "note": "Tax-rate, enforcement, refunds, imports and collection timing also affect gross GST receipts."
             }
           ]
         }

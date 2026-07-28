@@ -1,14 +1,19 @@
 {
   "metadata": {
-    "generated_at": "2026-07-21T16:42:10.152580+00:00",
+    "generated_at": "2026-07-22T14:55:24.666246+00:00",
     "source": [
       {
         "name": "MoSPI new-series GDP estimates — Statement 7.1B",
         "url": "https://mospi.gov.in/uploads/release_calendar/1772190058170_Press_Note_on_New_Series_of_GDP_Estimates_with_Base_Year_2022-23_27022026.pdf",
-        "retrieved_at": "2026-07-21T16:42:09.665369+00:00"
+        "retrieved_at": "2026-07-22T14:55:22.148111+00:00"
       },
       {
         "name": "Validated government investment artifact"
+      },
+      {
+        "name": "RBI OBICUS — Table 1 Capacity Utilisation",
+        "url": "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23808",
+        "retrieved_at": "2026-07-22T14:55:24.649965+00:00"
       }
     ],
     "frequency": "mixed",
@@ -24,8 +29,8 @@
       "public_capex_lagged"
     ],
     "is_derived": true,
-    "methodology": "Private corporate means private non-financial plus private financial corporations under the 2022-23 national-accounts base. The public-CapEx series is shifted forward one fiscal year.",
-    "note": "Partial bundle: RBI OBICUS capacity utilisation is not yet ingested. Co-movement cannot establish crowding-in; demand, profitability, rates and global conditions also drive investment."
+    "methodology": "Private corporate means private non-financial plus private financial corporations under the 2022-23 national-accounts base. The public-CapEx series is shifted forward one fiscal year. Capacity utilisation is RBI OBICUS' published unadjusted aggregate.",
+    "note": "Co-movement cannot establish crowding-in; demand, profitability, rates and global conditions also drive investment."
   },
   "series": {
     "private_corporate_gfcf_pct_gdp": {
@@ -89,7 +94,38 @@
       "entity": "IND",
       "unit": "percent",
       "is_derived": false,
-      "values": [],
+      "values": [
+        {
+          "date": "2024-12-31",
+          "value": 75.4,
+          "status": "provisional",
+          "period_label": "Q3:FY2024-25"
+        },
+        {
+          "date": "2025-03-31",
+          "value": 77.7,
+          "status": "provisional",
+          "period_label": "Q4:FY2024-25"
+        },
+        {
+          "date": "2025-06-30",
+          "value": 74.1,
+          "status": "provisional",
+          "period_label": "Q1:FY2025-26"
+        },
+        {
+          "date": "2025-09-30",
+          "value": 74.3,
+          "status": "provisional",
+          "period_label": "Q2:FY2025-26"
+        },
+        {
+          "date": "2025-12-31",
+          "value": 75.6,
+          "status": "provisional",
+          "period_label": "Q3:FY2025-26"
+        }
+      ],
       "source_note": "OBICUS is a voluntary survey and does not cover the entire manufacturing universe."
     },
     "public_capex_lagged": {

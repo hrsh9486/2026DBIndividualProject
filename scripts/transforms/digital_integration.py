@@ -6,8 +6,9 @@ import calendar
 from datetime import date, datetime
 from typing import Mapping, Sequence
 
+from extractors.gst_revenue import GstRevenueResponse
 from extractors.npci import UpiMonthlyRecord
-from models import CanonicalRecord, ObservationStatus
+from models import CanonicalRecord, FiscalPeriod, ObservationStatus
 
 
 def _month_end(year: int, month: int) -> date:
@@ -65,3 +66,55 @@ def build_upi_canonical_records(
             CanonicalRecord(date=observation_date, indicator="upi_value_pct_gdp", value=value_pct_gdp, unit="percent", method="Trailing 12-month UPI value / calendar-year nominal GDP * 100", **common),
         ))
     return output
+
+
+def _least_final_status(*statuses: ObservationStatus) -> ObservationStatus:
+    order = {
+        ObservationStatus.ACTUAL: 0,
+        ObservationStatus.REVISED: 1,
+        ObservationStatus.PROVISIONAL: 2,
+        ObservationStatus.ESTIMATE: 3,
+        ObservationStatus.BUDGET: 4,
+    }
+    return max(statuses, key=order.__getitem__)
+
+
+def build_gst_growth_gap_records(
+    response: GstRevenueResponse,
+    *,
+    nominal_gdp_by_fiscal_year: Mapping[int, tuple[float, ObservationStatus]],
+) -> list[CanonicalRecord]:
+    """Subtract fiscal-year nominal-GDP growth from gross-GST growth."""
+    observations = {item.fiscal_start_year: item for item in response.observations}
+    records: list[CanonicalRecord] = []
+    for fiscal_year in sorted(observations):
+        previous_year = fiscal_year - 1
+        current = observations[fiscal_year]
+        previous = observations.get(previous_year)
+        current_gdp = nominal_gdp_by_fiscal_year.get(fiscal_year)
+        previous_gdp = nominal_gdp_by_fiscal_year.get(previous_year)
+        if previous is None or current_gdp is None or previous_gdp is None:
+            continue
+        if previous.gross_gst_crore <= 0 or current_gdp[0] <= 0 or previous_gdp[0] <= 0:
+            raise ValueError("GST and nominal-GDP levels must be positive")
+        gst_growth = (current.gross_gst_crore / previous.gross_gst_crore - 1) * 100
+        nominal_gdp_growth = (current_gdp[0] / previous_gdp[0] - 1) * 100
+        period = FiscalPeriod(fiscal_year)
+        records.append(CanonicalRecord(
+            date=period.end_date,
+            entity="IND",
+            indicator="gst_growth_gap",
+            value=gst_growth - nominal_gdp_growth,
+            unit="percentage_points",
+            frequency="annual",
+            source="GST Portal / Ministry of Finance; RBI Handbook (NSO nominal GDP)",
+            status=_least_final_status(current.status, current_gdp[1]),
+            period_label=period.label,
+            is_derived=True,
+            method="Gross GST revenue YoY growth minus fiscal-year nominal GDP YoY growth",
+            source_url=current.source_url,
+            retrieved_at=datetime.fromisoformat(current.retrieved_at),
+            period_start=period.start_date,
+            period_end=period.end_date,
+        ))
+    return records

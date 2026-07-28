@@ -5,6 +5,7 @@ from __future__ import annotations
 from datetime import date, datetime
 
 from extractors.national_accounts import NationalAccountsResponse
+from extractors.rbi_obicus import ObicusResponse
 from models import CanonicalRecord, FiscalPeriod, ObservationStatus
 
 
@@ -64,5 +65,38 @@ def build_lagged_public_capex_records(government_payload: dict) -> list[Canonica
             method="Actual central-government CapEx/GDP shifted forward by one fiscal year",
             period_start=period.start_date,
             period_end=period.end_date,
+        ))
+    return records
+
+
+def build_capacity_utilisation_records(response: ObicusResponse) -> list[CanonicalRecord]:
+    """Map RBI OBICUS' unadjusted aggregate CU to fiscal-quarter end dates."""
+    quarter_dates = {
+        1: lambda year: (date(year, 4, 1), date(year, 6, 30)),
+        2: lambda year: (date(year, 7, 1), date(year, 9, 30)),
+        3: lambda year: (date(year, 10, 1), date(year, 12, 31)),
+        4: lambda year: (date(year + 1, 1, 1), date(year + 1, 3, 31)),
+    }
+    retrieved_at = datetime.fromisoformat(response.retrieved_at)
+    records: list[CanonicalRecord] = []
+    for observation in response.observations:
+        period_start, period_end = quarter_dates[observation.quarter](observation.fiscal_start_year)
+        fiscal_period = FiscalPeriod(observation.fiscal_start_year)
+        records.append(CanonicalRecord(
+            date=period_end,
+            entity="IND",
+            indicator="manufacturing_capacity_utilisation",
+            value=observation.capacity_utilisation,
+            unit="percent",
+            frequency="quarterly",
+            source="RBI Order Books, Inventories and Capacity Utilisation Survey (OBICUS)",
+            status=ObservationStatus.PROVISIONAL,
+            period_label=f"Q{observation.quarter}:{fiscal_period.label}",
+            is_derived=False,
+            method="Published unadjusted aggregate manufacturing capacity utilisation",
+            source_url=response.source_url,
+            retrieved_at=retrieved_at,
+            period_start=period_start,
+            period_end=period_end,
         ))
     return records

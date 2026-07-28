@@ -20,6 +20,13 @@ from extractors.npci import (  # noqa: E402
     parse_upi_api_rows,
     parse_upi_product_statistics,
 )
+from extractors.gst_revenue import (  # noqa: E402
+    AnnualGrossGst,
+    GstRevenueResponse,
+    GstSourceDocument,
+    parse_gst_march_report_text,
+    parse_pib_gst_history_text,
+)
 from extractors.national_accounts import parse_national_accounts_pdf_text  # noqa: E402
 from extractors.human_capital import (  # noqa: E402
     parse_aishe_ger_pdf_text,
@@ -33,8 +40,11 @@ from extractors.nse_institutional_flows import (  # noqa: E402
 )
 from extractors.union_budget import UnionBudgetSnapshot, parse_expenditure_pdf_text  # noqa: E402
 from extractors.rbi_handbook import read_html_table, read_html_tables, read_xlsx_sheets  # noqa: E402
-from models import FiscalPeriod  # noqa: E402
+from extractors.rbi_obicus import ObicusResponse, parse_obicus_html  # noqa: E402
+from models import FiscalPeriod, ObservationStatus  # noqa: E402
 from transforms.capital_resilience import build_capital_resilience_records  # noqa: E402
+from transforms.digital_integration import build_gst_growth_gap_records  # noqa: E402
+from transforms.private_investment import build_capacity_utilisation_records  # noqa: E402
 from validators import DataQualityError, validate_dated_payload_quality, validate_payload  # noqa: E402
 
 
@@ -117,6 +127,39 @@ class DigitalIntegrationTests(unittest.TestCase):
         )
         with self.assertRaises(DataQualityError):
             validate_dated_payload_quality(payload, required_non_empty=("gst_growth_gap",))
+
+    def test_official_gst_parsers_and_growth_gap(self):
+        history = parse_pib_gst_history_text("""
+            In the fiscal year 2020-21, the total collection was 11.37 lakh crores.
+            collections reaching 14.83 lakh crores in 2021-22.
+            continued in 2022-23, with total collections of 18.08 lakh crores.
+            fiscal year 2023-24, the GST collection has further surged to 20.18 lakh crores.
+        """)
+        latest = parse_gst_march_report_text(
+            "Total Gross GST Revenue 1,78,484 1,96,141 9.9% 20,18,249 22,08,861 9.4%"
+        )
+        self.assertEqual(history[2020], 1_137_000)
+        self.assertEqual(latest, {2023: 2_018_249, 2024: 2_208_861})
+
+        document = GstSourceDocument(
+            "GST report", "https://example.test/gst.pdf", "2026-07-21T10:00:00+00:00",
+            Path("unused.pdf"), "abc",
+        )
+        response = GstRevenueResponse((
+            AnnualGrossGst(2023, 2_000_000, ObservationStatus.ACTUAL, document.source_url, document.retrieved_at),
+            AnnualGrossGst(2024, 2_200_000, ObservationStatus.PROVISIONAL, document.source_url, document.retrieved_at),
+        ), (document,))
+        records = build_gst_growth_gap_records(
+            response,
+            nominal_gdp_by_fiscal_year={
+                2023: (30_000_000, ObservationStatus.REVISED),
+                2024: (33_000_000, ObservationStatus.PROVISIONAL),
+            },
+        )
+        self.assertEqual(len(records), 1)
+        self.assertAlmostEqual(records[0].value, 0.0)
+        self.assertEqual(records[0].date, date(2025, 3, 31))
+        self.assertEqual(records[0].status, ObservationStatus.PROVISIONAL)
 
 
 class GovernmentInvestmentTests(unittest.TestCase):
@@ -228,6 +271,33 @@ class RbiHandbookTests(unittest.TestCase):
         sheets = read_xlsx_sheets(target.getvalue())
         self.assertEqual(sheets[0].name, "Table")
         self.assertEqual(sheets[0].rows, (("Month", None, 103.5), ("Apr-2024", None, 104)))
+
+
+class ObicusTests(unittest.TestCase):
+    def test_parser_selects_unadjusted_capacity_utilisation(self):
+        html = """
+        <table>
+          <tr><th>Table 1: Capacity Utilisation</th></tr>
+          <tr><th>Quarter</th><th>Number of responding companies</th>
+              <th>Capacity Utilisation</th><th>Seasonally Adjusted Capacity Utilisation</th></tr>
+          <tr><td>Q4:2024-25</td><td>960</td><td>77.7</td><td>75.5</td></tr>
+          <tr><td>Q1:2025-26</td><td>887</td><td>74.1</td><td>75.8</td></tr>
+        </table>
+        """
+        observations = parse_obicus_html(html)
+        self.assertEqual(observations[0].capacity_utilisation, 77.7)
+        self.assertEqual(observations[0].seasonally_adjusted_capacity_utilisation, 75.5)
+        response = ObicusResponse(
+            observations,
+            "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23808",
+            "2026-07-21T10:00:00+00:00",
+            Path("unused.html"),
+            "abc",
+        )
+        records = build_capacity_utilisation_records(response)
+        self.assertEqual([item.date for item in records], [date(2025, 3, 31), date(2025, 6, 30)])
+        self.assertEqual(records[0].period_label, "Q4:FY2024-25")
+        self.assertEqual(records[0].value, 77.7)
 
 
 class NationalAccountsTests(unittest.TestCase):

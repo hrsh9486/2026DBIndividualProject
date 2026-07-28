@@ -10,7 +10,12 @@ from config import PROCESSED_DATA_DIR
 from config.focused_indicators import get_focused_bundle
 from exporters import publish_json
 from extractors.national_accounts import NationalAccountsExtractor
-from transforms.private_investment import build_lagged_public_capex_records, build_private_investment_records
+from extractors.rbi_obicus import ObicusExtractor
+from transforms.private_investment import (
+    build_capacity_utilisation_records,
+    build_lagged_public_capex_records,
+    build_private_investment_records,
+)
 from validators import validate_dated_payload_quality, validate_payload, validate_records
 
 
@@ -18,11 +23,13 @@ LOGGER = logging.getLogger(__name__)
 GOVERNMENT_ARTIFACT = PROCESSED_DATA_DIR / "government-investment" / "capex-and-execution.json"
 
 
-def build_payload(response, government_payload):
+def build_payload(response, government_payload, *, obicus_response=None):
     bundle = get_focused_bundle("private_investment")
     records = build_private_investment_records(response)
     records.extend(build_lagged_public_capex_records(government_payload))
-    validate_records(records, expected_frequency="annual")
+    if obicus_response is not None:
+        records.extend(build_capacity_utilisation_records(obicus_response))
+    validate_records(records)
     definitions = tuple(
         DatedSeriesDefinition(
             key=spec.key,
@@ -35,29 +42,46 @@ def build_payload(response, government_payload):
         )
         for spec in bundle.series
     )
+    sources = [{
+        "name": "MoSPI new-series GDP estimates — Statement 7.1B",
+        "url": response.source_url,
+        "retrieved_at": response.retrieved_at,
+    }, {
+        "name": "Validated government investment artifact",
+    }]
+    if obicus_response is not None:
+        sources.append({
+            "name": "RBI OBICUS — Table 1 Capacity Utilisation",
+            "url": obicus_response.source_url,
+            "retrieved_at": obicus_response.retrieved_at,
+        })
     payload = build_dated_multi_series_payload(
         records,
         definitions,
         indicator_code="PRIVATE_INVESTMENT_CROWDING_IN",
         label=bundle.label,
         frequency=bundle.frequency,
-        sources=({
-            "name": "MoSPI new-series GDP estimates — Statement 7.1B",
-            "url": response.source_url,
-            "retrieved_at": response.retrieved_at,
-        }, {
-            "name": "Validated government investment artifact",
-        }),
-        methodology="Private corporate means private non-financial plus private financial corporations under the 2022-23 national-accounts base. The public-CapEx series is shifted forward one fiscal year.",
-        note=f"Partial bundle: RBI OBICUS capacity utilisation is not yet ingested. {bundle.limitation}",
+        sources=tuple(sources),
+        methodology="Private corporate means private non-financial plus private financial corporations under the 2022-23 national-accounts base. The public-CapEx series is shifted forward one fiscal year. Capacity utilisation is RBI OBICUS' published unadjusted aggregate.",
+        note=(
+            bundle.limitation
+            if obicus_response is not None
+            else f"Partial bundle: RBI OBICUS capacity utilisation is unavailable. {bundle.limitation}"
+        ),
     )
     validate_dated_payload_quality(
         payload,
-        required_non_empty=("private_corporate_gfcf_pct_gdp", "private_share_total_gfcf", "public_capex_lagged"),
+        required_non_empty=(
+            "private_corporate_gfcf_pct_gdp",
+            "private_share_total_gfcf",
+            "public_capex_lagged",
+            *(("manufacturing_capacity_utilisation",) if obicus_response is not None else ()),
+        ),
         bounds={
             "private_corporate_gfcf_pct_gdp": (0, 100),
             "private_share_total_gfcf": (0, 100),
             "public_capex_lagged": (0, 100),
+            "manufacturing_capacity_utilisation": (0, 100),
         },
     )
     return payload
@@ -71,7 +95,8 @@ def main() -> None:
         government_payload = json.load(artifact_file)
     validate_payload(government_payload, "dated_multi_series.schema.json")
     response = NationalAccountsExtractor().fetch()
-    payload = build_payload(response, government_payload)
+    obicus_response = ObicusExtractor().fetch()
+    payload = build_payload(response, government_payload, obicus_response=obicus_response)
     output = PROCESSED_DATA_DIR / "private-investment" / "investment-and-capacity.json"
     publish_json(payload, output, "dated_multi_series.schema.json")
     LOGGER.info("Published private investment bundle to %s", output)

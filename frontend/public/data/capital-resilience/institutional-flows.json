@@ -1,16 +1,16 @@
 {
   "metadata": {
-    "generated_at": "2026-07-21T16:57:05.622509+00:00",
+    "generated_at": "2026-07-22T14:56:51.194553+00:00",
     "source": [
       {
         "name": "NSE FII/FPI and DII trading activity",
         "url": "https://www.nseindia.com/api/fiidiiTradeReact",
-        "retrieved_at": "2026-07-21T16:57:05.619863+00:00"
+        "retrieved_at": "2026-07-22T14:56:51.190783+00:00"
       }
     ],
     "frequency": "monthly",
-    "start_date": "2026-07-21",
-    "end_date": "2026-07-21",
+    "start_date": "2026-07-22",
+    "end_date": "2026-07-22",
     "indicator_code": "DOMESTIC_CAPITAL_BUFFER",
     "label": "Domestic capital buffer against global shocks",
     "default_unit": "mixed",
@@ -33,8 +33,8 @@
       "is_derived": true,
       "values": [
         {
-          "date": "2026-07-21",
-          "value": -656.88,
+          "date": "2026-07-22",
+          "value": -1075.1399999999999,
           "status": "provisional",
           "period_label": "Jul 2026"
         }
@@ -49,8 +49,8 @@
       "is_derived": true,
       "values": [
         {
-          "date": "2026-07-21",
-          "value": 1650.16,
+          "date": "2026-07-22",
+          "value": 830.96,
           "status": "provisional",
           "period_label": "Jul 2026"
         }
@@ -65,7 +65,7 @@
       "is_derived": true,
       "values": [
         {
-          "date": "2026-07-21",
+          "date": "2026-07-22",
           "value": null,
           "status": "provisional",
           "period_label": "Jul 2026"
@@ -81,7 +81,7 @@
       "is_derived": true,
       "values": [
         {
-          "date": "2026-07-21",
+          "date": "2026-07-22",
           "value": null,
           "status": "provisional",
           "period_label": "Jul 2026"
@@ -97,7 +97,7 @@
       "is_derived": true,
       "values": [
         {
-          "date": "2026-07-21",
+          "date": "2026-07-22",
           "value": null,
           "status": "provisional",
           "period_label": "Jul 2026"
