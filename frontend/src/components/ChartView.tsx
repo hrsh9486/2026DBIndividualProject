@@ -5,9 +5,9 @@ import { datedSeriesToRows } from "../adapters/datedSeriesToRows";
 import { marketPerformanceToRows } from "../adapters/marketPerformanceToRows";
 import type { AnnualCountryPayload, DatedPayload, MarketPayload, Presentation, StaticPayload } from "../data/types";
 import { countryName, formatValue } from "../lib/format";
+import { seriesColor } from "../lib/seriesColors";
 import EntityControls from "./EntityControls";
 
-const COLORS = ["#d45132", "#176b87", "#6b7a3d", "#7b5c9a", "#c18b2f", "#4d6670"];
 const MAX_VISIBLE_POINT_MARKERS = 250;
 
 export default function ChartView({ payload, presentation }: { payload: StaticPayload; presentation: Presentation }) {
@@ -33,7 +33,7 @@ export default function ChartView({ payload, presentation }: { payload: StaticPa
   }, [payload, presentation.market_field]);
 
   const active = visible.filter((key) => keys.includes(key));
-  const plotted = active.length ? active : keys.slice(0, 1);
+  const plotted = active;
   const pointCounts = useMemo(
     () => Object.fromEntries(keys.map((key) => [
       key,
@@ -54,8 +54,8 @@ export default function ChartView({ payload, presentation }: { payload: StaticPa
           {presentation.zero_line && <ReferenceLine y={0} stroke="#9b9489" />}
           <Tooltip contentStyle={{ background: "#fffdf8", border: "1px solid #cec6b9", borderRadius: 2 }} formatter={(value, name) => [formatValue(Number(value), presentation.value_format), labels[String(name)] ?? name]} />
           <Legend formatter={(key) => labels[String(key)] ?? key} />
-          {plotted.map((key, index) => {
-            const color = COLORS[index % COLORS.length];
+          {plotted.map((key) => {
+            const color = seriesColor(keys.indexOf(key));
             const showPoints = pointCounts[key] <= MAX_VISIBLE_POINT_MARKERS;
             return <Line
               key={key}

@@ -1,0 +1,480 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-21T16:34:39.524188+00:00",
+    "source": [
+      {
+        "name": "Union Budget 2018-19",
+        "url": "https://www.indiabudget.gov.in/budget2018-2019/ub2018-19/bag/bag6.pdf",
+        "retrieved_at": "2026-07-21T16:34:34.249236+00:00"
+      },
+      {
+        "name": "Union Budget 2019-20",
+        "url": "https://www.indiabudget.gov.in/budget2019-20/doc/Budget_at_Glance/bag6.pdf",
+        "retrieved_at": "2026-07-21T16:34:35.071323+00:00"
+      },
+      {
+        "name": "Union Budget 2020-21",
+        "url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag6.pdf",
+        "retrieved_at": "2026-07-21T16:34:35.692956+00:00"
+      },
+      {
+        "name": "Union Budget 2021-22",
+        "url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag6.pdf",
+        "retrieved_at": "2026-07-21T16:34:36.495290+00:00"
+      },
+      {
+        "name": "Union Budget 2022-23",
+        "url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag6.pdf",
+        "retrieved_at": "2026-07-21T16:34:36.316922+00:00"
+      },
+      {
+        "name": "Union Budget 2023-24",
+        "url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag6.pdf",
+        "retrieved_at": "2026-07-21T16:34:36.122099+00:00"
+      },
+      {
+        "name": "Union Budget 2024-25",
+        "url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag6.pdf",
+        "retrieved_at": "2026-07-21T16:34:36.693453+00:00"
+      },
+      {
+        "name": "Union Budget 2025-26",
+        "url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag6.pdf",
+        "retrieved_at": "2026-07-21T16:34:37.270457+00:00"
+      },
+      {
+        "name": "Union Budget 2026-27",
+        "url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/bag6.pdf",
+        "retrieved_at": "2026-07-21T16:34:37.491668+00:00"
+      },
+      {
+        "name": "Table 1 : Macro-Economic Aggregates (Base Year: 2011-12 At Current Prices)",
+        "url": "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23175",
+        "retrieved_at": "2026-07-21T16:34:39.521267+00:00"
+      }
+    ],
+    "frequency": "annual",
+    "start_date": "2018-03-31",
+    "end_date": "2027-03-31",
+    "indicator_code": "GOVERNMENT_INVESTMENT_CAPEX_EXECUTION",
+    "label": "Government investment and execution",
+    "default_unit": "mixed",
+    "series_order": [
+      "actual_capex_pct_gdp",
+      "actual_capex_pct_total_expenditure",
+      "capex_execution_ratio",
+      "capex_budget_estimate",
+      "capex_revised_estimate",
+      "capex_actual",
+      "nominal_capex_growth"
+    ],
+    "is_derived": true,
+    "methodology": "Each fiscal year's original BE, later RE and eventual actual are retained from separate Union Budget vintages; execution is actual divided by original BE.",
+    "note": "Fiscal expenditure measures effort and execution, not whether projects were completed well or were productive. Real CapEx growth is not published until a consistent government-investment deflator is registered; nominal growth is explicitly labelled."
+  },
+  "series": {
+    "actual_capex_pct_gdp": {
+      "label": "Actual central-government capital expenditure",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "values": [
+        {
+          "date": "2019-03-31",
+          "value": 1.6281450023354909,
+          "status": "actual",
+          "period_label": "FY2018-19"
+        },
+        {
+          "date": "2020-03-31",
+          "value": 1.6699800876390603,
+          "status": "actual",
+          "period_label": "FY2019-20"
+        },
+        {
+          "date": "2021-03-31",
+          "value": 2.147249615394224,
+          "status": "actual",
+          "period_label": "FY2020-21"
+        },
+        {
+          "date": "2022-03-31",
+          "value": 2.512454868436983,
+          "status": "actual",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": 2.751996961897993,
+          "status": "actual",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": 3.151068573748207,
+          "status": "revised",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": 3.1811672532583852,
+          "status": "provisional",
+          "period_label": "FY2024-25"
+        }
+      ],
+      "methodology": "actual_capex / nominal_gdp * 100",
+      "source_note": "Excludes broader effective CapEx unless separately labelled."
+    },
+    "actual_capex_pct_total_expenditure": {
+      "label": "Actual CapEx share of expenditure",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "values": [
+        {
+          "date": "2018-03-31",
+          "value": 12.284935431025508,
+          "status": "actual",
+          "period_label": "FY2017-18"
+        },
+        {
+          "date": "2019-03-31",
+          "value": 13.291532637931713,
+          "status": "actual",
+          "period_label": "FY2018-19"
+        },
+        {
+          "date": "2020-03-31",
+          "value": 12.497571035576419,
+          "status": "actual",
+          "period_label": "FY2019-20"
+        },
+        {
+          "date": "2021-03-31",
+          "value": 12.14635099759647,
+          "status": "actual",
+          "period_label": "FY2020-21"
+        },
+        {
+          "date": "2022-03-31",
+          "value": 15.627440659117333,
+          "status": "actual",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": 17.64839713848062,
+          "status": "actual",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": 21.361681595392046,
+          "status": "actual",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": 22.6087055572403,
+          "status": "actual",
+          "period_label": "FY2024-25"
+        }
+      ],
+      "methodology": "actual_capex / actual_total_expenditure * 100",
+      "source_note": "Accounting classification does not measure asset quality."
+    },
+    "capex_execution_ratio": {
+      "label": "CapEx execution ratio",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "values": [
+        {
+          "date": "2019-03-31",
+          "value": 102.42077479438558,
+          "status": "actual",
+          "period_label": "FY2018-19"
+        },
+        {
+          "date": "2020-03-31",
+          "value": 99.15999645568124,
+          "status": "actual",
+          "period_label": "FY2019-20"
+        },
+        {
+          "date": "2021-03-31",
+          "value": 103.45365640583861,
+          "status": "actual",
+          "period_label": "FY2020-21"
+        },
+        {
+          "date": "2022-03-31",
+          "value": 106.97139846563557,
+          "status": "actual",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": 98.6376468518326,
+          "status": "actual",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": 94.82836993649103,
+          "status": "actual",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": 110.90630950146863,
+          "status": "actual",
+          "period_label": "FY2024-25"
+        }
+      ],
+      "methodology": "actual_capex / budget_estimate_capex * 100",
+      "source_note": "A ratio above 100 may reflect supplemental spending rather than superior execution."
+    },
+    "capex_budget_estimate": {
+      "label": "Capital expenditure — Budget Estimate",
+      "entity": "IND",
+      "unit": "INR_crore",
+      "is_derived": false,
+      "values": [
+        {
+          "date": "2019-03-31",
+          "value": 300441.0,
+          "status": "budget",
+          "period_label": "FY2018-19"
+        },
+        {
+          "date": "2020-03-31",
+          "value": 338570.0,
+          "status": "budget",
+          "period_label": "FY2019-20"
+        },
+        {
+          "date": "2021-03-31",
+          "value": 412085.0,
+          "status": "budget",
+          "period_label": "FY2020-21"
+        },
+        {
+          "date": "2022-03-31",
+          "value": 554236.0,
+          "status": "budget",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": 750246.0,
+          "status": "budget",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": 1000961.0,
+          "status": "budget",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": 948506.0,
+          "status": "budget",
+          "period_label": "FY2024-25"
+        },
+        {
+          "date": "2026-03-31",
+          "value": 1121090.0,
+          "status": "budget",
+          "period_label": "FY2025-26"
+        },
+        {
+          "date": "2027-03-31",
+          "value": 1221821.0,
+          "status": "budget",
+          "period_label": "FY2026-27"
+        }
+      ],
+      "source_note": "Budget estimates are plans, not delivered spending."
+    },
+    "capex_revised_estimate": {
+      "label": "Capital expenditure — Revised Estimate",
+      "entity": "IND",
+      "unit": "INR_crore",
+      "is_derived": false,
+      "values": [
+        {
+          "date": "2018-03-31",
+          "value": 273445.0,
+          "status": "estimate",
+          "period_label": "FY2017-18"
+        },
+        {
+          "date": "2019-03-31",
+          "value": 316624.0,
+          "status": "estimate",
+          "period_label": "FY2018-19"
+        },
+        {
+          "date": "2020-03-31",
+          "value": 348907.0,
+          "status": "estimate",
+          "period_label": "FY2019-20"
+        },
+        {
+          "date": "2021-03-31",
+          "value": 439163.0,
+          "status": "estimate",
+          "period_label": "FY2020-21"
+        },
+        {
+          "date": "2022-03-31",
+          "value": 602711.0,
+          "status": "estimate",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": 728274.0,
+          "status": "estimate",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": 950246.0,
+          "status": "estimate",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": 1018429.0,
+          "status": "estimate",
+          "period_label": "FY2024-25"
+        },
+        {
+          "date": "2026-03-31",
+          "value": 1095755.0,
+          "status": "estimate",
+          "period_label": "FY2025-26"
+        }
+      ],
+      "source_note": "Revised estimates remain estimates."
+    },
+    "capex_actual": {
+      "label": "Capital expenditure — Actual",
+      "entity": "IND",
+      "unit": "INR_crore",
+      "is_derived": false,
+      "values": [
+        {
+          "date": "2018-03-31",
+          "value": 263140.0,
+          "status": "actual",
+          "period_label": "FY2017-18"
+        },
+        {
+          "date": "2019-03-31",
+          "value": 307714.0,
+          "status": "actual",
+          "period_label": "FY2018-19"
+        },
+        {
+          "date": "2020-03-31",
+          "value": 335726.0,
+          "status": "actual",
+          "period_label": "FY2019-20"
+        },
+        {
+          "date": "2021-03-31",
+          "value": 426317.0,
+          "status": "actual",
+          "period_label": "FY2020-21"
+        },
+        {
+          "date": "2022-03-31",
+          "value": 592874.0,
+          "status": "actual",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": 740025.0,
+          "status": "actual",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": 949195.0,
+          "status": "actual",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": 1051953.0,
+          "status": "actual",
+          "period_label": "FY2024-25"
+        }
+      ],
+      "source_note": "Latest actuals lag budget estimates."
+    },
+    "nominal_capex_growth": {
+      "label": "Actual CapEx growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Year-on-year percentage change in actual nominal central-government capital expenditure.",
+      "source_note": "Nominal growth is affected by inflation and does not measure project quality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "value": null,
+          "status": "actual",
+          "period_label": "FY2017-18"
+        },
+        {
+          "date": "2019-03-31",
+          "value": 16.939271870487183,
+          "status": "actual",
+          "period_label": "FY2018-19"
+        },
+        {
+          "date": "2020-03-31",
+          "value": 9.103258220295473,
+          "status": "actual",
+          "period_label": "FY2019-20"
+        },
+        {
+          "date": "2021-03-31",
+          "value": 26.983611635679104,
+          "status": "actual",
+          "period_label": "FY2020-21"
+        },
+        {
+          "date": "2022-03-31",
+          "value": 39.068814989784606,
+          "status": "actual",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": 24.819944878675738,
+          "status": "actual",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": 28.265261308739564,
+          "status": "actual",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": 10.825805024257406,
+          "status": "actual",
+          "period_label": "FY2024-25"
+        }
+      ]
+    }
+  }
+}

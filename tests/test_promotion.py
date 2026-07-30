@@ -8,8 +8,10 @@ from pathlib import Path
 
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from promote_processed_data import promote_artifact  # noqa: E402
+from evidence_fixtures import digital_report, supported_result  # noqa: E402
 
 
 class PromotionTests(unittest.TestCase):
@@ -91,6 +93,45 @@ class PromotionTests(unittest.TestCase):
                 Path("digital-integration/upi-and-tax-capacity.json"),
             )
             self.assertEqual(json.loads(destination.read_text()), payload)
+
+    def test_promotes_registered_evidence_report_after_cross_field_validation(self):
+        payload = digital_report(supported_result())
+        with tempfile.TemporaryDirectory() as processed, tempfile.TemporaryDirectory() as frontend:
+            source = Path(processed) / "evidence" / "digital-integration.json"
+            source.parent.mkdir(parents=True)
+            source.write_text(json.dumps(payload), encoding="utf-8")
+
+            destination = promote_artifact(
+                "evidence/digital-integration.json",
+                processed_root=processed,
+                frontend_root=frontend,
+            )
+
+            self.assertEqual(
+                destination.relative_to(frontend),
+                Path("evidence/digital-integration.json"),
+            )
+            self.assertEqual(json.loads(destination.read_text()), payload)
+
+    def test_rejects_invalid_evidence_without_replacing_public_report(self):
+        payload = digital_report(supported_result())
+        payload["analyses"][0]["estimates"][0]["confidence_interval"] = [0.2, 0.3]
+        with tempfile.TemporaryDirectory() as processed, tempfile.TemporaryDirectory() as frontend:
+            source = Path(processed) / "evidence" / "digital-integration.json"
+            source.parent.mkdir(parents=True)
+            source.write_text(json.dumps(payload), encoding="utf-8")
+            destination = Path(frontend) / "evidence" / "digital-integration.json"
+            destination.parent.mkdir(parents=True)
+            destination.write_text('{"previous": true}', encoding="utf-8")
+
+            with self.assertRaises(Exception):
+                promote_artifact(
+                    "evidence/digital-integration.json",
+                    processed_root=processed,
+                    frontend_root=frontend,
+                )
+
+            self.assertEqual(json.loads(destination.read_text()), {"previous": True})
 
 
 if __name__ == "__main__":

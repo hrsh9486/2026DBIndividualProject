@@ -53,6 +53,32 @@ Build the market-performance bundle with:
 python3 scripts/build_yfinance_markets.py
 ```
 
+Build the focused India public-CapEx transmission project with:
+
+```bash
+python3 scripts/build_capex_analysis.py
+python3 scripts/promote_processed_data.py \
+  capex-analysis/capex-execution.json \
+  capex-analysis/sector-performance.json \
+  capex-analysis/capex-sector-correlations.json \
+  capex-analysis/private-investment-response.json \
+  capex-analysis/fiscal-sustainability.json \
+  capex-analysis/analysis-summary.json \
+  capex-analysis/corporate-fundamentals.json
+python3 scripts/sync_focused_catalogue.py
+```
+
+This job uses official Nifty total-return-index histories, the validated Union
+Budget/MoSPI CapEx artifact, RBI OBICUS capacity utilisation, national-accounts
+private GFCF, and RBI fiscal tables. It publishes the five chart contracts and
+a rule-generated hypothesis summary and frozen ten-company corporate case study
+under `data/processed/capex-analysis/`. The market bundle includes Nifty FMCG
+as a control and publishes target-sector performance relative to both Nifty 50
+and Nifty FMCG.
+The 0-, 6- and 12-month market tests include a pandemic-year exclusion
+sensitivity. The project labels nominal CapEx growth explicitly; real growth is
+withheld until a consistent investment deflator is registered.
+
 Promote validated processed artifacts into the frontend without deleting any
 existing files:
 

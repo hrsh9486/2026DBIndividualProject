@@ -3,6 +3,9 @@ import type { Indicator, StaticDataAsset } from "../data/types";
 import { useIndicatorData } from "../hooks/useIndicatorData";
 import { assertAdapterMatchesSchema } from "../data/runtimeGuards";
 import ChartView from "./ChartView";
+import CapexCorrelationView from "./CapexCorrelationView";
+import CorporateFundamentalsView from "./CorporateFundamentalsView";
+import FiscalBridgeView from "./FiscalBridgeView";
 import DataStatusBadge from "./DataStatusBadge";
 import InsightRail from "./InsightRail";
 import SourcePanel from "./SourcePanel";
@@ -24,6 +27,15 @@ export default function MetricPanel({ indicator, assets }: { indicator: Indicato
     {query.error && <ErrorPanel message={query.error.message} />}
     {query.data && (() => {
       assertAdapterMatchesSchema(view.presentation.component, asset.schema);
+      if (view.presentation.component === "capex-correlation" && "series" in query.data) {
+        return <><CapexCorrelationView payload={query.data} /><SourcePanel payload={query.data} /></>;
+      }
+      if (view.presentation.component === "corporate-fundamentals" && "series" in query.data) {
+        return <><CorporateFundamentalsView payload={query.data} /><SourcePanel payload={query.data} /></>;
+      }
+      if (view.presentation.component === "fiscal-bridge" && "series" in query.data) {
+        return <><FiscalBridgeView payload={query.data} /><SourcePanel payload={query.data} /></>;
+      }
       return <><div className="analysis-grid"><section className="chart-card"><div className="chart-title"><div><span>Time series</span><h3>{indicator.title}</h3></div><b>{asset.expected_frequency}</b></div><ChartView key={view.id} payload={query.data} presentation={view.presentation} /></section><aside className="ranking-card"><div className="rail-heading"><span>Latest reading</span><h3>Selected series</h3></div><InsightRail payload={query.data} presentation={view.presentation} /></aside></div><SourcePanel payload={query.data} /></>;
     })()}
   </article>;

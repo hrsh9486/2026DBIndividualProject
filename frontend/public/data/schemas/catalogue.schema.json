@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.com/schemas/static_frontend_indicator_manifest.schema.json",
   "title": "Static Frontend Indicator Manifest",
-  "description": "Navigation, public-file references and presentation configuration for a React frontend. Every data_path points to a static JSON file served from the React application's public directory. Each referenced file validates against one of the existing annual-country, dated-multi-series or market-performance schemas.",
+  "description": "Navigation, public-file references and presentation configuration for a React frontend. Every data_path points to a static JSON file served from the React application's public directory. Lens-level evidence reports remain distinct from time-series indicator views.",
   "type": "object",
   "required": [
     "schema_version",
@@ -65,6 +65,7 @@
           "enum": [
             "annual_country_series",
             "dated_multi_series",
+            "evidence_report",
             "market_performance"
           ]
         },
@@ -141,6 +142,10 @@
         "order": {
           "type": "integer",
           "minimum": 1
+        },
+        "evidence_asset_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
         },
         "indicators": {
           "type": "array",
@@ -235,11 +240,14 @@
           "enum": [
             "country-comparison-line",
             "multi-series-line",
-            "market-performance"
+            "market-performance",
+            "capex-correlation",
+            "corporate-fundamentals",
+            "fiscal-bridge"
           ]
         },
         "chart_type": {
-          "const": "line"
+          "enum": ["line", "scatter", "bar"]
         },
         "x_axis": {
           "type": "string",
@@ -253,6 +261,7 @@
           "enum": [
             "price",
             "normalized_value",
+            "relative_to_nifty50",
             "return",
             "drawdown",
             "rolling_volatility"

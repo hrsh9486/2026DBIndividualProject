@@ -8,10 +8,12 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from config import PROCESSED_DATA_DIR, PROJECT_ROOT
+from config.evidence_specs import EVIDENCE_OUTPUT_PATHS
+from config.capex_analysis import OUTPUTS as CAPEX_OUTPUTS
 from config.focused_indicators import FOCUSED_BUNDLES
 from config.indicators import Contract, INDICATORS
 from exporters import write_json_atomic
-from validators import validate_payload
+from validators import validate_evidence_report, validate_payload
 
 
 FRONTEND_DATA_DIR = PROJECT_ROOT / "frontend" / "public" / "data"
@@ -50,9 +52,23 @@ def artifact_routes() -> dict[Path, PromotionRoute]:
         Path(spec.output_path): PromotionRoute(spec.contract, Path(spec.output_path))
         for spec in FOCUSED_BUNDLES.values()
     })
+    routes.update({
+        Path(path): PromotionRoute(Contract.EVIDENCE_REPORT, Path(path))
+        for path in EVIDENCE_OUTPUT_PATHS.values()
+    })
     routes[Path("equity/market_performance.json")] = PromotionRoute(
         Contract.MARKET_PERFORMANCE,
         Path("equities/market-performance.json"),
+    )
+    for key in ("execution", "correlations", "private", "fiscal", "corporate"):
+        routes[Path(CAPEX_OUTPUTS[key])] = PromotionRoute(
+            Contract.DATED_MULTI_SERIES, Path(CAPEX_OUTPUTS[key]),
+        )
+    routes[Path(CAPEX_OUTPUTS["sectors"])] = PromotionRoute(
+        Contract.MARKET_PERFORMANCE, Path(CAPEX_OUTPUTS["sectors"]),
+    )
+    routes[Path(CAPEX_OUTPUTS["summary"])] = PromotionRoute(
+        Contract.CAPEX_ANALYSIS_SUMMARY, Path(CAPEX_OUTPUTS["summary"]),
     )
     return routes
 
@@ -75,7 +91,10 @@ def promote_artifact(
     with source.open(encoding="utf-8") as source_file:
         payload = json.load(source_file)
 
-    validate_payload(payload, route.contract.value)
+    if route.contract is Contract.EVIDENCE_REPORT:
+        validate_evidence_report(payload)
+    else:
+        validate_payload(payload, route.contract.value)
     destination = Path(frontend_root) / route.public_path
     write_json_atomic(payload, destination)
     return destination

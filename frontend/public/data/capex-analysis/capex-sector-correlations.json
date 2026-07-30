@@ -1,0 +1,2898 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-30T13:56:27.894639+00:00",
+    "source": [
+      {
+        "name": "Validated central-government CapEx artifact"
+      },
+      {
+        "name": "Validated CapEx-sector market artifact"
+      }
+    ],
+    "frequency": "annual",
+    "start_date": "2018-03-31",
+    "end_date": "2025-03-31",
+    "indicator_code": "CAPEX_SECTOR_LAG_ANALYSIS",
+    "label": "CapEx growth and subsequent sector performance",
+    "default_unit": "percent",
+    "series_order": [
+      "nominal_capex_growth",
+      "capital_goods_lag_0m",
+      "capital_goods_lag_6m",
+      "capital_goods_lag_12m",
+      "capital_goods_lead_3m",
+      "capital_goods_lead_6m",
+      "capital_goods_lead_12m",
+      "infrastructure_lag_0m",
+      "infrastructure_lag_6m",
+      "infrastructure_lag_12m",
+      "infrastructure_lead_3m",
+      "infrastructure_lead_6m",
+      "infrastructure_lead_12m",
+      "manufacturing_lag_0m",
+      "manufacturing_lag_6m",
+      "manufacturing_lag_12m",
+      "manufacturing_lead_3m",
+      "manufacturing_lead_6m",
+      "manufacturing_lead_12m",
+      "nifty_50_lag_0m",
+      "nifty_50_lag_6m",
+      "nifty_50_lag_12m",
+      "nifty_50_lead_3m",
+      "nifty_50_lead_6m",
+      "nifty_50_lead_12m",
+      "capital_goods_vs_fmcg_lag_0m",
+      "capital_goods_vs_fmcg_lag_6m",
+      "capital_goods_vs_fmcg_lag_12m",
+      "capital_goods_vs_fmcg_lead_3m",
+      "capital_goods_vs_fmcg_lead_6m",
+      "capital_goods_vs_fmcg_lead_12m",
+      "infrastructure_vs_fmcg_lag_0m",
+      "infrastructure_vs_fmcg_lag_6m",
+      "infrastructure_vs_fmcg_lag_12m",
+      "infrastructure_vs_fmcg_lead_3m",
+      "infrastructure_vs_fmcg_lead_6m",
+      "infrastructure_vs_fmcg_lead_12m",
+      "manufacturing_vs_fmcg_lag_0m",
+      "manufacturing_vs_fmcg_lag_6m",
+      "manufacturing_vs_fmcg_lag_12m",
+      "manufacturing_vs_fmcg_lead_3m",
+      "manufacturing_vs_fmcg_lead_6m",
+      "manufacturing_vs_fmcg_lead_12m",
+      "private_gfcf_lag_0y",
+      "private_gfcf_lag_1y",
+      "private_gfcf_lag_2y"
+    ],
+    "is_derived": true,
+    "methodology": "Fiscal-year nominal CapEx growth is paired with subsequent market returns at 0, 6 and 12 months; preceding market returns ending 3, 6 and 12 months before CapEx; and private corporate GFCF/GDP at 0, 1 and 2 fiscal years.",
+    "correlation_estimates": {
+      "capital_goods_lag_0m": {
+        "label": "Nifty Capital Goods",
+        "lag": 0,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.6397,
+        "spearman": 0.5238,
+        "n": 8,
+        "pearson_excluding_pandemic": 0.5294,
+        "n_excluding_pandemic": 6
+      },
+      "capital_goods_lag_6m": {
+        "label": "Nifty Capital Goods",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.5159,
+        "spearman": 0.3571,
+        "n": 8,
+        "pearson_excluding_pandemic": 0.2629,
+        "n_excluding_pandemic": 6
+      },
+      "capital_goods_lag_12m": {
+        "label": "Nifty Capital Goods",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.7753,
+        "spearman": 0.5714,
+        "n": 7,
+        "pearson_excluding_pandemic": 0.5984,
+        "n_excluding_pandemic": 5
+      },
+      "capital_goods_lead_3m": {
+        "label": "Nifty Capital Goods",
+        "lag": 3,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.6331,
+        "spearman": 0.7714,
+        "n": 6,
+        "pearson_excluding_pandemic": 0.6935,
+        "n_excluding_pandemic": 4
+      },
+      "capital_goods_lead_6m": {
+        "label": "Nifty Capital Goods",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.4135,
+        "spearman": 0.5429,
+        "n": 6,
+        "pearson_excluding_pandemic": 0.7149,
+        "n_excluding_pandemic": 4
+      },
+      "capital_goods_lead_12m": {
+        "label": "Nifty Capital Goods",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.1818,
+        "spearman": 0.1429,
+        "n": 6,
+        "pearson_excluding_pandemic": 0.4472,
+        "n_excluding_pandemic": 4
+      },
+      "infrastructure_lag_0m": {
+        "label": "Nifty Infrastructure",
+        "lag": 0,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.4314,
+        "spearman": 0.0952,
+        "n": 8,
+        "pearson_excluding_pandemic": 0.597,
+        "n_excluding_pandemic": 6
+      },
+      "infrastructure_lag_6m": {
+        "label": "Nifty Infrastructure",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.2016,
+        "spearman": 0.0476,
+        "n": 8,
+        "pearson_excluding_pandemic": 0.0959,
+        "n_excluding_pandemic": 6
+      },
+      "infrastructure_lag_12m": {
+        "label": "Nifty Infrastructure",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.5766,
+        "spearman": 0.5714,
+        "n": 7,
+        "pearson_excluding_pandemic": 0.1746,
+        "n_excluding_pandemic": 5
+      },
+      "infrastructure_lead_3m": {
+        "label": "Nifty Infrastructure",
+        "lag": 3,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.5298,
+        "spearman": 0.7143,
+        "n": 6,
+        "pearson_excluding_pandemic": 0.681,
+        "n_excluding_pandemic": 4
+      },
+      "infrastructure_lead_6m": {
+        "label": "Nifty Infrastructure",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": -0.403,
+        "spearman": 0.0286,
+        "n": 6,
+        "pearson_excluding_pandemic": -0.2802,
+        "n_excluding_pandemic": 4
+      },
+      "infrastructure_lead_12m": {
+        "label": "Nifty Infrastructure",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": -0.122,
+        "spearman": 0.0857,
+        "n": 6,
+        "pearson_excluding_pandemic": -0.0633,
+        "n_excluding_pandemic": 4
+      },
+      "manufacturing_lag_0m": {
+        "label": "Nifty India Manufacturing",
+        "lag": 0,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.3365,
+        "spearman": 0.0238,
+        "n": 8,
+        "pearson_excluding_pandemic": 0.5063,
+        "n_excluding_pandemic": 6
+      },
+      "manufacturing_lag_6m": {
+        "label": "Nifty India Manufacturing",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.5252,
+        "spearman": 0.1667,
+        "n": 8,
+        "pearson_excluding_pandemic": 0.6902,
+        "n_excluding_pandemic": 6
+      },
+      "manufacturing_lag_12m": {
+        "label": "Nifty India Manufacturing",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.7326,
+        "spearman": 0.5714,
+        "n": 7,
+        "pearson_excluding_pandemic": 0.746,
+        "n_excluding_pandemic": 5
+      },
+      "manufacturing_lead_3m": {
+        "label": "Nifty India Manufacturing",
+        "lag": 3,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.4137,
+        "spearman": 0.3714,
+        "n": 6,
+        "pearson_excluding_pandemic": 0.3491,
+        "n_excluding_pandemic": 4
+      },
+      "manufacturing_lead_6m": {
+        "label": "Nifty India Manufacturing",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.0966,
+        "spearman": -0.0857,
+        "n": 6,
+        "pearson_excluding_pandemic": 0.1855,
+        "n_excluding_pandemic": 4
+      },
+      "manufacturing_lead_12m": {
+        "label": "Nifty India Manufacturing",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.2816,
+        "spearman": 0.2571,
+        "n": 6,
+        "pearson_excluding_pandemic": 0.1194,
+        "n_excluding_pandemic": 4
+      },
+      "nifty_50_lag_0m": {
+        "label": "Nifty 50",
+        "lag": 0,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": -0.1478,
+        "spearman": -0.1905,
+        "n": 8,
+        "pearson_excluding_pandemic": -0.0837,
+        "n_excluding_pandemic": 6
+      },
+      "nifty_50_lag_6m": {
+        "label": "Nifty 50",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": -0.1021,
+        "spearman": -0.3571,
+        "n": 8,
+        "pearson_excluding_pandemic": -0.0577,
+        "n_excluding_pandemic": 6
+      },
+      "nifty_50_lag_12m": {
+        "label": "Nifty 50",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.3021,
+        "spearman": 0.1786,
+        "n": 7,
+        "pearson_excluding_pandemic": 0.3085,
+        "n_excluding_pandemic": 5
+      },
+      "nifty_50_lead_3m": {
+        "label": "Nifty 50",
+        "lag": 3,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.6557,
+        "spearman": 0.7714,
+        "n": 6,
+        "pearson_excluding_pandemic": 0.2733,
+        "n_excluding_pandemic": 4
+      },
+      "nifty_50_lead_6m": {
+        "label": "Nifty 50",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.381,
+        "spearman": 0.3714,
+        "n": 6,
+        "pearson_excluding_pandemic": -0.3532,
+        "n_excluding_pandemic": 4
+      },
+      "nifty_50_lead_12m": {
+        "label": "Nifty 50",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.315,
+        "spearman": 0.0857,
+        "n": 6,
+        "pearson_excluding_pandemic": -0.4644,
+        "n_excluding_pandemic": 4
+      },
+      "capital_goods_vs_fmcg_lag_0m": {
+        "label": "Nifty Capital Goods vs Nifty FMCG",
+        "lag": 0,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.1464,
+        "spearman": -0.0476,
+        "n": 8,
+        "pearson_excluding_pandemic": 0.2723,
+        "n_excluding_pandemic": 6
+      },
+      "capital_goods_vs_fmcg_lag_6m": {
+        "label": "Nifty Capital Goods vs Nifty FMCG",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.3233,
+        "spearman": 0.2143,
+        "n": 8,
+        "pearson_excluding_pandemic": 0.2801,
+        "n_excluding_pandemic": 6
+      },
+      "capital_goods_vs_fmcg_lag_12m": {
+        "label": "Nifty Capital Goods vs Nifty FMCG",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.533,
+        "spearman": 0.2857,
+        "n": 7,
+        "pearson_excluding_pandemic": 0.5654,
+        "n_excluding_pandemic": 5
+      },
+      "capital_goods_vs_fmcg_lead_3m": {
+        "label": "Nifty Capital Goods vs Nifty FMCG",
+        "lag": 3,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.5437,
+        "spearman": 0.6571,
+        "n": 6,
+        "pearson_excluding_pandemic": 0.2165,
+        "n_excluding_pandemic": 4
+      },
+      "capital_goods_vs_fmcg_lead_6m": {
+        "label": "Nifty Capital Goods vs Nifty FMCG",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.5703,
+        "spearman": 0.7714,
+        "n": 6,
+        "pearson_excluding_pandemic": 0.4983,
+        "n_excluding_pandemic": 4
+      },
+      "capital_goods_vs_fmcg_lead_12m": {
+        "label": "Nifty Capital Goods vs Nifty FMCG",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.2421,
+        "spearman": 0.3143,
+        "n": 6,
+        "pearson_excluding_pandemic": 0.0418,
+        "n_excluding_pandemic": 4
+      },
+      "infrastructure_vs_fmcg_lag_0m": {
+        "label": "Nifty Infrastructure vs Nifty FMCG",
+        "lag": 0,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": -0.0681,
+        "spearman": -0.3095,
+        "n": 8,
+        "pearson_excluding_pandemic": 0.2864,
+        "n_excluding_pandemic": 6
+      },
+      "infrastructure_vs_fmcg_lag_6m": {
+        "label": "Nifty Infrastructure vs Nifty FMCG",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": -0.1157,
+        "spearman": -0.1429,
+        "n": 8,
+        "pearson_excluding_pandemic": 0.3652,
+        "n_excluding_pandemic": 6
+      },
+      "infrastructure_vs_fmcg_lag_12m": {
+        "label": "Nifty Infrastructure vs Nifty FMCG",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.4301,
+        "spearman": 0.4286,
+        "n": 7,
+        "pearson_excluding_pandemic": 0.5536,
+        "n_excluding_pandemic": 5
+      },
+      "infrastructure_vs_fmcg_lead_3m": {
+        "label": "Nifty Infrastructure vs Nifty FMCG",
+        "lag": 3,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.1955,
+        "spearman": 0.3714,
+        "n": 6,
+        "pearson_excluding_pandemic": -0.4673,
+        "n_excluding_pandemic": 4
+      },
+      "infrastructure_vs_fmcg_lead_6m": {
+        "label": "Nifty Infrastructure vs Nifty FMCG",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.0414,
+        "spearman": 0.1429,
+        "n": 6,
+        "pearson_excluding_pandemic": -0.4938,
+        "n_excluding_pandemic": 4
+      },
+      "infrastructure_vs_fmcg_lead_12m": {
+        "label": "Nifty Infrastructure vs Nifty FMCG",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.0758,
+        "spearman": -0.2,
+        "n": 6,
+        "pearson_excluding_pandemic": -0.341,
+        "n_excluding_pandemic": 4
+      },
+      "manufacturing_vs_fmcg_lag_0m": {
+        "label": "Nifty India Manufacturing vs Nifty FMCG",
+        "lag": 0,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": -0.0968,
+        "spearman": -0.2857,
+        "n": 8,
+        "pearson_excluding_pandemic": 0.1984,
+        "n_excluding_pandemic": 6
+      },
+      "manufacturing_vs_fmcg_lag_6m": {
+        "label": "Nifty India Manufacturing vs Nifty FMCG",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.2539,
+        "spearman": -0.0476,
+        "n": 8,
+        "pearson_excluding_pandemic": 0.7654,
+        "n_excluding_pandemic": 6
+      },
+      "manufacturing_vs_fmcg_lag_12m": {
+        "label": "Nifty India Manufacturing vs Nifty FMCG",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "capex_leads",
+        "pearson": 0.3965,
+        "spearman": 0.4286,
+        "n": 7,
+        "pearson_excluding_pandemic": 0.6168,
+        "n_excluding_pandemic": 5
+      },
+      "manufacturing_vs_fmcg_lead_3m": {
+        "label": "Nifty India Manufacturing vs Nifty FMCG",
+        "lag": 3,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.149,
+        "spearman": 0.2571,
+        "n": 6,
+        "pearson_excluding_pandemic": -0.4408,
+        "n_excluding_pandemic": 4
+      },
+      "manufacturing_vs_fmcg_lead_6m": {
+        "label": "Nifty India Manufacturing vs Nifty FMCG",
+        "lag": 6,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.2738,
+        "spearman": 0.2571,
+        "n": 6,
+        "pearson_excluding_pandemic": -0.0913,
+        "n_excluding_pandemic": 4
+      },
+      "manufacturing_vs_fmcg_lead_12m": {
+        "label": "Nifty India Manufacturing vs Nifty FMCG",
+        "lag": 12,
+        "lag_unit": "months",
+        "outcome_type": "market",
+        "direction": "market_leads",
+        "pearson": 0.2851,
+        "spearman": 0.0857,
+        "n": 6,
+        "pearson_excluding_pandemic": -0.2405,
+        "n_excluding_pandemic": 4
+      },
+      "private_gfcf_lag_0y": {
+        "label": "Private corporate GFCF/GDP",
+        "lag": 0,
+        "lag_unit": "years",
+        "outcome_type": "real_economy",
+        "direction": "capex_leads",
+        "pearson": 0.4036,
+        "spearman": 0.5,
+        "n": 3,
+        "pearson_excluding_pandemic": null,
+        "n_excluding_pandemic": 3
+      },
+      "private_gfcf_lag_1y": {
+        "label": "Private corporate GFCF/GDP",
+        "lag": 1,
+        "lag_unit": "years",
+        "outcome_type": "real_economy",
+        "direction": "capex_leads",
+        "pearson": 0.9513,
+        "spearman": 0.5,
+        "n": 3,
+        "pearson_excluding_pandemic": null,
+        "n_excluding_pandemic": 2
+      },
+      "private_gfcf_lag_2y": {
+        "label": "Private corporate GFCF/GDP",
+        "lag": 2,
+        "lag_unit": "years",
+        "outcome_type": "real_economy",
+        "direction": "capex_leads",
+        "pearson": -0.2982,
+        "spearman": 0.5,
+        "n": 3,
+        "pearson_excluding_pandemic": null,
+        "n_excluding_pandemic": 1
+      }
+    },
+    "note": "Associational timing test only. Markets may anticipate budgets and the annual sample is small."
+  },
+  "series": {
+    "nominal_capex_growth": {
+      "label": "Actual nominal CapEx growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Year-on-year change in actual central-government capital expenditure.",
+      "source_note": "Nominal growth includes inflation and does not measure project quality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -7.5433,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 16.9393,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 9.1033,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 26.9836,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 39.0688,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 24.8199,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 28.2653,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 10.8258,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_lag_0m": {
+      "label": "Nifty Capital Goods: subsequent 12-month excess return (0-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -21.7525,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": -15.1773,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 15.0314,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 17.9033,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 24.862,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 33.3853,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 1.2361,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 12.383,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_lag_6m": {
+      "label": "Nifty Capital Goods: subsequent 12-month excess return (6-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -9.9163,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": -8.633,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 26.1358,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 28.3446,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 25.9788,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 22.1859,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": -1.145,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 10.1495,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_lag_12m": {
+      "label": "Nifty Capital Goods: subsequent 12-month excess return (12-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -15.1773,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 15.0314,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 17.9033,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 24.862,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 33.3853,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 1.2361,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 12.383,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_lead_3m": {
+      "label": "Nifty Capital Goods: 12-month excess return ending 3 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 3 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -19.9591,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -0.6827,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 34.3125,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 16.0061,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 33.1306,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 21.2725,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_lead_6m": {
+      "label": "Nifty Capital Goods: 12-month excess return ending 6 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 6 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -9.9163,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -8.633,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 26.1358,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 28.3446,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 25.9788,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 22.1859,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_lead_12m": {
+      "label": "Nifty Capital Goods: 12-month excess return ending 12 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 12 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -21.7525,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -15.1773,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 15.0314,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 17.9033,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 24.862,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 33.3853,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_lag_0m": {
+      "label": "Nifty Infrastructure: subsequent 12-month excess return (0-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -14.8102,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": -0.1198,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 1.6548,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 3.5359,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 1.5326,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 27.7905,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": -3.7174,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 6.3302,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_lag_6m": {
+      "label": "Nifty Infrastructure: subsequent 12-month excess return (6-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": 4.0123,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": -2.3565,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 4.3026,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 1.8116,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 9.4193,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 16.5723,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": -1.0697,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 4.8224,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_lag_12m": {
+      "label": "Nifty Infrastructure: subsequent 12-month excess return (12-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -0.1198,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 1.6548,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 3.5359,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 1.5326,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 27.7905,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": -3.7174,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 6.3302,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_lead_3m": {
+      "label": "Nifty Infrastructure: 12-month excess return ending 3 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 3 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -7.5209,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -2.6855,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 9.7051,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 1.5909,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 16.1543,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 6.1711,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_lead_6m": {
+      "label": "Nifty Infrastructure: 12-month excess return ending 6 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 6 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 4.0123,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -2.3565,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 4.3026,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 1.8116,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 9.4193,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 16.5723,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_lead_12m": {
+      "label": "Nifty Infrastructure: 12-month excess return ending 12 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 12 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -14.8102,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -0.1198,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 1.6548,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 3.5359,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 1.5326,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 27.7905,
+          "status": "actual"
+        }
+      ]
+    },
+    "manufacturing_lag_0m": {
+      "label": "Nifty India Manufacturing: subsequent 12-month excess return (0-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -18.6843,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": -10.3231,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 15.4806,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 4.2059,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 0.1861,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 19.6168,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 1.5455,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 12.2136,
+          "status": "actual"
+        }
+      ]
+    },
+    "manufacturing_lag_6m": {
+      "label": "Nifty India Manufacturing: subsequent 12-month excess return (6-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -16.8195,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 13.4373,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 0.5393,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 6.7749,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 4.0488,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 20.865,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": -0.7982,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 10.2284,
+          "status": "actual"
+        }
+      ]
+    },
+    "manufacturing_lag_12m": {
+      "label": "Nifty India Manufacturing: subsequent 12-month excess return (12-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -10.3231,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 15.4806,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 4.2059,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 0.1861,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 19.6168,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 1.5455,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 12.2136,
+          "status": "actual"
+        }
+      ]
+    },
+    "manufacturing_lead_3m": {
+      "label": "Nifty India Manufacturing: 12-month excess return ending 3 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 3 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -14.7605,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 8.076,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 8.8863,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": -0.5403,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 11.4672,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 14.8241,
+          "status": "actual"
+        }
+      ]
+    },
+    "manufacturing_lead_6m": {
+      "label": "Nifty India Manufacturing: 12-month excess return ending 6 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 6 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -16.8195,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 13.4373,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 0.5393,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 6.7749,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 4.0488,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 20.865,
+          "status": "actual"
+        }
+      ]
+    },
+    "manufacturing_lead_12m": {
+      "label": "Nifty India Manufacturing: 12-month excess return ending 12 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 12 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -18.6843,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -10.3231,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 15.4806,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 4.2059,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 0.1861,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 19.6168,
+          "status": "actual"
+        }
+      ]
+    },
+    "nifty_50_lag_0m": {
+      "label": "Nifty 50: subsequent 12-month market return (0-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly broad-market returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": 9.6648,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": -25.0321,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 72.517,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 20.2636,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 0.5949,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 30.0949,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 6.6386,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": -3.9921,
+          "status": "actual"
+        }
+      ]
+    },
+    "nifty_50_lag_6m": {
+      "label": "Nifty 50: subsequent 12-month market return (6-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly broad-market returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": 6.3427,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": -0.9746,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 58.5283,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -1.6357,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 16.0527,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 33.0302,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": -3.4734,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": -0.2682,
+          "status": "actual"
+        }
+      ]
+    },
+    "nifty_50_lag_12m": {
+      "label": "Nifty 50: subsequent 12-month market return (12-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly broad-market returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -25.0321,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 72.517,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 20.2636,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 0.5949,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 30.0949,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 6.6386,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": -3.9921,
+          "status": "actual"
+        }
+      ]
+    },
+    "nifty_50_lead_3m": {
+      "label": "Nifty 50: 12-month market return ending 3 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 3 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 13.4723,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 16.1331,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 25.5856,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 5.696,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 21.301,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 10.0905,
+          "status": "actual"
+        }
+      ]
+    },
+    "nifty_50_lead_6m": {
+      "label": "Nifty 50: 12-month market return ending 6 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 6 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 6.3427,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -0.9746,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 58.5283,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": -1.6357,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 16.0527,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 33.0302,
+          "status": "actual"
+        }
+      ]
+    },
+    "nifty_50_lead_12m": {
+      "label": "Nifty 50: 12-month market return ending 12 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 12 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 9.6648,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -25.0321,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 72.517,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 20.2636,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 0.5949,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 30.0949,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_vs_fmcg_lag_0m": {
+      "label": "Nifty Capital Goods vs Nifty FMCG: subsequent 12-month excess return (0-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -19.9703,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": -30.1344,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 52.3229,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 32.7421,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": -2.7057,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 44.9497,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 5.1694,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 23.6348,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_vs_fmcg_lag_6m": {
+      "label": "Nifty Capital Goods vs Nifty FMCG: subsequent 12-month excess return (6-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -9.6568,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": -5.279,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 42.7899,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 11.7514,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 24.2923,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 23.9307,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 10.514,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 19.635,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_vs_fmcg_lag_12m": {
+      "label": "Nifty Capital Goods vs Nifty FMCG: subsequent 12-month excess return (12-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -30.1344,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 52.3229,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 32.7421,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -2.7057,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 44.9497,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 5.1694,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 23.6348,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_vs_fmcg_lead_3m": {
+      "label": "Nifty Capital Goods vs Nifty FMCG: 12-month excess return ending 3 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 3 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -9.2244,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 2.152,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 47.6967,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 1.9076,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 23.332,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 29.2105,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_vs_fmcg_lead_6m": {
+      "label": "Nifty Capital Goods vs Nifty FMCG: 12-month excess return ending 6 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 6 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -9.6568,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -5.279,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 42.7899,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 11.7514,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 24.2923,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 23.9307,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_vs_fmcg_lead_12m": {
+      "label": "Nifty Capital Goods vs Nifty FMCG: 12-month excess return ending 12 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 12 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -19.9703,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -30.1344,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 52.3229,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 32.7421,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": -2.7057,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 44.9497,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_vs_fmcg_lag_0m": {
+      "label": "Nifty Infrastructure vs Nifty FMCG: subsequent 12-month excess return (0-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -12.9939,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": -16.8714,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 35.0039,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 16.6692,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": -21.6304,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 38.5101,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 0.2169,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 17.6182,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_vs_fmcg_lag_6m": {
+      "label": "Nifty Infrastructure vs Nifty FMCG: subsequent 12-month excess return (6-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": 4.1763,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 2.5832,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 18.1452,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -11.8231,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 7.357,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 18.681,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 10.8497,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 13.6065,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_vs_fmcg_lag_12m": {
+      "label": "Nifty Infrastructure vs Nifty FMCG: subsequent 12-month excess return (12-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -16.8714,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 35.0039,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 16.6692,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -21.6304,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 38.5101,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 0.2169,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 17.6182,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_vs_fmcg_lead_3m": {
+      "label": "Nifty Infrastructure vs Nifty FMCG: 12-month excess return ending 3 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 3 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 4.5371,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 1.6526,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 20.7263,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": -11.443,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 7.2705,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 13.6061,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_vs_fmcg_lead_6m": {
+      "label": "Nifty Infrastructure vs Nifty FMCG: 12-month excess return ending 6 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 6 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 4.1763,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 2.5832,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 18.1452,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": -11.8231,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 7.357,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 18.681,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_vs_fmcg_lead_12m": {
+      "label": "Nifty Infrastructure vs Nifty FMCG: 12-month excess return ending 12 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 12 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -12.9939,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -16.8714,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 35.0039,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 16.6692,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": -21.6304,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 38.5101,
+          "status": "actual"
+        }
+      ]
+    },
+    "manufacturing_vs_fmcg_lag_0m": {
+      "label": "Nifty India Manufacturing vs Nifty FMCG: subsequent 12-month excess return (0-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -16.8815,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": -25.5072,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 52.7177,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 17.228,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": -22.4121,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 29.9306,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 5.7616,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 24.1134,
+          "status": "actual"
+        }
+      ]
+    },
+    "manufacturing_vs_fmcg_lag_6m": {
+      "label": "Nifty India Manufacturing vs Nifty FMCG: subsequent 12-month excess return (6-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -16.5024,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 17.6565,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 14.2646,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -7.3996,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 2.4208,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 23.1293,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 11.2761,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 19.3898,
+          "status": "actual"
+        }
+      ]
+    },
+    "manufacturing_vs_fmcg_lag_12m": {
+      "label": "Nifty India Manufacturing vs Nifty FMCG: subsequent 12-month excess return (12-month lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly sector-minus-benchmark returns over the subsequent 12 months.",
+      "source_note": "Small annual samples are descriptive and do not establish causality.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -25.5072,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 52.7177,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 17.228,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -22.4121,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 29.9306,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 5.7616,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 24.1134,
+          "status": "actual"
+        }
+      ]
+    },
+    "manufacturing_vs_fmcg_lead_3m": {
+      "label": "Nifty India Manufacturing vs Nifty FMCG: 12-month excess return ending 3 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 3 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -3.3197,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 11.5576,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 19.9401,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": -12.8969,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 3.0416,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 23.0195,
+          "status": "actual"
+        }
+      ]
+    },
+    "manufacturing_vs_fmcg_lead_6m": {
+      "label": "Nifty India Manufacturing vs Nifty FMCG: 12-month excess return ending 6 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 6 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -16.5024,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 17.6565,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 14.2646,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": -7.3996,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 2.4208,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 23.1293,
+          "status": "actual"
+        }
+      ]
+    },
+    "manufacturing_vs_fmcg_lead_12m": {
+      "label": "Nifty India Manufacturing vs Nifty FMCG: 12-month excess return ending 12 months before CapEx",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Compound monthly return over the 12-month window ending 12 months before the fiscal-year CapEx observation.",
+      "source_note": "This tests market anticipation, not whether later expenditure caused the preceding return.",
+      "values": [
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -16.8815,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": -25.5072,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 52.7177,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 17.228,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": -22.4121,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 29.9306,
+          "status": "actual"
+        }
+      ]
+    },
+    "private_gfcf_lag_0y": {
+      "label": "Private corporate GFCF/GDP (0-year lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": false,
+      "methodology": "Private corporate GFCF/GDP aligned to the CapEx fiscal year at a fixed annual lag.",
+      "source_note": "The consistent national-accounts history is too short for a reliable correlation estimate.",
+      "values": [
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 10.925,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 10.2586,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 10.1944,
+          "status": "actual"
+        }
+      ]
+    },
+    "private_gfcf_lag_1y": {
+      "label": "Private corporate GFCF/GDP (1-year lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Private corporate GFCF/GDP aligned to the CapEx fiscal year at a fixed annual lag.",
+      "source_note": "The consistent national-accounts history is too short for a reliable correlation estimate.",
+      "values": [
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 10.925,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 10.2586,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 10.1944,
+          "status": "actual"
+        }
+      ]
+    },
+    "private_gfcf_lag_2y": {
+      "label": "Private corporate GFCF/GDP (2-year lag)",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Private corporate GFCF/GDP aligned to the CapEx fiscal year at a fixed annual lag.",
+      "source_note": "The consistent national-accounts history is too short for a reliable correlation estimate.",
+      "values": [
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 10.925,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 10.2586,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 10.1944,
+          "status": "actual"
+        }
+      ]
+    }
+  }
+}

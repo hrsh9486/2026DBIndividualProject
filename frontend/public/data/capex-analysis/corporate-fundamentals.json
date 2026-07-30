@@ -1,0 +1,501 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-30T08:31:26.941955+00:00",
+    "source": [
+      {
+        "name": "Company annual financial statements via Yahoo Finance"
+      }
+    ],
+    "frequency": "annual",
+    "start_date": "2022-03-31",
+    "end_date": "2026-03-31",
+    "indicator_code": "CAPEX_CORPORATE_FUNDAMENTALS_CASE_STUDY",
+    "label": "Corporate fundamentals of CapEx-sensitive companies",
+    "default_unit": "percent",
+    "series_order": [
+      "capital_goods_revenue_growth",
+      "capital_goods_ebitda_growth",
+      "capital_goods_capex_growth",
+      "capital_goods_net_ppe_growth",
+      "capital_goods_roce_proxy",
+      "capital_goods_debt_growth",
+      "infrastructure_revenue_growth",
+      "infrastructure_ebitda_growth",
+      "infrastructure_capex_growth",
+      "infrastructure_net_ppe_growth",
+      "infrastructure_roce_proxy",
+      "infrastructure_debt_growth"
+    ],
+    "is_derived": true,
+    "methodology": "Five frozen capital-goods and five frozen infrastructure companies. All level growth rates are calculated within company and aggregated using the group median.",
+    "note": "Order-book data are excluded because consistent machine-readable histories are unavailable. ROCE is a proxy using EBIT divided by total assets less current liabilities.",
+    "company_coverage": [
+      {
+        "company_key": "ABB",
+        "company": "ABB India",
+        "group": "capital_goods",
+        "start_year": 2022,
+        "end_year": 2025,
+        "observations": 4
+      },
+      {
+        "company_key": "ADANIPORTS",
+        "company": "Adani Ports",
+        "group": "infrastructure",
+        "start_year": 2023,
+        "end_year": 2026,
+        "observations": 4
+      },
+      {
+        "company_key": "BEL",
+        "company": "Bharat Electronics",
+        "group": "capital_goods",
+        "start_year": 2023,
+        "end_year": 2026,
+        "observations": 4
+      },
+      {
+        "company_key": "CUMMINS",
+        "company": "Cummins India",
+        "group": "capital_goods",
+        "start_year": 2023,
+        "end_year": 2026,
+        "observations": 4
+      },
+      {
+        "company_key": "IRCTC",
+        "company": "IRCTC",
+        "group": "infrastructure",
+        "start_year": 2023,
+        "end_year": 2026,
+        "observations": 4
+      },
+      {
+        "company_key": "LT",
+        "company": "Larsen & Toubro",
+        "group": "capital_goods",
+        "start_year": 2023,
+        "end_year": 2026,
+        "observations": 4
+      },
+      {
+        "company_key": "NTPC",
+        "company": "NTPC",
+        "group": "infrastructure",
+        "start_year": 2023,
+        "end_year": 2026,
+        "observations": 4
+      },
+      {
+        "company_key": "POWERGRID",
+        "company": "Power Grid Corporation",
+        "group": "infrastructure",
+        "start_year": 2023,
+        "end_year": 2026,
+        "observations": 4
+      },
+      {
+        "company_key": "SIEMENS",
+        "company": "Siemens India",
+        "group": "capital_goods",
+        "start_year": 2022,
+        "end_year": 2025,
+        "observations": 4
+      },
+      {
+        "company_key": "ULTRACEMCO",
+        "company": "UltraTech Cement",
+        "group": "infrastructure",
+        "start_year": 2023,
+        "end_year": 2026,
+        "observations": 4
+      }
+    ]
+  },
+  "series": {
+    "capital_goods_revenue_growth": {
+      "label": "Capital-goods companies: median revenue growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Unweighted median across the frozen five-company group; growth is calculated company by company before aggregation.",
+      "source_note": "Reporting dates and accounting classifications differ across companies; the basket is a case study, not the full index.",
+      "values": [
+        {
+          "date": "2023-03-31",
+          "period_label": "Reporting year 2023",
+          "value": 21.7184,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "Reporting year 2024",
+          "value": 15.9472,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "Reporting year 2025",
+          "value": 15.3414,
+          "status": "actual"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "Reporting year 2026",
+          "value": 16.1614,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_ebitda_growth": {
+      "label": "Capital-goods companies: median ebitda growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Unweighted median across the frozen five-company group; growth is calculated company by company before aggregation.",
+      "source_note": "Reporting dates and accounting classifications differ across companies; the basket is a case study, not the full index.",
+      "values": [
+        {
+          "date": "2023-03-31",
+          "period_label": "Reporting year 2023",
+          "value": 32.7965,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "Reporting year 2024",
+          "value": 30.9173,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "Reporting year 2025",
+          "value": 11.8274,
+          "status": "actual"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "Reporting year 2026",
+          "value": 13.7182,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_capex_growth": {
+      "label": "Capital-goods companies: median corporate capex growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Unweighted median across the frozen five-company group; growth is calculated company by company before aggregation.",
+      "source_note": "Reporting dates and accounting classifications differ across companies; the basket is a case study, not the full index.",
+      "values": [
+        {
+          "date": "2023-03-31",
+          "period_label": "Reporting year 2023",
+          "value": 19.2447,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "Reporting year 2024",
+          "value": 16.8615,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "Reporting year 2025",
+          "value": 11.1306,
+          "status": "actual"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "Reporting year 2026",
+          "value": 8.834,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_net_ppe_growth": {
+      "label": "Capital-goods companies: median net ppe growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Unweighted median across the frozen five-company group; growth is calculated company by company before aggregation.",
+      "source_note": "Reporting dates and accounting classifications differ across companies; the basket is a case study, not the full index.",
+      "values": [
+        {
+          "date": "2023-03-31",
+          "period_label": "Reporting year 2023",
+          "value": 2.852,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "Reporting year 2024",
+          "value": 11.8755,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "Reporting year 2025",
+          "value": 6.6523,
+          "status": "actual"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "Reporting year 2026",
+          "value": 7.3797,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_roce_proxy": {
+      "label": "Capital-goods companies: median roce proxy",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Unweighted median across the frozen five-company group; growth is calculated company by company before aggregation.",
+      "source_note": "Reporting dates and accounting classifications differ across companies; the basket is a case study, not the full index.",
+      "values": [
+        {
+          "date": "2022-03-31",
+          "period_label": "Reporting year 2022",
+          "value": 21.0424,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "Reporting year 2023",
+          "value": 26.3812,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "Reporting year 2024",
+          "value": 30.1319,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "Reporting year 2025",
+          "value": 28.4544,
+          "status": "actual"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "Reporting year 2026",
+          "value": 31.8845,
+          "status": "actual"
+        }
+      ]
+    },
+    "capital_goods_debt_growth": {
+      "label": "Capital-goods companies: median debt growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Unweighted median across the frozen five-company group; growth is calculated company by company before aggregation.",
+      "source_note": "Reporting dates and accounting classifications differ across companies; the basket is a case study, not the full index.",
+      "values": [
+        {
+          "date": "2023-03-31",
+          "period_label": "Reporting year 2023",
+          "value": 22.1157,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "Reporting year 2024",
+          "value": 1.9074,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "Reporting year 2025",
+          "value": -2.0477,
+          "status": "actual"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "Reporting year 2026",
+          "value": 6.9084,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_revenue_growth": {
+      "label": "Infrastructure companies: median revenue growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Unweighted median across the frozen five-company group; growth is calculated company by company before aggregation.",
+      "source_note": "Reporting dates and accounting classifications differ across companies; the basket is a case study, not the full index.",
+      "values": [
+        {
+          "date": "2024-03-31",
+          "period_label": "Reporting year 2024",
+          "value": 11.9862,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "Reporting year 2025",
+          "value": 7.3442,
+          "status": "actual"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "Reporting year 2026",
+          "value": 11.5533,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_ebitda_growth": {
+      "label": "Infrastructure companies: median ebitda growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Unweighted median across the frozen five-company group; growth is calculated company by company before aggregation.",
+      "source_note": "Reporting dates and accounting classifications differ across companies; the basket is a case study, not the full index.",
+      "values": [
+        {
+          "date": "2024-03-31",
+          "period_label": "Reporting year 2024",
+          "value": 11.1781,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "Reporting year 2025",
+          "value": 6.2363,
+          "status": "actual"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "Reporting year 2026",
+          "value": 6.3638,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_capex_growth": {
+      "label": "Infrastructure companies: median corporate capex growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Unweighted median across the frozen five-company group; growth is calculated company by company before aggregation.",
+      "source_note": "Reporting dates and accounting classifications differ across companies; the basket is a case study, not the full index.",
+      "values": [
+        {
+          "date": "2024-03-31",
+          "period_label": "Reporting year 2024",
+          "value": 38.4228,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "Reporting year 2025",
+          "value": 8.5301,
+          "status": "actual"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "Reporting year 2026",
+          "value": 54.4669,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_net_ppe_growth": {
+      "label": "Infrastructure companies: median net ppe growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Unweighted median across the frozen five-company group; growth is calculated company by company before aggregation.",
+      "source_note": "Reporting dates and accounting classifications differ across companies; the basket is a case study, not the full index.",
+      "values": [
+        {
+          "date": "2024-03-31",
+          "period_label": "Reporting year 2024",
+          "value": 10.415,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "Reporting year 2025",
+          "value": 10.5767,
+          "status": "actual"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "Reporting year 2026",
+          "value": 5.6617,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_roce_proxy": {
+      "label": "Infrastructure companies: median roce proxy",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Unweighted median across the frozen five-company group; growth is calculated company by company before aggregation.",
+      "source_note": "Reporting dates and accounting classifications differ across companies; the basket is a case study, not the full index.",
+      "values": [
+        {
+          "date": "2023-03-31",
+          "period_label": "Reporting year 2023",
+          "value": 11.711,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "Reporting year 2024",
+          "value": 13.0331,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "Reporting year 2025",
+          "value": 12.2917,
+          "status": "actual"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "Reporting year 2026",
+          "value": 10.9699,
+          "status": "actual"
+        }
+      ]
+    },
+    "infrastructure_debt_growth": {
+      "label": "Infrastructure companies: median debt growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Unweighted median across the frozen five-company group; growth is calculated company by company before aggregation.",
+      "source_note": "Reporting dates and accounting classifications differ across companies; the basket is a case study, not the full index.",
+      "values": [
+        {
+          "date": "2024-03-31",
+          "period_label": "Reporting year 2024",
+          "value": -1.2288,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "Reporting year 2025",
+          "value": 5.9164,
+          "status": "actual"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "Reporting year 2026",
+          "value": 8.3602,
+          "status": "actual"
+        }
+      ]
+    }
+  }
+}

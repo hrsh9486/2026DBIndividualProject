@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/capex_analysis_summary.schema.json",
+  "title": "CapEx Analysis Summary",
+  "type": "object",
+  "required": ["metadata", "hypotheses"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["generated_at", "research_question", "classification_method"],
+      "additionalProperties": false,
+      "properties": {
+        "generated_at": {"type": "string", "format": "date-time"},
+        "research_question": {"type": "string", "minLength": 1},
+        "classification_method": {"type": "string", "minLength": 1}
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["key", "hypothesis", "status", "interpretation", "caveat"],
+        "additionalProperties": false,
+        "properties": {
+          "key": {"type": "string"},
+          "hypothesis": {"type": "string"},
+          "status": {"enum": ["supported", "partially_supported", "unsupported", "inconclusive"]},
+          "interpretation": {"type": "string"},
+          "caveat": {"type": "string"}
+        }
+      }
+    }
+  }
+}

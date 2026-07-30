@@ -1,0 +1,327 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/evidence_report.schema.json",
+  "title": "Statistical Evidence Report",
+  "description": "Versioned analytical results derived from validated measurement artifacts.",
+  "type": "object",
+  "required": ["metadata", "analyses"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "generated_at",
+        "lens_key",
+        "label",
+        "research_question",
+        "specification_registry_version",
+        "code_version",
+        "source_assets",
+        "analysis_order",
+        "multiple_testing",
+        "software_versions"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "generated_at": {"type": "string", "format": "date-time"},
+        "lens_key": {"type": "string", "pattern": "^[a-z0-9]+(?:_[a-z0-9]+)*$"},
+        "label": {"type": "string", "minLength": 1},
+        "research_question": {"type": "string", "minLength": 1},
+        "specification_registry_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+        "code_version": {"type": "string", "minLength": 1},
+        "source_assets": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/sourceAsset"}
+        },
+        "analysis_order": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "uniqueItems": true
+        },
+        "multiple_testing": {"$ref": "#/$defs/multipleTesting"},
+        "software_versions": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "analyses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/analysis"}
+    }
+  },
+  "$defs": {
+    "sourceAsset": {
+      "type": "object",
+      "required": ["path", "contract", "sha256", "generated_at", "start_date", "end_date"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "contract": {
+          "type": "string",
+          "enum": [
+            "annual_country_series",
+            "dated_multi_series",
+            "market_performance",
+            "event_study"
+          ]
+        },
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "generated_at": {"type": "string", "format": "date-time"},
+        "start_date": {"type": "string", "format": "date"},
+        "end_date": {"type": "string", "format": "date"}
+      }
+    },
+    "multipleTesting": {
+      "type": "object",
+      "required": ["method", "family", "alpha"],
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": ["benjamini_hochberg", "bonferroni", "none"]
+        },
+        "family": {"type": "string", "minLength": 1},
+        "alpha": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1}
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "required": [
+        "analysis_key",
+        "specification_version",
+        "label",
+        "claim",
+        "null_hypothesis",
+        "evidence_class",
+        "causal",
+        "focal_terms",
+        "expected_direction",
+        "support_rule",
+        "status",
+        "grade",
+        "sample",
+        "method",
+        "estimates",
+        "diagnostics",
+        "robustness",
+        "eligibility",
+        "practical_interpretation",
+        "limitation"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "analysis_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "specification_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+        "label": {"type": "string", "minLength": 1},
+        "claim": {"type": "string", "minLength": 1},
+        "null_hypothesis": {"type": ["string", "null"], "minLength": 1},
+        "evidence_class": {
+          "type": "string",
+          "enum": ["descriptive", "associational", "event_study", "causal"]
+        },
+        "causal": {"type": "boolean"},
+        "focal_terms": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "expected_direction": {
+          "type": "string",
+          "enum": ["positive", "negative", "two_sided"]
+        },
+        "support_rule": {
+          "type": "string",
+          "enum": ["all_focal_adjusted_p_below_alpha"]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "not_supported",
+            "mixed",
+            "descriptive_only",
+            "insufficient_data",
+            "failed_diagnostics"
+          ]
+        },
+        "grade": {
+          "type": "string",
+          "enum": ["not_assessed", "descriptive", "limited", "moderate", "strong"]
+        },
+        "sample": {"$ref": "#/$defs/sample"},
+        "method": {"$ref": "#/$defs/method"},
+        "estimates": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/estimate"}
+        },
+        "diagnostics": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/diagnostic"}
+        },
+        "robustness": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/robustness"}
+        },
+        "eligibility": {
+          "oneOf": [
+            {"$ref": "#/$defs/eligibility"},
+            {"type": "null"}
+          ]
+        },
+        "practical_interpretation": {"type": "string", "minLength": 1},
+        "limitation": {"type": "string", "minLength": 1}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"status": {"const": "insufficient_data"}},
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "estimates": {"maxItems": 0},
+              "eligibility": {"$ref": "#/$defs/eligibility"},
+              "grade": {"const": "not_assessed"}
+            }
+          }
+        }
+      ]
+    },
+    "sample": {
+      "type": "object",
+      "required": ["n", "start_date", "end_date", "frequency", "excluded"],
+      "additionalProperties": false,
+      "properties": {
+        "n": {"type": "integer", "minimum": 0},
+        "start_date": {"type": ["string", "null"], "format": "date"},
+        "end_date": {"type": ["string", "null"], "format": "date"},
+        "frequency": {"type": "string", "minLength": 1},
+        "excluded": {
+          "type": "object",
+          "additionalProperties": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["estimator", "formula", "covariance", "max_lags", "alignment"],
+      "additionalProperties": false,
+      "properties": {
+        "estimator": {"type": "string", "minLength": 1},
+        "formula": {"type": "string", "minLength": 1},
+        "covariance": {"type": ["string", "null"]},
+        "max_lags": {"type": ["integer", "null"], "minimum": 0},
+        "alignment": {"type": "string", "minLength": 1}
+      }
+    },
+    "estimate": {
+      "type": "object",
+      "required": [
+        "term",
+        "value",
+        "unit",
+        "is_focal",
+        "standard_error",
+        "confidence_level",
+        "confidence_interval",
+        "p_value",
+        "adjusted_p_value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "term": {"type": "string", "minLength": 1},
+        "value": {"type": "number"},
+        "unit": {"type": "string", "minLength": 1},
+        "is_focal": {"type": "boolean"},
+        "standard_error": {"type": ["number", "null"], "minimum": 0},
+        "confidence_level": {
+          "type": ["number", "null"],
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 1
+        },
+        "confidence_interval": {
+          "oneOf": [
+            {
+              "type": "array",
+              "prefixItems": [{"type": "number"}, {"type": "number"}],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {"type": "null"}
+          ]
+        },
+        "p_value": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "adjusted_p_value": {"type": ["number", "null"], "minimum": 0, "maximum": 1}
+      }
+    },
+    "diagnostic": {
+      "type": "object",
+      "required": ["key", "value", "threshold", "passed", "interpretation"],
+      "additionalProperties": false,
+      "properties": {
+        "key": {"type": "string", "minLength": 1},
+        "value": {"type": ["number", "boolean", "string", "null"]},
+        "threshold": {"type": ["number", "null"]},
+        "passed": {"type": ["boolean", "null"]},
+        "interpretation": {"type": "string", "minLength": 1}
+      }
+    },
+    "robustness": {
+      "type": "object",
+      "required": ["specification", "status", "focal_estimate", "sample_size", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "specification": {"type": "string", "minLength": 1},
+        "status": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "not_supported",
+            "mixed",
+            "descriptive_only",
+            "insufficient_data",
+            "failed_diagnostics"
+          ]
+        },
+        "focal_estimate": {
+          "oneOf": [
+            {"$ref": "#/$defs/estimate"},
+            {"type": "null"}
+          ]
+        },
+        "sample_size": {"type": "integer", "minimum": 0},
+        "note": {"type": "string", "minLength": 1}
+      }
+    },
+    "eligibility": {
+      "type": "object",
+      "required": [
+        "eligible",
+        "required_observations",
+        "available_observations",
+        "reason",
+        "checks"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "eligible": {"type": "boolean"},
+        "required_observations": {"type": "integer", "minimum": 0},
+        "available_observations": {"type": "integer", "minimum": 0},
+        "reason": {"type": "string", "minLength": 1},
+        "checks": {
+          "type": "object",
+          "additionalProperties": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}

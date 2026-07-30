@@ -14,8 +14,10 @@ class Source(str, Enum):
 class Contract(str, Enum):
     ANNUAL_COUNTRY_SERIES = "annual_country_series.schema.json"
     DATED_MULTI_SERIES = "dated_multi_series.schema.json"
+    EVIDENCE_REPORT = "evidence_report.schema.json"
     MARKET_PERFORMANCE = "market_performance.schema.json"
     EVENT_STUDY = "event_study.schema.json"
+    CAPEX_ANALYSIS_SUMMARY = "capex_analysis_summary.schema.json"
 
 
 @dataclass(frozen=True, slots=True)

@@ -230,11 +230,14 @@
           "enum": [
             "country-comparison-line",
             "multi-series-line",
-            "market-performance"
+            "market-performance",
+            "capex-correlation",
+            "corporate-fundamentals",
+            "fiscal-bridge"
           ]
         },
         "chart_type": {
-          "const": "line"
+          "enum": ["line", "scatter", "bar"]
         },
         "x_axis": {
           "type": "string",
@@ -248,6 +251,7 @@
           "enum": [
             "price",
             "normalized_value",
+            "relative_to_nifty50",
             "return",
             "drawdown",
             "rolling_volatility"

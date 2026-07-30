@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-30T13:57:23.330892+00:00",
+    "research_question": "Did India's public CapEx push transmit into sectoral and real economic growth strongly enough to justify its fiscal cost?",
+    "classification_method": "Deterministic rules recorded in scripts/transforms/capex_analysis.py; classifications are evidence summaries, not causal estimates."
+  },
+  "hypotheses": [
+    {
+      "key": "capex_intensity",
+      "hypothesis": "Actual public CapEx increased relative to GDP and expenditure.",
+      "status": "supported",
+      "interpretation": "Available indicators move in the hypothesised direction.",
+      "caveat": "Descriptive and associational evidence cannot by itself identify the causal effect of public CapEx."
+    },
+    {
+      "key": "sector_transmission",
+      "hypothesis": "Higher CapEx growth preceded excess returns in CapEx-sensitive sectors.",
+      "status": "supported",
+      "interpretation": "Available indicators move in the hypothesised direction.",
+      "caveat": "Descriptive and associational evidence cannot by itself identify the causal effect of public CapEx."
+    },
+    {
+      "key": "real_economy_conversion",
+      "hypothesis": "Private investment and capacity increased after the CapEx push.",
+      "status": "inconclusive",
+      "interpretation": "The aligned history is too short for a defensible classification.",
+      "caveat": "Descriptive and associational evidence cannot by itself identify the causal effect of public CapEx."
+    },
+    {
+      "key": "fiscal_sustainability",
+      "hypothesis": "Debt service has not clearly made the strategy unsustainable.",
+      "status": "partially_supported",
+      "interpretation": "Some indicators are consistent with the hypothesis, but the evidence is mixed or incomplete.",
+      "caveat": "Descriptive and associational evidence cannot by itself identify the causal effect of public CapEx."
+    }
+  ]
+}

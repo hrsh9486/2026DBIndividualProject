@@ -1,0 +1,591 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-21T16:32:41.750001+00:00",
+    "source": [
+      {
+        "name": "Table 239 : Select Debt Indicators of Central and State Governments (As Percentage to GDP)",
+        "url": "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23413",
+        "retrieved_at": "2026-07-21T16:32:40.149539+00:00"
+      },
+      {
+        "name": "Table 236 : Select Fiscal Indicators of the Central Government (As Percentage to GDP)",
+        "url": "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23410",
+        "retrieved_at": "2026-07-21T16:32:41.747009+00:00"
+      }
+    ],
+    "frequency": "annual",
+    "start_date": "2011-03-31",
+    "end_date": "2026-03-31",
+    "indicator_code": "FISCAL_CAPACITY_DEBT_SUSTAINABILITY",
+    "label": "Fiscal capacity and debt sustainability",
+    "default_unit": "mixed",
+    "series_order": [
+      "general_government_debt_pct_gdp",
+      "interest_payments_pct_revenue",
+      "interest_payments_pct_expenditure",
+      "primary_balance_pct_gdp",
+      "actual_capex_pct_expenditure",
+      "capex_to_interest_allocation_ratio"
+    ],
+    "is_derived": true,
+    "methodology": "Debt uses RBI adjusted combined Centre-and-State liabilities. Interest ratios divide consistent percentage-of-GDP components; primary balance is the negative of the reported gross primary deficit.",
+    "note": "Debt sustainability depends on growth, interest rates, maturity, currency and expenditure quality, not one threshold.",
+    "transmission_evidence": [
+      {
+        "key": "capex_intensity",
+        "status": "supported",
+        "interpretation": "Available indicators move in the hypothesised direction."
+      },
+      {
+        "key": "sector_transmission",
+        "status": "supported",
+        "interpretation": "Available indicators move in the hypothesised direction."
+      },
+      {
+        "key": "real_economy_conversion",
+        "status": "inconclusive",
+        "interpretation": "The aligned history is too short for a defensible classification."
+      },
+      {
+        "key": "fiscal_sustainability",
+        "status": "partially_supported",
+        "interpretation": "Some indicators are consistent with the hypothesis, but the evidence is mixed or incomplete."
+      }
+    ]
+  },
+  "series": {
+    "general_government_debt_pct_gdp": {
+      "label": "General-government debt",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": false,
+      "values": [
+        {
+          "date": "2011-03-31",
+          "value": 65.6,
+          "status": "actual",
+          "period_label": "FY2010-11"
+        },
+        {
+          "date": "2012-03-31",
+          "value": 67.36,
+          "status": "actual",
+          "period_label": "FY2011-12"
+        },
+        {
+          "date": "2013-03-31",
+          "value": 66.65,
+          "status": "actual",
+          "period_label": "FY2012-13"
+        },
+        {
+          "date": "2014-03-31",
+          "value": 67.06,
+          "status": "actual",
+          "period_label": "FY2013-14"
+        },
+        {
+          "date": "2015-03-31",
+          "value": 66.58,
+          "status": "actual",
+          "period_label": "FY2014-15"
+        },
+        {
+          "date": "2016-03-31",
+          "value": 68.53,
+          "status": "actual",
+          "period_label": "FY2015-16"
+        },
+        {
+          "date": "2017-03-31",
+          "value": 68.77,
+          "status": "actual",
+          "period_label": "FY2016-17"
+        },
+        {
+          "date": "2018-03-31",
+          "value": 69.57,
+          "status": "actual",
+          "period_label": "FY2017-18"
+        },
+        {
+          "date": "2019-03-31",
+          "value": 70.53,
+          "status": "actual",
+          "period_label": "FY2018-19"
+        },
+        {
+          "date": "2020-03-31",
+          "value": 75.12,
+          "status": "actual",
+          "period_label": "FY2019-20"
+        },
+        {
+          "date": "2021-03-31",
+          "value": 89.24,
+          "status": "actual",
+          "period_label": "FY2020-21"
+        },
+        {
+          "date": "2022-03-31",
+          "value": 84.23,
+          "status": "actual",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": 82.88,
+          "status": "actual",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": 81.76,
+          "status": "revised",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": 81.92,
+          "status": "budget",
+          "period_label": "FY2024-25"
+        }
+      ],
+      "source_note": "Coverage must remain consistent across vintages."
+    },
+    "interest_payments_pct_revenue": {
+      "label": "Interest payments as share of revenue",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "values": [
+        {
+          "date": "2011-03-31",
+          "value": 29.7137216189536,
+          "status": "actual",
+          "period_label": "FY2010-11"
+        },
+        {
+          "date": "2012-03-31",
+          "value": 36.395348837209305,
+          "status": "actual",
+          "period_label": "FY2011-12"
+        },
+        {
+          "date": "2013-03-31",
+          "value": 35.633484162895925,
+          "status": "actual",
+          "period_label": "FY2012-13"
+        },
+        {
+          "date": "2014-03-31",
+          "value": 36.87707641196013,
+          "status": "actual",
+          "period_label": "FY2013-14"
+        },
+        {
+          "date": "2015-03-31",
+          "value": 36.57984144960362,
+          "status": "actual",
+          "period_label": "FY2014-15"
+        },
+        {
+          "date": "2016-03-31",
+          "value": 36.9815668202765,
+          "status": "actual",
+          "period_label": "FY2015-16"
+        },
+        {
+          "date": "2017-03-31",
+          "value": 34.9384098544233,
+          "status": "actual",
+          "period_label": "FY2016-17"
+        },
+        {
+          "date": "2018-03-31",
+          "value": 36.904761904761905,
+          "status": "actual",
+          "period_label": "FY2017-18"
+        },
+        {
+          "date": "2019-03-31",
+          "value": 37.469586374695865,
+          "status": "actual",
+          "period_label": "FY2018-19"
+        },
+        {
+          "date": "2020-03-31",
+          "value": 36.35280095351609,
+          "status": "actual",
+          "period_label": "FY2019-20"
+        },
+        {
+          "date": "2021-03-31",
+          "value": 41.55528554070473,
+          "status": "actual",
+          "period_label": "FY2020-21"
+        },
+        {
+          "date": "2022-03-31",
+          "value": 37.06521739130435,
+          "status": "actual",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": 39.02714932126697,
+          "status": "actual",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": 38.96247240618101,
+          "status": "actual",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": 36.83083511777302,
+          "status": "revised",
+          "period_label": "FY2024-25"
+        },
+        {
+          "date": "2026-03-31",
+          "value": 37.36951983298539,
+          "status": "budget",
+          "period_label": "FY2025-26"
+        }
+      ],
+      "methodology": "interest_payments / revenue_receipts * 100",
+      "source_note": "Central-government burden is narrower than general-government debt."
+    },
+    "interest_payments_pct_expenditure": {
+      "label": "Interest payments as share of expenditure",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "values": [
+        {
+          "date": "2011-03-31",
+          "value": 19.57087126137841,
+          "status": "actual",
+          "period_label": "FY2010-11"
+        },
+        {
+          "date": "2012-03-31",
+          "value": 20.964501004688547,
+          "status": "actual",
+          "period_label": "FY2011-12"
+        },
+        {
+          "date": "2013-03-31",
+          "value": 22.214386459802537,
+          "status": "actual",
+          "period_label": "FY2012-13"
+        },
+        {
+          "date": "2014-03-31",
+          "value": 23.991354466858787,
+          "status": "actual",
+          "period_label": "FY2013-14"
+        },
+        {
+          "date": "2015-03-31",
+          "value": 24.212893553223388,
+          "status": "actual",
+          "period_label": "FY2014-15"
+        },
+        {
+          "date": "2016-03-31",
+          "value": 24.69230769230769,
+          "status": "actual",
+          "period_label": "FY2015-16"
+        },
+        {
+          "date": "2017-03-31",
+          "value": 24.318004676539363,
+          "status": "actual",
+          "period_label": "FY2016-17"
+        },
+        {
+          "date": "2018-03-31",
+          "value": 24.740622505985638,
+          "status": "actual",
+          "period_label": "FY2017-18"
+        },
+        {
+          "date": "2019-03-31",
+          "value": 25.142857142857146,
+          "status": "actual",
+          "period_label": "FY2018-19"
+        },
+        {
+          "date": "2020-03-31",
+          "value": 22.79521674140508,
+          "status": "actual",
+          "period_label": "FY2019-20"
+        },
+        {
+          "date": "2021-03-31",
+          "value": 19.343891402714934,
+          "status": "actual",
+          "period_label": "FY2020-21"
+        },
+        {
+          "date": "2022-03-31",
+          "value": 21.206467661691544,
+          "status": "actual",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": 22.17223650385604,
+          "status": "actual",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": 23.932203389830505,
+          "status": "actual",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": 24.1234221598878,
+          "status": "revised",
+          "period_label": "FY2024-25"
+        },
+        {
+          "date": "2026-03-31",
+          "value": 25.22903453136011,
+          "status": "budget",
+          "period_label": "FY2025-26"
+        }
+      ],
+      "methodology": "interest_payments / total_expenditure * 100",
+      "source_note": "Changes in total expenditure alter the ratio independently of interest costs."
+    },
+    "primary_balance_pct_gdp": {
+      "label": "Primary balance",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "values": [
+        {
+          "date": "2011-03-31",
+          "value": -1.79,
+          "status": "actual",
+          "period_label": "FY2010-11"
+        },
+        {
+          "date": "2012-03-31",
+          "value": -2.78,
+          "status": "actual",
+          "period_label": "FY2011-12"
+        },
+        {
+          "date": "2013-03-31",
+          "value": -1.78,
+          "status": "actual",
+          "period_label": "FY2012-13"
+        },
+        {
+          "date": "2014-03-31",
+          "value": -1.14,
+          "status": "actual",
+          "period_label": "FY2013-14"
+        },
+        {
+          "date": "2015-03-31",
+          "value": -0.87,
+          "status": "actual",
+          "period_label": "FY2014-15"
+        },
+        {
+          "date": "2016-03-31",
+          "value": -0.66,
+          "status": "actual",
+          "period_label": "FY2015-16"
+        },
+        {
+          "date": "2017-03-31",
+          "value": -0.36,
+          "status": "actual",
+          "period_label": "FY2016-17"
+        },
+        {
+          "date": "2018-03-31",
+          "value": -0.36,
+          "status": "actual",
+          "period_label": "FY2017-18"
+        },
+        {
+          "date": "2019-03-31",
+          "value": -0.35,
+          "status": "actual",
+          "period_label": "FY2018-19"
+        },
+        {
+          "date": "2020-03-31",
+          "value": -1.6,
+          "status": "actual",
+          "period_label": "FY2019-20"
+        },
+        {
+          "date": "2021-03-31",
+          "value": -5.73,
+          "status": "actual",
+          "period_label": "FY2020-21"
+        },
+        {
+          "date": "2022-03-31",
+          "value": -3.3,
+          "status": "actual",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": -3.0,
+          "status": "actual",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": -1.96,
+          "status": "actual",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": -1.31,
+          "status": "revised",
+          "period_label": "FY2024-25"
+        },
+        {
+          "date": "2026-03-31",
+          "value": -0.82,
+          "status": "budget",
+          "period_label": "FY2025-26"
+        }
+      ],
+      "methodology": "-(fiscal_deficit - interest_payments) / nominal_gdp * 100",
+      "source_note": "Sign convention must be retained in presentation."
+    },
+    "actual_capex_pct_expenditure": {
+      "label": "Actual CapEx as share of expenditure",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "values": [
+        {
+          "date": "2018-03-31",
+          "value": 12.284935431025508,
+          "status": "actual",
+          "period_label": "FY2017-18"
+        },
+        {
+          "date": "2019-03-31",
+          "value": 13.291532637931713,
+          "status": "actual",
+          "period_label": "FY2018-19"
+        },
+        {
+          "date": "2020-03-31",
+          "value": 12.497571035576419,
+          "status": "actual",
+          "period_label": "FY2019-20"
+        },
+        {
+          "date": "2021-03-31",
+          "value": 12.14635099759647,
+          "status": "actual",
+          "period_label": "FY2020-21"
+        },
+        {
+          "date": "2022-03-31",
+          "value": 15.627440659117333,
+          "status": "actual",
+          "period_label": "FY2021-22"
+        },
+        {
+          "date": "2023-03-31",
+          "value": 17.64839713848062,
+          "status": "actual",
+          "period_label": "FY2022-23"
+        },
+        {
+          "date": "2024-03-31",
+          "value": 21.361681595392046,
+          "status": "actual",
+          "period_label": "FY2023-24"
+        },
+        {
+          "date": "2025-03-31",
+          "value": 22.6087055572403,
+          "status": "actual",
+          "period_label": "FY2024-25"
+        }
+      ],
+      "methodology": "actual_capex / actual_total_expenditure * 100",
+      "source_note": "Accounting classification does not measure asset quality."
+    },
+    "capex_to_interest_allocation_ratio": {
+      "label": "CapEx-to-interest allocation ratio",
+      "entity": "IND",
+      "unit": "ratio",
+      "is_derived": true,
+      "methodology": "Actual CapEx share of total expenditure divided by interest payments share of total expenditure.",
+      "source_note": "This is an expenditure-allocation ratio, not a benefit-cost ratio or debt-sustainability threshold.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": 0.49654916435725677,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 0.5286405026450113,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 0.5482540998557787,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 0.6279166246710689,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 0.7369186093800782,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 0.7959682883326332,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 0.892591511422189,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 0.9372097129251357,
+          "status": "revised"
+        }
+      ]
+    }
+  }
+}

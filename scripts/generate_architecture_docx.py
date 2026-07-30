@@ -18,7 +18,13 @@ from pathlib import Path
 from xml.sax.saxutils import escape, quoteattr
 
 from config import PROJECT_ROOT
+from config.evidence_specs import (
+    EVIDENCE_OUTPUT_PATHS,
+    EVIDENCE_SPECS,
+    SPECIFICATION_REGISTRY_VERSION,
+)
 from config.focused_indicators import FOCUSED_BUNDLES
+from analysis import prepare_registered_analysis
 
 
 OUTPUT_PATH = PROJECT_ROOT / "docs" / "architecture" / "FOCUSED_PIPELINE_ARCHITECTURE.docx"
@@ -447,10 +453,10 @@ def add_title_page(doc: DocxBuilder) -> None:
     doc.table(
         ["Document control", "Value"],
         [
-            ["Version", "1.0"],
+            ["Version", "1.2"],
             ["Implementation snapshot", GENERATED_ON.strftime("%d %B %Y")],
             ["Repository", str(PROJECT_ROOT)],
-            ["Scope", "Seven focused research lenses plus retained legacy compatibility"],
+            ["Scope", "Seven focused research lenses, registered evidence foundations and retained legacy compatibility"],
             ["Authoritative inputs", "Implemented registry, builders, schemas, processed artifacts and frontend source"],
             ["Intended readers", "Researchers, data engineers, reviewers and frontend maintainers"],
         ],
@@ -492,7 +498,9 @@ def add_executive_summary(doc: DocxBuilder) -> None:
     doc.add_heading("1. Executive summary and current status", 1, bookmark="executive_summary")
     doc.add_paragraph("The new architecture is a contract-driven, evidence-preserving publication pipeline. Provider-specific code is confined to acquisition. Every accepted statistic is normalised into a provider-neutral observation with date, entity, unit, frequency, status and provenance. Analytical transforms produce named research series. Only schema-valid, quality-checked bundles are written to the processed layer and promoted into the frontend’s public data directory.")
     doc.add_paragraph("The website is deliberately static at runtime: the browser loads a catalogue and versioned JSON assets rather than querying source institutions or a bespoke application API. This makes deployments cheap and inspectable, while moving strictness to build time. The catalogue defines navigation, availability, component choice, default visible series, formatting, staleness and source/methodology display.")
+    doc.add_paragraph("A separate evidence layer now estimates and publishes two fiscal analyses and one UPI trend analysis under versioned specifications. Registered loaders, time-aware alignment and deterministic eligibility gates feed OLS models with Newey–West HAC uncertainty, predeclared diagnostics, robustness checks, Benjamini–Hochberg adjustment and deterministic grading. Source-artifact SHA-256 digests and required code/software versions make each report traceable to its exact inputs.")
     doc.add_callout("Central analytical rule", "The project distinguishes a reported statistic, a derived statistic and an interpretation. A formula can make two inputs comparable; it cannot by itself establish causality, welfare effects, project quality or fair value.")
+    doc.add_callout("Evidence milestone", f"Specification registry {SPECIFICATION_REGISTRY_VERSION}, estimation, the evidence-report schema, cross-field validation, atomic export and validated promotion are complete for fiscal capacity and digital integration. Eligibility counts still describe readiness; coefficients and grades appear only in the separate evidence reports.", color="2E7D6B", shade="ECFDF5")
 
     rows = []
     for key, bundle in FOCUSED_BUNDLES.items():
@@ -530,6 +538,7 @@ def add_architecture(doc: DocxBuilder) -> None:
         ("Publication is gated", "Record checks, output checks, JSON Schema validation and atomic writes are required before promotion."),
         ("Static delivery, strong build", "Runtime is a catalogue plus JSON assets. TypeScript, schema/adapter compatibility and asset existence are checked during the frontend build."),
         ("Interpretation travels with data", "The asset contains sources, methodology and notes; the catalogue carries definitions, limitations and presentation choices into each metric panel."),
+        ("Specify before estimation", "Evidence questions, transformations, lag rules, exceptional periods, uncertainty estimators and robustness checks are versioned before results are calculated."),
     ]
     doc.table(["Principle", "Implemented consequence"], principles, widths=[2200, 6800])
 
@@ -545,10 +554,12 @@ def add_architecture(doc: DocxBuilder) -> None:
             ["scripts/extractors/", "HTTP/session handling, PDF/table/API parsing, raw snapshot creation", "Provider quirks stay at the edge"],
             ["scripts/models/", "Canonical records, fiscal periods and observation statuses", "One provider-neutral internal language"],
             ["scripts/transforms/", "Ratios, growth, rolling windows, joins and lags", "Formula and missing-data policy are explicit"],
+            ["scripts/analysis/", "Registered artifact loading, status-aware alignment and pre-estimation eligibility", "No unregistered series or future-period values enter a sample"],
             ["scripts/build_*.py", "Bundle-specific orchestration from source to candidate payload", "One builder per analytical product"],
             ["scripts/validators/", "Record and payload quality rules plus JSON Schema checks", "Reject before publication"],
             ["scripts/exporters/", "Deterministic, strict, atomic JSON publication", "No NaN; last good file survives failure"],
             ["schemas/", "Backend JSON contracts", "Payload shape is versionable and testable"],
+            ["docs/decisions/", "Versioned analytical-policy decisions", "Post-result changes require a new recorded specification version"],
             ["data/raw/", "Immutable source evidence", "Never edit to make a transform pass"],
             ["data/processed/", "Validated research bundles", "Authoritative generated analytical artifacts"],
             ["frontend/public/data/", "Promoted browser assets, schemas and catalogue", "Only validated artifacts reach users"],
@@ -579,6 +590,11 @@ def add_pipeline(doc: DocxBuilder) -> None:
         ("12. Deliver", "Load catalogue/assets with React Query, assert schema-to-component compatibility, adapt data to rows, and render chart, latest reading, source and methodology.", "frontend/src/"),
     ]
     doc.table(["Stage", "What happens", "Implementation"], stages, widths=[1500, 5300, 2200], font_size=17)
+
+    doc.add_heading("Registered evidence branch", 2)
+    doc.add_paragraph("Evidence production consumes validated processed bundles; it does not bypass the source-to-publication path above. The implemented branch is:")
+    doc.add_code("Frozen evidence specification → registered processed-artifact loader → status filtering → transformations and lagging → explicit date alignment → exclusions ledger → eligibility gates → frozen design matrix → OLS + HAC inference → diagnostics + robustness → family adjustment + grading → evidence-report validation → atomic publication")
+    doc.add_paragraph("Only an eligible prepared sample reaches estimation. Failed gates become a structured insufficient-data result rather than a best-effort regression. Eligible samples pass through the frozen design, HAC inference, diagnostics, robustness, family adjustment and grading; every completed report then passes the evidence-report schema and semantic validator before atomic export and promotion.")
 
     doc.add_heading("Acquisition patterns by source type", 2)
     doc.add_heading("Structured APIs: NPCI, World Bank and NSE", 3)
@@ -636,8 +652,87 @@ def add_contracts(doc: DocxBuilder) -> None:
             ["dated_multi_series", "All seven focused bundles with multiple named series and mixed status/period semantics.", "datedSeriesToRows"],
             ["market_performance", "Retained equity-market prices, return and risk measures.", "marketPerformanceToRows"],
             ["event_study", "Schema and event configuration prepared; no live artifact until sufficient institutional-flow history exists.", "Not yet wired as a live catalogue asset"],
+            ["evidence_report", "Versioned lens-level analyses, source digests, code/software versions, sample/exclusion metadata, estimates, diagnostics, robustness, eligibility and limitations. Fiscal-capacity and digital-integration reports are published.", "EvidencePanel renders the lens-level contract without a chart adapter"],
         ],
         widths=[2100, 4800, 2100],
+    )
+
+    doc.add_heading("Evidence specifications and current pre-estimation readiness", 2)
+    doc.add_paragraph(
+        "The table below is generated by loading the current processed artifacts through the registered "
+        "alignment and eligibility pipeline. Passing means only that a model may be attempted under the "
+        "frozen specification; it says nothing about coefficient direction, uncertainty or robustness."
+    )
+    readiness_rows = []
+    for spec in EVIDENCE_SPECS.values():
+        prepared = prepare_registered_analysis(spec.key)
+        readiness_rows.append([
+            spec.label,
+            spec.formula,
+            f"{prepared.sample.start_date} → {prepared.sample.end_date}",
+            f"{len(prepared.sample.rows)} / {prepared.eligibility.required_observations}",
+            "PASS" if prepared.eligibility.eligible else "FAIL",
+        ])
+    doc.table(
+        ["Registered analysis", "Frozen model", "Aligned coverage", "Available / required", "Gate"],
+        readiness_rows,
+        widths=[1900, 3100, 1700, 1400, 900],
+        font_size=15,
+    )
+    doc.add_paragraph(
+        "Both fiscal specifications accept actual and revised observations, use fiscal-period-safe lags, "
+        "require at least 30 complete observations and register HAC uncertainty with maximum lag two. "
+        "Focal terms and their expected directions are frozen: positive lagged debt for the interest-burden "
+        "change model, negative lagged primary balance for the debt-change model, and a positive annualised "
+        "underlying UPI trend. The UPI specification begins in April 2017, log-transforms transactions per capita, registers "
+        "calendar-month effects and a pandemic break, requires at least 36 observations and uses HAC "
+        "uncertainty with maximum lag twelve. All three are explicitly associational, not causal."
+    )
+    doc.add_callout(
+        "Exclusions are data",
+        "Disallowed statuses, unavailable differences or lags, pre-start observations, null values and "
+        "non-positive inputs to logarithms are counted by input and reason. Gaps break differences; the "
+        "pipeline does not bridge them or pull a later observation backward.",
+        color="2E7D6B",
+        shade="ECFDF5",
+    )
+
+    doc.add_heading("Published evidence results", 2)
+    evidence_rows = []
+    for lens_key in ("fiscal_capacity", "digital_integration"):
+        evidence_path = PROJECT_ROOT / "data" / "processed" / EVIDENCE_OUTPUT_PATHS[lens_key]
+        if not evidence_path.is_file():
+            continue
+        report = json.loads(evidence_path.read_text(encoding="utf-8"))
+        for analysis in report["analyses"]:
+            focal = next(item for item in analysis["estimates"] if item["is_focal"])
+            failed = [
+                item["key"]
+                for item in analysis["diagnostics"]
+                if item["passed"] is False
+            ]
+            evidence_rows.append([
+                analysis["label"],
+                f"{analysis['status']} / {analysis['grade']}",
+                (
+                    f"{focal['value']:.3f} {focal['unit']}\n"
+                    f"95% CI {focal['confidence_interval'][0]:.3f} to "
+                    f"{focal['confidence_interval'][1]:.3f}\n"
+                    f"adjusted p={focal['adjusted_p_value']:.4g}"
+                ),
+                ", ".join(failed) if failed else "All registered diagnostics passed",
+            ])
+    doc.table(
+        ["Analysis", "Status / grade", "Registered focal estimate", "Failed diagnostics"],
+        evidence_rows,
+        widths=[2500, 1700, 3000, 1800],
+        font_size=15,
+    )
+    doc.add_callout(
+        "Interpretation boundary",
+        "The negative debt/interest-burden coefficient is opposite the registered positive direction and is therefore not support for the claim even though its adjusted p-value is below 0.05. The primary-balance model fails the influence diagnostic. The UPI trend is positive in every registered robustness fit but fails the residual-autocorrelation diagnostic. None of these observational results establishes a policy effect.",
+        color="A33D4A",
+        shade="FFF1F2",
     )
 
     doc.add_heading("Quality gates", 2)
@@ -646,6 +741,7 @@ def add_contracts(doc: DocxBuilder) -> None:
         ("Series-level", "Chronological ordering; no duplicate dates; finite numerics; required non-empty series; sensible configured bounds; complete-window rules."),
         ("Metadata", "start_date and end_date must exactly match the payload’s true minimum and maximum dates; series_order must match delivered series."),
         ("Schema", "Draft 2020-12 JSON Schema validation of data bundles and the frontend catalogue."),
+        ("Evidence semantics", "Registry identity, analysis order, source coverage, sample dates, confidence intervals, adjusted p-values, insufficiency rules and non-causal language are checked across fields."),
         ("Serialisation", "Strict JSON with allow_nan=False. A NaN or infinity fails publication instead of becoming browser-dependent output."),
         ("Atomicity", "Write temporary file → flush → fsync → os.replace. A failed candidate leaves the previous processed/public file intact."),
         ("Promotion", "Processed input is validated again before reaching frontend/public/data."),
@@ -729,6 +825,7 @@ def add_frontend(doc: DocxBuilder) -> None:
             ["/  · DashboardPage", "A restrained landing page summarises the available research lenses without slogan-heavy branding."],
             ["/research/:sectionId  · ResearchLensPage", "One page per research lens. All metrics are stacked vertically; users can scroll through them or use metric jump links."],
             ["Layout + Sidebar", "The research-lens sidebar is available from every page. It is generated from catalogue sections, so navigation changes with the data registry rather than a separate menu file."],
+            ["EvidencePanel", "For lenses with a valid evidence_asset_id, appears above the metric stack and renders full textual status, focal uncertainty, diagnostics, robustness, method and limitations."],
             ["MetricPanel", "Shows definition, status/staleness, chart, latest selected reading, limitation, sources and methodology."],
             ["Planned/Loading/Error panels", "Catalogue availability and query state are explicit rather than rendered as an empty chart."],
         ],
@@ -743,6 +840,7 @@ def add_frontend(doc: DocxBuilder) -> None:
             ["Availability", "active if every registered series has a non-null value; partial if the valid artifact has gaps; planned if no promoted artifact exists."],
             ["Staleness threshold", "Monthly 45 days; annual 450 days; mixed 120 days."],
             ["Focused default visibility", "One registry-configured series for each metric panel, even though the shared artifact contains the other series in that lens."],
+            ["Lens evidence", "Only an existing, semantically validated evidence report creates evidence_asset_id. Evidence is not represented as a time-series indicator or recomputed in the browser."],
             ["Country comparison default", "annual_country_series charts select India and every available peer by default, satisfying the all-countries-on-load requirement."],
             ["Zero line", "Enabled for signed balances, deviations, growth and net-flow measures where direction around zero is analytically important."],
             ["Legacy preservation", "Focused sections are inserted first. Unrelated existing sections are retained and their order is shifted; deletion requires an explicit migration decision."],
@@ -751,7 +849,7 @@ def add_frontend(doc: DocxBuilder) -> None:
     )
 
     doc.add_heading("Loading, caching and guards", 2)
-    doc.add_paragraph("useCatalogue loads /data/catalogue.json with React Query. useIndicatorData does not issue a request for planned assets. For a delivered asset, the version is included in the query identity/cache-busting path and the fetch uses revalidation/no-cache semantics. Loading and network/schema failures are rendered in place.")
+    doc.add_paragraph("useCatalogue loads /data/catalogue.json with React Query. useIndicatorData does not issue a request for planned assets. useEvidenceData separately loads lens-level evidence and applies the evidence runtime guard. For a delivered asset, the version is included in the query identity/cache-busting path and the fetch uses revalidation/no-cache semantics. Loading and network/schema failures are rendered in place.")
     doc.add_paragraph("Before rendering, runtimeGuards identifies and checks the supported payload family. assertAdapterMatchesSchema prevents, for example, an annual-country component from receiving a dated-multi-series asset. The three adapters then produce the common row shape expected by ChartView:")
     for item in [
         "annualCountryToRows: pivots annual country observations by year and entity; country labels are resolved for the legend.",
@@ -760,9 +858,10 @@ def add_frontend(doc: DocxBuilder) -> None:
     ]:
         doc.add_bullet(item)
     doc.add_paragraph("ChartView uses Recharts lines with connectNulls=false. India is visually emphasised in country comparisons; every peer remains visible by default. A focused MetricPanel passes its catalogue default_visible key, so each vertically stacked metric starts with the statistic named by that panel rather than drawing all differently scaled series together.")
+    doc.add_paragraph("EvidencePanel deliberately has no chart adapter. Status labels spell out not-supported, mixed, failed-diagnostics or supported states; failed diagnostics are surfaced before the collapsed technical tables. Readers can expand all estimates, confidence intervals, raw/adjusted p-values, diagnostics, robustness fits, formula, causal flag and provenance.")
 
     doc.add_heading("Build-time validation and deployment", 2)
-    doc.add_paragraph("The frontend build validates catalogue structure, every active/partial asset, schema references, metadata coverage, duplicate identities and component/schema compatibility before TypeScript and Vite compilation. The result is a static dist directory suitable for ordinary static hosting. The previous build completed successfully; the only noted warning was a roughly 646 kB minified JavaScript chunk, a performance optimisation opportunity rather than a correctness failure.")
+    doc.add_paragraph("The frontend build validates catalogue structure, every active/partial asset, both evidence reports, schema references, metadata coverage, duplicate identities and component/schema compatibility before TypeScript and Vite compilation. The result is a static dist directory suitable for ordinary static hosting. The previous build completed successfully; the only noted warning was a roughly 655 kB minified JavaScript chunk, a performance optimisation opportunity rather than a correctness failure.")
     doc.add_callout("Why static", "A static site removes database and API availability from the reader’s critical path, makes each publication inspectable, and allows a deployment to be reproduced from committed code plus raw evidence. Its trade-off is that freshness depends on scheduled builds and promotion.")
 
 
@@ -777,7 +876,13 @@ def add_operations(doc: DocxBuilder) -> None:
     doc.add_paragraph("Regenerate this document after architecture or data changes:")
     doc.add_code("PYTHONDONTWRITEBYTECODE=1 python3 scripts/generate_architecture_docx.py")
     doc.add_paragraph("Backend and frontend verification:")
-    doc.add_code("PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests\ncd frontend && npm run build")
+    doc.add_code("PYTHONDONTWRITEBYTECODE=1 venv/bin/python -m unittest discover -s tests\ncd frontend && npm run build")
+    doc.add_paragraph("Inspect registered samples and eligibility without estimating coefficients:")
+    doc.add_code("PYTHONDONTWRITEBYTECODE=1 python3 scripts/audit_evidence_readiness.py")
+    doc.add_paragraph("Rebuild, validate and promote the registered evidence reports using the project environment:")
+    doc.add_code("PYTHONDONTWRITEBYTECODE=1 venv/bin/python scripts/build_evidence_reports.py --promote")
+    doc.add_paragraph("Independently reproduce the main estimates, diagnostics and grades through the review code path:")
+    doc.add_code("PYTHONDONTWRITEBYTECODE=1 venv/bin/python scripts/review_evidence_reports.py")
 
     doc.add_heading("What happens on failure", 2)
     doc.table(
@@ -794,7 +899,7 @@ def add_operations(doc: DocxBuilder) -> None:
     )
 
     doc.add_heading("Testing posture", 2)
-    doc.add_paragraph("At the implementation snapshot, the backend suite reported 28 passing tests and one skipped optional pandas/yfinance test. The frontend TypeScript/Vite build and static-data validation also passed. Tests cover canonical periods/status, registry contracts, formulas and rolling-window behaviour, schema validation, exporter atomicity, focused builders/catalogue logic, and source-specific GST/OBICUS parsing fixtures. A successful test run does not replace a data-review check for revisions or economic plausibility.")
+    doc.add_paragraph("At the implementation snapshot, the complete project environment reported 61 passing backend tests. The frontend TypeScript/Vite build and static-data validation also passed, validating 22 catalogue assets, two evidence reports and 13 sections. Tests cover canonical periods/status, registry contracts, formulas and rolling-window behaviour, schema validation, exporter atomicity, focused builders/catalogue logic, evidence catalogue registration, source-specific GST/OBICUS parsing fixtures, registered evidence loading, no-look-ahead alignment, eligibility gates, OLS/HAC estimation, rank rejection, robustness design, evidence-report semantics and non-destructive promotion. The separate numerical review reproduced every main estimate, interval, p-value adjustment, diagnostic flag, status and grade at tolerance 1e-9. These checks do not replace external peer review.")
 
     doc.add_heading("Recommended operating cadence", 2)
     for item in [
@@ -813,15 +918,17 @@ def add_gaps(doc: DocxBuilder) -> None:
     doc.table(
         ["Priority", "Missing capability", "Completion criterion"],
         [
-            ["1", "Historical institutional-flow archive", "Scheduled daily NSE collection has enough consecutive months for complete 12-month windows; month-completeness is explicit."],
-            ["2", "Shock-event analysis", "The configured 2018 EM sell-off, COVID-19 and 2022 tightening windows can be populated from adequate flow/market history and validated against event_study.schema.json."],
-            ["3", "Longer official GST and OBICUS history", "Additional compatible official vintages extend the short current histories without mixing definitions or overwriting source status."],
-            ["4", "Frontend performance", "Route/chart code splitting or other bundle reduction removes the large-chunk warning without weakening validation."],
-            ["5", "Legacy review", "Manually verify retained World Bank/market assets, decide which remain analytically useful, then migrate or delete only with explicit approval."],
-            ["6", "Automated document freshness", "Generate the DOCX in a release/documentation job and fail when registry series lack architecture notes."],
+            ["1", "External analytical review", "An independent reviewer checks source definitions, specification versions 1.0.0–1.2.0, generated wording and the two diagnostic failures before policy conclusions are drawn."],
+            ["2", "Future UPI serial-dependence specification", "If pursued, register a new version before estimation with a model appropriate to the residual dependence; retain the published version-1 result unchanged."],
+            ["3", "Historical institutional-flow archive", "Scheduled daily NSE collection has enough consecutive months for complete 12-month windows; month-completeness is explicit."],
+            ["4", "Shock-event analysis", "Only after sufficient flow/market history, the configured 2018 EM sell-off, COVID-19 and 2022 tightening windows are populated and validated against event_study.schema.json."],
+            ["5", "Longer official GST and OBICUS history", "Additional compatible official vintages extend the short current histories without mixing definitions or overwriting source status."],
+            ["6", "Frontend performance and document automation", "Reduce the large JavaScript chunk and generate this guide in a release job without weakening validation."],
+            ["7", "Legacy review", "Manually verify retained World Bank/market assets, decide which remain analytically useful, then migrate or delete only with explicit approval."],
         ],
         widths=[900, 3100, 5000],
     )
+    doc.add_callout("Immediate next gate", "Keep the version-1 reports visible with their limitations and obtain external analytical review. Any new UPI model must be registered as a new version before its coefficients are inspected; the failed residual-autocorrelation diagnostic must not be erased by retuning the published specification.", color="2E7D6B", shade="ECFDF5")
     doc.add_callout("Event-study readiness", "scripts/config/global_shock_events.py pre-registers the 2018 emerging-market sell-off, COVID-19 and 2022 global tightening windows, and schemas/event_study.schema.json defines the future contract. This is prepared architecture, not currently published evidence.", color="D97706", shade="FFF7ED")
 
 
@@ -866,6 +973,8 @@ def add_appendix(doc: DocxBuilder) -> None:
         ("GFCF", "Gross fixed capital formation, a national-accounts measure of investment in fixed assets."),
         ("GER", "Gross Enrolment Ratio: enrolment at a level divided by the population in its official age group; may exceed 100 at some levels because it is gross."),
         ("Immutable raw", "A source response retained without overwriting, identified by retrieval context and checksum."),
+        ("Eligibility gate", "A pre-estimation rule on sample size, variation, degrees of freedom, rank and time ordering. Passing authorises estimation; it is not evidence for a claim."),
+        ("Evidence grade", "A structured assessment carried by an evidence report after estimation, diagnostics and robustness—not a synonym for statistical significance."),
         ("Nominal GDP", "Gross domestic product at current prices. It is the appropriate denominator for nominal rupee flows in the implemented ratios."),
         ("Null", "Explicit absence or inapplicability; not zero and not an instruction to interpolate."),
         ("OBICUS", "RBI Order Books, Inventories and Capacity Utilisation Survey."),
@@ -880,7 +989,15 @@ def add_appendix(doc: DocxBuilder) -> None:
     doc.add_heading("Key implementation files", 2)
     files = [
         "scripts/config/focused_indicators.py — authoritative focused research registry",
+        "scripts/config/evidence_specs.py — frozen evidence questions, inputs, models and decision thresholds",
+        "scripts/audit_evidence_readiness.py — read-only registered sample and eligibility audit",
         "scripts/models/canonical.py — canonical observation, status and fiscal-period model",
+        "scripts/models/evidence.py — evidence-result, estimate, diagnostic and eligibility models",
+        "scripts/analysis/ — registered loading, alignment and pre-estimation eligibility",
+        "scripts/analysis/regression.py — explicit statsmodels OLS/HAC boundary and diagnostics",
+        "scripts/analysis/estimation.py — registered designs, robustness, adjustment and grading",
+        "scripts/build_evidence_reports.py — validated evidence build and promotion orchestrator",
+        "scripts/review_evidence_reports.py — independent-code-path numerical reproduction",
         "scripts/build_focused_pipeline.py — seven-bundle orchestrator",
         "scripts/build_<lens>.py — source-to-bundle builders",
         "scripts/extractors/ — provider-specific acquisition and raw archiving",
@@ -888,11 +1005,19 @@ def add_appendix(doc: DocxBuilder) -> None:
         "scripts/validators/quality.py — record and output quality gates",
         "scripts/exporters/json_export.py — strict atomic JSON writer",
         "scripts/promote_processed_data.py — validated frontend promotion",
+        "scripts/builders/evidence_report.py — registered lens-level evidence report assembly",
+        "scripts/validators/evidence.py — schema and cross-field evidence validation",
         "scripts/sync_focused_catalogue.py — catalogue availability and presentation generation",
+        "scripts/sync_public_schemas.py — authoritative schema synchronisation to the frontend",
         "schemas/dated_multi_series.schema.json — focused published contract",
+        "schemas/evidence_report.schema.json — versioned analytical-evidence contract",
+        "docs/decisions/0001-evidence-policy.md — initial evidence-policy decision freeze",
+        "docs/reviews/EVIDENCE_REVIEW_2026-07-28.md — internal reproducibility and interpretation review",
         "frontend/public/data/catalogue.json — runtime navigation/asset control plane",
         "frontend/src/pages/ResearchLensPage.tsx — scrollable one-page-per-lens layout",
         "frontend/src/components/MetricPanel.tsx — chart/insight/source composition",
+        "frontend/src/components/EvidencePanel.tsx — lens-level status, uncertainty, diagnostics and robustness display",
+        "frontend/src/hooks/useEvidenceData.ts — separately guarded evidence loading",
         "frontend/src/components/ChartView.tsx — common chart renderer with explicit null gaps",
         "frontend/src/data/runtimeGuards.ts — runtime schema/component protection",
         "tests/ — transformations, extractors, contracts and publication regression checks",

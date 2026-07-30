@@ -14,9 +14,12 @@ export default function Sidebar() {
           <NavLink to={`/research/${section.id}`} className={active ? "lens-link active" : "lens-link"}>
             <span>{String(section.order).padStart(2, "0")}</span>{section.label}
           </NavLink>
-          <div className="metric-links">{section.indicators.map((indicator) =>
-            <a key={indicator.id} href={`/research/${section.id}#${indicator.id}`}>{indicator.title}</a>
-          )}</div>
+          <div className="metric-links">
+            {section.evidence_asset_id && <a className="evidence-nav-link" href={`/research/${section.id}#evidence`}>Evidence assessment</a>}
+            {section.indicators.map((indicator) =>
+              <a key={indicator.id} href={`/research/${section.id}#${indicator.id}`}>{indicator.title}</a>
+            )}
+          </div>
         </div>;
       })}
     </nav>
