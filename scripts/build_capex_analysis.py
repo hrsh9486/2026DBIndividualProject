@@ -27,6 +27,11 @@ from transforms.capex_analysis import (
 )
 from transforms.corporate_fundamentals import build_corporate_fundamentals_payload
 from validators import validate_payload
+from build_capex_delivery import (
+    build_allocation_payload,
+    build_delivery_payload,
+    build_production_payload,
+)
 
 
 LOGGER = logging.getLogger(__name__)
@@ -206,6 +211,9 @@ def build_all(
     ]
     payloads = {
         "execution": execution_output,
+        "allocation": build_allocation_payload(),
+        "delivery": build_delivery_payload(),
+        "production": build_production_payload(),
         "sectors": sector,
         "correlations": correlations,
         "private": private_output,
@@ -256,6 +264,9 @@ def main() -> None:
     )
     schemas = {
         "execution": "dated_multi_series.schema.json",
+        "allocation": "dated_multi_series.schema.json",
+        "delivery": "dated_multi_series.schema.json",
+        "production": "dated_multi_series.schema.json",
         "sectors": "market_performance.schema.json",
         "correlations": "dated_multi_series.schema.json",
         "private": "dated_multi_series.schema.json",

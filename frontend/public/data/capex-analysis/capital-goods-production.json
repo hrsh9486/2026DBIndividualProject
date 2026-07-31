@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-31T10:16:22.260905+00:00",
+    "source": [
+      {
+        "name": "RBI Handbook of Statistics on the Indian Economy, Table 30 (source: NSO)",
+        "url": "https://rbi.org.in/scripts/PublicationsView.aspx?id=21836",
+        "retrieved_at": "2026-07-30T00:00:00+00:00"
+      }
+    ],
+    "frequency": "annual",
+    "start_date": "2015-03-31",
+    "end_date": "2023-03-31",
+    "indicator_code": "CAPITAL_GOODS_IIP",
+    "label": "Capital-goods industrial production",
+    "default_unit": "index",
+    "series_order": [
+      "capital_goods_iip"
+    ],
+    "is_derived": false,
+    "methodology": "Published fiscal-year average; no rebasing or interpolation.",
+    "note": "The pandemic discontinuity is retained. Use the series as a real-output check, not as proof that public CapEx caused production."
+  },
+  "series": {
+    "capital_goods_iip": {
+      "label": "Capital-goods production",
+      "entity": "IND",
+      "unit": "index",
+      "is_derived": false,
+      "methodology": "Fiscal-year average IIP for capital goods, use-based classification, base 2011-12=100.",
+      "source_note": "Capital-goods IIP is volatile and measures output, not orders, profitability or private ownership of investment.",
+      "values": [
+        {
+          "date": "2015-03-31",
+          "period_label": "FY2014-15",
+          "value": 95.5,
+          "status": "actual"
+        },
+        {
+          "date": "2016-03-31",
+          "period_label": "FY2015-16",
+          "value": 98.4,
+          "status": "actual"
+        },
+        {
+          "date": "2017-03-31",
+          "period_label": "FY2016-17",
+          "value": 101.5,
+          "status": "actual"
+        },
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": 105.6,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 108.4,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 93.3,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 75.9,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 88.7,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 100.3,
+          "status": "actual"
+        }
+      ]
+    }
+  }
+}

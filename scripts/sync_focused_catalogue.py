@@ -178,12 +178,16 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
 
     capex_asset_specs = {
         "capex-execution": ("execution", "dated_multi_series", "annual", "Has actual public CapEx intensified and been executed?"),
+        "capex-sector-allocation": ("allocation", "dated_multi_series", "annual", "How much central-budget CapEx was allocated to roads and railways?"),
+        "capex-physical-delivery": ("delivery", "dated_multi_series", "annual", "Did roads and railways deliver physical output?"),
+        "capex-capital-goods-production": ("production", "dated_multi_series", "annual", "Did capital-goods production rise alongside the CapEx push?"),
         "capex-sector-performance": ("sectors", "market_performance", "monthly", "Did CapEx-sensitive sectors outperform the Nifty 50?"),
         "capex-sector-correlations": ("correlations", "dated_multi_series", "annual", "Was CapEx growth followed by sector excess returns?"),
         "capex-private-response": ("private", "dated_multi_series", "mixed", "Did private investment and manufacturing capacity respond?"),
         "capex-fiscal-sustainability": ("fiscal", "dated_multi_series", "annual", "Can the CapEx push continue without excessive debt-service pressure?"),
         "capex-corporate-fundamentals": ("corporate", "dated_multi_series", "annual", "Did market expectations coincide with stronger corporate revenue, investment and productive assets?"),
     }
+    catalogue["assets"].pop("capex-sector-delivery", None)
     for asset_id, (output_key, schema, frequency, description) in capex_asset_specs.items():
         path = public_data_dir / CAPEX_OUTPUTS[output_key]
         catalogue["assets"][asset_id] = {
@@ -244,6 +248,16 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
                 }],
             },
             {
+                "id": "capex-sector-delivery",
+                "title": "1B. Sector allocation and physical delivery",
+                "summary": "Separating budget inputs from completed kilometres shows whether the CapEx push moved beyond headline allocations.",
+                "default_view": "allocation",
+                "views": [
+                    _capex_view("allocation", "Central budget allocation", "capex-sector-allocation", ["railways_budget_capex", "roads_budget_capex"], "crore", series_toggle=True),
+                    _capex_view("delivery", "Physical delivery", "capex-physical-delivery", ["national_highways_constructed_km", "railway_route_km_electrified"], "number", series_toggle=True),
+                ],
+            },
+            {
                 "id": "capex-corporate-case-study",
                 "title": "2C. Corporate fundamentals case study",
                 "summary": "A frozen ten-company basket tests whether sector optimism coincided with revenue, earnings, company investment and productive-asset growth.",
@@ -294,7 +308,10 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
                 "title": "2D. Private investment and capacity conversion",
                 "summary": "Private corporate GFCF and capacity utilisation distinguish market re-rating from realised productive investment.",
                 "default_view": "investment",
-                "views": [_capex_view("investment", "Real-economy response", "capex-private-response", ["private_corporate_gfcf_pct_gdp", "manufacturing_capacity_utilisation", "public_capex_lagged"], "percent", series_toggle=True)],
+                "views": [
+                    _capex_view("investment", "Investment and capacity", "capex-private-response", ["private_corporate_gfcf_pct_gdp", "manufacturing_capacity_utilisation", "public_capex_lagged"], "percent", series_toggle=True),
+                    _capex_view("production", "Capital-goods production", "capex-capital-goods-production", ["capital_goods_iip"], "index"),
+                ],
             },
             {
                 "id": "capex-fiscal-constraint",
@@ -319,15 +336,40 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
                     "note": "The allocation ratio compares spending shares; it is not a benefit-cost ratio or a causal estimate of returns to public investment.",
                 }, _capex_view("burden", "Debt and interest trends", "capex-fiscal-sustainability", ["general_government_debt_pct_gdp", "interest_payments_pct_revenue", "primary_balance_pct_gdp"], "percent", series_toggle=True, zero_line=True)],
             },
+            {
+                "id": "capex-scenario-lab",
+                "title": "4. CapEx transmission scenario lab",
+                "summary": "Test when a sustained increase in public CapEx produces enough growth and revenue feedback to justify its financing burden.",
+                "default_view": "model",
+                "views": [{
+                    "id": "model",
+                    "label": "Five-year scenario",
+                    "asset_id": "capex-fiscal-sustainability",
+                    "presentation": {
+                        "component": "capex-scenario-lab",
+                        "chart_type": "line",
+                        "x_axis": "date",
+                        "default_visible": ["general_government_debt_pct_gdp"],
+                        "value_format": {"style": "percent", "scale": 1, "decimals": 1},
+                        "controls": {"date_range": False, "entity_toggle": False, "series_toggle": False},
+                        "zero_line": False,
+                        "show_source": True,
+                        "show_methodology": True,
+                    },
+                    "note": "The latest non-budget fiscal observation establishes the starting position. Multipliers, lags, crowding effects and future financing conditions are editable assumptions—not estimates or forecasts.",
+                }],
+            },
         ],
     }
     capex_indicator_order = (
         "capex-policy-input",
+        "capex-sector-delivery",
         "capex-market-transmission",
         "capex-lag-test",
         "capex-corporate-case-study",
         "capex-real-conversion",
         "capex-fiscal-constraint",
+        "capex-scenario-lab",
     )
     capex_section["indicators"] = sorted(
         capex_section["indicators"],

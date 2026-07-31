@@ -243,7 +243,8 @@
             "market-performance",
             "capex-correlation",
             "corporate-fundamentals",
-            "fiscal-bridge"
+            "fiscal-bridge",
+            "capex-scenario-lab"
           ]
         },
         "chart_type": {

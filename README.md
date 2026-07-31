@@ -59,6 +59,9 @@ Build the focused India public-CapEx transmission project with:
 python3 scripts/build_capex_analysis.py
 python3 scripts/promote_processed_data.py \
   capex-analysis/capex-execution.json \
+  capex-analysis/sector-capex-allocation.json \
+  capex-analysis/physical-delivery.json \
+  capex-analysis/capital-goods-production.json \
   capex-analysis/sector-performance.json \
   capex-analysis/capex-sector-correlations.json \
   capex-analysis/private-investment-response.json \
@@ -70,7 +73,9 @@ python3 scripts/sync_focused_catalogue.py
 
 This job uses official Nifty total-return-index histories, the validated Union
 Budget/MoSPI CapEx artifact, RBI OBICUS capacity utilisation, national-accounts
-private GFCF, and RBI fiscal tables. It publishes the five chart contracts and
+private GFCF, RBI fiscal tables, Union Budget ministry allocations, official
+roads and railway delivery statistics, and NSO capital-goods IIP. It publishes
+all chart contracts through the same validated CapEx build and
 a rule-generated hypothesis summary and frozen ten-company corporate case study
 under `data/processed/capex-analysis/`. The market bundle includes Nifty FMCG
 as a control and publishes target-sector performance relative to both Nifty 50

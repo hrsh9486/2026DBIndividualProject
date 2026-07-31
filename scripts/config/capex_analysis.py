@@ -62,6 +62,9 @@ CORPORATE_CASES = (
 
 OUTPUTS = {
     "execution": "capex-analysis/capex-execution.json",
+    "allocation": "capex-analysis/sector-capex-allocation.json",
+    "delivery": "capex-analysis/physical-delivery.json",
+    "production": "capex-analysis/capital-goods-production.json",
     "sectors": "capex-analysis/sector-performance.json",
     "correlations": "capex-analysis/capex-sector-correlations.json",
     "private": "capex-analysis/private-investment-response.json",

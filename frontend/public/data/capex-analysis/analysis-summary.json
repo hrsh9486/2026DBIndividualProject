@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-30T13:57:23.330892+00:00",
+    "generated_at": "2026-07-31T10:16:22.260844+00:00",
     "research_question": "Did India's public CapEx push transmit into sectoral and real economic growth strongly enough to justify its fiscal cost?",
     "classification_method": "Deterministic rules recorded in scripts/transforms/capex_analysis.py; classifications are evidence summaries, not causal estimates."
   },

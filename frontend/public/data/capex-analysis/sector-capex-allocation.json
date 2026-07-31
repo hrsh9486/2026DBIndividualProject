@@ -1,0 +1,158 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-31T10:16:22.260877+00:00",
+    "source": [
+      {
+        "name": "Union Budget 2019-20 — Expenditure Profile, Statement 3",
+        "url": "https://www.indiabudget.gov.in/budget2019-20/doc/eb/stat3a.pdf",
+        "retrieved_at": "2026-07-30T00:00:00+00:00"
+      },
+      {
+        "name": "Union Budget 2021-22 — Expenditure Profile, Statement 3",
+        "url": "https://www.indiabudget.gov.in/budget2021-22/doc/eb/stat3a.pdf",
+        "retrieved_at": "2026-07-30T00:00:00+00:00"
+      },
+      {
+        "name": "Union Budget 2023-24 — Expenditure Profile, Statement 3",
+        "url": "https://www.indiabudget.gov.in/budget2023-24/doc/eb/stat3a.pdf",
+        "retrieved_at": "2026-07-30T00:00:00+00:00"
+      },
+      {
+        "name": "Union Budget 2025-26 — Expenditure Profile, Statement 3",
+        "url": "https://www.indiabudget.gov.in/budget2025-26/doc/eb/vol1.pdf",
+        "retrieved_at": "2026-07-30T00:00:00+00:00"
+      }
+    ],
+    "frequency": "annual",
+    "start_date": "2019-03-31",
+    "end_date": "2026-03-31",
+    "indicator_code": "CAPEX_SECTOR_ALLOCATION",
+    "label": "Roads and railways central-budget CapEx",
+    "default_unit": "INR_crore",
+    "series_order": [
+      "railways_budget_capex",
+      "roads_budget_capex"
+    ],
+    "is_derived": false,
+    "methodology": "Like-for-like central-budget allocations; Railways' internal and extra-budgetary resources are excluded.",
+    "note": "Budget allocations are financial inputs, not evidence that projects were completed."
+  },
+  "series": {
+    "railways_budget_capex": {
+      "label": "Railways central budget CapEx",
+      "entity": "IND",
+      "unit": "INR_crore",
+      "is_derived": false,
+      "methodology": "Budget estimate of central budgetary support/capital expenditure for the Ministry of Railways.",
+      "source_note": "Excludes internal and extra-budgetary resources; budget allocations are plans, not actual expenditure.",
+      "values": [
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 53060,
+          "status": "budget"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 65837,
+          "status": "budget"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 70000,
+          "status": "budget"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 107100,
+          "status": "budget"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 137100,
+          "status": "budget"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 240000,
+          "status": "budget"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 252000,
+          "status": "budget"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "FY2025-26",
+          "value": 252000,
+          "status": "budget"
+        }
+      ]
+    },
+    "roads_budget_capex": {
+      "label": "Roads central budget CapEx",
+      "entity": "IND",
+      "unit": "INR_crore",
+      "is_derived": false,
+      "methodology": "Budget estimate of capital expenditure for the Ministry of Road Transport and Highways.",
+      "source_note": "Budget allocations are plans, not actual expenditure.",
+      "values": [
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 59440.25,
+          "status": "budget"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 72058.58,
+          "status": "budget"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 81974.71,
+          "status": "budget"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 108230.11,
+          "status": "budget"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 187744,
+          "status": "budget"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 258605.53,
+          "status": "budget"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 272241.15,
+          "status": "budget"
+        },
+        {
+          "date": "2026-03-31",
+          "period_label": "FY2025-26",
+          "value": 272241.15,
+          "status": "budget"
+        }
+      ]
+    }
+  }
+}

@@ -14,13 +14,6 @@ import {
 } from "recharts";
 import type { DatedPayload, DatedValue } from "../data/types";
 
-type FiscalPoint = {
-  capex: number;
-  interest: number;
-  debt: number | null;
-  period: string;
-};
-
 type EvidenceItem = {
   key: string;
   status: "supported" | "partially_supported" | "unsupported" | "inconclusive";

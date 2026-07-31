@@ -11,6 +11,7 @@ from config.capex_analysis import CAPEX_MARKETS  # noqa: E402
 from transforms.capex_analysis import (  # noqa: E402
     build_lag_analysis,
     build_sector_performance_payload,
+    classify_summary,
 )
 from extractors.corporate_fundamentals import CorporateFundamental  # noqa: E402
 from transforms.corporate_fundamentals import build_corporate_fundamentals_payload  # noqa: E402
@@ -78,6 +79,39 @@ class CorporateFundamentalsTests(unittest.TestCase):
         validate_payload(payload, "dated_multi_series.schema.json")
         values = payload["series"]["capital_goods_revenue_growth"]["values"]
         self.assertAlmostEqual(values[-1]["value"], 10.0)
+
+
+class CapexSummaryTests(unittest.TestCase):
+    def test_reverse_market_leads_do_not_drive_sector_transmission_verdict(self):
+        execution = {"series": {
+            "actual_capex_pct_gdp": {"values": [{"value": 1}, {"value": 2}]},
+            "actual_capex_pct_total_expenditure": {"values": [{"value": 4}, {"value": 8}]},
+        }}
+        private = {"series": {
+            "private_corporate_gfcf_pct_gdp": {"values": [{"value": 10}, {"value": 11}]},
+            "manufacturing_capacity_utilisation": {"values": [{"value": 70}, {"value": 72}]},
+        }}
+        fiscal = {"series": {
+            "general_government_debt_pct_gdp": {"values": [{"value": 82}]},
+            "interest_payments_pct_revenue": {"values": [{"value": 37}]},
+        }}
+        estimates = {
+            "capital_goods_lead_6m": {
+                "pearson": 0.9, "n": 6, "direction": "market_leads",
+                "outcome_type": "market", "label": "Nifty Capital Goods",
+            },
+            "nifty_50_lag_0m": {
+                "pearson": 0.8, "n": 6, "direction": "capex_leads",
+                "outcome_type": "market", "label": "Nifty 50",
+            },
+            "capital_goods_lag_0m": {
+                "pearson": -0.4, "n": 6, "direction": "capex_leads",
+                "outcome_type": "market", "label": "Nifty Capital Goods",
+            },
+        }
+        summary = classify_summary(execution, private, fiscal, estimates)
+        sector = next(item for item in summary["hypotheses"] if item["key"] == "sector_transmission")
+        self.assertEqual(sector["status"], "inconclusive")
 
 
 if __name__ == "__main__":

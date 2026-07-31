@@ -702,3 +702,144 @@ footer { min-height: 80px; padding: 0 clamp(20px, 5vw, 78px); border-top: 1px so
   .fiscal-evidence-chain,
   .quadrant-key { grid-template-columns: 1fr; }
 }
+
+.scenario-lab {
+  display: grid;
+  grid-template-columns: minmax(300px, .8fr) minmax(0, 1.5fr);
+  gap: 1px;
+  border: 1px solid #cec6b9;
+  background: #cec6b9;
+}
+
+.scenario-controls,
+.scenario-results {
+  padding: clamp(1rem, 2.2vw, 1.7rem);
+  background: #fffdf8;
+}
+
+.scenario-controls > header {
+  display: grid;
+  gap: .8rem;
+  margin-bottom: 1.2rem;
+}
+
+.scenario-controls header span,
+.scenario-verdict > span,
+.scenario-kpis span {
+  color: #706a61;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.scenario-controls h3,
+.scenario-verdict h3 { margin: .25rem 0 0; }
+
+.scenario-presets {
+  display: flex;
+  gap: .35rem;
+}
+
+.scenario-presets button {
+  padding: .45rem .65rem;
+  border: 1px solid #cec6b9;
+  background: transparent;
+  color: #655f57;
+  cursor: pointer;
+  font-size: .72rem;
+}
+
+.scenario-presets button.active {
+  border-color: #a53f2b;
+  background: #f4e7df;
+  color: #812d20;
+}
+
+.scenario-sliders {
+  display: grid;
+  gap: .9rem;
+}
+
+.scenario-sliders label > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #30393b;
+  font-size: .75rem;
+}
+
+.scenario-sliders output {
+  color: #a53f2b;
+  font: 600 .74rem 'DM Mono';
+}
+
+.scenario-sliders input {
+  width: 100%;
+  margin: .35rem 0 .1rem;
+  accent-color: #a53f2b;
+}
+
+.scenario-sliders small {
+  display: block;
+  color: #817a70;
+  font-size: .64rem;
+}
+
+.scenario-results {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
+.scenario-verdict {
+  padding: 1rem;
+  border-left: 4px solid #a53f2b;
+  background: #f7f1e7;
+}
+
+.scenario-verdict p {
+  margin: .45rem 0 0;
+  color: #655f57;
+  font-size: .75rem;
+}
+
+.scenario-kpis {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: #d8d1c6;
+  border: 1px solid #d8d1c6;
+}
+
+.scenario-kpis article {
+  padding: .8rem;
+  background: #fffdf8;
+}
+
+.scenario-kpis b,
+.scenario-kpis small { display: block; }
+.scenario-kpis b { margin: .3rem 0 .1rem; font-size: 1.25rem; }
+.scenario-kpis small { color: #817a70; font-size: .62rem; }
+.scenario-kpis .positive b { color: #38502d; }
+.scenario-kpis .negative b { color: #8c382b; }
+.scenario-chart { height: 360px; }
+
+.scenario-method {
+  border-top: 1px solid #d8d1c6;
+  padding-top: .8rem;
+  color: #655f57;
+  font-size: .75rem;
+}
+
+.scenario-method summary { cursor: pointer; color: #30393b; font-weight: 600; }
+.scenario-method p { margin-bottom: 0; }
+
+@media (max-width: 960px) {
+  .scenario-lab { grid-template-columns: 1fr; }
+  .scenario-sliders { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 680px) {
+  .scenario-sliders { grid-template-columns: 1fr; }
+  .scenario-kpis { grid-template-columns: 1fr 1fr; }
+}

@@ -77,6 +77,7 @@ export function assertAdapterMatchesSchema(component: string, schema: DataSchema
     "capex-correlation": "dated_multi_series",
     "corporate-fundamentals": "dated_multi_series",
     "fiscal-bridge": "dated_multi_series",
+    "capex-scenario-lab": "dated_multi_series",
   };
   if (expected[component] !== schema) throw new Error(`${component} cannot render ${schema}`);
 }

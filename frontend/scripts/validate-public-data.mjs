@@ -30,6 +30,7 @@ const adapters = {
   "capex-correlation": "dated_multi_series",
   "corporate-fundamentals": "dated_multi_series",
   "fiscal-bridge": "dated_multi_series",
+  "capex-scenario-lab": "dated_multi_series",
 };
 
 for (const section of catalogue.sections ?? []) {

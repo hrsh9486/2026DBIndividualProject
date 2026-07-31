@@ -342,7 +342,15 @@ def classify_summary(
     capex_gdp = [row["value"] for row in execution_payload["series"]["actual_capex_pct_gdp"]["values"] if row["value"] is not None]
     capex_share = [row["value"] for row in execution_payload["series"]["actual_capex_pct_total_expenditure"]["values"] if row["value"] is not None]
     h1_supported = len(capex_gdp) >= 2 and len(capex_share) >= 2 and capex_gdp[-1] > capex_gdp[0] and capex_share[-1] > capex_share[0]
-    usable_corr = [item["pearson"] for item in correlation_estimates.values() if item["pearson"] is not None and item["n"] >= 4]
+    usable_corr = [
+        item["pearson"]
+        for item in correlation_estimates.values()
+        if item["pearson"] is not None
+        and item["n"] >= 4
+        and item.get("direction", "capex_leads") == "capex_leads"
+        and item.get("outcome_type") == "market"
+        and item.get("label") != "Nifty 50"
+    ]
     h2 = "supported" if usable_corr and sum(value > 0 for value in usable_corr) / len(usable_corr) >= 2 / 3 else ("partially_supported" if any(value > 0 for value in usable_corr) else "inconclusive")
     private_gfcf = [row["value"] for row in private_payload["series"]["private_corporate_gfcf_pct_gdp"]["values"] if row["value"] is not None]
     capacity = [row["value"] for row in private_payload["series"]["manufacturing_capacity_utilisation"]["values"] if row["value"] is not None]

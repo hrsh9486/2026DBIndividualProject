@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-07-30T13:57:25.762165+00:00",
+  "generated_at": "2026-07-31T10:16:25.496155+00:00",
   "public_data_root": "/data",
   "assets": {
     "market-performance": {
@@ -142,7 +142,7 @@
       "expected_frequency": "mixed",
       "stale_after_days": 120,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "active",
       "description": "Is digital-payment adoption occurring alongside deeper participation and stronger tax capacity?"
     },
@@ -153,7 +153,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "active",
       "description": "Is central-government spending shifting toward productive assets, and are budget plans delivered?"
     },
@@ -164,7 +164,7 @@
       "expected_frequency": "mixed",
       "stale_after_days": 120,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "active",
       "description": "Is public infrastructure investment associated with firms expanding productive capacity?"
     },
@@ -175,7 +175,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "active",
       "description": "Can general-government investment be sustained without debt service crowding out future spending?"
     },
@@ -186,7 +186,7 @@
       "expected_frequency": "mixed",
       "stale_after_days": 120,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "active",
       "description": "Is domestic growth occurring without persistent deterioration in external competitiveness?"
     },
@@ -197,7 +197,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "active",
       "description": "Is higher-education expansion translating into productive employment?"
     },
@@ -208,7 +208,7 @@
       "expected_frequency": "monthly",
       "stale_after_days": 45,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "partial",
       "description": "Has domestic institutional investment reduced market sensitivity to foreign portfolio outflows?"
     },
@@ -241,7 +241,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "active",
       "description": "Has actual public CapEx intensified and been executed?"
     },
@@ -252,7 +252,7 @@
       "expected_frequency": "monthly",
       "stale_after_days": 45,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "active",
       "description": "Did CapEx-sensitive sectors outperform the Nifty 50?"
     },
@@ -263,7 +263,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "active",
       "description": "Was CapEx growth followed by sector excess returns?"
     },
@@ -274,7 +274,7 @@
       "expected_frequency": "mixed",
       "stale_after_days": 120,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "active",
       "description": "Did private investment and manufacturing capacity respond?"
     },
@@ -285,7 +285,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "active",
       "description": "Can the CapEx push continue without excessive debt-service pressure?"
     },
@@ -296,9 +296,42 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-07-30",
+      "version": "2026-07-31",
       "availability": "active",
       "description": "Did market expectations coincide with stronger corporate revenue, investment and productive assets?"
+    },
+    "capex-capital-goods-production": {
+      "data_path": "/data/capex-analysis/capital-goods-production.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "schema": "dated_multi_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-31",
+      "availability": "active",
+      "description": "Did capital-goods production rise alongside the CapEx push?"
+    },
+    "capex-sector-allocation": {
+      "data_path": "/data/capex-analysis/sector-capex-allocation.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "schema": "dated_multi_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-31",
+      "availability": "active",
+      "description": "How much central-budget CapEx was allocated to roads and railways?"
+    },
+    "capex-physical-delivery": {
+      "data_path": "/data/capex-analysis/physical-delivery.json",
+      "schema_path": "/data/schemas/dated_multi_series.schema.json",
+      "schema": "dated_multi_series",
+      "expected_frequency": "annual",
+      "stale_after_days": 450,
+      "cache_strategy": "revalidate",
+      "version": "2026-07-31",
+      "availability": "active",
+      "description": "Did roads and railways deliver physical output?"
     }
   },
   "sections": [
@@ -392,6 +425,72 @@
                   "date_range": true,
                   "entity_toggle": false,
                   "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Descriptive evidence; common movements do not identify a causal effect of public CapEx."
+            }
+          ]
+        },
+        {
+          "id": "capex-sector-delivery",
+          "title": "1B. Sector allocation and physical delivery",
+          "summary": "Separating budget inputs from completed kilometres shows whether the CapEx push moved beyond headline allocations.",
+          "default_view": "allocation",
+          "views": [
+            {
+              "id": "allocation",
+              "label": "Central budget allocation",
+              "asset_id": "capex-sector-allocation",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "railways_budget_capex",
+                  "roads_budget_capex"
+                ],
+                "value_format": {
+                  "style": "number",
+                  "scale": 1,
+                  "decimals": 0,
+                  "prefix": "₹",
+                  "suffix": " cr"
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Descriptive evidence; common movements do not identify a causal effect of public CapEx."
+            },
+            {
+              "id": "delivery",
+              "label": "Physical delivery",
+              "asset_id": "capex-physical-delivery",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "national_highways_constructed_km",
+                  "railway_route_km_electrified"
+                ],
+                "value_format": {
+                  "style": "number",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": true
                 },
                 "zero_line": false,
                 "show_source": true,
@@ -549,7 +648,7 @@
           "views": [
             {
               "id": "investment",
-              "label": "Real-economy response",
+              "label": "Investment and capacity",
               "asset_id": "capex-private-response",
               "presentation": {
                 "component": "multi-series-line",
@@ -569,6 +668,33 @@
                   "date_range": true,
                   "entity_toggle": false,
                   "series_toggle": true
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "Descriptive evidence; common movements do not identify a causal effect of public CapEx."
+            },
+            {
+              "id": "production",
+              "label": "Capital-goods production",
+              "asset_id": "capex-capital-goods-production",
+              "presentation": {
+                "component": "multi-series-line",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "capital_goods_iip"
+                ],
+                "value_format": {
+                  "style": "index",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": true,
+                  "entity_toggle": false,
+                  "series_toggle": false
                 },
                 "zero_line": false,
                 "show_source": true,
@@ -640,6 +766,41 @@
                 "show_methodology": true
               },
               "note": "Descriptive evidence; common movements do not identify a causal effect of public CapEx."
+            }
+          ]
+        },
+        {
+          "id": "capex-scenario-lab",
+          "title": "4. CapEx transmission scenario lab",
+          "summary": "Test when a sustained increase in public CapEx produces enough growth and revenue feedback to justify its financing burden.",
+          "default_view": "model",
+          "views": [
+            {
+              "id": "model",
+              "label": "Five-year scenario",
+              "asset_id": "capex-fiscal-sustainability",
+              "presentation": {
+                "component": "capex-scenario-lab",
+                "chart_type": "line",
+                "x_axis": "date",
+                "default_visible": [
+                  "general_government_debt_pct_gdp"
+                ],
+                "value_format": {
+                  "style": "percent",
+                  "scale": 1,
+                  "decimals": 1
+                },
+                "controls": {
+                  "date_range": false,
+                  "entity_toggle": false,
+                  "series_toggle": false
+                },
+                "zero_line": false,
+                "show_source": true,
+                "show_methodology": true
+              },
+              "note": "The latest non-budget fiscal observation establishes the starting position. Multipliers, lags, crowding effects and future financing conditions are editable assumptions—not estimates or forecasts."
             }
           ]
         }
@@ -1799,7 +1960,7 @@
     {
       "id": "equities",
       "label": "Equities",
-      "order": 19,
+      "order": 25,
       "indicators": [
         {
           "id": "market-performance",
@@ -1882,7 +2043,7 @@
     {
       "id": "currency",
       "label": "Currency",
-      "order": 20,
+      "order": 26,
       "indicators": [
         {
           "id": "reer",
@@ -1925,7 +2086,7 @@
     {
       "id": "macro",
       "label": "Macro",
-      "order": 21,
+      "order": 27,
       "indicators": [
         {
           "id": "central-government-debt",
@@ -1967,7 +2128,7 @@
     {
       "id": "workforce",
       "label": "Workforce",
-      "order": 22,
+      "order": 28,
       "indicators": [
         {
           "id": "lfpr",
@@ -2118,7 +2279,7 @@
     {
       "id": "education",
       "label": "Education",
-      "order": 23,
+      "order": 29,
       "indicators": [
         {
           "id": "adult-literacy",
@@ -2268,7 +2429,7 @@
     {
       "id": "trade",
       "label": "Trade",
-      "order": 24,
+      "order": 30,
       "indicators": [
         {
           "id": "technology-exports",
@@ -2345,5 +2506,5 @@
       ]
     }
   ],
-  "roadmap_total": 50
+  "roadmap_total": 52
 }

@@ -60,7 +60,7 @@ def artifact_routes() -> dict[Path, PromotionRoute]:
         Contract.MARKET_PERFORMANCE,
         Path("equities/market-performance.json"),
     )
-    for key in ("execution", "correlations", "private", "fiscal", "corporate"):
+    for key in ("execution", "allocation", "delivery", "production", "correlations", "private", "fiscal", "corporate"):
         routes[Path(CAPEX_OUTPUTS[key])] = PromotionRoute(
             Contract.DATED_MULTI_SERIES, Path(CAPEX_OUTPUTS[key]),
         )

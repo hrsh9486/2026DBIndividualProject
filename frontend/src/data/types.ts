@@ -10,7 +10,8 @@ export type ChartAdapterName =
   | "market-performance"
   | "capex-correlation"
   | "corporate-fundamentals"
-  | "fiscal-bridge";
+  | "fiscal-bridge"
+  | "capex-scenario-lab";
 
 export interface ValueFormat {
   style: "number" | "percent" | "currency" | "ratio" | "index" | "months" | "compact";
