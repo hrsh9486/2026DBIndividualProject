@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:20:15.685632+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/IDN/indicator/PX.REX.REER?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "6e52c1f58d6e6b05339dac225a74de0a2e7d70ca456e48242a8dc0f56e9ba2c3",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2025",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2024",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2023",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2022",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2021",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2020",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2019",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2018",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2017",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2016",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2015",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2014",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2013",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2012",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2011",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2010",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2009",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2008",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2007",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2006",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2005",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2004",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2003",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2002",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2001",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2000",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1999",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1998",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1997",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1996",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1995",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1994",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1993",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1992",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "PX.REX.REER",
+          "value": "Real effective exchange rate index (2010 = 100)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1991",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      }
+    ]
+  ]
+}

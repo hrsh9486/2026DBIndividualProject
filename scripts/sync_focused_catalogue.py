@@ -1,9 +1,4 @@
-"""Add the focused research programme to the static frontend catalogue.
-
-Existing non-focused sections and assets are preserved until their removal is
-explicitly approved. Focused bundles without a promoted artifact are exposed
-as planned work rather than as empty live datasets.
-"""
+"""Build the static frontend catalogue for the CapEx transmission product."""
 
 from __future__ import annotations
 
@@ -12,169 +7,28 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from config import PROJECT_ROOT
-from config.evidence_specs import EVIDENCE_OUTPUT_PATHS
 from config.capex_analysis import OUTPUTS as CAPEX_OUTPUTS
-from config.focused_indicators import FOCUSED_BUNDLES, FocusedSeriesSpec
 from exporters import write_json_atomic
-from validators import validate_evidence_report, validate_payload
+from validators import validate_payload
 
 
 CATALOGUE_PATH = PROJECT_ROOT / "frontend" / "public" / "data" / "catalogue.json"
 FRONTEND_SCHEMA_DIR = PROJECT_ROOT / "frontend" / "public" / "data" / "schemas"
 
 
-def _slug(value: str) -> str:
-    return value.replace("_", "-")
-
-
-def _value_format(series: FocusedSeriesSpec) -> dict:
-    if series.unit in {"percent", "percentage_points"}:
-        return {"style": "percent", "scale": 1, "decimals": 1}
-    if series.unit == "INR":
-        return {"style": "currency", "scale": 1, "decimals": 0, "currency": "INR"}
-    if series.unit == "INR_crore":
-        return {"style": "number", "scale": 1, "decimals": 0, "prefix": "₹", "suffix": " cr"}
-    if series.unit == "index":
-        return {"style": "index", "scale": 1, "decimals": 1}
-    if series.unit == "ratio":
-        return {"style": "ratio", "scale": 1, "decimals": 2}
-    return {"style": "number", "scale": 1, "decimals": 2}
-
-
 def _stale_after_days(frequency: str) -> int:
     return {"monthly": 45, "annual": 450, "mixed": 120}.get(frequency, 120)
 
 
-def _artifact_availability(path: Path, bundle) -> str:
-    if not path.is_file():
-        return "planned"
-    try:
-        with path.open(encoding="utf-8") as artifact_file:
-            artifact = json.load(artifact_file)
-        series = artifact["series"]
-        complete = all(
-            any(observation.get("value") is not None for observation in series[spec.key]["values"])
-            for spec in bundle.series
-        )
-    except (KeyError, TypeError, json.JSONDecodeError):
-        return "partial"
-    return "active" if complete else "partial"
-
-
-def _section(
-    bundle,
-    *,
-    order: int,
-    asset_id: str,
-    evidence_asset_id: str | None = None,
-) -> dict:
-    indicators = []
-    zero_line_series = {
-        "gst_growth_gap",
-        "primary_balance_pct_gdp",
-        "reer_deviation_pct",
-        "current_account_pct_gdp",
-        "non_oil_export_growth",
-        "dii_net_flow",
-        "fpi_net_flow",
-        "dii_rolling_12m",
-        "fpi_rolling_12m",
-    }
-    for series in bundle.series:
-        indicators.append({
-            "id": _slug(series.key),
-            "title": series.label,
-            "summary": series.definition,
-            "default_view": "main",
-            "views": [{
-                "id": "main",
-                "label": "Time series",
-                "asset_id": asset_id,
-                "presentation": {
-                    "component": "multi-series-line",
-                    "chart_type": "line",
-                    "x_axis": "date",
-                    "default_visible": [series.key],
-                    "value_format": _value_format(series),
-                    "controls": {
-                        "date_range": True,
-                        "entity_toggle": False,
-                        "series_toggle": False,
-                    },
-                    "zero_line": series.key in zero_line_series,
-                    "show_source": True,
-                    "show_methodology": True,
-                },
-                "note": series.limitation,
-            }],
-        })
-    section = {
-        "id": _slug(bundle.key),
-        "label": bundle.label,
-        "order": order,
-        "indicators": indicators,
-    }
-    if evidence_asset_id is not None:
-        section["evidence_asset_id"] = evidence_asset_id
-    return section
-
-
 def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
-    """Return a focused catalogue while retaining unrelated legacy entries."""
-    focused_ids = {_slug(key) for key in FOCUSED_BUNDLES}
-    existing_sections = [
-        section for section in catalogue.get("sections", [])
-        if section.get("id") not in focused_ids
-        and section.get("id") != "capex-transmission"
-    ]
-    for section in existing_sections:
-        if section.get("order", 0) <= len(FOCUSED_BUNDLES):
-            section["order"] += len(FOCUSED_BUNDLES)
-
-    focused_sections = []
-    for order, bundle in enumerate(FOCUSED_BUNDLES.values(), start=1):
-        asset_id = _slug(bundle.key)
-        promoted = public_data_dir / bundle.output_path
-        availability = _artifact_availability(promoted, bundle)
-        catalogue.setdefault("assets", {})[asset_id] = {
-            "data_path": f"/data/{bundle.output_path}",
-            "schema_path": "/data/schemas/dated_multi_series.schema.json",
-            "schema": "dated_multi_series",
-            "expected_frequency": bundle.frequency,
-            "stale_after_days": _stale_after_days(bundle.frequency),
-            "cache_strategy": "revalidate",
-            "version": datetime.now(timezone.utc).date().isoformat(),
-            "availability": availability,
-            "description": bundle.research_question,
-        }
-        evidence_asset_id = f"{asset_id}-evidence"
-        evidence_relative_path = EVIDENCE_OUTPUT_PATHS[bundle.key]
-        evidence_path = public_data_dir / evidence_relative_path
-        if evidence_path.is_file():
-            evidence_payload = json.loads(evidence_path.read_text(encoding="utf-8"))
-            validate_evidence_report(evidence_payload)
-            catalogue["assets"][evidence_asset_id] = {
-                "data_path": f"/data/{evidence_relative_path}",
-                "schema_path": "/data/schemas/evidence_report.schema.json",
-                "schema": "evidence_report",
-                "expected_frequency": "mixed",
-                "stale_after_days": 120,
-                "cache_strategy": "revalidate",
-                "version": evidence_payload["metadata"]["generated_at"],
-                "availability": "active",
-                "description": (
-                    f"Registered statistical evidence for {bundle.label.lower()}."
-                ),
-            }
-        else:
-            catalogue["assets"].pop(evidence_asset_id, None)
-            evidence_asset_id = None
-        focused_sections.append(_section(
-            bundle,
-            order=order,
-            asset_id=asset_id,
-            evidence_asset_id=evidence_asset_id,
-        ))
+    """Return a catalogue containing only the active CapEx story."""
+    catalogue = {
+        "schema_version": catalogue.get("schema_version", "1.0.0"),
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "public_data_root": catalogue.get("public_data_root", "/data"),
+        "assets": {},
+        "sections": [],
+    }
 
     capex_asset_specs = {
         "capex-execution": ("execution", "dated_multi_series", "annual", "Has actual public CapEx intensified and been executed?"),
@@ -186,8 +40,10 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
         "capex-private-response": ("private", "dated_multi_series", "mixed", "Did private investment and manufacturing capacity respond?"),
         "capex-fiscal-sustainability": ("fiscal", "dated_multi_series", "annual", "Can the CapEx push continue without excessive debt-service pressure?"),
         "capex-corporate-fundamentals": ("corporate", "dated_multi_series", "annual", "Did market expectations coincide with stronger corporate revenue, investment and productive assets?"),
+        "capex-investment-quality": ("quality", "dated_multi_series", "annual", "Did monitored central-sector projects improve on delivery timing and cost control?"),
+        "capex-state-evaluation": ("states", "dated_multi_series", "annual", "Do within-state changes in capital outlay precede stronger real GSDP growth?"),
+        "capex-crowding-in-evidence": ("crowding_in", "dated_multi_series", "annual", "Do private-investment and production outcomes respond at registered CapEx leads?"),
     }
-    catalogue["assets"].pop("capex-sector-delivery", None)
     for asset_id, (output_key, schema, frequency, description) in capex_asset_specs.items():
         path = public_data_dir / CAPEX_OUTPUTS[output_key]
         catalogue["assets"][asset_id] = {
@@ -258,6 +114,27 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
                 ],
             },
             {
+                "id": "capex-investment-quality",
+                "title": "1C. Investment quality and project delivery",
+                "summary": "Project counts, delays and cost overruns test whether higher financial inputs translated into timely, cost-controlled central-sector assets.",
+                "default_view": "quality",
+                "views": [{
+                    "id": "quality",
+                    "label": "Project-quality explorer",
+                    "asset_id": "capex-investment-quality",
+                    "presentation": {
+                        "component": "investment-quality",
+                        "chart_type": "scatter",
+                        "x_axis": "date",
+                        "default_visible": ["delayed_share", "on_schedule_share", "cost_overrun_pct"],
+                        "value_format": {"style": "percent", "scale": 1, "decimals": 1},
+                        "controls": {"date_range": False, "entity_toggle": False, "series_toggle": False},
+                        "zero_line": False, "show_source": True, "show_methodology": True,
+                    },
+                    "note": "The 2011 threshold and delay-definition break is shown explicitly. These monitored-project measures assess implementation quality, not social returns.",
+                }],
+            },
+            {
                 "id": "capex-corporate-case-study",
                 "title": "2C. Corporate fundamentals case study",
                 "summary": "A frozen ten-company basket tests whether sector optimism coincided with revenue, earnings, company investment and productive-asset growth.",
@@ -314,6 +191,44 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
                 ],
             },
             {
+                "id": "capex-crowding-in-depth",
+                "title": "2E. Crowding-in evidence ladder",
+                "summary": "A registered zero- to three-year lag grid triangulates private GFCF, its share of investment, capacity use and capital-goods production—and refuses inference when the sample is too short.",
+                "default_view": "lags",
+                "views": [{
+                    "id": "lags",
+                    "label": "Distributed-lag explorer",
+                    "asset_id": "capex-crowding-in-evidence",
+                    "presentation": {
+                        "component": "crowding-in", "chart_type": "scatter", "x_axis": "date",
+                        "default_visible": ["nominal_capex_growth"],
+                        "value_format": {"style": "percent", "scale": 1, "decimals": 1},
+                        "controls": {"date_range": False, "entity_toggle": False, "series_toggle": False},
+                        "zero_line": True, "show_source": True, "show_methodology": True,
+                    },
+                    "note": "Every coefficient remains descriptive until it clears the pre-registered eight-observation gate; passing that gate would still establish association, not causation.",
+                }],
+            },
+            {
+                "id": "capex-state-evaluation",
+                "title": "2F. State capital-outlay evaluation",
+                "summary": "A multi-state panel compares actual capital outlay/GSDP with subsequent real GSDP growth and reports a two-way fixed-effects association with state-clustered uncertainty.",
+                "default_view": "panel",
+                "views": [{
+                    "id": "panel",
+                    "label": "State panel explorer",
+                    "asset_id": "capex-state-evaluation",
+                    "presentation": {
+                        "component": "state-capex-evaluation", "chart_type": "scatter", "x_axis": "date",
+                        "default_visible": ["median_state_capex_pct_gsdp", "median_next_year_real_gsdp_growth"],
+                        "value_format": {"style": "percent", "scale": 1, "decimals": 1},
+                        "controls": {"date_range": False, "entity_toggle": False, "series_toggle": False},
+                        "zero_line": True, "show_source": True, "show_methodology": True,
+                    },
+                    "note": "State and year fixed effects improve comparability but do not remove time-varying confounding or reverse causality; the result is associational, not a causal state multiplier.",
+                }],
+            },
+            {
                 "id": "capex-fiscal-constraint",
                 "title": "3. Fiscal sustainability",
                 "summary": "Compare the evidence of CapEx transmission with the debt-service pressure that constrains future productive spending.",
@@ -339,7 +254,7 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
             {
                 "id": "capex-scenario-lab",
                 "title": "4. CapEx transmission scenario lab",
-                "summary": "Test when a sustained increase in public CapEx produces enough growth and revenue feedback to justify its financing burden.",
+                "summary": "Stress-test a sustained CapEx increase against dynamic debt arithmetic, parameter uncertainty, sensitivity, a break-even frontier and historical one-step errors.",
                 "default_view": "model",
                 "views": [{
                     "id": "model",
@@ -356,7 +271,7 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
                         "show_source": True,
                         "show_methodology": True,
                     },
-                    "note": "The latest non-budget fiscal observation establishes the starting position. Multipliers, lags, crowding effects and future financing conditions are editable assumptions—not estimates or forecasts.",
+                    "note": "The latest non-budget debt and primary-balance observations establish the starting position. Monte Carlo bands reflect registered assumption ranges, not estimated confidence intervals; all results remain conditional scenarios rather than forecasts.",
                 }],
             },
         ],
@@ -364,10 +279,13 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
     capex_indicator_order = (
         "capex-policy-input",
         "capex-sector-delivery",
+        "capex-investment-quality",
         "capex-market-transmission",
         "capex-lag-test",
         "capex-corporate-case-study",
         "capex-real-conversion",
+        "capex-crowding-in-depth",
+        "capex-state-evaluation",
         "capex-fiscal-constraint",
         "capex-scenario-lab",
     )
@@ -375,9 +293,7 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
         capex_section["indicators"],
         key=lambda indicator: capex_indicator_order.index(indicator["id"]),
     )
-    for section in focused_sections + existing_sections:
-        section["order"] = section.get("order", 0) + 1
-    catalogue["sections"] = [capex_section] + focused_sections + existing_sections
+    catalogue["sections"] = [capex_section]
     catalogue["generated_at"] = datetime.now(timezone.utc).isoformat()
     catalogue["roadmap_total"] = sum(len(section["indicators"]) for section in catalogue["sections"])
     return catalogue
@@ -418,7 +334,7 @@ def main() -> None:
     payload = build_catalogue(catalogue, public_data_dir=CATALOGUE_PATH.parent)
     validate_payload(payload, "catalogue.schema.json", schema_dir=FRONTEND_SCHEMA_DIR)
     write_json_atomic(payload, CATALOGUE_PATH)
-    print(f"updated {CATALOGUE_PATH} with {len(FOCUSED_BUNDLES)} focused lenses")
+    print(f"updated {CATALOGUE_PATH} with the CapEx transmission story")
 
 
 if __name__ == "__main__":

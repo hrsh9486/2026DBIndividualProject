@@ -6,7 +6,7 @@ import logging
 
 from builders import DatedSeriesDefinition, build_dated_multi_series_payload
 from config import PROCESSED_DATA_DIR
-from config.focused_indicators import get_focused_bundle
+from config.capex_upstream import get_capex_upstream_bundle
 from exporters import publish_json
 from extractors import RbiHandbookExtractor
 from transforms.fiscal_capacity import build_fiscal_capacity_records
@@ -19,7 +19,7 @@ FISCAL_TABLE = 236
 
 
 def build_payload(debt_response, fiscal_response):
-    bundle = get_focused_bundle("fiscal_capacity")
+    bundle = get_capex_upstream_bundle("fiscal_capacity")
     records = build_fiscal_capacity_records(debt_response, fiscal_response)
     validate_records(records, expected_frequency="annual")
     definitions = tuple(

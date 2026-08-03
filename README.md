@@ -1,148 +1,132 @@
-# 2026DBIndividualProject
-Analysis of India's position as a emerging global financial leader
+# India public CapEx transmission
 
-## Data pipeline
+This repository now contains one deployable research product: an evidence-led
+analysis of whether India's public capital-expenditure push translated into
+executed projects, market and corporate response, private investment and real
+productive capacity strongly enough to justify its fiscal cost.
 
-The pipeline follows the source-boundary architecture documented in
-`docs/planning/`:
+The former broad India-indicators programme is preserved under
+`archive_iteration_2/`. It is not imported, published or exercised by the
+active build.
+
+## Research stages
+
+The frontend follows a single transmission chain:
+
+1. public CapEx intensity, execution, sector allocation and physical delivery;
+2. project timing and cost quality;
+3. CapEx-sensitive market performance, lag correlations and a corporate case
+   study;
+4. private GFCF, capacity utilisation, capital-goods production, a distributed
+   lag evidence ladder and a state fixed-effects evaluation;
+5. debt and interest burden, followed by a five-year conditional scenario lab.
+
+The analysis is descriptive or associational unless explicitly labelled
+otherwise. The scenario lab is a parameterised stress test, not an estimated
+forecast or causal multiplier.
+
+## Active pipeline
 
 ```text
-config/indicators.py      indicator definitions and output contracts
-extractors/               provider-specific network and raw landing logic
-models/                   canonical provider-neutral records
-transforms/               deterministic reusable calculations
-builders/                 contract-specific payload assembly
-validators/               quality gates and Draft 2020-12 JSON Schema checks
-exporters/                validated atomic publication
-data/raw/<source>/        immutable retrieved payloads
-data/processed/<bucket>/  schema-valid frontend artifacts
+official sources / frozen raw inputs
+  -> provider-specific extractors
+  -> canonical records
+  -> deterministic CapEx and upstream transforms
+  -> schema-valid processed JSON
+  -> validated atomic promotion
+  -> static React frontend
 ```
 
-Run a subset of the World Bank registry with:
+The three retained structural upstream builders are required by the CapEx
+story:
+
+- `scripts/build_government_investment.py` reconstructs Union Budget vintages
+  and execution ratios;
+- `scripts/build_private_investment.py` combines national-accounts private GFCF
+  with RBI OBICUS capacity utilisation;
+- `scripts/build_fiscal_capacity.py` produces the debt, interest-burden and
+  primary-balance inputs.
+
+CapEx-specific construction is handled by:
+
+- `scripts/build_capex_analysis.py` for execution, markets, correlations,
+  private response, fiscal bridge, summary and corporate fundamentals;
+- `scripts/build_capex_delivery.py` for sector allocation, physical delivery
+  and capital-goods production;
+- `scripts/build_capex_depth.py` for investment quality, the state evaluation
+  and the registered crowding-in lag grid.
+
+Refresh the upstream inputs first when their sources change, then build and
+publish the CapEx product:
 
 ```bash
-python3 scripts/build_world_bank_series.py labour_force_participation working_age_share_pct
-```
-
-Build, quality-check and promote all seven focused India research lenses with:
-
-```bash
-python3 scripts/build_focused_pipeline.py --frontend-build
-```
-
-Individual lens keys can be supplied for targeted refreshes. For example:
-
-```bash
-python3 scripts/build_focused_pipeline.py human_capital capital_resilience
-```
-
-The focused jobs retain immutable dated source snapshots, map provider data to
-canonical records, validate semantic quality constraints, publish processed JSON
-atomically, promote only schema-valid artifacts, and regenerate the frontend
-catalogue. Government investment runs before private investment because the
-private lens uses the validated public-CapEx series as a lagged comparator.
-
-Some official sources expose only partial histories. The catalogue reports these
-honestly: GST is not yet included in the digital bundle, RBI OBICUS is not yet
-included in the private-investment bundle, and NSE's current-day FII/DII endpoint
-is accumulated prospectively before rolling 12-month measures are enabled.
-
-Build the market-performance bundle with:
-
-```bash
-python3 scripts/build_yfinance_markets.py
-```
-
-Build the focused India public-CapEx transmission project with:
-
-```bash
+python3 scripts/build_government_investment.py
+python3 scripts/build_private_investment.py
+python3 scripts/build_fiscal_capacity.py
 python3 scripts/build_capex_analysis.py
-python3 scripts/promote_processed_data.py \
-  capex-analysis/capex-execution.json \
-  capex-analysis/sector-capex-allocation.json \
-  capex-analysis/physical-delivery.json \
-  capex-analysis/capital-goods-production.json \
-  capex-analysis/sector-performance.json \
-  capex-analysis/capex-sector-correlations.json \
-  capex-analysis/private-investment-response.json \
-  capex-analysis/fiscal-sustainability.json \
-  capex-analysis/analysis-summary.json \
-  capex-analysis/corporate-fundamentals.json
+python3 scripts/build_capex_delivery.py
+python3 scripts/build_capex_depth.py
+python3 scripts/promote_processed_data.py
+python3 scripts/sync_public_schemas.py
 python3 scripts/sync_focused_catalogue.py
 ```
 
-This job uses official Nifty total-return-index histories, the validated Union
-Budget/MoSPI CapEx artifact, RBI OBICUS capacity utilisation, national-accounts
-private GFCF, RBI fiscal tables, Union Budget ministry allocations, official
-roads and railway delivery statistics, and NSO capital-goods IIP. It publishes
-all chart contracts through the same validated CapEx build and
-a rule-generated hypothesis summary and frozen ten-company corporate case study
-under `data/processed/capex-analysis/`. The market bundle includes Nifty FMCG
-as a control and publishes target-sector performance relative to both Nifty 50
-and Nifty FMCG.
-The 0-, 6- and 12-month market tests include a pandemic-year exclusion
-sensitivity. The project labels nominal CapEx growth explicitly; real growth is
-withheld until a consistent investment deflator is registered.
+Each builder validates before replacing a processed artifact. Promotion accepts
+only paths registered in `scripts/config/capex_analysis.py`; unrelated legacy
+outputs cannot be copied into the live frontend accidentally.
 
-Promote validated processed artifacts into the frontend without deleting any
-existing files:
+## Data contracts and publication
 
-```bash
-python3 scripts/promote_processed_data.py
-# or promote one artifact
-python3 scripts/promote_processed_data.py currency/real_effective_exchange_rate.json
-```
-
-Each job validates before replacing a processed artifact. A failed source,
-quality gate, or schema check leaves the last valid JSON untouched.
-
-
-
-
-# Frontend
-
-The current frontend is a TypeScript React application in `frontend/`.
-`frontend_legacy/` is retained for reference but is not used by the build.
-
-The browser has no application API. It loads `public/data/catalogue.json`,
-resolves an indicator view to a static artifact, runtime-checks its schema
-discriminator, and sends it through one of three schema-specific adapters.
+Active browser data lives only under `frontend/public/data/capex-analysis/`.
+The catalogue contains one `capex-transmission` section and uses two chart-data
+contracts:
 
 ```text
 catalogue.json
-  -> annual_country_series -> country comparison
-  -> dated_multi_series    -> multi-series chart
-  -> market_performance    -> market chart and summaries
+  -> dated_multi_series -> time-series and CapEx-specific analytical views
+  -> market_performance -> sector performance views
 ```
 
-Run locally:
+`capex_analysis_summary.schema.json` separately validates the verdict summary
+loaded by the CapEx page. JSON Schema validation runs both during Python
+publication and in the frontend build. Runtime guards repeat the schema
+discriminator check before React renders an asset.
+
+The browser has no application API. It loads static JSON through TanStack Query
+and renders it with React, TypeScript, React Router and Recharts.
+
+## Verification
+
+Backend:
+
+```bash
+PYTHONPATH=scripts venv/bin/python -m unittest discover -s tests -v
+```
+
+Frontend:
 
 ```bash
 cd frontend
-npm install
-npm run dev
-```
-
-Verify a production build:
-
-```bash
 npm run validate:data
 npx tsc --noEmit
 npm run lint
 npm run build
 ```
 
-`npm run build` validates the catalogue against its manifest schema, checks
-every view-to-asset reference and adapter pairing, validates all published
-artifacts against their declared Draft 2020-12 schemas, checks duplicate
-periods and metadata coverage, and only then runs Vite.
-
-To publish newly processed artifacts to their stable frontend paths:
+Generate the two maintained CapEx guides with:
 
 ```bash
-python3 scripts/promote_processed_data.py
+PYTHONPATH=scripts venv/bin/python scripts/generate_capex_documentation.py
 ```
 
-The frontend stack is React 19, TypeScript, Vite, TanStack Query, React Router,
-Recharts and AJV. Presentation and percentage scaling are controlled by the
-catalogue rather than inferred in React components.
+The generated documents are written to `docs/capex/`.
+
+## Archives
+
+- `archive_iteration_1/` contains the original exploratory/dashboard material.
+- `archive_iteration_2/` contains the superseded seven-lens research programme,
+  evidence-report engine, broad frontend catalogue, old schemas, notebooks and
+  their tests.
+
+Archive files are retained for provenance and recovery but are outside the
+active import, validation and deployment boundary.

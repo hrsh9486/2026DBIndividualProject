@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:09:09.375816+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/BGD/indicator/SL.TLF.CACT.ZS?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "863fae22e3f49d8e0e0a0c7218a4edf7f80b314365ffa6c27efbf6e1210109f1",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2025",
+        "value": 58.796,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2024",
+        "value": 58.903,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2023",
+        "value": 60.885,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2022",
+        "value": 61.873,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2021",
+        "value": 61.085,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2020",
+        "value": 59.77,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2019",
+        "value": 59.47,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2018",
+        "value": 58.915,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2017",
+        "value": 58.328,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2016",
+        "value": 56.09,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2015",
+        "value": 56.454,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2014",
+        "value": 56.817,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2013",
+        "value": 57.18,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2012",
+        "value": 57.647,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2011",
+        "value": 58.112,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2010",
+        "value": 58.576,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2009",
+        "value": 58.45,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2008",
+        "value": 58.324,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2007",
+        "value": 58.198,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2006",
+        "value": 58.071,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2005",
+        "value": 58.12,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2004",
+        "value": 58.156,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2003",
+        "value": 58.187,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2002",
+        "value": 58.207,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2001",
+        "value": 58.206,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2000",
+        "value": 58.163,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1999",
+        "value": 58.076,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1998",
+        "value": 57.966,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1997",
+        "value": 57.837,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1996",
+        "value": 57.69,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1995",
+        "value": 57.533,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1994",
+        "value": 57.375,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1993",
+        "value": 57.219,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1992",
+        "value": 57.069,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1991",
+        "value": 56.918,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      }
+    ]
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:20:11.711687+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/IDN/indicator/SE.XPD.SECO.PC.ZS?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "7288e5f82dfbbe56fea761c1c504a1d5761776370724a3202c47585cb188e442",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2025",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2024",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2023",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2022",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2021",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2020",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2019",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2018",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2017",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2016",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2015",
+        "value": 10.52216,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2014",
+        "value": 9.95311,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2013",
+        "value": 9.86514,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2012",
+        "value": 10.2787,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2011",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2010",
+        "value": 8.28022,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2009",
+        "value": 10.9866,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2008",
+        "value": 9.42407,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2007",
+        "value": 9.48922,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2006",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2005",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2004",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2003",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2002",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2001",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2000",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1999",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1998",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1997",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1996",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1995",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1994",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1993",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1992",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1991",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      }
+    ]
+  ]
+}

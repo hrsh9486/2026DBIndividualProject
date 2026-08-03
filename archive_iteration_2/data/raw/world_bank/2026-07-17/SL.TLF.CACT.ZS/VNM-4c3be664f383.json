@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:08:13.252675+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/VNM/indicator/SL.TLF.CACT.ZS?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "4c3be664f383326a6d851fbd2f2da7212464a494d805782c14559bfe5e458691",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2025",
+        "value": 72.778,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2024",
+        "value": 73.134,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2023",
+        "value": 73.545,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2022",
+        "value": 74.484,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2021",
+        "value": 73.738,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2020",
+        "value": 74.367,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2019",
+        "value": 76.615,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2018",
+        "value": 77.482,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2017",
+        "value": 77.2,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2016",
+        "value": 76.965,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2015",
+        "value": 77.43,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2014",
+        "value": 77.306,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2013",
+        "value": 77.234,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2012",
+        "value": 76.323,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2011",
+        "value": 76.372,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2010",
+        "value": 76.268,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2009",
+        "value": 76.039,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2008",
+        "value": 75.587,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2007",
+        "value": 75.032,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2006",
+        "value": 74.596,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2005",
+        "value": 74.247,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2004",
+        "value": 73.986,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2003",
+        "value": 74.096,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2002",
+        "value": 74.416,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2001",
+        "value": 74.911,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2000",
+        "value": 73.393,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1999",
+        "value": 74.509,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1998",
+        "value": 75.327,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1997",
+        "value": 76.14,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1996",
+        "value": 77.113,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1995",
+        "value": 77.315,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1994",
+        "value": 77.525,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1993",
+        "value": 77.709,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1992",
+        "value": 77.87,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.ZS",
+          "value": "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1991",
+        "value": 78.062,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      }
+    ]
+  ]
+}

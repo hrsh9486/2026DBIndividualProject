@@ -35,3 +35,6 @@ def test_new_layers_remain_registered_in_main_capex_output_map():
     assert OUTPUTS["allocation"] == "capex-analysis/sector-capex-allocation.json"
     assert OUTPUTS["delivery"] == "capex-analysis/physical-delivery.json"
     assert OUTPUTS["production"] == "capex-analysis/capital-goods-production.json"
+    assert OUTPUTS["quality"] == "capex-analysis/investment-quality.json"
+    assert OUTPUTS["states"] == "capex-analysis/state-capex-evaluation.json"
+    assert OUTPUTS["crowding_in"] == "capex-analysis/crowding-in-evidence.json"

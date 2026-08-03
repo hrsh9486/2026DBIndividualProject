@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:21:50.795408+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/VNM/indicator/TX.MNF.TECH.ZS.UN?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "591a132739802d2b8001034e0a423cf3d7c9003a3ce213532ff87f6e08f2ea73",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2025",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2024",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2023",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2022",
+        "value": 57.4817806016312,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2021",
+        "value": 58.3161977964934,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2020",
+        "value": 57.4589186480649,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2019",
+        "value": 54.004161429567,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2018",
+        "value": 54.5667454190798,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2017",
+        "value": 54.6823872784392,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2016",
+        "value": 51.2535601259455,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2015",
+        "value": 49.2461635389913,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2014",
+        "value": 46.4563792360295,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2013",
+        "value": 47.3871499746722,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2012",
+        "value": 43.5814908375431,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2011",
+        "value": 33.6544916307182,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2010",
+        "value": 27.9860786960583,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2009",
+        "value": 25.6127749389397,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2008",
+        "value": 25.8365942102447,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2007",
+        "value": 24.1152756866156,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2006",
+        "value": 23.0432241809668,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2005",
+        "value": 21.4374898022493,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2004",
+        "value": 20.4446019599664,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2003",
+        "value": 18.6188149452328,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2002",
+        "value": 17.6693322801007,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2001",
+        "value": 20.6704105871682,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2000",
+        "value": 21.4542208351824,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1999",
+        "value": 19.5282951832153,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1998",
+        "value": 20.6073366802652,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1997",
+        "value": 16.3764936527439,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1996",
+        "value": 16.3764936527439,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1995",
+        "value": 16.3764936527439,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1994",
+        "value": 16.3764936527439,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1993",
+        "value": 16.3764936527439,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1992",
+        "value": 16.3764936527439,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1991",
+        "value": 16.3764936527439,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      }
+    ]
+  ]
+}

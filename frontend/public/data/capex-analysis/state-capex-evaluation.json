@@ -1,0 +1,3319 @@
+{
+  "metadata": {
+    "generated_at": "2026-08-03T12:57:39.539362+00:00",
+    "source": [
+      {
+        "name": "RBI Handbook of Statistics on Indian States, Table 21 — GSDP at Current Prices",
+        "url": "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23470",
+        "retrieved_at": "2026-08-03T12:57:37.726072+00:00"
+      },
+      {
+        "name": "RBI Handbook of Statistics on Indian States, Table 22 — GSDP at Constant Prices",
+        "url": "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23471",
+        "retrieved_at": "2026-08-03T12:57:38.523354+00:00"
+      },
+      {
+        "name": "RBI Handbook of Statistics on Indian States, Table 174 — State-wise Capital Outlay",
+        "url": "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23623",
+        "retrieved_at": "2026-08-03T12:57:39.511536+00:00"
+      }
+    ],
+    "frequency": "annual",
+    "start_date": "2012-03-31",
+    "end_date": "2023-03-31",
+    "indicator_code": "STATE_CAPEX_EVALUATION_PANEL",
+    "label": "State capital outlay and subsequent real growth",
+    "default_unit": "percent",
+    "series_order": [
+      "median_state_capex_pct_gsdp",
+      "median_next_year_real_gsdp_growth"
+    ],
+    "is_derived": true,
+    "methodology": "Actual state capital outlay is scaled by current-price GSDP and paired with next-year constant-price GSDP growth. The registered estimate uses state and fiscal-year fixed effects with state-clustered standard errors.",
+    "note": "This is a state-year associational evaluation. It deliberately does not claim project-level or causal identification.",
+    "panel_observations": [
+      {
+        "state": "Andhra Pradesh",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 3.6167,
+        "next_year_real_gsdp_growth": 0.3234,
+        "status": "actual"
+      },
+      {
+        "state": "Andhra Pradesh",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 3.6823,
+        "next_year_real_gsdp_growth": 6.9584,
+        "status": "actual"
+      },
+      {
+        "state": "Andhra Pradesh",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 3.2912,
+        "next_year_real_gsdp_growth": 9.1988,
+        "status": "actual"
+      },
+      {
+        "state": "Andhra Pradesh",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 2.1725,
+        "next_year_real_gsdp_growth": 12.1562,
+        "status": "actual"
+      },
+      {
+        "state": "Andhra Pradesh",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 2.3455,
+        "next_year_real_gsdp_growth": 8.3444,
+        "status": "actual"
+      },
+      {
+        "state": "Andhra Pradesh",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 2.2181,
+        "next_year_real_gsdp_growth": 10.0932,
+        "status": "actual"
+      },
+      {
+        "state": "Andhra Pradesh",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 1.7161,
+        "next_year_real_gsdp_growth": 5.36,
+        "status": "actual"
+      },
+      {
+        "state": "Andhra Pradesh",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 2.2863,
+        "next_year_real_gsdp_growth": 3.7018,
+        "status": "actual"
+      },
+      {
+        "state": "Andhra Pradesh",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 1.3223,
+        "next_year_real_gsdp_growth": 1.5185,
+        "status": "actual"
+      },
+      {
+        "state": "Andhra Pradesh",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 1.939,
+        "next_year_real_gsdp_growth": 7.1419,
+        "status": "actual"
+      },
+      {
+        "state": "Andhra Pradesh",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 1.4469,
+        "next_year_real_gsdp_growth": 6.509,
+        "status": "actual"
+      },
+      {
+        "state": "Andhra Pradesh",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 0.5532,
+        "next_year_real_gsdp_growth": 6.1907,
+        "status": "actual"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 18.6754,
+        "next_year_real_gsdp_growth": 2.1383,
+        "status": "actual"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 9.6122,
+        "next_year_real_gsdp_growth": 9.2058,
+        "status": "actual"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 11.5218,
+        "next_year_real_gsdp_growth": 16.5586,
+        "status": "actual"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 8.2575,
+        "next_year_real_gsdp_growth": -0.9886,
+        "status": "actual"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 10.7676,
+        "next_year_real_gsdp_growth": 4.5798,
+        "status": "actual"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 7.758,
+        "next_year_real_gsdp_growth": 4.5629,
+        "status": "actual"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 14.1848,
+        "next_year_real_gsdp_growth": 7.0394,
+        "status": "actual"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 22.6052,
+        "next_year_real_gsdp_growth": 14.8301,
+        "status": "actual"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 12.3003,
+        "next_year_real_gsdp_growth": -3.6875,
+        "status": "actual"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 16.7828,
+        "next_year_real_gsdp_growth": 1.1646,
+        "status": "actual"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 19.8378,
+        "next_year_real_gsdp_growth": 3.4924,
+        "status": "actual"
+      },
+      {
+        "state": "Arunachal Pradesh",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 22.7014,
+        "next_year_real_gsdp_growth": 5.9483,
+        "status": "actual"
+      },
+      {
+        "state": "Assam",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 1.7503,
+        "next_year_real_gsdp_growth": 2.9108,
+        "status": "actual"
+      },
+      {
+        "state": "Assam",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 1.6683,
+        "next_year_real_gsdp_growth": 4.8751,
+        "status": "actual"
+      },
+      {
+        "state": "Assam",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 1.8043,
+        "next_year_real_gsdp_growth": 6.916,
+        "status": "actual"
+      },
+      {
+        "state": "Assam",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 1.9987,
+        "next_year_real_gsdp_growth": 15.6748,
+        "status": "actual"
+      },
+      {
+        "state": "Assam",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 1.1805,
+        "next_year_real_gsdp_growth": 5.7411,
+        "status": "actual"
+      },
+      {
+        "state": "Assam",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 2.1629,
+        "next_year_real_gsdp_growth": 8.8274,
+        "status": "actual"
+      },
+      {
+        "state": "Assam",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 2.7168,
+        "next_year_real_gsdp_growth": 5.0565,
+        "status": "actual"
+      },
+      {
+        "state": "Assam",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 3.567,
+        "next_year_real_gsdp_growth": 4.1844,
+        "status": "actual"
+      },
+      {
+        "state": "Assam",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 3.8013,
+        "next_year_real_gsdp_growth": 2.9546,
+        "status": "actual"
+      },
+      {
+        "state": "Assam",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 3.6489,
+        "next_year_real_gsdp_growth": 4.1645,
+        "status": "actual"
+      },
+      {
+        "state": "Assam",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 4.9001,
+        "next_year_real_gsdp_growth": 12.2622,
+        "status": "actual"
+      },
+      {
+        "state": "Assam",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 3.2987,
+        "next_year_real_gsdp_growth": 11.9957,
+        "status": "actual"
+      },
+      {
+        "state": "Bihar",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 3.5817,
+        "next_year_real_gsdp_growth": 3.9277,
+        "status": "actual"
+      },
+      {
+        "state": "Bihar",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 3.3945,
+        "next_year_real_gsdp_growth": 4.983,
+        "status": "actual"
+      },
+      {
+        "state": "Bihar",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 4.4153,
+        "next_year_real_gsdp_growth": 3.6464,
+        "status": "actual"
+      },
+      {
+        "state": "Bihar",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 5.2923,
+        "next_year_real_gsdp_growth": 6.0847,
+        "status": "actual"
+      },
+      {
+        "state": "Bihar",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 6.4494,
+        "next_year_real_gsdp_growth": 7.5245,
+        "status": "actual"
+      },
+      {
+        "state": "Bihar",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 6.4619,
+        "next_year_real_gsdp_growth": 7.9142,
+        "status": "actual"
+      },
+      {
+        "state": "Bihar",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 6.1669,
+        "next_year_real_gsdp_growth": 10.858,
+        "status": "actual"
+      },
+      {
+        "state": "Bihar",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 3.9884,
+        "next_year_real_gsdp_growth": 4.4435,
+        "status": "actual"
+      },
+      {
+        "state": "Bihar",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 2.1146,
+        "next_year_real_gsdp_growth": -7.3706,
+        "status": "actual"
+      },
+      {
+        "state": "Bihar",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 3.2069,
+        "next_year_real_gsdp_growth": 4.9559,
+        "status": "actual"
+      },
+      {
+        "state": "Bihar",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 3.6574,
+        "next_year_real_gsdp_growth": 12.8219,
+        "status": "actual"
+      },
+      {
+        "state": "Bihar",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 4.1302,
+        "next_year_real_gsdp_growth": 11.9515,
+        "status": "actual"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 2.5659,
+        "next_year_real_gsdp_growth": 4.9999,
+        "status": "actual"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 2.7711,
+        "next_year_real_gsdp_growth": 10.0027,
+        "status": "actual"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 2.2114,
+        "next_year_real_gsdp_growth": 1.7712,
+        "status": "actual"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 2.9943,
+        "next_year_real_gsdp_growth": 2.5673,
+        "status": "actual"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 3.5286,
+        "next_year_real_gsdp_growth": 12.1317,
+        "status": "actual"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 3.6039,
+        "next_year_real_gsdp_growth": 3.0093,
+        "status": "actual"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 3.5372,
+        "next_year_real_gsdp_growth": 11.1038,
+        "status": "actual"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 2.7217,
+        "next_year_real_gsdp_growth": 2.8498,
+        "status": "actual"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 2.4853,
+        "next_year_real_gsdp_growth": -0.1418,
+        "status": "actual"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 2.5613,
+        "next_year_real_gsdp_growth": 6.306,
+        "status": "actual"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 2.5519,
+        "next_year_real_gsdp_growth": 7.0345,
+        "status": "actual"
+      },
+      {
+        "state": "Chhattisgarh",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 2.9026,
+        "next_year_real_gsdp_growth": 7.3107,
+        "status": "actual"
+      },
+      {
+        "state": "Goa",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 2.7947,
+        "next_year_real_gsdp_growth": -15.3811,
+        "status": "actual"
+      },
+      {
+        "state": "Goa",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 2.4711,
+        "next_year_real_gsdp_growth": -11.9435,
+        "status": "actual"
+      },
+      {
+        "state": "Goa",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 2.8117,
+        "next_year_real_gsdp_growth": 27.0778,
+        "status": "actual"
+      },
+      {
+        "state": "Goa",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 2.585,
+        "next_year_real_gsdp_growth": 14.8926,
+        "status": "actual"
+      },
+      {
+        "state": "Goa",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 2.9462,
+        "next_year_real_gsdp_growth": 11.1918,
+        "status": "actual"
+      },
+      {
+        "state": "Goa",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 2.6026,
+        "next_year_real_gsdp_growth": 2.7385,
+        "status": "actual"
+      },
+      {
+        "state": "Goa",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 3.0194,
+        "next_year_real_gsdp_growth": 0.7793,
+        "status": "actual"
+      },
+      {
+        "state": "Goa",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 3.0061,
+        "next_year_real_gsdp_growth": 3.2952,
+        "status": "actual"
+      },
+      {
+        "state": "Goa",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 2.2111,
+        "next_year_real_gsdp_growth": -4.0249,
+        "status": "actual"
+      },
+      {
+        "state": "Goa",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 2.7873,
+        "next_year_real_gsdp_growth": 1.0697,
+        "status": "actual"
+      },
+      {
+        "state": "Goa",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 3.3007,
+        "next_year_real_gsdp_growth": 12.5989,
+        "status": "actual"
+      },
+      {
+        "state": "Goa",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 3.6734,
+        "next_year_real_gsdp_growth": 7.1329,
+        "status": "actual"
+      },
+      {
+        "state": "Gujarat",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 2.2436,
+        "next_year_real_gsdp_growth": 10.8908,
+        "status": "actual"
+      },
+      {
+        "state": "Gujarat",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 2.9299,
+        "next_year_real_gsdp_growth": 7.5637,
+        "status": "actual"
+      },
+      {
+        "state": "Gujarat",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 2.8079,
+        "next_year_real_gsdp_growth": 10.506,
+        "status": "actual"
+      },
+      {
+        "state": "Gujarat",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 2.6208,
+        "next_year_real_gsdp_growth": 10.2335,
+        "status": "actual"
+      },
+      {
+        "state": "Gujarat",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 2.3488,
+        "next_year_real_gsdp_growth": 9.7127,
+        "status": "actual"
+      },
+      {
+        "state": "Gujarat",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 1.9153,
+        "next_year_real_gsdp_growth": 10.7228,
+        "status": "actual"
+      },
+      {
+        "state": "Gujarat",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 1.9798,
+        "next_year_real_gsdp_growth": 8.8766,
+        "status": "actual"
+      },
+      {
+        "state": "Gujarat",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 1.8806,
+        "next_year_real_gsdp_growth": 6.9532,
+        "status": "actual"
+      },
+      {
+        "state": "Gujarat",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 1.5862,
+        "next_year_real_gsdp_growth": -1.9094,
+        "status": "actual"
+      },
+      {
+        "state": "Gujarat",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 1.6571,
+        "next_year_real_gsdp_growth": 10.0288,
+        "status": "actual"
+      },
+      {
+        "state": "Gujarat",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 1.4673,
+        "next_year_real_gsdp_growth": 7.3529,
+        "status": "actual"
+      },
+      {
+        "state": "Haryana",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 1.8055,
+        "next_year_real_gsdp_growth": 7.8556,
+        "status": "actual"
+      },
+      {
+        "state": "Haryana",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 1.6604,
+        "next_year_real_gsdp_growth": 8.2872,
+        "status": "actual"
+      },
+      {
+        "state": "Haryana",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 0.9856,
+        "next_year_real_gsdp_growth": 6.6266,
+        "status": "actual"
+      },
+      {
+        "state": "Haryana",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 0.8501,
+        "next_year_real_gsdp_growth": 11.5698,
+        "status": "actual"
+      },
+      {
+        "state": "Haryana",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 1.3941,
+        "next_year_real_gsdp_growth": 10.475,
+        "status": "actual"
+      },
+      {
+        "state": "Haryana",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 1.2224,
+        "next_year_real_gsdp_growth": 5.5456,
+        "status": "actual"
+      },
+      {
+        "state": "Haryana",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 2.1192,
+        "next_year_real_gsdp_growth": 10.5718,
+        "status": "actual"
+      },
+      {
+        "state": "Haryana",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 2.19,
+        "next_year_real_gsdp_growth": 2.2754,
+        "status": "actual"
+      },
+      {
+        "state": "Haryana",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 2.3936,
+        "next_year_real_gsdp_growth": -8.3432,
+        "status": "actual"
+      },
+      {
+        "state": "Haryana",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 0.8036,
+        "next_year_real_gsdp_growth": 12.0643,
+        "status": "actual"
+      },
+      {
+        "state": "Haryana",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 1.2591,
+        "next_year_real_gsdp_growth": 4.3308,
+        "status": "actual"
+      },
+      {
+        "state": "Haryana",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 1.1967,
+        "next_year_real_gsdp_growth": 7.758,
+        "status": "actual"
+      },
+      {
+        "state": "Himachal Pradesh",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 2.489,
+        "next_year_real_gsdp_growth": 6.4143,
+        "status": "actual"
+      },
+      {
+        "state": "Himachal Pradesh",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 2.3605,
+        "next_year_real_gsdp_growth": 7.0588,
+        "status": "actual"
+      },
+      {
+        "state": "Himachal Pradesh",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 1.9585,
+        "next_year_real_gsdp_growth": 7.5,
+        "status": "actual"
+      },
+      {
+        "state": "Himachal Pradesh",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 2.3831,
+        "next_year_real_gsdp_growth": 8.1,
+        "status": "actual"
+      },
+      {
+        "state": "Himachal Pradesh",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 2.507,
+        "next_year_real_gsdp_growth": 7.0434,
+        "status": "actual"
+      },
+      {
+        "state": "Himachal Pradesh",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 2.7851,
+        "next_year_real_gsdp_growth": 6.163,
+        "status": "actual"
+      },
+      {
+        "state": "Himachal Pradesh",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 2.7109,
+        "next_year_real_gsdp_growth": 6.4052,
+        "status": "actual"
+      },
+      {
+        "state": "Himachal Pradesh",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 3.0893,
+        "next_year_real_gsdp_growth": 4.1344,
+        "status": "actual"
+      },
+      {
+        "state": "Himachal Pradesh",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 3.2507,
+        "next_year_real_gsdp_growth": -4.3994,
+        "status": "actual"
+      },
+      {
+        "state": "Himachal Pradesh",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 3.4949,
+        "next_year_real_gsdp_growth": 4.5707,
+        "status": "actual"
+      },
+      {
+        "state": "Himachal Pradesh",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 3.5386,
+        "next_year_real_gsdp_growth": 6.5977,
+        "status": "actual"
+      },
+      {
+        "state": "Himachal Pradesh",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 3.1397,
+        "next_year_real_gsdp_growth": 6.3136,
+        "status": "actual"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 2.0932,
+        "next_year_real_gsdp_growth": 8.1718,
+        "status": "actual"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 2.4141,
+        "next_year_real_gsdp_growth": 1.5718,
+        "status": "actual"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 2.5079,
+        "next_year_real_gsdp_growth": 12.4946,
+        "status": "actual"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 2.5365,
+        "next_year_real_gsdp_growth": -6.2472,
+        "status": "actual"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 3.9489,
+        "next_year_real_gsdp_growth": 10.4601,
+        "status": "actual"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 4.5621,
+        "next_year_real_gsdp_growth": 9.0144,
+        "status": "actual"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 4.4301,
+        "next_year_real_gsdp_growth": 8.8738,
+        "status": "actual"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 3.5038,
+        "next_year_real_gsdp_growth": 1.0821,
+        "status": "actual"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 3.1836,
+        "next_year_real_gsdp_growth": -5.2953,
+        "status": "actual"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 2.8537,
+        "next_year_real_gsdp_growth": 12.0156,
+        "status": "actual"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 2.493,
+        "next_year_real_gsdp_growth": 7.1892,
+        "status": "actual"
+      },
+      {
+        "state": "Jharkhand",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 3.383,
+        "next_year_real_gsdp_growth": 7.4957,
+        "status": "actual"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 2.5587,
+        "next_year_real_gsdp_growth": 6.1093,
+        "status": "actual"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 2.2257,
+        "next_year_real_gsdp_growth": 9.5536,
+        "status": "actual"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 2.0751,
+        "next_year_real_gsdp_growth": 6.2406,
+        "status": "actual"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 2.147,
+        "next_year_real_gsdp_growth": 11.0756,
+        "status": "actual"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 1.9818,
+        "next_year_real_gsdp_growth": 13.2864,
+        "status": "actual"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 2.3311,
+        "next_year_real_gsdp_growth": 8.2769,
+        "status": "actual"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 2.3002,
+        "next_year_real_gsdp_growth": 6.4113,
+        "status": "actual"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 2.3428,
+        "next_year_real_gsdp_growth": 6.1093,
+        "status": "actual"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 2.1988,
+        "next_year_real_gsdp_growth": -2.3522,
+        "status": "actual"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 2.7673,
+        "next_year_real_gsdp_growth": 11.0595,
+        "status": "actual"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 2.4033,
+        "next_year_real_gsdp_growth": 10.5243,
+        "status": "actual"
+      },
+      {
+        "state": "Karnataka",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 2.4722,
+        "next_year_real_gsdp_growth": 5.9789,
+        "status": "actual"
+      },
+      {
+        "state": "Kerala",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 1.0584,
+        "next_year_real_gsdp_growth": 6.4952,
+        "status": "actual"
+      },
+      {
+        "state": "Kerala",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 1.1164,
+        "next_year_real_gsdp_growth": 3.8917,
+        "status": "actual"
+      },
+      {
+        "state": "Kerala",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 0.9234,
+        "next_year_real_gsdp_growth": 4.2639,
+        "status": "actual"
+      },
+      {
+        "state": "Kerala",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 0.8301,
+        "next_year_real_gsdp_growth": 7.4423,
+        "status": "actual"
+      },
+      {
+        "state": "Kerala",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 1.3345,
+        "next_year_real_gsdp_growth": 7.5556,
+        "status": "actual"
+      },
+      {
+        "state": "Kerala",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 1.5949,
+        "next_year_real_gsdp_growth": 6.3647,
+        "status": "actual"
+      },
+      {
+        "state": "Kerala",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 1.247,
+        "next_year_real_gsdp_growth": 7.3691,
+        "status": "actual"
+      },
+      {
+        "state": "Kerala",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 0.9427,
+        "next_year_real_gsdp_growth": 0.896,
+        "status": "actual"
+      },
+      {
+        "state": "Kerala",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 1.0401,
+        "next_year_real_gsdp_growth": -8.4928,
+        "status": "actual"
+      },
+      {
+        "state": "Kerala",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 1.6703,
+        "next_year_real_gsdp_growth": 11.7803,
+        "status": "actual"
+      },
+      {
+        "state": "Kerala",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 1.5352,
+        "next_year_real_gsdp_growth": 5.7082,
+        "status": "actual"
+      },
+      {
+        "state": "Kerala",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 1.3475,
+        "next_year_real_gsdp_growth": 6.7276,
+        "status": "actual"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 2.8695,
+        "next_year_real_gsdp_growth": 11.4466,
+        "status": "actual"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 3.0366,
+        "next_year_real_gsdp_growth": 3.8248,
+        "status": "actual"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 2.4604,
+        "next_year_real_gsdp_growth": 5.1517,
+        "status": "actual"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 2.4749,
+        "next_year_real_gsdp_growth": 9.0615,
+        "status": "actual"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 3.1114,
+        "next_year_real_gsdp_growth": 12.4024,
+        "status": "actual"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 4.1993,
+        "next_year_real_gsdp_growth": 5.6159,
+        "status": "actual"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 4.2563,
+        "next_year_real_gsdp_growth": 9.2879,
+        "status": "actual"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 3.5459,
+        "next_year_real_gsdp_growth": 4.4643,
+        "status": "actual"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 3.1516,
+        "next_year_real_gsdp_growth": -4.7435,
+        "status": "actual"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 3.2081,
+        "next_year_real_gsdp_growth": 9.815,
+        "status": "actual"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 3.6991,
+        "next_year_real_gsdp_growth": 5.8268,
+        "status": "actual"
+      },
+      {
+        "state": "Madhya Pradesh",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 3.6371,
+        "next_year_real_gsdp_growth": 6.9047,
+        "status": "actual"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 1.3965,
+        "next_year_real_gsdp_growth": 6.0586,
+        "status": "actual"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 1.1919,
+        "next_year_real_gsdp_growth": 6.8981,
+        "status": "actual"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 1.2136,
+        "next_year_real_gsdp_growth": 6.3068,
+        "status": "actual"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 1.0973,
+        "next_year_real_gsdp_growth": 7.2007,
+        "status": "actual"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 1.1592,
+        "next_year_real_gsdp_growth": 9.2343,
+        "status": "actual"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 1.1623,
+        "next_year_real_gsdp_growth": 4.519,
+        "status": "actual"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 1.1409,
+        "next_year_real_gsdp_growth": 3.6361,
+        "status": "actual"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 1.386,
+        "next_year_real_gsdp_growth": 4.5588,
+        "status": "actual"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 1.3707,
+        "next_year_real_gsdp_growth": -9.5026,
+        "status": "actual"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 1.1371,
+        "next_year_real_gsdp_growth": 11.1608,
+        "status": "actual"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 1.4845,
+        "next_year_real_gsdp_growth": 9.5618,
+        "status": "actual"
+      },
+      {
+        "state": "Maharashtra",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 1.6928,
+        "next_year_real_gsdp_growth": 7.9599,
+        "status": "actual"
+      },
+      {
+        "state": "Manipur",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 13.1402,
+        "next_year_real_gsdp_growth": 0.6056,
+        "status": "actual"
+      },
+      {
+        "state": "Manipur",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 10.929,
+        "next_year_real_gsdp_growth": 8.6377,
+        "status": "actual"
+      },
+      {
+        "state": "Manipur",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 7.9842,
+        "next_year_real_gsdp_growth": 8.0043,
+        "status": "actual"
+      },
+      {
+        "state": "Manipur",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 7.3473,
+        "next_year_real_gsdp_growth": 7.7323,
+        "status": "actual"
+      },
+      {
+        "state": "Manipur",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 6.3387,
+        "next_year_real_gsdp_growth": 4.0079,
+        "status": "actual"
+      },
+      {
+        "state": "Manipur",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 7.0161,
+        "next_year_real_gsdp_growth": 9.7695,
+        "status": "actual"
+      },
+      {
+        "state": "Manipur",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 5.5372,
+        "next_year_real_gsdp_growth": -2.6053,
+        "status": "actual"
+      },
+      {
+        "state": "Manipur",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 6.3203,
+        "next_year_real_gsdp_growth": 5.0649,
+        "status": "actual"
+      },
+      {
+        "state": "Manipur",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 3.8741,
+        "next_year_real_gsdp_growth": -5.8048,
+        "status": "actual"
+      },
+      {
+        "state": "Manipur",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 8.1911,
+        "next_year_real_gsdp_growth": 10.556,
+        "status": "actual"
+      },
+      {
+        "state": "Manipur",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 9.287,
+        "next_year_real_gsdp_growth": 5.97,
+        "status": "actual"
+      },
+      {
+        "state": "Manipur",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 9.0436,
+        "next_year_real_gsdp_growth": 7.9082,
+        "status": "actual"
+      },
+      {
+        "state": "Meghalaya",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 4.2927,
+        "next_year_real_gsdp_growth": 2.1881,
+        "status": "actual"
+      },
+      {
+        "state": "Meghalaya",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 4.2429,
+        "next_year_real_gsdp_growth": 1.8284,
+        "status": "actual"
+      },
+      {
+        "state": "Meghalaya",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 4.6865,
+        "next_year_real_gsdp_growth": -2.8244,
+        "status": "actual"
+      },
+      {
+        "state": "Meghalaya",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 4.8118,
+        "next_year_real_gsdp_growth": 2.4731,
+        "status": "actual"
+      },
+      {
+        "state": "Meghalaya",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 4.4232,
+        "next_year_real_gsdp_growth": 5.2902,
+        "status": "actual"
+      },
+      {
+        "state": "Meghalaya",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 4.7014,
+        "next_year_real_gsdp_growth": 3.8384,
+        "status": "actual"
+      },
+      {
+        "state": "Meghalaya",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 3.3313,
+        "next_year_real_gsdp_growth": 5.1166,
+        "status": "actual"
+      },
+      {
+        "state": "Meghalaya",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 4.4039,
+        "next_year_real_gsdp_growth": 5.0784,
+        "status": "actual"
+      },
+      {
+        "state": "Meghalaya",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 2.7034,
+        "next_year_real_gsdp_growth": -7.85,
+        "status": "actual"
+      },
+      {
+        "state": "Meghalaya",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 5.1338,
+        "next_year_real_gsdp_growth": 8.311,
+        "status": "actual"
+      },
+      {
+        "state": "Meghalaya",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 6.842,
+        "next_year_real_gsdp_growth": 9.5648,
+        "status": "actual"
+      },
+      {
+        "state": "Meghalaya",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 5.8547,
+        "next_year_real_gsdp_growth": 10.6378,
+        "status": "actual"
+      },
+      {
+        "state": "Mizoram",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 6.8194,
+        "next_year_real_gsdp_growth": 7.1539,
+        "status": "actual"
+      },
+      {
+        "state": "Mizoram",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 7.271,
+        "next_year_real_gsdp_growth": 16.2054,
+        "status": "actual"
+      },
+      {
+        "state": "Mizoram",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 5.8193,
+        "next_year_real_gsdp_growth": 24.5908,
+        "status": "actual"
+      },
+      {
+        "state": "Mizoram",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 6.8693,
+        "next_year_real_gsdp_growth": 9.4356,
+        "status": "actual"
+      },
+      {
+        "state": "Mizoram",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 4.6965,
+        "next_year_real_gsdp_growth": 10.3186,
+        "status": "actual"
+      },
+      {
+        "state": "Mizoram",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 5.299,
+        "next_year_real_gsdp_growth": 8.5513,
+        "status": "actual"
+      },
+      {
+        "state": "Mizoram",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 10.2964,
+        "next_year_real_gsdp_growth": 9.0975,
+        "status": "actual"
+      },
+      {
+        "state": "Mizoram",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 8.525,
+        "next_year_real_gsdp_growth": 11.0798,
+        "status": "actual"
+      },
+      {
+        "state": "Mizoram",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 5.4943,
+        "next_year_real_gsdp_growth": -8.1463,
+        "status": "actual"
+      },
+      {
+        "state": "Mizoram",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 4.7068,
+        "next_year_real_gsdp_growth": 7.5151,
+        "status": "actual"
+      },
+      {
+        "state": "Mizoram",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 3.761,
+        "next_year_real_gsdp_growth": 11.3242,
+        "status": "actual"
+      },
+      {
+        "state": "Mizoram",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 4.3798,
+        "next_year_real_gsdp_growth": 10.1822,
+        "status": "actual"
+      },
+      {
+        "state": "Nagaland",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 10.2572,
+        "next_year_real_gsdp_growth": 5.6761,
+        "status": "actual"
+      },
+      {
+        "state": "Nagaland",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 8.8873,
+        "next_year_real_gsdp_growth": 7.186,
+        "status": "actual"
+      },
+      {
+        "state": "Nagaland",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 7.266,
+        "next_year_real_gsdp_growth": 4.395,
+        "status": "actual"
+      },
+      {
+        "state": "Nagaland",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 5.5596,
+        "next_year_real_gsdp_growth": 1.8177,
+        "status": "actual"
+      },
+      {
+        "state": "Nagaland",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 5.4241,
+        "next_year_real_gsdp_growth": 6.749,
+        "status": "actual"
+      },
+      {
+        "state": "Nagaland",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 4.9442,
+        "next_year_real_gsdp_growth": 5.0474,
+        "status": "actual"
+      },
+      {
+        "state": "Nagaland",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 5.2269,
+        "next_year_real_gsdp_growth": 2.6027,
+        "status": "actual"
+      },
+      {
+        "state": "Nagaland",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 6.0164,
+        "next_year_real_gsdp_growth": 9.5394,
+        "status": "actual"
+      },
+      {
+        "state": "Nagaland",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 4.0584,
+        "next_year_real_gsdp_growth": -4.3498,
+        "status": "actual"
+      },
+      {
+        "state": "Nagaland",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 5.6048,
+        "next_year_real_gsdp_growth": 3.5028,
+        "status": "actual"
+      },
+      {
+        "state": "Nagaland",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 5.8701,
+        "next_year_real_gsdp_growth": 2.235,
+        "status": "actual"
+      },
+      {
+        "state": "Nagaland",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 7.5894,
+        "next_year_real_gsdp_growth": 10.2075,
+        "status": "actual"
+      },
+      {
+        "state": "Odisha",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 1.9464,
+        "next_year_real_gsdp_growth": 5.358,
+        "status": "actual"
+      },
+      {
+        "state": "Odisha",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 2.1483,
+        "next_year_real_gsdp_growth": 9.257,
+        "status": "actual"
+      },
+      {
+        "state": "Odisha",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 2.6161,
+        "next_year_real_gsdp_growth": 1.7954,
+        "status": "actual"
+      },
+      {
+        "state": "Odisha",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 3.5243,
+        "next_year_real_gsdp_growth": 7.9669,
+        "status": "actual"
+      },
+      {
+        "state": "Odisha",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 5.2017,
+        "next_year_real_gsdp_growth": 15.4397,
+        "status": "actual"
+      },
+      {
+        "state": "Odisha",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 4.7023,
+        "next_year_real_gsdp_growth": 7.0457,
+        "status": "actual"
+      },
+      {
+        "state": "Odisha",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 4.7932,
+        "next_year_real_gsdp_growth": 7.0936,
+        "status": "actual"
+      },
+      {
+        "state": "Odisha",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 4.7095,
+        "next_year_real_gsdp_growth": 2.7654,
+        "status": "actual"
+      },
+      {
+        "state": "Odisha",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 3.7725,
+        "next_year_real_gsdp_growth": -2.1258,
+        "status": "actual"
+      },
+      {
+        "state": "Odisha",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 3.3227,
+        "next_year_real_gsdp_growth": 16.4166,
+        "status": "actual"
+      },
+      {
+        "state": "Odisha",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 3.2673,
+        "next_year_real_gsdp_growth": -0.2321,
+        "status": "actual"
+      },
+      {
+        "state": "Odisha",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 4.6625,
+        "next_year_real_gsdp_growth": 7.0219,
+        "status": "actual"
+      },
+      {
+        "state": "Puducherry",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 2.2298,
+        "next_year_real_gsdp_growth": 2.9279,
+        "status": "actual"
+      },
+      {
+        "state": "Puducherry",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 1.6688,
+        "next_year_real_gsdp_growth": 10.7439,
+        "status": "actual"
+      },
+      {
+        "state": "Puducherry",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 1.6598,
+        "next_year_real_gsdp_growth": -5.0265,
+        "status": "actual"
+      },
+      {
+        "state": "Puducherry",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 2.7199,
+        "next_year_real_gsdp_growth": 4.6883,
+        "status": "actual"
+      },
+      {
+        "state": "Puducherry",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 1.6494,
+        "next_year_real_gsdp_growth": 7.4193,
+        "status": "actual"
+      },
+      {
+        "state": "Puducherry",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 1.5115,
+        "next_year_real_gsdp_growth": 9.003,
+        "status": "actual"
+      },
+      {
+        "state": "Puducherry",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 1.2263,
+        "next_year_real_gsdp_growth": 17.4355,
+        "status": "actual"
+      },
+      {
+        "state": "Puducherry",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 0.916,
+        "next_year_real_gsdp_growth": 0.7749,
+        "status": "actual"
+      },
+      {
+        "state": "Puducherry",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 0.8838,
+        "next_year_real_gsdp_growth": -8.6144,
+        "status": "actual"
+      },
+      {
+        "state": "Puducherry",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 0.6634,
+        "next_year_real_gsdp_growth": 1.9378,
+        "status": "actual"
+      },
+      {
+        "state": "Puducherry",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 0.3985,
+        "next_year_real_gsdp_growth": 2.2873,
+        "status": "actual"
+      },
+      {
+        "state": "Puducherry",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 0.7491,
+        "next_year_real_gsdp_growth": 7.934,
+        "status": "actual"
+      },
+      {
+        "state": "Punjab",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 0.5993,
+        "next_year_real_gsdp_growth": 5.3237,
+        "status": "actual"
+      },
+      {
+        "state": "Punjab",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 0.6435,
+        "next_year_real_gsdp_growth": 6.633,
+        "status": "actual"
+      },
+      {
+        "state": "Punjab",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 0.6627,
+        "next_year_real_gsdp_growth": 4.233,
+        "status": "actual"
+      },
+      {
+        "state": "Punjab",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 0.8781,
+        "next_year_real_gsdp_growth": 5.7434,
+        "status": "actual"
+      },
+      {
+        "state": "Punjab",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 0.7842,
+        "next_year_real_gsdp_growth": 6.8682,
+        "status": "actual"
+      },
+      {
+        "state": "Punjab",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 1.0178,
+        "next_year_real_gsdp_growth": 6.4315,
+        "status": "actual"
+      },
+      {
+        "state": "Punjab",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 0.4993,
+        "next_year_real_gsdp_growth": 5.7573,
+        "status": "actual"
+      },
+      {
+        "state": "Punjab",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 0.4706,
+        "next_year_real_gsdp_growth": 4.0995,
+        "status": "actual"
+      },
+      {
+        "state": "Punjab",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 3.3197,
+        "next_year_real_gsdp_growth": -1.4591,
+        "status": "actual"
+      },
+      {
+        "state": "Punjab",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 0.8102,
+        "next_year_real_gsdp_growth": 7.3929,
+        "status": "actual"
+      },
+      {
+        "state": "Punjab",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 1.2761,
+        "next_year_real_gsdp_growth": 7.093,
+        "status": "actual"
+      },
+      {
+        "state": "Punjab",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 0.9627,
+        "next_year_real_gsdp_growth": 6.2699,
+        "status": "actual"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 1.6372,
+        "next_year_real_gsdp_growth": 4.5368,
+        "status": "actual"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 2.1647,
+        "next_year_real_gsdp_growth": 6.9662,
+        "status": "actual"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 2.4799,
+        "next_year_real_gsdp_growth": 7.2556,
+        "status": "actual"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 2.6156,
+        "next_year_real_gsdp_growth": 8.0211,
+        "status": "actual"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 3.2261,
+        "next_year_real_gsdp_growth": 5.93,
+        "status": "actual"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 2.2325,
+        "next_year_real_gsdp_growth": 5.2408,
+        "status": "actual"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 2.4772,
+        "next_year_real_gsdp_growth": 2.4296,
+        "status": "actual"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 2.1544,
+        "next_year_real_gsdp_growth": 5.4467,
+        "status": "actual"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 1.4718,
+        "next_year_real_gsdp_growth": -1.821,
+        "status": "actual"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 1.5001,
+        "next_year_real_gsdp_growth": 8.9345,
+        "status": "actual"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 2.02,
+        "next_year_real_gsdp_growth": 7.4066,
+        "status": "actual"
+      },
+      {
+        "state": "Rajasthan",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 1.4595,
+        "next_year_real_gsdp_growth": 7.8802,
+        "status": "actual"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 5.5172,
+        "next_year_real_gsdp_growth": 2.2938,
+        "status": "actual"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 6.8242,
+        "next_year_real_gsdp_growth": 6.0663,
+        "status": "actual"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 6.5792,
+        "next_year_real_gsdp_growth": 7.8993,
+        "status": "actual"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 6.3674,
+        "next_year_real_gsdp_growth": 9.9345,
+        "status": "actual"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 3.5156,
+        "next_year_real_gsdp_growth": 7.1524,
+        "status": "actual"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 3.4804,
+        "next_year_real_gsdp_growth": 14.7824,
+        "status": "actual"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 5.8027,
+        "next_year_real_gsdp_growth": 5.3844,
+        "status": "actual"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 4.5454,
+        "next_year_real_gsdp_growth": 4.6554,
+        "status": "actual"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 2.2932,
+        "next_year_real_gsdp_growth": 0.3333,
+        "status": "actual"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 4.5854,
+        "next_year_real_gsdp_growth": 8.607,
+        "status": "actual"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 3.4954,
+        "next_year_real_gsdp_growth": 8.0399,
+        "status": "actual"
+      },
+      {
+        "state": "Sikkim",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 5.5697,
+        "next_year_real_gsdp_growth": 8.5164,
+        "status": "actual"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 2.1738,
+        "next_year_real_gsdp_growth": 5.3678,
+        "status": "actual"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 1.7042,
+        "next_year_real_gsdp_growth": 7.5965,
+        "status": "actual"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 1.7731,
+        "next_year_real_gsdp_growth": 4.9226,
+        "status": "actual"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 1.6597,
+        "next_year_real_gsdp_growth": 8.2387,
+        "status": "actual"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 1.6145,
+        "next_year_real_gsdp_growth": 7.152,
+        "status": "actual"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 1.5898,
+        "next_year_real_gsdp_growth": 8.5874,
+        "status": "actual"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 1.379,
+        "next_year_real_gsdp_growth": 7.0061,
+        "status": "actual"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 1.4913,
+        "next_year_real_gsdp_growth": 3.2514,
+        "status": "actual"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 1.4704,
+        "next_year_real_gsdp_growth": 0.0655,
+        "status": "actual"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 1.8494,
+        "next_year_real_gsdp_growth": 7.8871,
+        "status": "actual"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 1.7858,
+        "next_year_real_gsdp_growth": 6.175,
+        "status": "actual"
+      },
+      {
+        "state": "Tamil Nadu",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 1.6662,
+        "next_year_real_gsdp_growth": 9.2644,
+        "status": "actual"
+      },
+      {
+        "state": "Telangana",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 1.6552,
+        "next_year_real_gsdp_growth": 11.5798,
+        "status": "actual"
+      },
+      {
+        "state": "Telangana",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 2.3516,
+        "next_year_real_gsdp_growth": 9.3433,
+        "status": "actual"
+      },
+      {
+        "state": "Telangana",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 5.0691,
+        "next_year_real_gsdp_growth": 9.738,
+        "status": "actual"
+      },
+      {
+        "state": "Telangana",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 3.1867,
+        "next_year_real_gsdp_growth": 9.148,
+        "status": "actual"
+      },
+      {
+        "state": "Telangana",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 2.6406,
+        "next_year_real_gsdp_growth": 5.3528,
+        "status": "actual"
+      },
+      {
+        "state": "Telangana",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 1.7745,
+        "next_year_real_gsdp_growth": -6.0118,
+        "status": "actual"
+      },
+      {
+        "state": "Telangana",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 1.6883,
+        "next_year_real_gsdp_growth": 11.177,
+        "status": "actual"
+      },
+      {
+        "state": "Telangana",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 2.5687,
+        "next_year_real_gsdp_growth": 7.3094,
+        "status": "actual"
+      },
+      {
+        "state": "Telangana",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 1.3642,
+        "next_year_real_gsdp_growth": 7.5076,
+        "status": "actual"
+      },
+      {
+        "state": "Tripura",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 7.2729,
+        "next_year_real_gsdp_growth": 8.6658,
+        "status": "actual"
+      },
+      {
+        "state": "Tripura",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 6.8457,
+        "next_year_real_gsdp_growth": 9.3237,
+        "status": "actual"
+      },
+      {
+        "state": "Tripura",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 6.412,
+        "next_year_real_gsdp_growth": 18.1694,
+        "status": "actual"
+      },
+      {
+        "state": "Tripura",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 9.5891,
+        "next_year_real_gsdp_growth": -0.6613,
+        "status": "actual"
+      },
+      {
+        "state": "Tripura",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 8.8709,
+        "next_year_real_gsdp_growth": 14.002,
+        "status": "actual"
+      },
+      {
+        "state": "Tripura",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 8.3664,
+        "next_year_real_gsdp_growth": 8.3674,
+        "status": "actual"
+      },
+      {
+        "state": "Tripura",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 4.0649,
+        "next_year_real_gsdp_growth": 11.0634,
+        "status": "actual"
+      },
+      {
+        "state": "Tripura",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 2.9725,
+        "next_year_real_gsdp_growth": 3.5626,
+        "status": "actual"
+      },
+      {
+        "state": "Tripura",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 1.6306,
+        "next_year_real_gsdp_growth": -4.3598,
+        "status": "actual"
+      },
+      {
+        "state": "Tripura",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 1.555,
+        "next_year_real_gsdp_growth": 8.5497,
+        "status": "actual"
+      },
+      {
+        "state": "Tripura",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 2.1973,
+        "next_year_real_gsdp_growth": 7.8873,
+        "status": "actual"
+      },
+      {
+        "state": "Tripura",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 2.8669,
+        "next_year_real_gsdp_growth": 8.4261,
+        "status": "actual"
+      },
+      {
+        "state": "Uttar Pradesh",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 2.927,
+        "next_year_real_gsdp_growth": 4.7783,
+        "status": "actual"
+      },
+      {
+        "state": "Uttar Pradesh",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 2.8444,
+        "next_year_real_gsdp_growth": 6.1632,
+        "status": "actual"
+      },
+      {
+        "state": "Uttar Pradesh",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 3.4182,
+        "next_year_real_gsdp_growth": 4.229,
+        "status": "actual"
+      },
+      {
+        "state": "Uttar Pradesh",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 5.1399,
+        "next_year_real_gsdp_growth": 9.3171,
+        "status": "actual"
+      },
+      {
+        "state": "Uttar Pradesh",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 5.4958,
+        "next_year_real_gsdp_growth": 11.3795,
+        "status": "actual"
+      },
+      {
+        "state": "Uttar Pradesh",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 5.2478,
+        "next_year_real_gsdp_growth": 3.8745,
+        "status": "actual"
+      },
+      {
+        "state": "Uttar Pradesh",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 2.6476,
+        "next_year_real_gsdp_growth": 3.8559,
+        "status": "actual"
+      },
+      {
+        "state": "Uttar Pradesh",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 3.8516,
+        "next_year_real_gsdp_growth": 4.148,
+        "status": "actual"
+      },
+      {
+        "state": "Uttar Pradesh",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 3.438,
+        "next_year_real_gsdp_growth": -4.5823,
+        "status": "actual"
+      },
+      {
+        "state": "Uttar Pradesh",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 3.1039,
+        "next_year_real_gsdp_growth": 11.2359,
+        "status": "actual"
+      },
+      {
+        "state": "Uttar Pradesh",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 3.5228,
+        "next_year_real_gsdp_growth": 7.4359,
+        "status": "actual"
+      },
+      {
+        "state": "Uttar Pradesh",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 4.0522,
+        "next_year_real_gsdp_growth": 8.9245,
+        "status": "actual"
+      },
+      {
+        "state": "Uttarakhand",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 2.0091,
+        "next_year_real_gsdp_growth": 7.2684,
+        "status": "actual"
+      },
+      {
+        "state": "Uttarakhand",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 2.6912,
+        "next_year_real_gsdp_growth": 8.4652,
+        "status": "actual"
+      },
+      {
+        "state": "Uttarakhand",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 2.49,
+        "next_year_real_gsdp_growth": 5.2878,
+        "status": "actual"
+      },
+      {
+        "state": "Uttarakhand",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 3.0594,
+        "next_year_real_gsdp_growth": 8.0841,
+        "status": "actual"
+      },
+      {
+        "state": "Uttarakhand",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 2.3803,
+        "next_year_real_gsdp_growth": 9.8262,
+        "status": "actual"
+      },
+      {
+        "state": "Uttarakhand",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 2.5389,
+        "next_year_real_gsdp_growth": 7.9026,
+        "status": "actual"
+      },
+      {
+        "state": "Uttarakhand",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 2.6855,
+        "next_year_real_gsdp_growth": 2.8331,
+        "status": "actual"
+      },
+      {
+        "state": "Uttarakhand",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 2.6849,
+        "next_year_real_gsdp_growth": 1.9656,
+        "status": "actual"
+      },
+      {
+        "state": "Uttarakhand",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 2.2628,
+        "next_year_real_gsdp_growth": -12.0977,
+        "status": "actual"
+      },
+      {
+        "state": "Uttarakhand",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 2.8978,
+        "next_year_real_gsdp_growth": 4.7058,
+        "status": "actual"
+      },
+      {
+        "state": "Uttarakhand",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 2.9545,
+        "next_year_real_gsdp_growth": 8.4969,
+        "status": "actual"
+      },
+      {
+        "state": "Uttarakhand",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 2.8001,
+        "next_year_real_gsdp_growth": 7.8331,
+        "status": "actual"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2012,
+        "date": "2012-03-31",
+        "period_label": "FY2011-12",
+        "capex_pct_gsdp": 0.531,
+        "next_year_real_gsdp_growth": 4.1703,
+        "status": "actual"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2013,
+        "date": "2013-03-31",
+        "period_label": "FY2012-13",
+        "capex_pct_gsdp": 0.7688,
+        "next_year_real_gsdp_growth": 3.0076,
+        "status": "actual"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2014,
+        "date": "2014-03-31",
+        "period_label": "FY2013-14",
+        "capex_pct_gsdp": 1.0234,
+        "next_year_real_gsdp_growth": 2.841,
+        "status": "actual"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2015,
+        "date": "2015-03-31",
+        "period_label": "FY2014-15",
+        "capex_pct_gsdp": 1.3757,
+        "next_year_real_gsdp_growth": 6.1251,
+        "status": "actual"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2016,
+        "date": "2016-03-31",
+        "period_label": "FY2015-16",
+        "capex_pct_gsdp": 1.5578,
+        "next_year_real_gsdp_growth": 7.1974,
+        "status": "actual"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2017,
+        "date": "2017-03-31",
+        "period_label": "FY2016-17",
+        "capex_pct_gsdp": 1.2992,
+        "next_year_real_gsdp_growth": 6.3611,
+        "status": "actual"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2018,
+        "date": "2018-03-31",
+        "period_label": "FY2017-18",
+        "capex_pct_gsdp": 1.9871,
+        "next_year_real_gsdp_growth": 6.3225,
+        "status": "actual"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2019,
+        "date": "2019-03-31",
+        "period_label": "FY2018-19",
+        "capex_pct_gsdp": 2.1521,
+        "next_year_real_gsdp_growth": 3.0955,
+        "status": "actual"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2020,
+        "date": "2020-03-31",
+        "period_label": "FY2019-20",
+        "capex_pct_gsdp": 1.3545,
+        "next_year_real_gsdp_growth": -7.581,
+        "status": "actual"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2021,
+        "date": "2021-03-31",
+        "period_label": "FY2020-21",
+        "capex_pct_gsdp": 1.1415,
+        "next_year_real_gsdp_growth": 11.6416,
+        "status": "actual"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2022,
+        "date": "2022-03-31",
+        "period_label": "FY2021-22",
+        "capex_pct_gsdp": 1.3047,
+        "next_year_real_gsdp_growth": 5.7566,
+        "status": "actual"
+      },
+      {
+        "state": "West Bengal",
+        "year": 2023,
+        "date": "2023-03-31",
+        "period_label": "FY2022-23",
+        "capex_pct_gsdp": 1.4522,
+        "next_year_real_gsdp_growth": 6.0922,
+        "status": "actual"
+      }
+    ],
+    "panel_estimate": {
+      "coefficient": 0.2734,
+      "clustered_standard_error": 0.0782,
+      "confidence_interval_95": [
+        0.1201,
+        0.4268
+      ],
+      "n": 344,
+      "states": 29,
+      "years": 12,
+      "eligible": true,
+      "required": {
+        "observations": 100,
+        "states": 15,
+        "years": 5
+      },
+      "evidence_class": "associational",
+      "interpretation": "Within-state change in next-year real GSDP growth associated with a one percentage-point change in capital outlay/GSDP after removing common year effects.",
+      "limitation": "State and year fixed effects do not remove time-varying policy choices, disasters, transfers, project selection or reverse causality; this is not a causal multiplier."
+    }
+  },
+  "series": {
+    "median_state_capex_pct_gsdp": {
+      "label": "Median state capital outlay/GSDP",
+      "entity": "IND_STATES",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Cross-state median of capital outlay divided by current-price GSDP.",
+      "source_note": "State accounting coverage and budget status vary; only observations labelled actual are used in the panel estimate.",
+      "values": [
+        {
+          "date": "2012-03-31",
+          "period_label": "FY2011-12",
+          "value": 2.5238,
+          "status": "actual"
+        },
+        {
+          "date": "2013-03-31",
+          "period_label": "FY2012-13",
+          "value": 2.5812,
+          "status": "actual"
+        },
+        {
+          "date": "2014-03-31",
+          "period_label": "FY2013-14",
+          "value": 2.4989,
+          "status": "actual"
+        },
+        {
+          "date": "2015-03-31",
+          "period_label": "FY2014-15",
+          "value": 2.6156,
+          "status": "actual"
+        },
+        {
+          "date": "2016-03-31",
+          "period_label": "FY2015-16",
+          "value": 2.9462,
+          "status": "actual"
+        },
+        {
+          "date": "2017-03-31",
+          "period_label": "FY2016-17",
+          "value": 2.7851,
+          "status": "actual"
+        },
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": 2.7168,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 2.9725,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 2.2932,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 2.7873,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 2.5687,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 3.0212,
+          "status": "actual"
+        }
+      ]
+    },
+    "median_next_year_real_gsdp_growth": {
+      "label": "Median next-year real GSDP growth",
+      "entity": "IND_STATES",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Cross-state median of the subsequent fiscal year's constant-price GSDP growth.",
+      "source_note": "Growth is an outcome association, not a project-level return.",
+      "values": [
+        {
+          "date": "2012-03-31",
+          "period_label": "FY2011-12",
+          "value": 5.3408,
+          "status": "actual"
+        },
+        {
+          "date": "2013-03-31",
+          "period_label": "FY2012-13",
+          "value": 7.0125,
+          "status": "actual"
+        },
+        {
+          "date": "2014-03-31",
+          "period_label": "FY2013-14",
+          "value": 6.2737,
+          "status": "actual"
+        },
+        {
+          "date": "2015-03-31",
+          "period_label": "FY2014-15",
+          "value": 8.0211,
+          "status": "actual"
+        },
+        {
+          "date": "2016-03-31",
+          "period_label": "FY2015-16",
+          "value": 8.3444,
+          "status": "actual"
+        },
+        {
+          "date": "2017-03-31",
+          "period_label": "FY2016-17",
+          "value": 7.0457,
+          "status": "actual"
+        },
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": 6.4113,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 4.148,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": -4.3994,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 8.5497,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 7.1892,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 7.7956,
+          "status": "actual"
+        }
+      ]
+    }
+  }
+}

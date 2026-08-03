@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:18:44.988448+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/VNM/indicator/SL.TLF.CACT.FM.NE.ZS?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "238a361ef22d3acbc4d995055cb31be477879977fa87dd78a59e1a6bbbc5945e",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2025",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2024",
+        "value": 88.3472458424749,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2023",
+        "value": 88.61347388196,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2022",
+        "value": 88.2461067143222,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2021",
+        "value": 87.6866151039391,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2020",
+        "value": 85.9718245622926,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2019",
+        "value": 86.9777717438258,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2018",
+        "value": 86.9309838472834,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2017",
+        "value": 88.1334813718233,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2016",
+        "value": 88.3390013627825,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2015",
+        "value": 88.1789098517194,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2014",
+        "value": 89.0009794319295,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2013",
+        "value": 88.9683550504556,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2012",
+        "value": 88.708381242041,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2011",
+        "value": 88.0834881917865,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2010",
+        "value": 88.3106307373408,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2009",
+        "value": 88.8807389634124,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2008",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2007",
+        "value": 89.9003288383594,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2006",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2005",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2004",
+        "value": 89.5521201764495,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2003",
+        "value": 90.3693931398417,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2002",
+        "value": 90.5511811023622,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2001",
+        "value": 90.625,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2000",
+        "value": 90.407358738502,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1999",
+        "value": 91.5474642392718,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1998",
+        "value": 90.7096774193548,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1997",
+        "value": 90.537084398977,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1996",
+        "value": 91.4357682619647,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1995",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1994",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1993",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1992",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.TLF.CACT.FM.NE.ZS",
+          "value": "Ratio of female to male labor force participation rate (%) (national estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1991",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      }
+    ]
+  ]
+}

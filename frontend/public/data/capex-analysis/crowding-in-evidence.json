@@ -1,0 +1,626 @@
+{
+  "metadata": {
+    "generated_at": "2026-08-03T12:57:39.570845+00:00",
+    "source": [
+      {
+        "name": "Validated central-government CapEx artifact"
+      },
+      {
+        "name": "Validated private-investment and capacity artifact"
+      },
+      {
+        "name": "Validated capital-goods production artifact"
+      }
+    ],
+    "frequency": "annual",
+    "start_date": "2018-03-31",
+    "end_date": "2025-03-31",
+    "indicator_code": "CAPEX_CROWDING_IN_DISTRIBUTED_LAGS",
+    "label": "Crowding-in distributed-lag evidence ladder",
+    "default_unit": "percent",
+    "series_order": [
+      "nominal_capex_growth"
+    ],
+    "is_derived": true,
+    "methodology": "Nominal CapEx growth is paired with four outcomes at zero- through three-year leads. Pearson and Spearman correlations are published only as associations and every cell is gated at eight aligned annual observations.",
+    "note": "The current national-accounts vintages do not meet the registered minimum sample for a credible crowding-in estimate. Showing that failure is preferable to presenting unstable coefficients as evidence.",
+    "lag_estimates": [
+      {
+        "key": "private_gfcf_lag_0y",
+        "outcome_key": "private_gfcf",
+        "label": "Private corporate GFCF/GDP",
+        "role": "Direct private-investment outcome",
+        "transformation": "level",
+        "lag": 0,
+        "lag_unit": "years",
+        "n": 3,
+        "pearson": 0.4036,
+        "spearman": 0.5,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "private_gfcf_lag_1y",
+        "outcome_key": "private_gfcf",
+        "label": "Private corporate GFCF/GDP",
+        "role": "Direct private-investment outcome",
+        "transformation": "level",
+        "lag": 1,
+        "lag_unit": "years",
+        "n": 3,
+        "pearson": 0.9513,
+        "spearman": 0.5,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "private_gfcf_lag_2y",
+        "outcome_key": "private_gfcf",
+        "label": "Private corporate GFCF/GDP",
+        "role": "Direct private-investment outcome",
+        "transformation": "level",
+        "lag": 2,
+        "lag_unit": "years",
+        "n": 3,
+        "pearson": -0.2982,
+        "spearman": 0.5,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "private_gfcf_lag_3y",
+        "outcome_key": "private_gfcf",
+        "label": "Private corporate GFCF/GDP",
+        "role": "Direct private-investment outcome",
+        "transformation": "level",
+        "lag": 3,
+        "lag_unit": "years",
+        "n": 3,
+        "pearson": -0.9451,
+        "spearman": -1.0,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "private_gfcf_share_lag_0y",
+        "outcome_key": "private_gfcf_share",
+        "label": "Private corporate share of total GFCF",
+        "role": "Direct private-investment composition outcome",
+        "transformation": "level",
+        "lag": 0,
+        "lag_unit": "years",
+        "n": 3,
+        "pearson": 0.2996,
+        "spearman": -0.5,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "private_gfcf_share_lag_1y",
+        "outcome_key": "private_gfcf_share",
+        "label": "Private corporate share of total GFCF",
+        "role": "Direct private-investment composition outcome",
+        "transformation": "level",
+        "lag": 1,
+        "lag_unit": "years",
+        "n": 3,
+        "pearson": 0.9796,
+        "spearman": 1.0,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "private_gfcf_share_lag_2y",
+        "outcome_key": "private_gfcf_share",
+        "label": "Private corporate share of total GFCF",
+        "role": "Direct private-investment composition outcome",
+        "transformation": "level",
+        "lag": 2,
+        "lag_unit": "years",
+        "n": 3,
+        "pearson": -0.4022,
+        "spearman": -0.5,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "private_gfcf_share_lag_3y",
+        "outcome_key": "private_gfcf_share",
+        "label": "Private corporate share of total GFCF",
+        "role": "Direct private-investment composition outcome",
+        "transformation": "level",
+        "lag": 3,
+        "lag_unit": "years",
+        "n": 3,
+        "pearson": -0.903,
+        "spearman": -0.5,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "capacity_utilisation_lag_0y",
+        "outcome_key": "capacity_utilisation",
+        "label": "Manufacturing capacity utilisation",
+        "role": "Operating-capacity outcome",
+        "transformation": "level",
+        "lag": 0,
+        "lag_unit": "years",
+        "n": 1,
+        "pearson": null,
+        "spearman": null,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "capacity_utilisation_lag_1y",
+        "outcome_key": "capacity_utilisation",
+        "label": "Manufacturing capacity utilisation",
+        "role": "Operating-capacity outcome",
+        "transformation": "level",
+        "lag": 1,
+        "lag_unit": "years",
+        "n": 2,
+        "pearson": null,
+        "spearman": null,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "capacity_utilisation_lag_2y",
+        "outcome_key": "capacity_utilisation",
+        "label": "Manufacturing capacity utilisation",
+        "role": "Operating-capacity outcome",
+        "transformation": "level",
+        "lag": 2,
+        "lag_unit": "years",
+        "n": 2,
+        "pearson": null,
+        "spearman": null,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "capacity_utilisation_lag_3y",
+        "outcome_key": "capacity_utilisation",
+        "label": "Manufacturing capacity utilisation",
+        "role": "Operating-capacity outcome",
+        "transformation": "level",
+        "lag": 3,
+        "lag_unit": "years",
+        "n": 2,
+        "pearson": null,
+        "spearman": null,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "capital_goods_iip_growth_lag_0y",
+        "outcome_key": "capital_goods_iip_growth",
+        "label": "Capital-goods production growth",
+        "role": "Upstream real-economy outcome; not direct private investment",
+        "transformation": "growth",
+        "lag": 0,
+        "lag_unit": "years",
+        "n": 6,
+        "pearson": 0.2552,
+        "spearman": 0.2571,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "capital_goods_iip_growth_lag_1y",
+        "outcome_key": "capital_goods_iip_growth",
+        "label": "Capital-goods production growth",
+        "role": "Upstream real-economy outcome; not direct private investment",
+        "transformation": "growth",
+        "lag": 1,
+        "lag_unit": "years",
+        "n": 5,
+        "pearson": 0.4817,
+        "spearman": 0.6,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "capital_goods_iip_growth_lag_2y",
+        "outcome_key": "capital_goods_iip_growth",
+        "label": "Capital-goods production growth",
+        "role": "Upstream real-economy outcome; not direct private investment",
+        "transformation": "growth",
+        "lag": 2,
+        "lag_unit": "years",
+        "n": 4,
+        "pearson": 0.4086,
+        "spearman": 0.0,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      },
+      {
+        "key": "capital_goods_iip_growth_lag_3y",
+        "outcome_key": "capital_goods_iip_growth",
+        "label": "Capital-goods production growth",
+        "role": "Upstream real-economy outcome; not direct private investment",
+        "transformation": "growth",
+        "lag": 3,
+        "lag_unit": "years",
+        "n": 3,
+        "pearson": 0.9756,
+        "spearman": 1.0,
+        "eligible": false,
+        "required_observations": 8,
+        "status": "insufficient_data"
+      }
+    ],
+    "pair_observations": [
+      {
+        "estimate_key": "private_gfcf_lag_0y",
+        "date": "2023-03-31",
+        "capex_growth": 24.8199,
+        "outcome": 10.925
+      },
+      {
+        "estimate_key": "private_gfcf_lag_0y",
+        "date": "2024-03-31",
+        "capex_growth": 28.2653,
+        "outcome": 10.2586
+      },
+      {
+        "estimate_key": "private_gfcf_lag_0y",
+        "date": "2025-03-31",
+        "capex_growth": 10.8258,
+        "outcome": 10.1944
+      },
+      {
+        "estimate_key": "private_gfcf_lag_1y",
+        "date": "2022-03-31",
+        "capex_growth": 39.0688,
+        "outcome": 10.925
+      },
+      {
+        "estimate_key": "private_gfcf_lag_1y",
+        "date": "2023-03-31",
+        "capex_growth": 24.8199,
+        "outcome": 10.2586
+      },
+      {
+        "estimate_key": "private_gfcf_lag_1y",
+        "date": "2024-03-31",
+        "capex_growth": 28.2653,
+        "outcome": 10.1944
+      },
+      {
+        "estimate_key": "private_gfcf_lag_2y",
+        "date": "2021-03-31",
+        "capex_growth": 26.9836,
+        "outcome": 10.925
+      },
+      {
+        "estimate_key": "private_gfcf_lag_2y",
+        "date": "2022-03-31",
+        "capex_growth": 39.0688,
+        "outcome": 10.2586
+      },
+      {
+        "estimate_key": "private_gfcf_lag_2y",
+        "date": "2023-03-31",
+        "capex_growth": 24.8199,
+        "outcome": 10.1944
+      },
+      {
+        "estimate_key": "private_gfcf_lag_3y",
+        "date": "2020-03-31",
+        "capex_growth": 9.1033,
+        "outcome": 10.925
+      },
+      {
+        "estimate_key": "private_gfcf_lag_3y",
+        "date": "2021-03-31",
+        "capex_growth": 26.9836,
+        "outcome": 10.2586
+      },
+      {
+        "estimate_key": "private_gfcf_lag_3y",
+        "date": "2022-03-31",
+        "capex_growth": 39.0688,
+        "outcome": 10.1944
+      },
+      {
+        "estimate_key": "private_gfcf_share_lag_0y",
+        "date": "2023-03-31",
+        "capex_growth": 24.8199,
+        "outcome": 33.7535
+      },
+      {
+        "estimate_key": "private_gfcf_share_lag_0y",
+        "date": "2024-03-31",
+        "capex_growth": 28.2653,
+        "outcome": 32.159
+      },
+      {
+        "estimate_key": "private_gfcf_share_lag_0y",
+        "date": "2025-03-31",
+        "capex_growth": 10.8258,
+        "outcome": 32.2163
+      },
+      {
+        "estimate_key": "private_gfcf_share_lag_1y",
+        "date": "2022-03-31",
+        "capex_growth": 39.0688,
+        "outcome": 33.7535
+      },
+      {
+        "estimate_key": "private_gfcf_share_lag_1y",
+        "date": "2023-03-31",
+        "capex_growth": 24.8199,
+        "outcome": 32.159
+      },
+      {
+        "estimate_key": "private_gfcf_share_lag_1y",
+        "date": "2024-03-31",
+        "capex_growth": 28.2653,
+        "outcome": 32.2163
+      },
+      {
+        "estimate_key": "private_gfcf_share_lag_2y",
+        "date": "2021-03-31",
+        "capex_growth": 26.9836,
+        "outcome": 33.7535
+      },
+      {
+        "estimate_key": "private_gfcf_share_lag_2y",
+        "date": "2022-03-31",
+        "capex_growth": 39.0688,
+        "outcome": 32.159
+      },
+      {
+        "estimate_key": "private_gfcf_share_lag_2y",
+        "date": "2023-03-31",
+        "capex_growth": 24.8199,
+        "outcome": 32.2163
+      },
+      {
+        "estimate_key": "private_gfcf_share_lag_3y",
+        "date": "2020-03-31",
+        "capex_growth": 9.1033,
+        "outcome": 33.7535
+      },
+      {
+        "estimate_key": "private_gfcf_share_lag_3y",
+        "date": "2021-03-31",
+        "capex_growth": 26.9836,
+        "outcome": 32.159
+      },
+      {
+        "estimate_key": "private_gfcf_share_lag_3y",
+        "date": "2022-03-31",
+        "capex_growth": 39.0688,
+        "outcome": 32.2163
+      },
+      {
+        "estimate_key": "capacity_utilisation_lag_0y",
+        "date": "2025-03-31",
+        "capex_growth": 10.8258,
+        "outcome": 76.55
+      },
+      {
+        "estimate_key": "capacity_utilisation_lag_1y",
+        "date": "2024-03-31",
+        "capex_growth": 28.2653,
+        "outcome": 76.55
+      },
+      {
+        "estimate_key": "capacity_utilisation_lag_1y",
+        "date": "2025-03-31",
+        "capex_growth": 10.8258,
+        "outcome": 74.6667
+      },
+      {
+        "estimate_key": "capacity_utilisation_lag_2y",
+        "date": "2023-03-31",
+        "capex_growth": 24.8199,
+        "outcome": 76.55
+      },
+      {
+        "estimate_key": "capacity_utilisation_lag_2y",
+        "date": "2024-03-31",
+        "capex_growth": 28.2653,
+        "outcome": 74.6667
+      },
+      {
+        "estimate_key": "capacity_utilisation_lag_3y",
+        "date": "2022-03-31",
+        "capex_growth": 39.0688,
+        "outcome": 76.55
+      },
+      {
+        "estimate_key": "capacity_utilisation_lag_3y",
+        "date": "2023-03-31",
+        "capex_growth": 24.8199,
+        "outcome": 74.6667
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_0y",
+        "date": "2018-03-31",
+        "capex_growth": -7.5433,
+        "outcome": 4.0394
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_0y",
+        "date": "2019-03-31",
+        "capex_growth": 16.9393,
+        "outcome": 2.6515
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_0y",
+        "date": "2020-03-31",
+        "capex_growth": 9.1033,
+        "outcome": -13.9299
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_0y",
+        "date": "2021-03-31",
+        "capex_growth": 26.9836,
+        "outcome": -18.6495
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_0y",
+        "date": "2022-03-31",
+        "capex_growth": 39.0688,
+        "outcome": 16.8643
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_0y",
+        "date": "2023-03-31",
+        "capex_growth": 24.8199,
+        "outcome": 13.0778
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_1y",
+        "date": "2018-03-31",
+        "capex_growth": -7.5433,
+        "outcome": 2.6515
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_1y",
+        "date": "2019-03-31",
+        "capex_growth": 16.9393,
+        "outcome": -13.9299
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_1y",
+        "date": "2020-03-31",
+        "capex_growth": 9.1033,
+        "outcome": -18.6495
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_1y",
+        "date": "2021-03-31",
+        "capex_growth": 26.9836,
+        "outcome": 16.8643
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_1y",
+        "date": "2022-03-31",
+        "capex_growth": 39.0688,
+        "outcome": 13.0778
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_2y",
+        "date": "2018-03-31",
+        "capex_growth": -7.5433,
+        "outcome": -13.9299
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_2y",
+        "date": "2019-03-31",
+        "capex_growth": 16.9393,
+        "outcome": -18.6495
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_2y",
+        "date": "2020-03-31",
+        "capex_growth": 9.1033,
+        "outcome": 16.8643
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_2y",
+        "date": "2021-03-31",
+        "capex_growth": 26.9836,
+        "outcome": 13.0778
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_3y",
+        "date": "2018-03-31",
+        "capex_growth": -7.5433,
+        "outcome": -18.6495
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_3y",
+        "date": "2019-03-31",
+        "capex_growth": 16.9393,
+        "outcome": 16.8643
+      },
+      {
+        "estimate_key": "capital_goods_iip_growth_lag_3y",
+        "date": "2020-03-31",
+        "capex_growth": 9.1033,
+        "outcome": 13.0778
+      }
+    ]
+  },
+  "series": {
+    "nominal_capex_growth": {
+      "label": "Actual nominal central CapEx growth",
+      "entity": "IND",
+      "unit": "percent",
+      "is_derived": true,
+      "methodology": "Year-on-year growth in actual nominal central-government capital expenditure.",
+      "source_note": "Nominal growth includes inflation and cannot identify an exogenous public-investment shock.",
+      "values": [
+        {
+          "date": "2018-03-31",
+          "period_label": "FY2017-18",
+          "value": -7.5433,
+          "status": "actual"
+        },
+        {
+          "date": "2019-03-31",
+          "period_label": "FY2018-19",
+          "value": 16.9393,
+          "status": "actual"
+        },
+        {
+          "date": "2020-03-31",
+          "period_label": "FY2019-20",
+          "value": 9.1033,
+          "status": "actual"
+        },
+        {
+          "date": "2021-03-31",
+          "period_label": "FY2020-21",
+          "value": 26.9836,
+          "status": "actual"
+        },
+        {
+          "date": "2022-03-31",
+          "period_label": "FY2021-22",
+          "value": 39.0688,
+          "status": "actual"
+        },
+        {
+          "date": "2023-03-31",
+          "period_label": "FY2022-23",
+          "value": 24.8199,
+          "status": "actual"
+        },
+        {
+          "date": "2024-03-31",
+          "period_label": "FY2023-24",
+          "value": 28.2653,
+          "status": "actual"
+        },
+        {
+          "date": "2025-03-31",
+          "period_label": "FY2024-25",
+          "value": 10.8258,
+          "status": "actual"
+        }
+      ]
+    }
+  }
+}

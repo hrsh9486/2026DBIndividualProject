@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:20:08.130147+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/IDN/indicator/SE.TER.ENRR?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "cc7a7f33ebc9f9cfef9ff49a2be5447ce789d2fc3db5f7769e4623a176928ce8",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2025",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2024",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2023",
+        "value": 44.8813034886441,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2022",
+        "value": 42.3260385456152,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2021",
+        "value": 40.6293239880732,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2020",
+        "value": 38.1650601406923,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2019",
+        "value": 37.3230862728703,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2018",
+        "value": 36.1494878042588,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2017",
+        "value": 35.967012362631,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2016",
+        "value": 34.8307173410877,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2015",
+        "value": 32.4590200433758,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2014",
+        "value": 29.9904910473273,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2013",
+        "value": 29.894529174265,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2012",
+        "value": 29.0425391195214,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2011",
+        "value": 25.027444191823,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2010",
+        "value": 23.4159086398462,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2009",
+        "value": 22.6933307647705,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2008",
+        "value": 20.5209503173828,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2007",
+        "value": 17.5765991210938,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2006",
+        "value": 16.767240524292,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2005",
+        "value": 16.6967105865479,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2004",
+        "value": 16.1766300201416,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2003",
+        "value": 15.7722797393799,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2002",
+        "value": 14.6824598312378,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2001",
+        "value": 14.1229801177978,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "2000",
+        "value": 14.810640335083,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1999",
+        "value": 14.6863803863525,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1998",
+        "value": 13.3347997665405,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1997",
+        "value": 13.3638401031494,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1996",
+        "value": 11.5222902297974,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1995",
+        "value": 11.301739692688,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1994",
+        "value": 10.4964103698731,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1993",
+        "value": 9.33967018127441,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1992",
+        "value": 9.37843990325928,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SE.TER.ENRR",
+          "value": "School enrollment, tertiary (% gross)"
+        },
+        "country": {
+          "id": "ID",
+          "value": "Indonesia"
+        },
+        "countryiso3code": "IDN",
+        "date": "1991",
+        "value": 8.55126953125,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      }
+    ]
+  ]
+}

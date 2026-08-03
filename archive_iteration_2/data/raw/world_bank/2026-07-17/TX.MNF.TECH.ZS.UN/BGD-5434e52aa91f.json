@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:21:52.579587+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/BGD/indicator/TX.MNF.TECH.ZS.UN?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "5434e52aa91fec4a926fd3c6c73f096901bfe2473eb3f28a891fa5a9e7cb6d2d",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2025",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2024",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2023",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2022",
+        "value": 1.86967789554948,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2021",
+        "value": 1.86967789554948,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2020",
+        "value": 1.86967789554948,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2019",
+        "value": 1.86967789554948,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2018",
+        "value": 1.86967789554948,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2017",
+        "value": 1.86967789554948,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2016",
+        "value": 1.86967789554948,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2015",
+        "value": 1.86967789554948,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2014",
+        "value": 1.80088879232127,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2013",
+        "value": 1.80088879232127,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2012",
+        "value": 2.13006894278896,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2011",
+        "value": 2.02555496926701,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2010",
+        "value": 2.14484622004356,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2009",
+        "value": 2.67197194096643,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2008",
+        "value": 2.83351853323631,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2007",
+        "value": 4.34079484062213,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2006",
+        "value": 2.92849230459827,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2005",
+        "value": 3.97902061210022,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2004",
+        "value": 3.36331075208342,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2003",
+        "value": 2.60681998524391,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2002",
+        "value": 2.22044690858979,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2001",
+        "value": 2.59196986451968,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2000",
+        "value": 3.32823858738819,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1999",
+        "value": 3.12492555997322,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1998",
+        "value": 3.12492555997322,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1997",
+        "value": 5.23619739514622,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1996",
+        "value": 5.26214748189636,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1995",
+        "value": 5.92730470816436,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1994",
+        "value": 3.13536429364869,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1993",
+        "value": 4.25760961399886,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1992",
+        "value": 5.65777122609959,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1991",
+        "value": 4.51045208464875,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      }
+    ]
+  ]
+}

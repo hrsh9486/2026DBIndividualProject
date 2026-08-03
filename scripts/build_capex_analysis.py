@@ -32,6 +32,7 @@ from build_capex_delivery import (
     build_delivery_payload,
     build_production_payload,
 )
+from build_capex_depth import build_depth_payloads
 
 
 LOGGER = logging.getLogger(__name__)
@@ -237,6 +238,11 @@ def main() -> None:
         action="store_true",
         help="Build the pre-existing analysis without refreshing corporate statements.",
     )
+    parser.add_argument(
+        "--skip-depth-refresh",
+        action="store_true",
+        help="Skip RBI project-quality and state-panel refresh for a fully offline rebuild.",
+    )
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     structural = {key: _load_validated(path) for key, path in STRUCTURAL_INPUTS.items()}
@@ -278,6 +284,11 @@ def main() -> None:
         destination = PROCESSED_DATA_DIR / OUTPUTS[key]
         publish_json(payload, destination, schemas[key])
         LOGGER.info("Published %s", destination)
+    if not args.skip_depth_refresh:
+        for key, payload in build_depth_payloads().items():
+            destination = PROCESSED_DATA_DIR / OUTPUTS[key]
+            publish_json(payload, destination, "dated_multi_series.schema.json")
+            LOGGER.info("Published %s", destination)
 
 
 if __name__ == "__main__":

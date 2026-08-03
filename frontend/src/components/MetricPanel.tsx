@@ -7,6 +7,9 @@ import CapexCorrelationView from "./CapexCorrelationView";
 import CorporateFundamentalsView from "./CorporateFundamentalsView";
 import FiscalBridgeView from "./FiscalBridgeView";
 import CapexScenarioLab from "./CapexScenarioLab";
+import InvestmentQualityView from "./InvestmentQualityView";
+import StateCapexEvaluationView from "./StateCapexEvaluationView";
+import CrowdingInView from "./CrowdingInView";
 import DataStatusBadge from "./DataStatusBadge";
 import InsightRail from "./InsightRail";
 import SourcePanel from "./SourcePanel";
@@ -39,6 +42,15 @@ export default function MetricPanel({ indicator, assets }: { indicator: Indicato
       }
       if (view.presentation.component === "capex-scenario-lab" && "series" in query.data) {
         return <><CapexScenarioLab payload={query.data} /><SourcePanel payload={query.data} /></>;
+      }
+      if (view.presentation.component === "investment-quality" && "series" in query.data) {
+        return <><InvestmentQualityView payload={query.data} /><SourcePanel payload={query.data} /></>;
+      }
+      if (view.presentation.component === "state-capex-evaluation" && "series" in query.data) {
+        return <><StateCapexEvaluationView payload={query.data} /><SourcePanel payload={query.data} /></>;
+      }
+      if (view.presentation.component === "crowding-in" && "series" in query.data) {
+        return <><CrowdingInView payload={query.data} /><SourcePanel payload={query.data} /></>;
       }
       return <><div className="analysis-grid"><section className="chart-card"><div className="chart-title"><div><span>Time series</span><h3>{indicator.title}</h3></div><b>{asset.expected_frequency}</b></div><ChartView key={view.id} payload={query.data} presentation={view.presentation} /></section><aside className="ranking-card"><div className="rail-heading"><span>Latest reading</span><h3>Selected series</h3></div><InsightRail payload={query.data} presentation={view.presentation} /></aside></div><SourcePanel payload={query.data} /></>;
     })()}

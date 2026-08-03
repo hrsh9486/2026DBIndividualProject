@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-09T09:51:39.633230+00:00",
+    "source": "yfinance",
+    "period": "10y",
+    "windows": {
+      "2018_Rate_Hikes": [
+        "2018-01-01",
+        "2018-12-31"
+      ],
+      "2020_COVID": [
+        "2020-02-01",
+        "2020-06-30"
+      ],
+      "2022_Fed_Hiking": [
+        "2022-01-01",
+        "2022-12-31"
+      ]
+    }
+  },
+  "data": [
+    {
+      "event": "2018_Rate_Hikes",
+      "start_date": "2018-01-01",
+      "end_date": "2018-12-31",
+      "pair": "USD_INR",
+      "pct_change": 9.53
+    },
+    {
+      "event": "2018_Rate_Hikes",
+      "start_date": "2018-01-01",
+      "end_date": "2018-12-31",
+      "pair": "GBP_INR",
+      "pct_change": 2.99
+    },
+    {
+      "event": "2018_Rate_Hikes",
+      "start_date": "2018-01-01",
+      "end_date": "2018-12-31",
+      "pair": "EUR_INR",
+      "pct_change": 5.81
+    },
+    {
+      "event": "2018_Rate_Hikes",
+      "start_date": "2018-01-01",
+      "end_date": "2018-12-31",
+      "pair": "JPY_INR",
+      "pct_change": 11.9
+    },
+    {
+      "event": "2018_Rate_Hikes",
+      "start_date": "2018-01-01",
+      "end_date": "2018-12-31",
+      "pair": "CHF_INR",
+      "pct_change": 8.44
+    },
+    {
+      "event": "2020_COVID",
+      "start_date": "2020-02-01",
+      "end_date": "2020-06-30",
+      "pair": "USD_INR",
+      "pct_change": 5.88
+    },
+    {
+      "event": "2020_COVID",
+      "start_date": "2020-02-01",
+      "end_date": "2020-06-30",
+      "pair": "GBP_INR",
+      "pct_change": -1.3
+    },
+    {
+      "event": "2020_COVID",
+      "start_date": "2020-02-01",
+      "end_date": "2020-06-30",
+      "pair": "EUR_INR",
+      "pct_change": 7.0
+    },
+    {
+      "event": "2020_COVID",
+      "start_date": "2020-02-01",
+      "end_date": "2020-06-30",
+      "pair": "JPY_INR",
+      "pct_change": 6.33
+    },
+    {
+      "event": "2020_COVID",
+      "start_date": "2020-02-01",
+      "end_date": "2020-06-30",
+      "pair": "CHF_INR",
+      "pct_change": 6.94
+    },
+    {
+      "event": "2022_Fed_Hiking",
+      "start_date": "2022-01-01",
+      "end_date": "2022-12-31",
+      "pair": "USD_INR",
+      "pct_change": 11.17
+    },
+    {
+      "event": "2022_Fed_Hiking",
+      "start_date": "2022-01-01",
+      "end_date": "2022-12-31",
+      "pair": "GBP_INR",
+      "pct_change": -0.89
+    },
+    {
+      "event": "2022_Fed_Hiking",
+      "start_date": "2022-01-01",
+      "end_date": "2022-12-31",
+      "pair": "EUR_INR",
+      "pct_change": 4.25
+    },
+    {
+      "event": "2022_Fed_Hiking",
+      "start_date": "2022-01-01",
+      "end_date": "2022-12-31",
+      "pair": "JPY_INR",
+      "pct_change": -3.8
+    },
+    {
+      "event": "2022_Fed_Hiking",
+      "start_date": "2022-01-01",
+      "end_date": "2022-12-31",
+      "pair": "CHF_INR",
+      "pct_change": 9.74
+    }
+  ]
+}

@@ -2,8 +2,6 @@ numpy
 pandas
 scipy
 statsmodels
-matplotlib
 yfinance
-wbgapi
 requests
 jsonschema>=4.10

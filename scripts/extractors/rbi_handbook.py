@@ -285,3 +285,42 @@ class RbiHandbookExtractor:
             raw_path=raw_path,
             checksum=checksum,
         )
+
+    def fetch_publication(
+        self,
+        publication_id: int,
+        *,
+        table_number: int,
+        table_label: str,
+    ) -> RbiHandbookResponse:
+        """Fetch a stable RBI publication page when an archived table is required.
+
+        RBI renumbers some Handbook tables between editions.  The publication ID
+        is stable, so research stages that intentionally use a frozen edition can
+        retain reproducible source semantics without weakening raw-data landing.
+        """
+        source_url = (
+            "https://www.rbi.org.in/scripts/PublicationsView.aspx?"
+            f"id={publication_id}"
+        )
+        table_response = self._get(source_url, referer=HANDBOOK_URL)
+        sheets = read_html_tables(table_response.text, table_label=table_label)
+        retrieved = datetime.now(timezone.utc)
+        checksum = hashlib.sha256(table_response.content).hexdigest()
+        raw_path = (
+            self.raw_root
+            / retrieved.date().isoformat()
+            / f"publication-{publication_id}-{checksum[:12]}.html"
+        )
+        if not raw_path.exists():
+            raw_path.parent.mkdir(parents=True, exist_ok=True)
+            raw_path.write_bytes(table_response.content)
+        return RbiHandbookResponse(
+            table_number=table_number,
+            table_label=table_label,
+            sheets=sheets,
+            source_url=source_url,
+            retrieved_at=retrieved.isoformat(),
+            raw_path=raw_path,
+            checksum=checksum,
+        )

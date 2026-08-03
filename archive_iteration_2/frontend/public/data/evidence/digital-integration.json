@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-28T14:52:01.808081+00:00",
+    "lens_key": "digital_integration",
+    "label": "Digital integration and tax capacity — evidence",
+    "research_question": "Is digital-payment adoption occurring alongside deeper participation and stronger tax capacity?",
+    "specification_registry_version": "1.2.0",
+    "code_version": "4b394d05ba990bf065c8a511b670128509aa30c0+evidence.sha256.57825b8d814f7f629ec95bfc510edd414817fbf9e5322d66e2ab46de01032cba",
+    "source_assets": [
+      {
+        "path": "digital-integration/upi-and-tax-capacity.json",
+        "contract": "dated_multi_series",
+        "sha256": "d5fdafe257924fa5f7b9837b3778e520397816f26e6127843747cd6828fb8f41",
+        "generated_at": "2026-07-22T14:56:08.495032+00:00",
+        "start_date": "2016-04-30",
+        "end_date": "2026-06-30"
+      }
+    ],
+    "analysis_order": [
+      "upi-adoption-trend"
+    ],
+    "multiple_testing": {
+      "method": "benjamini_hochberg",
+      "family": "digital_integration_primary",
+      "alpha": 0.05
+    },
+    "software_versions": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.3",
+      "python": "3.12.3",
+      "scipy": "1.18.0",
+      "statsmodels": "0.14.6"
+    }
+  },
+  "analyses": [
+    {
+      "analysis_key": "upi-adoption-trend",
+      "specification_version": "1.0.0",
+      "label": "Persistent UPI adoption trend",
+      "claim": "UPI transactions per capita show a persistent adoption trend beyond ordinary calendar-month variation.",
+      "null_hypothesis": "The annualised underlying adoption trend is zero.",
+      "evidence_class": "associational",
+      "causal": false,
+      "focal_terms": [
+        "annualised_underlying_trend"
+      ],
+      "expected_direction": "positive",
+      "support_rule": "all_focal_adjusted_p_below_alpha",
+      "status": "failed_diagnostics",
+      "grade": "limited",
+      "sample": {
+        "n": 105,
+        "start_date": "2017-04-30",
+        "end_date": "2025-12-31",
+        "frequency": "monthly",
+        "excluded": {
+          "log_upi_transactions_per_capita:before_start": 12,
+          "log_upi_transactions_per_capita:missing_value": 6
+        }
+      },
+      "method": {
+        "estimator": "log_linear_segmented_trend",
+        "formula": "log_upi_transactions_per_capita ~ trend + calendar_month_effects + covid_level + post_covid_slope",
+        "covariance": "HAC",
+        "max_lags": 12,
+        "alignment": "exact_date_inner_join"
+      },
+      "estimates": [
+        {
+          "term": "annualised_underlying_trend",
+          "value": 410.82622030703095,
+          "unit": "percent_per_year",
+          "is_focal": true,
+          "standard_error": 131.2175274664556,
+          "confidence_level": 0.95,
+          "confidence_interval": [
+            206.64973176760557,
+            750.9494720540741
+          ],
+          "p_value": 8.621359456235575e-09,
+          "adjusted_p_value": 8.621359456235575e-09
+        },
+        {
+          "term": "covid_level_shift",
+          "value": -45.680064282874646,
+          "unit": "percent",
+          "is_focal": false,
+          "standard_error": 19.491238841811313,
+          "confidence_level": 0.95,
+          "confidence_interval": [
+            -73.37030604227303,
+            10.80320415986069
+          ],
+          "p_value": 0.09243728322226298,
+          "adjusted_p_value": null
+        },
+        {
+          "term": "annualised_post_covid_slope_change",
+          "value": -68.2877241402957,
+          "unit": "percent_per_year",
+          "is_focal": false,
+          "standard_error": 8.637291838060156,
+          "confidence_level": 0.95,
+          "confidence_interval": [
+            -81.54002942617112,
+            -45.52166612726117
+          ],
+          "p_value": 5.892054418948313e-05,
+          "adjusted_p_value": null
+        }
+      ],
+      "diagnostics": [
+        {
+          "key": "residual_degrees_of_freedom",
+          "value": 90,
+          "threshold": 20.0,
+          "passed": true,
+          "interpretation": "Residual degrees of freedom must meet the registered minimum."
+        },
+        {
+          "key": "condition_number",
+          "value": 10.724235893156044,
+          "threshold": 30.0,
+          "passed": true,
+          "interpretation": "Condition number of the design after standardising every non-constant column; values above 30 fail the registered gate."
+        },
+        {
+          "key": "residual_autocorrelation",
+          "value": 5.5713491634861195e-14,
+          "threshold": 0.01,
+          "passed": false,
+          "interpretation": "Breusch–Godfrey LM p-value at the registered HAC lag; values below 0.01 indicate residual serial dependence."
+        },
+        {
+          "key": "influential_observation",
+          "value": 0.1613046433571234,
+          "threshold": 1.0,
+          "passed": true,
+          "interpretation": "Maximum Cook's distance; 1.0 is the hard gate and 4/n=0.0381 is the screening reference."
+        },
+        {
+          "key": "stability",
+          "value": true,
+          "threshold": null,
+          "passed": true,
+          "interpretation": "The registered focal direction must persist after separately dropping the first and last 12 observations."
+        }
+      ],
+      "robustness": [
+        {
+          "specification": "start_date_2018_04",
+          "status": "supported",
+          "focal_estimate": {
+            "term": "annualised_underlying_trend",
+            "value": 159.66029882784173,
+            "unit": "percent_per_year",
+            "is_focal": true,
+            "standard_error": 26.89836391307194,
+            "confidence_level": 0.95,
+            "confidence_interval": [
+              111.27090260228074,
+              219.1327814521119
+            ],
+            "p_value": 4.201284022723478e-14,
+            "adjusted_p_value": null
+          },
+          "sample_size": 93,
+          "note": "Moved the registered start date to April 2018."
+        },
+        {
+          "specification": "exclude_pandemic_disruption_months",
+          "status": "supported",
+          "focal_estimate": {
+            "term": "annualised_underlying_trend",
+            "value": 442.59383661909357,
+            "unit": "percent_per_year",
+            "is_focal": true,
+            "standard_error": 136.9250589163867,
+            "confidence_level": 0.95,
+            "confidence_interval": [
+              228.5537125369659,
+              796.0728803327811
+            ],
+            "p_value": 2.0415419866126283e-09,
+            "adjusted_p_value": null
+          },
+          "sample_size": 101,
+          "note": "Omitted March through June 2020."
+        },
+        {
+          "specification": "linear_level_trend",
+          "status": "supported",
+          "focal_estimate": {
+            "term": "annualised_underlying_trend",
+            "value": 0.37035764400916893,
+            "unit": "transactions_per_person_per_year",
+            "is_focal": true,
+            "standard_error": 0.044586126318155166,
+            "confidence_level": 0.95,
+            "confidence_interval": [
+              0.28177952198428785,
+              0.45893576603405
+            ],
+            "p_value": 9.486128014526458e-13,
+            "adjusted_p_value": null
+          },
+          "sample_size": 105,
+          "note": "Estimated the registered design in transactions-per-person levels."
+        },
+        {
+          "specification": "hac_max_lags_6",
+          "status": "supported",
+          "focal_estimate": {
+            "term": "annualised_underlying_trend",
+            "value": 410.82622030703095,
+            "unit": "percent_per_year",
+            "is_focal": true,
+            "standard_error": 137.58764081846522,
+            "confidence_level": 0.95,
+            "confidence_interval": [
+              199.14604427379535,
+              772.2944272475058
+            ],
+            "p_value": 3.189197494098094e-08,
+            "adjusted_p_value": null
+          },
+          "sample_size": 105,
+          "note": "Used Newey–West HAC covariance with maximum lag six."
+        }
+      ],
+      "eligibility": {
+        "eligible": true,
+        "required_observations": 36,
+        "available_observations": 105,
+        "reason": "All registered pre-estimation eligibility gates passed.",
+        "checks": {
+          "minimum_observations": true,
+          "minimum_complete_pairs": true,
+          "dependent_variation": true,
+          "focal_variation": true,
+          "residual_degrees_of_freedom": true,
+          "no_exact_multicollinearity": true,
+          "no_future_information": true
+        }
+      },
+      "practical_interpretation": "The registered model estimated an annualised underlying UPI trend of 410.826% (95% interval 206.650 to 750.949; Benjamini–Hochberg-adjusted p=8.621e-09) and failed the registered model diagnostic: residual_autocorrelation. This describes observed adoption over time and does not identify a policy effect.",
+      "limitation": "The trend measures network adoption over time; it does not identify a policy effect or a causal effect on formalisation. Inference and deterministic grading follow decision 0002. 4 of 4 registered robustness fits met their unadjusted directional support rule."
+    }
+  ]
+}

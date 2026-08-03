@@ -7,7 +7,7 @@ import logging
 
 from builders import DatedSeriesDefinition, build_dated_multi_series_payload
 from config import PROCESSED_DATA_DIR
-from config.focused_indicators import get_focused_bundle
+from config.capex_upstream import get_capex_upstream_bundle
 from exporters import publish_json
 from extractors.national_accounts import NationalAccountsExtractor
 from extractors.rbi_obicus import ObicusExtractor
@@ -24,7 +24,7 @@ GOVERNMENT_ARTIFACT = PROCESSED_DATA_DIR / "government-investment" / "capex-and-
 
 
 def build_payload(response, government_payload, *, obicus_response=None):
-    bundle = get_focused_bundle("private_investment")
+    bundle = get_capex_upstream_bundle("private_investment")
     records = build_private_investment_records(response)
     records.extend(build_lagged_public_capex_records(government_payload))
     if obicus_response is not None:

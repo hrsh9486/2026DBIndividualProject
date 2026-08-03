@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "markets": [
+      "Nifty 50",
+      "Sensex",
+      "Nifty Bank",
+      "S&P500",
+      "FTSE100",
+      "HangSeng_China",
+      "Bovespa_Brazil",
+      "EM_ETF"
+    ],
+    "start_date": "2016-07-11",
+    "end_date": "2026-07-08",
+    "trading_days": 1750
+  },
+  "summary": {
+    "Nifty 50": {
+      "total_return": 1.8105925640260132,
+      "cagr": 0.16045123906402114,
+      "annual_return": 0.16656898478650603,
+      "annual_volatility": 0.18736999686329955,
+      "sharpe_ratio": 0.8889842961785959,
+      "sortino_ratio": 1.1258344279189234,
+      "max_drawdown": -0.3689645189053318,
+      "calmar_ratio": 0.4348690208480166
+    },
+    "Sensex": {
+      "total_return": 1.762696512543258,
+      "cagr": 0.1575825672260771,
+      "annual_return": 0.16434692355695263,
+      "annual_volatility": 0.1887649047175221,
+      "sharpe_ratio": 0.8706434270866724,
+      "sortino_ratio": 1.1096587593601308,
+      "max_drawdown": -0.3641869415029395,
+      "calmar_ratio": 0.43269691816999206
+    },
+    "Nifty Bank": {
+      "total_return": 2.067567092501334,
+      "cagr": 0.17516364095268644,
+      "annual_return": 0.1945433830381771,
+      "annual_volatility": 0.25639770092189257,
+      "sharpe_ratio": 0.7587563474192057,
+      "sortino_ratio": 0.9758033158546772,
+      "max_drawdown": -0.4717515049393275,
+      "calmar_ratio": 0.37130489064409966
+    },
+    "S&P500": {
+      "total_return": 2.5012400890264086,
+      "cagr": 0.1977548897661583,
+      "annual_return": 0.20085261768558602,
+      "annual_volatility": 0.20053526483109418,
+      "sharpe_ratio": 1.001582528912105,
+      "sortino_ratio": 1.1722364460063948,
+      "max_drawdown": -0.3392496000265327,
+      "calmar_ratio": 0.5829185642391086
+    },
+    "FTSE100": {
+      "total_return": 0.5590028236947118,
+      "cagr": 0.06603129400110097,
+      "annual_return": 0.07954463183163825,
+      "annual_volatility": 0.17563459144489596,
+      "sharpe_ratio": 0.4528984363344779,
+      "sortino_ratio": 0.5297698629439813,
+      "max_drawdown": -0.3588028394842766,
+      "calmar_ratio": 0.18403225040250715
+    },
+    "HangSeng_China": {
+      "total_return": 0.13217779921666084,
+      "cagr": 0.018037339654607187,
+      "annual_return": 0.05166277484444221,
+      "annual_volatility": 0.25956976582565666,
+      "sharpe_ratio": 0.19903232828411216,
+      "sortino_ratio": 0.2814238542403073,
+      "max_drawdown": -0.5490397544274468,
+      "calmar_ratio": 0.03285252025769428
+    },
+    "Bovespa_Brazil": {
+      "total_return": 2.1626019273535952,
+      "cagr": 0.18033806360690385,
+      "annual_return": 0.19809755949430485,
+      "annual_volatility": 0.25239589299455056,
+      "sharpe_ratio": 0.7848683952182295,
+      "sortino_ratio": 1.0031142827716433,
+      "max_drawdown": -0.46815808848136,
+      "calmar_ratio": 0.3852076211945746
+    },
+    "EM_ETF": {
+      "total_return": 1.3674624889462814,
+      "cagr": 0.13213122143438993,
+      "annual_return": 0.15202897793991943,
+      "annual_volatility": 0.2353052072751763,
+      "sharpe_ratio": 0.6460927053013751,
+      "sortino_ratio": 0.8449349756330216,
+      "max_drawdown": -0.3982232516753065,
+      "calmar_ratio": 0.33180187464825345
+    }
+  },
+  "rankings": {
+    "total_return": [
+      "S&P500",
+      "Bovespa_Brazil",
+      "Nifty Bank",
+      "Nifty 50",
+      "Sensex",
+      "EM_ETF",
+      "FTSE100",
+      "HangSeng_China"
+    ],
+    "cagr": [
+      "S&P500",
+      "Bovespa_Brazil",
+      "Nifty Bank",
+      "Nifty 50",
+      "Sensex",
+      "EM_ETF",
+      "FTSE100",
+      "HangSeng_China"
+    ],
+    "annual_return": [
+      "S&P500",
+      "Bovespa_Brazil",
+      "Nifty Bank",
+      "Nifty 50",
+      "Sensex",
+      "EM_ETF",
+      "FTSE100",
+      "HangSeng_China"
+    ],
+    "annual_volatility": [
+      "HangSeng_China",
+      "Nifty Bank",
+      "Bovespa_Brazil",
+      "EM_ETF",
+      "S&P500",
+      "Sensex",
+      "Nifty 50",
+      "FTSE100"
+    ],
+    "sharpe_ratio": [
+      "S&P500",
+      "Nifty 50",
+      "Sensex",
+      "Bovespa_Brazil",
+      "Nifty Bank",
+      "EM_ETF",
+      "FTSE100",
+      "HangSeng_China"
+    ],
+    "sortino_ratio": [
+      "S&P500",
+      "Nifty 50",
+      "Sensex",
+      "Bovespa_Brazil",
+      "Nifty Bank",
+      "EM_ETF",
+      "FTSE100",
+      "HangSeng_China"
+    ],
+    "max_drawdown": [
+      "HangSeng_China",
+      "Nifty Bank",
+      "Bovespa_Brazil",
+      "EM_ETF",
+      "Nifty 50",
+      "Sensex",
+      "FTSE100",
+      "S&P500"
+    ],
+    "calmar_ratio": [
+      "S&P500",
+      "Nifty 50",
+      "Sensex",
+      "Bovespa_Brazil",
+      "Nifty Bank",
+      "EM_ETF",
+      "FTSE100",
+      "HangSeng_China"
+    ]
+  }
+}

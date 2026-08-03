@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:21:48.870689+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/IND/indicator/TX.MNF.TECH.ZS.UN?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "eec3353b1e2aae0701928a81e0079372371621b2c89d0cf557c683767be840f8",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2025",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2024",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2023",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2022",
+        "value": 33.8296308862499,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2021",
+        "value": 35.6107858665442,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2020",
+        "value": 40.0356029492172,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2019",
+        "value": 36.6689569974549,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2018",
+        "value": 34.7731286139299,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2017",
+        "value": 33.8424641183214,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2016",
+        "value": 34.0705238527559,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2015",
+        "value": 33.8905663476031,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2014",
+        "value": 30.2073979064013,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2013",
+        "value": 28.6969111044334,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2012",
+        "value": 28.0496334346215,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2011",
+        "value": 27.67446292234,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2010",
+        "value": 28.2412482431593,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2009",
+        "value": 28.8628899871325,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2008",
+        "value": 27.2989821895677,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2007",
+        "value": 23.9699252287308,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2006",
+        "value": 23.1763904990123,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2005",
+        "value": 22.5979828939544,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2004",
+        "value": 22.8282776439707,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2003",
+        "value": 22.1994875684007,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2002",
+        "value": 21.5462510464389,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2001",
+        "value": 21.4967258250246,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2000",
+        "value": 18.6799869103853,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1999",
+        "value": 18.0300163549926,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1998",
+        "value": 18.4495951145456,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1997",
+        "value": 20.7006249275988,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1996",
+        "value": 20.3704333510761,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1995",
+        "value": 19.3955581829249,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1994",
+        "value": 18.3475185143425,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1993",
+        "value": 17.2879654348205,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1992",
+        "value": 16.0908667544183,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "TX.MNF.TECH.ZS.UN",
+          "value": "Medium and high-tech exports (% manufactured exports)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1991",
+        "value": 18.7901932288136,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      }
+    ]
+  ]
+}

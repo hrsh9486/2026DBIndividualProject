@@ -1,26 +1,17 @@
 import { useMemo, useState } from "react";
 import { CartesianGrid, Legend, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import { annualCountryToRows } from "../adapters/annualCountryToRows";
 import { datedSeriesToRows } from "../adapters/datedSeriesToRows";
 import { marketPerformanceToRows } from "../adapters/marketPerformanceToRows";
-import type { AnnualCountryPayload, DatedPayload, MarketPayload, Presentation, StaticPayload } from "../data/types";
-import { countryName, formatValue } from "../lib/format";
+import type { DatedPayload, MarketPayload, Presentation, StaticPayload } from "../data/types";
+import { formatValue } from "../lib/format";
 import { seriesColor } from "../lib/seriesColors";
 import EntityControls from "./EntityControls";
 
 const MAX_VISIBLE_POINT_MARKERS = 250;
 
 export default function ChartView({ payload, presentation }: { payload: StaticPayload; presentation: Presentation }) {
-  const initialKeys = "india" in payload
-    ? [payload.metadata.country, ...Object.keys(payload.peers)]
-    : presentation.default_visible;
-  const [visible, setVisible] = useState(initialKeys);
+  const [visible, setVisible] = useState(presentation.default_visible);
   const { rows, keys, labels } = useMemo(() => {
-    if ("india" in payload) {
-      const annual = payload as AnnualCountryPayload;
-      const entityKeys = [annual.metadata.country, ...Object.keys(annual.peers)];
-      return { rows: annualCountryToRows(annual), keys: entityKeys, labels: Object.fromEntries(entityKeys.map((key) => [key, countryName(key)])) };
-    }
     if ("series" in payload) {
       const dated = payload as DatedPayload;
       const seriesKeys = dated.metadata.series_order ?? Object.keys(dated.series);
@@ -64,7 +55,7 @@ export default function ChartView({ payload, presentation }: { payload: StaticPa
               type="monotone"
               connectNulls={false}
               stroke={color}
-              strokeWidth={key === "IND" ? 2.8 : 1.8}
+              strokeWidth={1.8}
               dot={showPoints ? { r: 2.5, fill: "#fffdf8", stroke: color, strokeWidth: 1.5 } : false}
               activeDot={{ r: 4 }}
             />;

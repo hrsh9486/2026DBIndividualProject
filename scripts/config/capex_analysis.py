@@ -71,4 +71,7 @@ OUTPUTS = {
     "fiscal": "capex-analysis/fiscal-sustainability.json",
     "summary": "capex-analysis/analysis-summary.json",
     "corporate": "capex-analysis/corporate-fundamentals.json",
+    "quality": "capex-analysis/investment-quality.json",
+    "states": "capex-analysis/state-capex-evaluation.json",
+    "crowding_in": "capex-analysis/crowding-in-evidence.json",
 }

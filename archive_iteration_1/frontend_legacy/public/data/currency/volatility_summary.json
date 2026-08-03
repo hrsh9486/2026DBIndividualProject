@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-01T09:00:00Z",
+    "window_days": 30,
+    "method": "annualized_stdev_of_log_returns"
+  },
+  "pairs": [
+    { "pair": "USDINR", "annualized_vol_pct": 4.8,  "current_vol_pct": 5.1,  "vol_percentile_1y": 62 },
+    { "pair": "GBPINR", "annualized_vol_pct": 7.9,  "current_vol_pct": 8.6,  "vol_percentile_1y": 71 },
+    { "pair": "EURINR", "annualized_vol_pct": 6.5,  "current_vol_pct": 6.2,  "vol_percentile_1y": 48 },
+    { "pair": "JPYINR", "annualized_vol_pct": 9.3,  "current_vol_pct": 11.4, "vol_percentile_1y": 88 },
+    { "pair": "CHFINR", "annualized_vol_pct": 7.1,  "current_vol_pct": 6.8,  "vol_percentile_1y": 55 }
+  ]
+}

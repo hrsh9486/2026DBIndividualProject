@@ -1,0 +1,14 @@
+{
+  "retrieved_at": "2026-07-29T15:36:20.729236+00:00",
+  "source_url": "https://finance.yahoo.com/quote/NIFTY_INDIA_MFG.NS/history",
+  "ticker": "NIFTY_INDIA_MFG.NS",
+  "period": "10y",
+  "interval": "1d",
+  "observations": [
+    {
+      "date": "2026-07-29",
+      "close": 16055.0498046875
+    }
+  ],
+  "sha256": "ae8a5d33796dc67a504f59a14952b190d6a4f7dbaa8172007c704de29ba3f13b"
+}

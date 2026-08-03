@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:21:47.905267+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/BGD/indicator/BX.KLT.DINV.WD.GD.ZS?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "f1ef6e0be42c3aca71f3e19c4aa9a74542f359fd2d08bd6eb83372ec314b760d",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2025",
+        "value": 0.404544313117544,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2024",
+        "value": 0.283870773350074,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2023",
+        "value": 0.335721505298968,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2022",
+        "value": 0.347960024540439,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2021",
+        "value": 0.414118154040593,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2020",
+        "value": 0.407859894856915,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2019",
+        "value": 0.543244141585063,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2018",
+        "value": 0.75354913412869,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2017",
+        "value": 0.616341784631384,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2016",
+        "value": 0.879528340271998,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2015",
+        "value": 1.4507824552936,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2014",
+        "value": 1.46870305074204,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2013",
+        "value": 1.73532012481503,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2012",
+        "value": 1.18850391920183,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2011",
+        "value": 0.983399364184761,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2010",
+        "value": 1.06896766308322,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2009",
+        "value": 0.879517142536145,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2008",
+        "value": 1.4496579161576,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2007",
+        "value": 0.817756922700044,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2006",
+        "value": 0.635863899506714,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2005",
+        "value": 1.17065167448603,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2004",
+        "value": 0.689472335587339,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2003",
+        "value": 0.44596078329809,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2002",
+        "value": 0.0955793676464671,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2001",
+        "value": 0.145443904569924,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2000",
+        "value": 0.525362089236087,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1999",
+        "value": 0.350304290993083,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1998",
+        "value": 0.380236166897954,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1997",
+        "value": 0.288896567530213,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1996",
+        "value": 0.0291349551912919,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1995",
+        "value": 0.00499837818821925,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1994",
+        "value": 0.033012230974896,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1993",
+        "value": 0.0423616549795556,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1992",
+        "value": 0.0117375764038404,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "value": "Foreign direct investment, net inflows (% of GDP)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1991",
+        "value": 0.00449146424413688,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      }
+    ]
+  ]
+}

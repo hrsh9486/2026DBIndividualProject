@@ -17,10 +17,6 @@ export function formatValue(value: number | null | undefined, format?: ValueForm
   return `${format?.prefix ?? ""}${rendered}${suffix}`;
 }
 
-export const countryName = (code: string) => ({
-  IND: "India", CHN: "China", VNM: "Vietnam", IDN: "Indonesia", BGD: "Bangladesh",
-}[code] ?? code);
-
 export function relativeFreshness(generatedAt: string, staleAfterDays: number): { label: string; stale: boolean } {
   const days = Math.max(0, Math.floor((Date.now() - new Date(generatedAt).getTime()) / 86_400_000));
   return { label: days === 0 ? "Updated today" : `Updated ${days}d ago`, stale: days > staleAfterDays };

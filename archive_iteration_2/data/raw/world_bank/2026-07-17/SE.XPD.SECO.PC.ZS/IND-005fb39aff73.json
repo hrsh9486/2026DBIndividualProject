@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:20:09.460306+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/IND/indicator/SE.XPD.SECO.PC.ZS?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "005fb39aff7353f92e79517ba90d427ad85cc3ca2acef67d7953f0ab1dd8b4da",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2025",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2024",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2023",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2022",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2021",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2020",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2019",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2018",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2017",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2016",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2015",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2014",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2013",
+        "value": 16.8546,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2012",
+        "value": 15.71915,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2011",
+        "value": 15.22846,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2010",
+        "value": 14.1265,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2009",
+        "value": 13.59323,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2008",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2007",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2006",
+        "value": 16.74737,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2005",
+        "value": 17.26857,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2004",
+        "value": 18.33907,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2003",
+        "value": 20.30911,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2002",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2001",
+        "value": 23.94886,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "2000",
+        "value": 25.33873,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1999",
+        "value": 25.36353,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1998",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1997",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1996",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1995",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1994",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1993",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1992",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SE.XPD.SECO.PC.ZS",
+          "value": "Government expenditure per student, secondary (% of GDP per capita)"
+        },
+        "country": {
+          "id": "IN",
+          "value": "India"
+        },
+        "countryiso3code": "IND",
+        "date": "1991",
+        "value": null,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      }
+    ]
+  ]
+}

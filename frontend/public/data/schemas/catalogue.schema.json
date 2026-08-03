@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.com/schemas/static_frontend_indicator_manifest.schema.json",
   "title": "Static Frontend Indicator Manifest",
-  "description": "Navigation, public-file references and presentation configuration for a React frontend. Every data_path points to a static JSON file served from the React application's public directory. Lens-level evidence reports remain distinct from time-series indicator views.",
+  "description": "Navigation, public-file references and presentation configuration for the static CapEx research frontend.",
   "type": "object",
   "required": [
     "schema_version",
@@ -63,9 +63,7 @@
         "schema": {
           "type": "string",
           "enum": [
-            "annual_country_series",
             "dated_multi_series",
-            "evidence_report",
             "market_performance"
           ]
         },
@@ -142,10 +140,6 @@
         "order": {
           "type": "integer",
           "minimum": 1
-        },
-        "evidence_asset_id": {
-          "type": "string",
-          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
         },
         "indicators": {
           "type": "array",
@@ -238,13 +232,15 @@
         "component": {
           "type": "string",
           "enum": [
-            "country-comparison-line",
             "multi-series-line",
             "market-performance",
             "capex-correlation",
             "corporate-fundamentals",
             "fiscal-bridge",
-            "capex-scenario-lab"
+            "capex-scenario-lab",
+            "investment-quality",
+            "state-capex-evaluation",
+            "crowding-in"
           ]
         },
         "chart_type": {

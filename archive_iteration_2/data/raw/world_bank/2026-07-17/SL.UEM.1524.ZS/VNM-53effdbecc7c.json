@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:17:21.080891+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/VNM/indicator/SL.UEM.1524.ZS?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "53effdbecc7c9511a3db0fc68da9cd6e67308d9400fd8738c07503c0a4ee2926",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2025",
+        "value": 6.165,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2024",
+        "value": 6.338,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2023",
+        "value": 6.441,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2022",
+        "value": 6.097,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2021",
+        "value": 6.903,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2020",
+        "value": 6.546,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2019",
+        "value": 5.624,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2018",
+        "value": 4.648,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2017",
+        "value": 7.124,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2016",
+        "value": 6.763,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2015",
+        "value": 6.267,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2014",
+        "value": 4.666,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2013",
+        "value": 4.559,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2012",
+        "value": 3.63,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2011",
+        "value": 3.226,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2010",
+        "value": 3.432,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2009",
+        "value": 4.433,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2008",
+        "value": 5.184,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2007",
+        "value": 5.885,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2006",
+        "value": 5.401,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2005",
+        "value": 4.963,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2004",
+        "value": 4.57,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2003",
+        "value": 4.718,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2002",
+        "value": 4.418,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2001",
+        "value": 5.592,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "2000",
+        "value": 4.732,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1999",
+        "value": 4.785,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1998",
+        "value": 4.765,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1997",
+        "value": 5.994,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1996",
+        "value": 3.973,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1995",
+        "value": 3.986,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1994",
+        "value": 3.991,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1993",
+        "value": 4.066,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1992",
+        "value": 4.151,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "SL.UEM.1524.ZS",
+          "value": "Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)"
+        },
+        "country": {
+          "id": "VN",
+          "value": "Viet Nam"
+        },
+        "countryiso3code": "VNM",
+        "date": "1991",
+        "value": 4.181,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      }
+    ]
+  ]
+}

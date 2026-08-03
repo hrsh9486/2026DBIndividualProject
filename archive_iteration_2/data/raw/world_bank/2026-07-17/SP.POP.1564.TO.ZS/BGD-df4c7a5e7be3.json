@@ -1,0 +1,577 @@
+{
+  "retrieved_at": "2026-07-17T09:11:21.733932+00:00",
+  "source_url": "https://api.worldbank.org/v2/country/BGD/indicator/SP.POP.1564.TO.ZS?format=json&per_page=1000&date=1991%3A2026",
+  "sha256": "df4c7a5e7be366afbb7aeea6c9f1f8a783438843b0d02ccc35179050f3044d96",
+  "payload": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 1000,
+      "total": 35,
+      "sourceid": "2",
+      "lastupdated": "2026-07-13"
+    },
+    [
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2025",
+        "value": 65.6858333367082,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2024",
+        "value": 65.5126064657658,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2023",
+        "value": 65.3185697725259,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2022",
+        "value": 65.0947523228864,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2021",
+        "value": 64.9516858651805,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2020",
+        "value": 64.9064095313604,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2019",
+        "value": 64.8612797816401,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2018",
+        "value": 64.7973177686173,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2017",
+        "value": 64.6648001467869,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2016",
+        "value": 64.3617117778247,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2015",
+        "value": 63.9150578117155,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2014",
+        "value": 63.4371252223876,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2013",
+        "value": 62.9494570158261,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2012",
+        "value": 62.4844425603217,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2011",
+        "value": 62.0740346987153,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2010",
+        "value": 61.7403305619908,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2009",
+        "value": 61.4616088790656,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2008",
+        "value": 61.2236072332278,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2007",
+        "value": 61.008240407795,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2006",
+        "value": 60.7813908631262,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2005",
+        "value": 60.5359621928184,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2004",
+        "value": 60.2870409402001,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2003",
+        "value": 60.0554642158213,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2002",
+        "value": 59.8282267929633,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2001",
+        "value": 59.5841764337926,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "2000",
+        "value": 59.2159179803854,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1999",
+        "value": 58.715180480144,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1998",
+        "value": 58.186387813893,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1997",
+        "value": 57.6206370805022,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1996",
+        "value": 57.0127368192093,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1995",
+        "value": 56.3958391805832,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1994",
+        "value": 55.8094563880517,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1993",
+        "value": 55.2582858953369,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1992",
+        "value": 54.7446561197595,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.1564.TO.ZS",
+          "value": "Population ages 15-64 (% of total population)"
+        },
+        "country": {
+          "id": "BD",
+          "value": "Bangladesh"
+        },
+        "countryiso3code": "BGD",
+        "date": "1991",
+        "value": 54.2521332535129,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      }
+    ]
+  ]
+}

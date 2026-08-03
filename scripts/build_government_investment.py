@@ -7,7 +7,7 @@ import logging
 
 from builders import DatedSeriesDefinition, build_dated_multi_series_payload
 from config import PROCESSED_DATA_DIR
-from config.focused_indicators import get_focused_bundle
+from config.capex_upstream import get_capex_upstream_bundle
 from exporters import publish_json
 from extractors import RbiHandbookExtractor, UnionBudgetExtractor
 from transforms.government_investment import (
@@ -21,7 +21,7 @@ LOGGER = logging.getLogger(__name__)
 
 
 def build_payload(snapshots, gdp_response=None):
-    bundle = get_focused_bundle("government_investment")
+    bundle = get_capex_upstream_bundle("government_investment")
     nominal_gdp = parse_nominal_gdp_by_fiscal_year(gdp_response) if gdp_response else {}
     records = build_government_investment_records(
         snapshots,

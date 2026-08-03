@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-14T11:50:39.421836+00:00",
+    "source": "World Bank Open Data API",
+    "country": "IND",
+    "peers": [
+      "CHN",
+      "VNM",
+      "IDN",
+      "BGD"
+    ],
+    "start_year": 1991,
+    "end_year": 2026
+  },
+  "indicators": {
+    "urban_population_pct": {
+      "label": "Urban Population (% of total)",
+      "india_latest": {
+        "year": 2025,
+        "value": 35.689155772396
+      },
+      "peers_latest": {
+        "CHN": {
+          "year": 2025,
+          "value": 66.3429910348272
+        },
+        "VNM": {
+          "year": 2025,
+          "value": 38.8299160351294
+        },
+        "IDN": {
+          "year": 2025,
+          "value": 59.3929063969984
+        },
+        "BGD": {
+          "year": 2025,
+          "value": 33.2395847043975
+        }
+      }
+    },
+    "adult_literacy_rate": {
+      "label": "Adult Literacy Rate (% ages 15+)",
+      "india_latest": {
+        "year": 2024,
+        "value": 78.1625330351403
+      },
+      "peers_latest": {
+        "CHN": {
+          "year": 2020,
+          "value": 96.7399978637695
+        },
+        "VNM": {
+          "year": 2022,
+          "value": 96.129997253418
+        },
+        "IDN": {
+          "year": 2020,
+          "value": 96.0
+        },
+        "BGD": {
+          "year": 2022,
+          "value": 79.0
+        }
+      }
+    },
+    "labor_force_participation": {
+      "label": "Labor Force Participation Rate (% ages 15+)",
+      "india_latest": {
+        "year": 2025,
+        "value": 55.658
+      },
+      "peers_latest": {
+        "CHN": {
+          "year": 2025,
+          "value": 64.551
+        },
+        "VNM": {
+          "year": 2025,
+          "value": 72.778
+        },
+        "IDN": {
+          "year": 2025,
+          "value": 67.965
+        },
+        "BGD": {
+          "year": 2025,
+          "value": 58.796
+        }
+      }
+    },
+    "working_age_share_pct": {
+      "label": "Working Age Population Share  (% ages 15-64)",
+      "india_latest": {
+        "year": 2025,
+        "value": 68.4281617563294
+      },
+      "peers_latest": {
+        "CHN": {
+          "year": 2025,
+          "value": 69.6812776464024
+        },
+        "VNM": {
+          "year": 2025,
+          "value": 67.6494468271179
+        },
+        "IDN": {
+          "year": 2025,
+          "value": 68.2099803183862
+        },
+        "BGD": {
+          "year": 2025,
+          "value": 65.6858333367082
+        }
+      }
+    },
+    "youth_unemployment_rate": {
+      "label": "Youth Unemployment Rate (% ages 15-24)",
+      "india_latest": {
+        "year": 2025,
+        "value": 16.022
+      },
+      "peers_latest": {
+        "CHN": {
+          "year": 2025,
+          "value": 15.795
+        },
+        "VNM": {
+          "year": 2025,
+          "value": 6.165
+        },
+        "IDN": {
+          "year": 2025,
+          "value": 12.977
+        },
+        "BGD": {
+          "year": 2025,
+          "value": 9.385
+        }
+      }
+    },
+    "female_to_male_lfpr_ration": {
+      "label": "Female to Male LFPR Ratio (% ages 15+)",
+      "india_latest": {
+        "year": 2025,
+        "value": 44.1144043063752
+      },
+      "peers_latest": {
+        "CHN": {
+          "year": 2010,
+          "value": 81.5392489284115
+        },
+        "VNM": {
+          "year": 2024,
+          "value": 88.3472458424749
+        },
+        "IDN": {
+          "year": 2023,
+          "value": 64.9259358353805
+        },
+        "BGD": {
+          "year": 2024,
+          "value": 48.0291131008954
+        }
+      }
+    },
+    "school_enrollment_gross_secondary": {
+      "label": "Secondary Education Enrollment (% of total)",
+      "india_latest": {
+        "year": 2025,
+        "value": 79.594985086469
+      },
+      "peers_latest": {
+        "CHN": {
+          "year": 2012,
+          "value": 92.2603063015232
+        },
+        "VNM": {
+          "year": 2022,
+          "value": 93.4123434096522
+        },
+        "IDN": {
+          "year": 2025,
+          "value": 97.1701841816
+        },
+        "BGD": {
+          "year": 2024,
+          "value": 64.2997191043961
+        }
+      }
+    },
+    "school_enrollment_gross_tertiary": {
+      "label": "Tertiary Education Enrollment (% of total)",
+      "india_latest": {
+        "year": 2025,
+        "value": 34.4465039692543
+      },
+      "peers_latest": {
+        "CHN": {
+          "year": 2024,
+          "value": 76.8757843123403
+        },
+        "VNM": {
+          "year": 2024,
+          "value": 37.5923642016718
+        },
+        "IDN": {
+          "year": 2023,
+          "value": 44.8813034886441
+        },
+        "BGD": {
+          "year": 2024,
+          "value": 23.7295608009814
+        }
+      }
+    },
+    "pct_gdb_secondary_expenditure": {
+      "label": "Government expenditure on Secondary Education (% of GDP)",
+      "india_latest": {
+        "year": 2013,
+        "value": 16.8546
+      },
+      "peers_latest": {
+        "CHN": {
+          "year": 1999,
+          "value": 11.42726
+        },
+        "VNM": null,
+        "IDN": {
+          "year": 2015,
+          "value": 10.52216
+        },
+        "BGD": {
+          "year": 2016,
+          "value": 9.88363
+        }
+      }
+    },
+    "dependency_ratio": {
+      "label": "Age Dependency Ratio & Working-Age Population Share",
+      "india_latest": {
+        "year": 2025,
+        "age_dependency_ratio": 46.1386620179175,
+        "working_age_share_pct": 68.4281617563294
+      }
+    }
+  }
+}
