@@ -1,19 +1,20 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import type { Indicator, StaticDataAsset } from "../data/types";
 import { useIndicatorData } from "../hooks/useIndicatorData";
 import { assertAdapterMatchesSchema } from "../data/runtimeGuards";
 import ChartView from "./ChartView";
-import CapexCorrelationView from "./CapexCorrelationView";
-import CorporateFundamentalsView from "./CorporateFundamentalsView";
-import FiscalBridgeView from "./FiscalBridgeView";
-import CapexScenarioLab from "./CapexScenarioLab";
-import InvestmentQualityView from "./InvestmentQualityView";
-import StateCapexEvaluationView from "./StateCapexEvaluationView";
-import CrowdingInView from "./CrowdingInView";
 import DataStatusBadge from "./DataStatusBadge";
 import InsightRail from "./InsightRail";
 import SourcePanel from "./SourcePanel";
 import { ErrorPanel, LoadingPanel, PlannedPanel } from "./StatePanel";
+
+const CapexCorrelationView = lazy(() => import("./CapexCorrelationView"));
+const CorporateFundamentalsView = lazy(() => import("./CorporateFundamentalsView"));
+const FiscalBridgeView = lazy(() => import("./FiscalBridgeView"));
+const CapexScenarioLab = lazy(() => import("./CapexScenarioLab"));
+const InvestmentQualityView = lazy(() => import("./InvestmentQualityView"));
+const StateCapexEvaluationView = lazy(() => import("./StateCapexEvaluationView"));
+const CrowdingInView = lazy(() => import("./CrowdingInView"));
 
 export default function MetricPanel({ indicator, assets }: { indicator: Indicator; assets: Record<string, StaticDataAsset> }) {
   const [viewId, setViewId] = useState(indicator.default_view);
@@ -29,7 +30,7 @@ export default function MetricPanel({ indicator, assets }: { indicator: Indicato
     {asset.availability === "planned" && <PlannedPanel />}
     {query.isLoading && <LoadingPanel />}
     {query.error && <ErrorPanel message={query.error.message} />}
-    {query.data && (() => {
+    {query.data && <Suspense fallback={<LoadingPanel />}>{(() => {
       assertAdapterMatchesSchema(view.presentation.component, asset.schema);
       if (view.presentation.component === "capex-correlation" && "series" in query.data) {
         return <><CapexCorrelationView payload={query.data} /><SourcePanel payload={query.data} /></>;
@@ -53,6 +54,6 @@ export default function MetricPanel({ indicator, assets }: { indicator: Indicato
         return <><CrowdingInView payload={query.data} /><SourcePanel payload={query.data} /></>;
       }
       return <><div className="analysis-grid"><section className="chart-card"><div className="chart-title"><div><span>Time series</span><h3>{indicator.title}</h3></div><b>{asset.expected_frequency}</b></div><ChartView key={view.id} payload={query.data} presentation={view.presentation} /></section><aside className="ranking-card"><div className="rail-heading"><span>Latest reading</span><h3>Selected series</h3></div><InsightRail payload={query.data} presentation={view.presentation} /></aside></div><SourcePanel payload={query.data} /></>;
-    })()}
+    })()}</Suspense>}
   </article>;
 }
