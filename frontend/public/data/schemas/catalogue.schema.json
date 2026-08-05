@@ -293,6 +293,10 @@
           "type": "boolean",
           "default": false
         },
+        "show_points": {
+          "type": "boolean",
+          "default": true
+        },
         "show_status": {
           "type": "boolean",
           "default": false

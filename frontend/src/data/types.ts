@@ -32,6 +32,7 @@ export interface Presentation {
   controls: { date_range: boolean; entity_toggle: boolean; series_toggle: boolean };
   summary_fields?: Array<{ key: string; label: string; format: ValueFormat }>;
   zero_line?: boolean;
+  show_points?: boolean;
   show_source: boolean;
   show_methodology: boolean;
 }

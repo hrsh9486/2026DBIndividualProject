@@ -47,7 +47,7 @@ export default function ChartView({ payload, presentation }: { payload: StaticPa
           <Legend formatter={(key) => labels[String(key)] ?? key} />
           {plotted.map((key) => {
             const color = seriesColor(keys.indexOf(key));
-            const showPoints = pointCounts[key] <= MAX_VISIBLE_POINT_MARKERS;
+            const showPoints = presentation.show_points !== false && pointCounts[key] <= MAX_VISIBLE_POINT_MARKERS;
             return <Line
               key={key}
               dataKey={key}

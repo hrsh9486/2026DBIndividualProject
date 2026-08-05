@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-08-03T13:30:35.309771+00:00",
+  "generated_at": "2026-08-05T09:53:11.071476+00:00",
   "public_data_root": "/data",
   "assets": {
     "capex-execution": {
@@ -10,7 +10,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-08-03",
+      "version": "2026-08-05",
       "availability": "active",
       "description": "Has actual public CapEx intensified and been executed?"
     },
@@ -21,7 +21,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-08-03",
+      "version": "2026-08-05",
       "availability": "active",
       "description": "How much central-budget CapEx was allocated to roads and railways?"
     },
@@ -32,7 +32,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-08-03",
+      "version": "2026-08-05",
       "availability": "active",
       "description": "Did roads and railways deliver physical output?"
     },
@@ -43,7 +43,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-08-03",
+      "version": "2026-08-05",
       "availability": "active",
       "description": "Did capital-goods production rise alongside the CapEx push?"
     },
@@ -54,7 +54,7 @@
       "expected_frequency": "monthly",
       "stale_after_days": 45,
       "cache_strategy": "revalidate",
-      "version": "2026-08-03",
+      "version": "2026-08-05",
       "availability": "active",
       "description": "Did CapEx-sensitive sectors outperform the Nifty 50?"
     },
@@ -65,7 +65,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-08-03",
+      "version": "2026-08-05",
       "availability": "active",
       "description": "Was CapEx growth followed by sector excess returns?"
     },
@@ -76,7 +76,7 @@
       "expected_frequency": "mixed",
       "stale_after_days": 120,
       "cache_strategy": "revalidate",
-      "version": "2026-08-03",
+      "version": "2026-08-05",
       "availability": "active",
       "description": "Did private investment and manufacturing capacity respond?"
     },
@@ -87,7 +87,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-08-03",
+      "version": "2026-08-05",
       "availability": "active",
       "description": "Can the CapEx push continue without excessive debt-service pressure?"
     },
@@ -98,7 +98,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-08-03",
+      "version": "2026-08-05",
       "availability": "active",
       "description": "Did market expectations coincide with stronger corporate revenue, investment and productive assets?"
     },
@@ -109,7 +109,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-08-03",
+      "version": "2026-08-05",
       "availability": "active",
       "description": "Did monitored central-sector projects improve on delivery timing and cost control?"
     },
@@ -120,7 +120,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-08-03",
+      "version": "2026-08-05",
       "availability": "active",
       "description": "Do within-state changes in capital outlay precede stronger real GSDP growth?"
     },
@@ -131,7 +131,7 @@
       "expected_frequency": "annual",
       "stale_after_days": 450,
       "cache_strategy": "revalidate",
-      "version": "2026-08-03",
+      "version": "2026-08-05",
       "availability": "active",
       "description": "Do private-investment and production outcomes respond at registered CapEx leads?"
     }
@@ -355,36 +355,7 @@
                 "x_axis": "date",
                 "market_field": "relative_to_nifty50",
                 "default_visible": [
-                  "CAPITAL_GOODS",
-                  "INFRASTRUCTURE",
-                  "MANUFACTURING"
-                ],
-                "value_format": {
-                  "style": "index",
-                  "scale": 1,
-                  "decimals": 1
-                },
-                "controls": {
-                  "date_range": true,
-                  "entity_toggle": false,
-                  "series_toggle": true
-                },
-                "zero_line": false,
-                "show_source": true,
-                "show_methodology": true
-              },
-              "note": "Index provider data are preferred; the automated pipeline uses provider-labelled adjusted-close histories and preserves raw observations."
-            },
-            {
-              "id": "control",
-              "label": "FMCG comparison",
-              "asset_id": "capex-sector-performance",
-              "presentation": {
-                "component": "market-performance",
-                "chart_type": "line",
-                "x_axis": "date",
-                "market_field": "normalized_value",
-                "default_visible": [
+                  "NIFTY_50",
                   "CAPITAL_GOODS",
                   "INFRASTRUCTURE",
                   "MANUFACTURING",
@@ -401,10 +372,11 @@
                   "series_toggle": true
                 },
                 "zero_line": false,
+                "show_points": false,
                 "show_source": true,
                 "show_methodology": true
               },
-              "note": "Each official TRI is independently rebased to 100 at the common start date. The correlation analysis still uses target-sector returns relative to Nifty FMCG."
+              "note": "Index provider data are preferred; the automated pipeline uses provider-labelled adjusted-close histories and preserves raw observations."
             }
           ]
         },

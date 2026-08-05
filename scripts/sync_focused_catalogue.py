@@ -84,23 +84,12 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
                     "presentation": {
                         "component": "market-performance", "chart_type": "line", "x_axis": "date",
                         "market_field": "relative_to_nifty50",
-                        "default_visible": ["CAPITAL_GOODS", "INFRASTRUCTURE", "MANUFACTURING"],
+                        "default_visible": ["NIFTY_50", "CAPITAL_GOODS", "INFRASTRUCTURE", "MANUFACTURING", "FMCG"],
                         "value_format": {"style": "index", "scale": 1, "decimals": 1},
                         "controls": {"date_range": True, "entity_toggle": False, "series_toggle": True},
-                        "zero_line": False, "show_source": True, "show_methodology": True,
+                        "zero_line": False, "show_points": False, "show_source": True, "show_methodology": True,
                     },
                     "note": "Index provider data are preferred; the automated pipeline uses provider-labelled adjusted-close histories and preserves raw observations.",
-                }, {
-                    "id": "control", "label": "FMCG comparison", "asset_id": "capex-sector-performance",
-                    "presentation": {
-                        "component": "market-performance", "chart_type": "line", "x_axis": "date",
-                        "market_field": "normalized_value",
-                        "default_visible": ["CAPITAL_GOODS", "INFRASTRUCTURE", "MANUFACTURING", "FMCG"],
-                        "value_format": {"style": "index", "scale": 1, "decimals": 1},
-                        "controls": {"date_range": True, "entity_toggle": False, "series_toggle": True},
-                        "zero_line": False, "show_source": True, "show_methodology": True,
-                    },
-                    "note": "Each official TRI is independently rebased to 100 at the common start date. The correlation analysis still uses target-sector returns relative to Nifty FMCG.",
                 }],
             },
             {

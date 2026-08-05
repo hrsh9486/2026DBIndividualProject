@@ -1,6 +1,5 @@
 # Artifacts and other metadata
 venv/
-/data/
 .ipynb_checkpoints/
 .csv
 .png
@@ -37,4 +36,7 @@ dist-ssr
 archive
 docs/reviews
 docs/decisions
-*/data/
+data
+archive_iteration_1/data
+archive_iteration_2/data
+git-filter-repo.py
