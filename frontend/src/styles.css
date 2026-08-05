@@ -12,6 +12,7 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--paper); }
 button, select { font: inherit; }
+button { touch-action: manipulation; }
 a { color: inherit; text-decoration: none; }
 .app-shell { min-height: 100vh; }
 .topbar { height: 76px; padding: 0 clamp(20px, 5vw, 78px); display: flex; align-items: center; border-bottom: 1px solid var(--line); background: rgba(244,240,232,.94); position: sticky; top: 0; z-index: 20; backdrop-filter: blur(14px); }
@@ -20,6 +21,7 @@ a { color: inherit; text-decoration: none; }
 .topbar nav { display: flex; gap: 28px; margin: 0 auto; font-size: 12px; color: var(--muted); }
 .topbar nav a:hover { color: var(--red); }
 .topbar-meta { font: 10px 'DM Mono'; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.menu-toggle, .nav-scrim { display: none; }
 .live-dot { width: 7px; height: 7px; background: #6b8e54; border-radius: 50%; box-shadow: 0 0 0 4px #dce4d3; }
 main { min-height: calc(100vh - 76px); }
 .hero { padding: clamp(72px, 10vw, 136px) clamp(20px, 8vw, 130px) 80px; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
@@ -1040,3 +1042,87 @@ footer { min-height: 80px; padding: 0 clamp(20px, 5vw, 78px); border-top: 1px so
   .depth-toolbar select { min-width: 100%; width: 100%; }
   .depth-chart { height: 340px; }
 }
+
+/* Mobile research experience */
+@media (max-width: 760px) {
+  body { overflow-x: hidden; }
+  .app-shell { display: block; }
+  .site-frame { width: 100%; }
+  .sidebar {
+    position: fixed; inset: 0 auto 0 0; width: min(86vw, 340px); height: 100dvh; max-height: none;
+    border-right: 1px solid rgba(255,255,255,.14); border-bottom: 0;
+    box-shadow: 18px 0 48px rgba(10,17,20,.28); transform: translateX(-105%);
+    transition: transform .22s ease; visibility: hidden; z-index: 60;
+  }
+  .sidebar.open { transform: translateX(0); visibility: visible; }
+  .sidebar-brand { min-height: 58px; padding-block: 8px; }
+  .sidebar-story { padding-block: 14px; }
+  .sidebar-stage-link, .sidebar-overview { min-height: 44px; }
+  .sidebar-foot { display: flex; }
+  .nav-scrim { display: block; position: fixed; inset: 0; width: 100%; border: 0; background: rgba(15,23,27,.46); z-index: 50; }
+  .topbar { height: 58px; padding: 0 16px; gap: 12px; justify-content: flex-start; }
+  .topbar > span { overflow: hidden; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+  .topbar-meta { display: none; }
+  .menu-toggle {
+    display: grid; place-content: center; flex: 0 0 44px; width: 44px; height: 44px; padding: 0 12px;
+    border: 1px solid var(--line); background: transparent; gap: 4px; cursor: pointer;
+  }
+  .menu-toggle i { display: block; width: 18px; height: 1px; background: var(--ink); }
+  main { min-height: calc(100vh - 58px); }
+  .hero.compact { padding: 42px 18px 36px; }
+  .hero.compact h1, .lens-header h1 { font-size: clamp(36px, 11vw, 48px); line-height: 1.02; }
+  .hero.compact > p { margin: 18px 0 26px; font-size: 14px; line-height: 1.65; }
+  .landing-page .coverage-strip, .landing-page .section-list { padding-inline: 16px; }
+  .catalogue-section { padding-block: 46px; }
+  .indicator-card { min-height: 210px; padding: 22px 20px; }
+  .indicator-card h3 { margin-top: 24px; }
+  .lens-page { padding: 0 14px 64px; }
+  .lens-header { padding: 40px 2px 28px; }
+  .lens-jump { top: 58px; margin-inline: -14px; padding: 12px 14px; gap: 18px; scrollbar-width: none; }
+  .lens-jump::-webkit-scrollbar { display: none; }
+  .lens-jump a { flex: 0 0 auto; min-height: 36px; align-items: center; }
+  .metric-panel { padding-block: 42px; scroll-margin-top: 106px; }
+  .metric-header { gap: 16px; margin-bottom: 22px; }
+  .metric-header h2 { font-size: clamp(28px, 8vw, 36px); }
+  .status-badge { min-height: 44px; }
+  .view-tabs, .entity-controls, .corporate-metric-tabs, .scenario-view-tabs, .depth-tabs {
+    flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none;
+  }
+  .view-tabs::-webkit-scrollbar, .entity-controls::-webkit-scrollbar, .corporate-metric-tabs::-webkit-scrollbar,
+  .scenario-view-tabs::-webkit-scrollbar, .depth-tabs::-webkit-scrollbar { display: none; }
+  .view-tabs button, .entity-controls button, .corporate-metric-tabs button, .scenario-view-tabs button, .depth-tabs button {
+    flex: 0 0 auto; min-height: 44px;
+  }
+  .analysis-grid { border-inline: 0; }
+  .chart-card { padding: 18px 0 12px; }
+  .chart-title { padding-inline: 12px; }
+  .chart-title h3, .rail-heading h3 { font-size: 19px; }
+  .chart-title > b { display: none; }
+  .chart-wrap, .corporate-bar-wrap, .scatter-wrap, .fiscal-scatter-wrap, .scenario-chart, .depth-chart { height: 300px; }
+  .chart-wrap .recharts-legend-wrapper { padding-inline: 8px; font-size: 10px; line-height: 1.7; }
+  .ranking-card { padding: 22px 16px; }
+  .source-panel { margin-top: 12px; }
+  .source-panel div { padding: 15px 16px; }
+  .evidence-panel { padding: 42px 0 14px; scroll-margin-top: 106px; }
+  .evidence-panel-header { gap: 16px; margin-bottom: 20px; }
+  .evidence-analysis-header { padding: 20px 16px; gap: 14px; }
+  .evidence-analysis-header h3 { font-size: 22px; }
+  .evidence-claim { padding: 18px 16px 0; }
+  .evidence-interpretation, .evidence-warning { margin: 16px 16px 0; }
+  .evidence-summary-grid > section { padding: 18px 16px; }
+  .evidence-details > summary { min-height: 48px; padding: 16px; }
+  .evidence-detail-grid { padding: 0 16px 18px; gap: 22px; }
+  .evidence-table-wrap { position: relative; max-width: calc(100vw - 60px); }
+  .correlation-heatmap, .correlation-scatter, .corporate-fundamentals-view, .fiscal-quadrant,
+  .scenario-controls, .scenario-results, .depth-view { padding: 14px; }
+  footer { min-height: 110px; padding: 22px 16px; align-items: flex-start; flex-direction: column; gap: 10px; }
+}
+
+@media (max-width: 430px) {
+  .chart-wrap, .corporate-bar-wrap, .scatter-wrap, .fiscal-scatter-wrap, .scenario-chart, .depth-chart { height: 270px; }
+  .scenario-kpis { grid-template-columns: 1fr; }
+  .capex-verdict { padding: 16px; }
+  .verdict-grid article { padding: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) { .sidebar { transition: none; } }

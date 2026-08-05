@@ -49,7 +49,7 @@ const shortLabels: Record<string, string> = {
   "capex-scenario-lab": "Five-year scenario",
 };
 
-export default function Sidebar() {
+export default function Sidebar({ open = false, onNavigate }: { open?: boolean; onNavigate?: () => void }) {
   const { data } = useCatalogue();
   const location = useLocation();
   const sidebarRef = useRef<HTMLElement>(null);
@@ -92,6 +92,7 @@ export default function Sidebar() {
       className={activeMetric === indicator.id ? "sidebar-stage-link active" : "sidebar-stage-link"}
       href={`${STORY_PATH}#${indicator.id}`}
       aria-current={activeMetric === indicator.id ? "location" : undefined}
+      onClick={onNavigate}
     >
       <span>{String(index + 1).padStart(2, "0")}</span>
       <strong>{shortLabels[indicator.id] ?? indicator.title}</strong>
@@ -103,8 +104,8 @@ export default function Sidebar() {
     requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "smooth" }));
   };
 
-  return <aside className="sidebar" ref={sidebarRef}>
-    <NavLink to={STORY_PATH} className="sidebar-brand" onClick={returnToOverview}>
+  return <aside className={open ? "sidebar open" : "sidebar"} ref={sidebarRef} aria-hidden={!open ? undefined : false}>
+    <NavLink to={STORY_PATH} className="sidebar-brand" onClick={() => { returnToOverview(); onNavigate?.(); }}>
       <span>IC</span>
       <strong>India<br />CapEx</strong>
     </NavLink>
@@ -117,7 +118,7 @@ export default function Sidebar() {
           to={STORY_PATH}
           end
           className={!activeMetric ? "sidebar-overview active" : "sidebar-overview"}
-          onClick={returnToOverview}
+          onClick={() => { returnToOverview(); onNavigate?.(); }}
         >
           <i />Overview & verdict
         </NavLink>
