@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 from datetime import date, datetime
+from typing import Sequence
 
-from extractors.national_accounts import NationalAccountsResponse
-from extractors.rbi_obicus import ObicusResponse
+from models.capex_sources import NationalAccountsResponse, ObicusResponse
 from models import CanonicalRecord, FiscalPeriod, ObservationStatus
 
 
@@ -45,21 +45,25 @@ def build_private_investment_records(response: NationalAccountsResponse) -> list
     return records
 
 
-def build_lagged_public_capex_records(government_payload: dict) -> list[CanonicalRecord]:
+def build_lagged_public_capex_records(
+    government_records: Sequence[CanonicalRecord],
+) -> list[CanonicalRecord]:
     records: list[CanonicalRecord] = []
-    values = government_payload["series"]["actual_capex_pct_gdp"]["values"]
-    for item in values:
-        source_date = date.fromisoformat(item["date"])
-        period = FiscalPeriod(source_date.year)
+    values = [
+        record for record in government_records
+        if record.indicator == "actual_capex_pct_gdp"
+    ]
+    for record in values:
+        period = FiscalPeriod(record.date.year)
         records.append(CanonicalRecord(
             date=period.end_date,
             entity="IND",
             indicator="public_capex_lagged",
-            value=item.get("value"),
+            value=record.value,
             unit="percent",
             frequency="annual",
-            source="Derived from government-investment/capex-and-execution.json",
-            status=ObservationStatus(item.get("status", "actual")),
+            source="Derived from GovernmentMetrics",
+            status=record.status,
             period_label=period.label,
             is_derived=True,
             method="Actual central-government CapEx/GDP shifted forward by one fiscal year",
@@ -69,18 +73,27 @@ def build_lagged_public_capex_records(government_payload: dict) -> list[Canonica
     return records
 
 
+def _quarter_period(fiscal_start_year: int, quarter: int) -> tuple[date, date]:
+    if quarter == 1:
+        return date(fiscal_start_year, 4, 1), date(fiscal_start_year, 6, 30)
+    if quarter == 2:
+        return date(fiscal_start_year, 7, 1), date(fiscal_start_year, 9, 30)
+    if quarter == 3:
+        return date(fiscal_start_year, 10, 1), date(fiscal_start_year, 12, 31)
+    if quarter == 4:
+        return date(fiscal_start_year + 1, 1, 1), date(fiscal_start_year + 1, 3, 31)
+    raise ValueError(f"Quarter must be between 1 and 4; received {quarter}")
+
+
 def build_capacity_utilisation_records(response: ObicusResponse) -> list[CanonicalRecord]:
     """Map RBI OBICUS' unadjusted aggregate CU to fiscal-quarter end dates."""
-    quarter_dates = {
-        1: lambda year: (date(year, 4, 1), date(year, 6, 30)),
-        2: lambda year: (date(year, 7, 1), date(year, 9, 30)),
-        3: lambda year: (date(year, 10, 1), date(year, 12, 31)),
-        4: lambda year: (date(year + 1, 1, 1), date(year + 1, 3, 31)),
-    }
     retrieved_at = datetime.fromisoformat(response.retrieved_at)
     records: list[CanonicalRecord] = []
     for observation in response.observations:
-        period_start, period_end = quarter_dates[observation.quarter](observation.fiscal_start_year)
+        period_start, period_end = _quarter_period(
+            observation.fiscal_start_year,
+            observation.quarter,
+        )
         fiscal_period = FiscalPeriod(observation.fiscal_start_year)
         records.append(CanonicalRecord(
             date=period_end,

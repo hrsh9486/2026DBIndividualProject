@@ -16,6 +16,8 @@ from config.capex_analysis import (
     TARGET_KEYS,
 )
 from helper import clean_float
+from models import CanonicalRecord
+from models.capex_metrics import FiscalMetrics, GovernmentMetrics, PrivateMetrics
 
 
 def _maximum_drawdown(wealth: pd.Series) -> float | None:
@@ -108,12 +110,20 @@ def build_sector_performance_payload(
     }
 
 
-def capex_growth_series(execution_payload: dict) -> pd.Series:
-    rows = execution_payload["series"]["capex_actual"]["values"]
+def _record_series(records: tuple[CanonicalRecord, ...], indicator: str) -> pd.Series:
     series = pd.Series(
-        {pd.Timestamp(row["date"]): row["value"] for row in rows if row["value"] is not None},
+        {
+            pd.Timestamp(record.date): record.value
+            for record in records
+            if record.indicator == indicator and record.value is not None
+        },
         dtype=float,
     ).sort_index()
+    return series
+
+
+def capex_growth_series(government: GovernmentMetrics) -> pd.Series:
+    series = _record_series(government.records, "capex_actual")
     return series.pct_change(fill_method=None) * 100
 
 
@@ -136,12 +146,12 @@ def sector_monthly_return(sector_payload: dict, key: str, *, raw: bool = False) 
 
 
 def build_lag_analysis(
-    execution_payload: dict,
+    government: GovernmentMetrics,
     sector_payload: dict,
-    private_payload: dict | None = None,
+    private: PrivateMetrics | None = None,
 ) -> tuple[dict, dict]:
     """Relate fiscal-year CapEx growth to subsequent sector excess returns."""
-    capex = capex_growth_series(execution_payload)
+    capex = capex_growth_series(government)
     capex_values = [
         {
             "date": date_value.strftime("%Y-%m-%d"),
@@ -259,12 +269,12 @@ def build_lag_analysis(
                 "pearson_excluding_pandemic": clean_float(sensitivity[["capex", "sector"]].corr(method="pearson").iloc[0, 1]) if len(sensitivity) >= 3 else None,
                 "n_excluding_pandemic": len(sensitivity),
             }
-    if private_payload is not None:
-        gfcf_rows = private_payload["series"]["private_corporate_gfcf_pct_gdp"]["values"]
-        gfcf = {
-            pd.Timestamp(row["date"]): float(row["value"])
-            for row in gfcf_rows if row.get("value") is not None
-        }
+    if private is not None:
+        gfcf_series = _record_series(
+            private.records,
+            "private_corporate_gfcf_pct_gdp",
+        )
+        gfcf = {date_value: float(value) for date_value, value in gfcf_series.items()}
         for lag in (0, 1, 2):
             values = []
             pairs = []
@@ -333,14 +343,17 @@ def build_lag_analysis(
 
 
 def classify_summary(
-    execution_payload: dict,
-    private_payload: dict,
-    fiscal_payload: dict,
+    government: GovernmentMetrics,
+    private: PrivateMetrics,
+    fiscal: FiscalMetrics,
     correlation_estimates: dict,
 ) -> dict:
     """Create reproducible, conservative hypothesis classifications."""
-    capex_gdp = [row["value"] for row in execution_payload["series"]["actual_capex_pct_gdp"]["values"] if row["value"] is not None]
-    capex_share = [row["value"] for row in execution_payload["series"]["actual_capex_pct_total_expenditure"]["values"] if row["value"] is not None]
+    capex_gdp = list(_record_series(government.records, "actual_capex_pct_gdp"))
+    capex_share = list(_record_series(
+        government.records,
+        "actual_capex_pct_total_expenditure",
+    ))
     h1_supported = len(capex_gdp) >= 2 and len(capex_share) >= 2 and capex_gdp[-1] > capex_gdp[0] and capex_share[-1] > capex_share[0]
     usable_corr = [
         item["pearson"]
@@ -352,14 +365,20 @@ def classify_summary(
         and item.get("label") != "Nifty 50"
     ]
     h2 = "supported" if usable_corr and sum(value > 0 for value in usable_corr) / len(usable_corr) >= 2 / 3 else ("partially_supported" if any(value > 0 for value in usable_corr) else "inconclusive")
-    private_gfcf = [row["value"] for row in private_payload["series"]["private_corporate_gfcf_pct_gdp"]["values"] if row["value"] is not None]
-    capacity = [row["value"] for row in private_payload["series"]["manufacturing_capacity_utilisation"]["values"] if row["value"] is not None]
+    private_gfcf = list(_record_series(
+        private.records,
+        "private_corporate_gfcf_pct_gdp",
+    ))
+    capacity = list(_record_series(
+        private.records,
+        "manufacturing_capacity_utilisation",
+    ))
     if len(private_gfcf) < 4 or len(capacity) < 4:
         h3 = "inconclusive"
     else:
         h3 = "supported" if private_gfcf[-1] > private_gfcf[0] and capacity[-1] > capacity[0] else "partially_supported"
-    debt = [row["value"] for row in fiscal_payload["series"]["general_government_debt_pct_gdp"]["values"] if row["value"] is not None]
-    interest = [row["value"] for row in fiscal_payload["series"]["interest_payments_pct_revenue"]["values"] if row["value"] is not None]
+    debt = list(_record_series(fiscal.records, "general_government_debt_pct_gdp"))
+    interest = list(_record_series(fiscal.records, "interest_payments_pct_revenue"))
     h4 = "partially_supported" if debt and interest else "inconclusive"
     hypotheses = [
         ("capex_intensity", "Actual public CapEx increased relative to GDP and expenditure.", "supported" if h1_supported else "unsupported"),

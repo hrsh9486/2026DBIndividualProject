@@ -75,3 +75,12 @@ OUTPUTS = {
     "states": "capex-analysis/state-capex-evaluation.json",
     "crowding_in": "capex-analysis/crowding-in-evidence.json",
 }
+
+OUTPUT_SCHEMAS = {
+    key: (
+        "market_performance.schema.json" if key == "sectors"
+        else "capex_analysis_summary.schema.json" if key == "summary"
+        else "dated_multi_series.schema.json"
+    )
+    for key in OUTPUTS
+}

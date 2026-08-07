@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import hashlib
 import re
-from dataclasses import dataclass
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
@@ -14,6 +13,7 @@ import requests
 
 from config import RAW_DATA_DIR, REQUEST_TIMEOUT
 from extractors.rbi_handbook import read_html_tables
+from models.capex_sources import ObicusObservation, ObicusResponse
 
 
 OBICUS_INDEX_URL = (
@@ -21,24 +21,6 @@ OBICUS_INDEX_URL = (
     "head=Quarterly%20Order%20Books,%20Inventories%20and%20Capacity%20Utilisation%20Survey"
 )
 _USER_AGENT = "India-research-pipeline/1.0 (+academic research)"
-
-
-@dataclass(frozen=True, slots=True)
-class ObicusObservation:
-    fiscal_start_year: int
-    quarter: int
-    responding_companies: int
-    capacity_utilisation: float
-    seasonally_adjusted_capacity_utilisation: float
-
-
-@dataclass(frozen=True, slots=True)
-class ObicusResponse:
-    observations: tuple[ObicusObservation, ...]
-    source_url: str
-    retrieved_at: str
-    raw_path: Path
-    checksum: str
 
 
 class _PublicationParser(HTMLParser):
@@ -111,7 +93,14 @@ def parse_obicus_html(content: str) -> tuple[ObicusObservation, ...]:
     keys = [(item.fiscal_start_year, item.quarter) for item in observations]
     if not observations or len(keys) != len(set(keys)):
         raise ValueError("RBI OBICUS observations are empty or duplicated")
-    return tuple(sorted(observations, key=lambda item: (item.fiscal_start_year, item.quarter)))
+    observation_by_period = {
+        (item.fiscal_start_year, item.quarter): item
+        for item in observations
+    }
+    return tuple(
+        observation_by_period[period]
+        for period in sorted(observation_by_period)
+    )
 
 
 class ObicusExtractor:
@@ -148,7 +137,15 @@ class ObicusExtractor:
         raise ValueError("RBI OBICUS index contains no publication link")
 
     def fetch(self) -> ObicusResponse:
-        source_url = self.discover_latest()
+        return self.fetch_url(self.discover_latest())
+
+    def fetch_publication(self, publication_id: int) -> ObicusResponse:
+        """Fetch a stable RBI OBICUS publication when index discovery changes."""
+        return self.fetch_url(
+            f"https://www.rbi.org.in/scripts/PublicationsView.aspx?id={publication_id}"
+        )
+
+    def fetch_url(self, source_url: str) -> ObicusResponse:
         response = self._get(source_url, referer=OBICUS_INDEX_URL)
         retrieved = datetime.now(timezone.utc)
         checksum = hashlib.sha256(response.content).hexdigest()

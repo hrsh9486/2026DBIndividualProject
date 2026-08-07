@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from typing import Iterable, Mapping, Sequence
 
 from models import CanonicalRecord
+from models.capex_metrics import MetricSource
+from config.capex_structural import CapexStructuralBundle
 
 
 @dataclass(frozen=True, slots=True)
@@ -18,6 +20,60 @@ class DatedSeriesDefinition:
     is_derived: bool = False
     methodology: str | None = None
     source_note: str | None = None
+
+
+def structural_definition(
+    bundle: CapexStructuralBundle,
+    key: str,
+) -> DatedSeriesDefinition:
+    """Convert one registered structural metric definition to output metadata."""
+    for spec in bundle.series:
+        if spec.key == key:
+            return DatedSeriesDefinition(
+                key=spec.key,
+                label=spec.label,
+                entity="IND",
+                unit=spec.unit,
+                is_derived=spec.is_derived,
+                methodology=spec.transformation,
+                source_note=spec.limitation,
+            )
+    raise KeyError(f"Structural bundle {bundle.key!r} has no series {key!r}")
+
+
+def structural_definitions(
+    bundle: CapexStructuralBundle,
+    keys: tuple[str, ...],
+) -> tuple[DatedSeriesDefinition, ...]:
+    """Return registered definitions in the final output's explicit order."""
+    return tuple(structural_definition(bundle, key) for key in keys)
+
+
+def metric_source_rows(
+    sources: tuple[MetricSource, ...],
+) -> tuple[dict[str, str], ...]:
+    """Convert typed provenance to the final JSON metadata contract."""
+    rows = []
+    for source in sources:
+        row = {"name": source.name}
+        if source.url is not None:
+            row["url"] = source.url
+        if source.retrieved_at is not None:
+            row["retrieved_at"] = source.retrieved_at
+        rows.append(row)
+    return tuple(rows)
+
+
+def select_metric_records(
+    records: tuple[CanonicalRecord, ...],
+    keys: tuple[str, ...],
+    start_date: date,
+) -> tuple[CanonicalRecord, ...]:
+    """Select typed records for one final artifact without constructing JSON."""
+    return tuple(
+        record for record in records
+        if record.indicator in keys and record.date >= start_date
+    )
 
 
 def build_dated_multi_series_payload(
@@ -33,7 +89,11 @@ def build_dated_multi_series_payload(
     note: str | None = None,
 ) -> dict:
     """Build a deterministic payload without filling missing observations."""
-    materialized = sorted(records, key=lambda record: (record.date, record.indicator, record.entity))
+    indexed_records = [
+        (record.date, record.indicator, record.entity, index, record)
+        for index, record in enumerate(records)
+    ]
+    materialized = [item[4] for item in sorted(indexed_records)]
     if not materialized:
         raise ValueError("Cannot build a dated-series payload without records")
     definition_by_key = {definition.key: definition for definition in definitions}

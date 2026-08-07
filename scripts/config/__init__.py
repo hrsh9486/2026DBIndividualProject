@@ -8,6 +8,7 @@ DATA_DIR = PROJECT_ROOT / "data"
 RAW_DATA_DIR = DATA_DIR / "raw"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 SCHEMA_DIR = PROJECT_ROOT / "schemas"
+REFERENCE_SOURCE_DIR = PROJECT_ROOT / "sources"
 
 # Backwards-compatible name used by the existing scripts.
 OUTPUT_DIR = str(DATA_DIR)

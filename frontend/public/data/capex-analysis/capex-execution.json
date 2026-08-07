@@ -1,56 +1,56 @@
 {
   "metadata": {
-    "generated_at": "2026-07-21T16:34:39.524188+00:00",
+    "generated_at": "2026-08-06T13:19:00.552791+00:00",
     "source": [
       {
         "name": "Union Budget 2018-19",
         "url": "https://www.indiabudget.gov.in/budget2018-2019/ub2018-19/bag/bag6.pdf",
-        "retrieved_at": "2026-07-21T16:34:34.249236+00:00"
+        "retrieved_at": "2026-08-06T13:18:25.684322+00:00"
       },
       {
         "name": "Union Budget 2019-20",
         "url": "https://www.indiabudget.gov.in/budget2019-20/doc/Budget_at_Glance/bag6.pdf",
-        "retrieved_at": "2026-07-21T16:34:35.071323+00:00"
+        "retrieved_at": "2026-08-06T13:18:26.231253+00:00"
       },
       {
         "name": "Union Budget 2020-21",
         "url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag6.pdf",
-        "retrieved_at": "2026-07-21T16:34:35.692956+00:00"
+        "retrieved_at": "2026-08-06T13:18:26.604072+00:00"
       },
       {
         "name": "Union Budget 2021-22",
         "url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag6.pdf",
-        "retrieved_at": "2026-07-21T16:34:36.495290+00:00"
+        "retrieved_at": "2026-08-06T13:18:27.195586+00:00"
       },
       {
         "name": "Union Budget 2022-23",
         "url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag6.pdf",
-        "retrieved_at": "2026-07-21T16:34:36.316922+00:00"
+        "retrieved_at": "2026-08-06T13:18:27.576329+00:00"
       },
       {
         "name": "Union Budget 2023-24",
         "url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag6.pdf",
-        "retrieved_at": "2026-07-21T16:34:36.122099+00:00"
+        "retrieved_at": "2026-08-06T13:18:28.072496+00:00"
       },
       {
         "name": "Union Budget 2024-25",
         "url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag6.pdf",
-        "retrieved_at": "2026-07-21T16:34:36.693453+00:00"
+        "retrieved_at": "2026-08-06T13:18:28.511075+00:00"
       },
       {
         "name": "Union Budget 2025-26",
         "url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag6.pdf",
-        "retrieved_at": "2026-07-21T16:34:37.270457+00:00"
+        "retrieved_at": "2026-08-06T13:18:28.890138+00:00"
       },
       {
         "name": "Union Budget 2026-27",
         "url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/bag6.pdf",
-        "retrieved_at": "2026-07-21T16:34:37.491668+00:00"
+        "retrieved_at": "2026-08-06T13:18:29.013044+00:00"
       },
       {
         "name": "Table 1 : Macro-Economic Aggregates (Base Year: 2011-12 At Current Prices)",
         "url": "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23175",
-        "retrieved_at": "2026-07-21T16:34:39.521267+00:00"
+        "retrieved_at": "2026-08-06T13:18:30.016891+00:00"
       }
     ],
     "frequency": "annual",
@@ -423,8 +423,6 @@
       "entity": "IND",
       "unit": "percent",
       "is_derived": true,
-      "methodology": "Year-on-year percentage change in actual nominal central-government capital expenditure.",
-      "source_note": "Nominal growth is affected by inflation and does not measure project quality.",
       "values": [
         {
           "date": "2018-03-31",
@@ -474,7 +472,9 @@
           "status": "actual",
           "period_label": "FY2024-25"
         }
-      ]
+      ],
+      "methodology": "Year-on-year percentage change in actual nominal central-government capital expenditure.",
+      "source_note": "Nominal growth is affected by inflation and does not measure project quality."
     }
   }
 }

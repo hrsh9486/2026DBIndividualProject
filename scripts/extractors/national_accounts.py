@@ -5,13 +5,13 @@ from __future__ import annotations
 import hashlib
 import re
 import subprocess
-from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
 
 from config import RAW_DATA_DIR, REQUEST_TIMEOUT
+from models.capex_sources import NationalAccountsObservation, NationalAccountsResponse
 
 
 NATIONAL_ACCOUNTS_RELEASE_URLS = (
@@ -24,23 +24,6 @@ NATIONAL_ACCOUNTS_RELEASE_URLS = (
     "Press_Note_on_New_Series_of_GDP_Estimates_with_Base_Year_2022-23_27022026.pdf",
 )
 _USER_AGENT = "India-research-pipeline/1.0 (+academic research)"
-
-
-@dataclass(frozen=True, slots=True)
-class NationalAccountsObservation:
-    fiscal_start_year: int
-    nominal_gdp_crore: float
-    total_gfcf_crore: float
-    private_corporate_gfcf_crore: float
-
-
-@dataclass(frozen=True, slots=True)
-class NationalAccountsResponse:
-    observations: tuple[NationalAccountsObservation, ...]
-    source_url: str
-    retrieved_at: str
-    raw_path: Path
-    checksum: str
 
 
 def _section(text: str, start: str, end: str) -> str:

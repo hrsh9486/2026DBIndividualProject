@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1900" viewBox="0 0 2400 1900">
+  <defs>
+    <style>
+      text{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;fill:#18212b}.title{font:700 30px system-ui,sans-serif}.sub{font:16px system-ui,sans-serif;fill:#394b59}.h{font:700 17px system-ui,sans-serif}.b{font-size:14px}.m{font-size:13px}.small{font-size:12px;fill:#455766}.section{fill:#263746}.sectionText{font:700 15px system-ui,sans-serif;fill:white}.extract{fill:#edf5ff;stroke:#296aa3;stroke-width:2}.model{fill:#f4efff;stroke:#7353a6;stroke-width:2}.transform{fill:#eef8f1;stroke:#28764a;stroke-width:2}.gate{fill:#fff7e6;stroke:#b06d00;stroke-width:2}.output{fill:#f4f6f8;stroke:#4d5e6c;stroke-width:2}.line{stroke:#7b8b97;stroke-width:1}.arrow{fill:none;stroke:#263746;stroke-width:2;marker-end:url(#a)}
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#263746"/></marker>
+  </defs>
+  <rect width="2400" height="1900" fill="white"/>
+  <text class="title" x="60" y="55">CapEx ETL: one pipeline for every source and every output</text>
+  <text class="sub" x="60" y="86">source-specific acquisition → typed source model → pure transform → final payload → complete-set validation → processed/public JSON</text>
+
+  <rect class="section" x="60" y="115" width="2280" height="36" rx="4"/><text class="sectionText" x="78" y="140">0  ENTRY POINT AND EXECUTION ORDER</text>
+  <rect class="output" x="60" y="175" width="2280" height="112" rx="5"/>
+  <text class="h" x="80" y="203">scripts/build_capex_pipeline.py::main() → run_pipeline()</text>
+  <text class="m" x="80" y="230">[1/5] acquire_capex_sources() or load_landed_capex_sources()  →  [2/5] build_capex_artifacts()</text>
+  <text class="m" x="80" y="254">→ [3/5] _validate_all_artifacts() → _select_artifact_entries() → [4/5] _publish_artifacts() → [5/5] _verify_written_artifacts()</text>
+  <text class="small" x="80" y="276">--target output:&lt;key&gt; changes Load and Verify only. Extract, Transform and complete-set Validate are unchanged.</text>
+
+  <rect class="section" x="60" y="315" width="2280" height="36" rx="4"/><text class="sectionText" x="78" y="340">1  EXTRACT ALL REQUIRED SOURCES BEFORE ANY TRANSFORM</text>
+  <rect class="extract" x="60" y="375" width="540" height="330" rx="5"/>
+  <text class="h" x="80" y="404">StructuralSources</text>
+  <text class="m" x="80" y="432">extractors/capex_sources.py</text>
+  <text class="m" x="80" y="458">acquire_structural_sources()</text>
+  <line class="line" x1="80" y1="474" x2="580" y2="474"/>
+  <text class="b" x="80" y="501">UnionBudgetExtractor.fetch_expenditure_snapshots()</text>
+  <text class="b" x="80" y="525">RbiHandbookExtractor.fetch_publication()</text>
+  <text class="b" x="80" y="549">NationalAccountsExtractor.fetch()</text>
+  <text class="b" x="80" y="573">ObicusExtractor.fetch_publication()</text>
+  <text class="small" x="80" y="605">data/raw/union-budget/</text>
+  <text class="small" x="80" y="627">data/raw/rbi-handbook/</text>
+  <text class="small" x="80" y="649">data/raw/mospi-national-accounts/</text>
+  <text class="small" x="80" y="671">data/raw/rbi-obicus/</text>
+
+  <rect class="extract" x="640" y="375" width="540" height="330" rx="5"/>
+  <text class="h" x="660" y="404">AnalysisSources</text>
+  <text class="m" x="660" y="432">extractors/capex_sources.py</text>
+  <text class="m" x="660" y="458">acquire_analysis_sources()</text>
+  <line class="line" x1="660" y1="474" x2="1160" y2="474"/>
+  <text class="b" x="660" y="501">NiftyIndicesExtractor.fetch_total_return_indices()</text>
+  <text class="b" x="660" y="525">CorporateFundamentalsExtractor.fetch()</text>
+  <text class="small" x="660" y="557">data/raw/nifty-indices/</text>
+  <text class="small" x="660" y="579">data/raw/corporate-fundamentals/</text>
+  <text class="small" x="660" y="615">returns:</text>
+  <text class="small" x="660" y="637">prices: pandas.DataFrame</text>
+  <text class="small" x="660" y="659">corporate_records: tuple[CorporateFundamental, ...]</text>
+
+  <rect class="extract" x="1220" y="375" width="500" height="330" rx="5"/>
+  <text class="h" x="1240" y="404">DepthSources</text>
+  <text class="m" x="1240" y="432">acquire_depth_sources()</text>
+  <line class="line" x1="1240" y1="450" x2="1700" y2="450"/>
+  <text class="b" x="1240" y="477">RbiHandbookExtractor.fetch_publication()</text>
+  <text class="small" x="1240" y="509">21841 project status</text>
+  <text class="small" x="1240" y="531">21842 project cost</text>
+  <text class="small" x="1240" y="553">23470 current GSDP</text>
+  <text class="small" x="1240" y="575">23471 constant GSDP</text>
+  <text class="small" x="1240" y="597">23623 capital outlay</text>
+  <text class="small" x="1240" y="633">landing: data/raw/rbi-handbook/</text>
+
+  <rect class="extract" x="1760" y="375" width="580" height="330" rx="5"/>
+  <text class="h" x="1780" y="404">DeliverySources</text>
+  <text class="m" x="1780" y="432">extractors/delivery_reference.py</text>
+  <text class="m" x="1780" y="458">extract_delivery_sources()</text>
+  <line class="line" x1="1780" y1="474" x2="2320" y2="474"/>
+  <text class="b" x="1780" y="501">reads sources/capex_delivery_reference.json</text>
+  <text class="b" x="1780" y="525">validates dataset keys, series keys, FY order,</text>
+  <text class="b" x="1780" y="549">status and finite numeric observations; hashes file</text>
+  <text class="small" x="1780" y="585">allocation: AnnualSourceDataset</text>
+  <text class="small" x="1780" y="607">delivery: AnnualSourceDataset</text>
+  <text class="small" x="1780" y="629">production: AnnualSourceDataset</text>
+  <text class="small" x="1780" y="665">No values are embedded in builders.</text>
+
+  <rect class="model" x="440" y="742" width="1520" height="94" rx="5"/>
+  <text class="h" x="460" y="772">scripts/models/capex_sources.py::CapexSources</text>
+  <text class="m" x="460" y="800">structural: StructuralSources  |  analysis: AnalysisSources  |  depth: DepthSources  |  delivery: DeliverySources</text>
+  <text class="small" x="460" y="822">This single typed object is the only data argument passed from Extract to Transform.</text>
+  <path class="arrow" d="M330 705 V730 H760 V736"/><path class="arrow" d="M910 705 V736"/><path class="arrow" d="M1470 705 V736"/><path class="arrow" d="M2050 705 V730 H1640 V736"/>
+
+  <rect class="section" x="60" y="875" width="2280" height="36" rx="4"/><text class="sectionText" x="78" y="900">2  TRANSFORM IN MEMORY — NO NETWORK, RAW-FILE READS OR OUTPUT WRITES</text>
+  <rect class="transform" x="60" y="935" width="700" height="300" rx="5"/>
+  <text class="h" x="80" y="964">2.1 Structural transforms</text>
+  <text class="m" x="80" y="992">builders/capex_artifacts.py::build_capex_artifacts()</text>
+  <text class="m" x="80" y="1018">→ transforms/capex_metrics.py::calculate_government_metrics()</text>
+  <text class="m" x="80" y="1044">→ calculate_private_metrics()  [receives GovernmentMetrics]</text>
+  <text class="m" x="80" y="1070">→ calculate_fiscal_metrics()</text>
+  <line class="line" x1="80" y1="1090" x2="740" y2="1090"/>
+  <text class="b" x="80" y="1117">models/capex_metrics.py: GovernmentMetrics,</text>
+  <text class="b" x="80" y="1141">PrivateMetrics, FiscalMetrics.</text>
+  <text class="small" x="80" y="1177">Contents: tuple[CanonicalRecord, ...] + provenance.</text>
+  <text class="small" x="80" y="1199">No metadata/series dictionary and no JSON path.</text>
+
+  <rect class="transform" x="800" y="935" width="750" height="300" rx="5"/>
+  <text class="h" x="820" y="964">2.2 Fiscal and market final outputs</text>
+  <text class="m" x="820" y="992">builders/fiscal_outputs.py</text>
+  <text class="m" x="840" y="1018">build_execution_payload()</text>
+  <text class="m" x="840" y="1044">build_fiscal_sustainability_payload()</text>
+  <text class="m" x="820" y="1078">builders/market_outputs.py</text>
+  <text class="m" x="840" y="1104">build_sector_payload()</text>
+  <text class="m" x="840" y="1130">build_correlations_payload()</text>
+  <line class="line" x1="820" y1="1150" x2="1530" y2="1150"/>
+  <text class="small" x="820" y="1177">Final builders create JSON shape once; calculations read typed records.</text>
+
+  <rect class="transform" x="1590" y="935" width="750" height="300" rx="5"/>
+  <text class="h" x="1610" y="964">2.3 Real-economy and evaluation outputs</text>
+  <text class="m" x="1610" y="992">builders/real_economy_outputs.py</text>
+  <text class="m" x="1610" y="1018">allocation, delivery, production, private, corporate builders</text>
+  <line class="line" x1="1610" y1="1038" x2="2320" y2="1038"/>
+  <text class="m" x="1610" y="1065">builders/evaluation_outputs.py</text>
+  <text class="m" x="1610" y="1089">quality, states, crowding-in, summary builders</text>
+  <text class="small" x="1610" y="1130">One public builder function per registered output.</text>
+  <text class="small" x="1610" y="1154">capex_artifacts.py directly calls all nine functions here.</text>
+  <text class="small" x="1610" y="1178">No bulk output-family return hides individual execution.</text>
+  <path class="arrow" d="M1200 836 V920 H410 V929"/><path class="arrow" d="M1200 836 V929"/><path class="arrow" d="M1200 836 V920 H1965 V929"/>
+
+  <rect class="model" x="390" y="1270" width="1620" height="116" rx="5"/>
+  <text class="h" x="410" y="1300">builders/capex_artifacts.py::CapexArtifacts(outputs)</text>
+  <text class="m" x="410" y="1328">Exactly 13 keys: execution, allocation, delivery, production, sectors, correlations, private, fiscal, summary, corporate, quality, states, crowding_in</text>
+  <text class="small" x="410" y="1358">No upstream/checkpoint artifact map exists. Nothing in data/processed is an input to this object.</text>
+  <path class="arrow" d="M410 1235 V1264"/><path class="arrow" d="M1175 1235 V1264"/><path class="arrow" d="M1965 1235 V1264"/>
+
+  <rect class="section" x="60" y="1425" width="2280" height="36" rx="4"/><text class="sectionText" x="78" y="1450">3  VALIDATE THE COMPLETE SET, THEN LOAD THE SELECTED FINAL OUTPUTS</text>
+  <rect class="gate" x="60" y="1485" width="720" height="250" rx="5"/>
+  <text class="h" x="80" y="1514">3.1 _validate_all_artifacts()</text>
+  <text class="m" x="80" y="1542">_require_complete_artifacts(): set(outputs) == set(OUTPUTS)</text>
+  <text class="m" x="80" y="1568">_artifact_entries(): path + OUTPUT_SCHEMAS[key]</text>
+  <text class="m" x="80" y="1594">validators.validate_payload()</text>
+  <text class="m" x="80" y="1620">json.dumps(allow_nan=False)</text>
+  <line class="line" x1="80" y1="1642" x2="760" y2="1642"/>
+  <text class="small" x="80" y="1669">Any invalid or missing final payload stops the run</text>
+  <text class="small" x="80" y="1691">before the first output write.</text>
+
+  <rect class="gate" x="840" y="1485" width="720" height="250" rx="5"/>
+  <text class="h" x="860" y="1514">3.2 _select_artifact_entries() → _publish_artifacts()</text>
+  <text class="m" x="860" y="1542">all: 13 processed + 13 public files</text>
+  <text class="m" x="860" y="1568">output:&lt;key&gt;: 1 processed + 1 public file</text>
+  <text class="m" x="860" y="1594">exporters/json_export.py::write_json_atomic()</text>
+  <line class="line" x1="860" y1="1615" x2="1540" y2="1615"/>
+  <text class="small" x="860" y="1642">data/processed/capex-analysis/*.json</text>
+  <text class="small" x="860" y="1666">frontend/public/data/capex-analysis/*.json</text>
+  <text class="small" x="860" y="1696">temporary sibling → flush → fsync → os.replace</text>
+
+  <rect class="output" x="1620" y="1485" width="720" height="250" rx="5"/>
+  <text class="h" x="1640" y="1514">3.3 _verify_written_artifacts()</text>
+  <text class="m" x="1640" y="1542">reopen each selected processed JSON</text>
+  <text class="m" x="1640" y="1568">→ validate_payload(payload, OUTPUT_SCHEMAS[key])</text>
+  <text class="m" x="1640" y="1594">→ require public counterpart</text>
+  <text class="m" x="1640" y="1620">→ processed SHA-256 == public SHA-256</text>
+  <line class="line" x1="1640" y1="1642" x2="2320" y2="1642"/>
+  <text class="small" x="1640" y="1669">Final JSON is the only published data category.</text>
+  <text class="small" x="1640" y="1691">Per-file writes are atomic; the 13-file set has no rollback.</text>
+  <path class="arrow" d="M1200 1386 V1470 H420 V1479"/><path class="arrow" d="M780 1610 H834"/><path class="arrow" d="M1560 1610 H1614"/>
+
+  <rect class="output" x="60" y="1775" width="2280" height="72" rx="5"/>
+  <text class="h" x="80" y="1804">Boundary test</text>
+  <text class="m" x="80" y="1832">tests/test_capex_pipeline.py enforces typed structural metrics, direct calls, layer boundaries and complete final-output sets.</text>
+</svg>

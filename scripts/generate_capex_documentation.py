@@ -14,7 +14,7 @@ from config import PROCESSED_DATA_DIR, PROJECT_ROOT
 from config.capex_analysis import OUTPUTS
 
 
-OUTPUT_DIR = PROJECT_ROOT / "docs" / "capex"
+OUTPUT_DIR = PROJECT_ROOT / "docs"
 ECONOMIC_GUIDE = OUTPUT_DIR / "CAPEX_STORY_ECONOMIC_AND_METHODOLOGY_GUIDE.docx"
 TECHNICAL_GUIDE = OUTPUT_DIR / "CAPEX_STORY_TECHNICAL_GUIDE.docx"
 GENERATED_AT = datetime.now(timezone.utc)
@@ -661,7 +661,7 @@ def build_economic_guide() -> None:
             key = (name, url)
             if key not in seen:
                 seen.add(key)
-                source_rows.append([name, url or "Recorded upstream artifact; no URL in this chart contract"])
+                source_rows.append([name, url or "Recorded source metadata; no URL in this chart contract"])
     source_rows.append([str(sectors["metadata"].get("source")), "https://www.niftyindices.com/reports/historical-data"])
     doc.table(["Source", "Official location or provenance note"], source_rows, widths=[3800, 5200], font_size=14)
 
@@ -734,21 +734,21 @@ def build_technical_guide() -> None:
         doc,
         "India’s Public CapEx Transmission",
         "Technical guide to sources, ETL, contracts, frontend integration, verification and deployment",
-        "This document is for data engineers, software engineers, maintainers and technical reviewers. It maps each research stage to source acquisition, transformation code, output contracts, promotion routes, frontend adapters and operational checks.",
+        "This document is for data engineers, software engineers, maintainers and technical reviewers. It maps each research stage to source acquisition, transformation code, output contracts, public paths, frontend adapters and operational checks.",
     )
     add_toc(doc)
 
     doc.add_heading("1. System overview", 1)
     doc.add_paragraph(
         "The CapEx research lens is a static, reproducible analytical product. Python jobs acquire or consume "
-        "source data, preserve source evidence, transform observations, validate complete payloads and publish "
-        "strict JSON. A promotion job revalidates processed artifacts before copying them to the Vite public "
-        "directory. The generated catalogue maps stable asset IDs to schemas and presentation components. "
+        "source data, preserve immutable raw evidence, transform observations without I/O, validate the complete "
+        "artifact set and publish processed plus browser-facing JSON. The generated "
+        "catalogue maps stable asset IDs to schemas and presentation components. "
         "React Query loads static JSON at runtime; runtime guards and component-schema mappings prevent an "
         "artifact from reaching an incompatible visualisation."
     )
     doc.add_code(
-        "Official source / frozen source series → extractor or validated upstream artifact → transformation → schema validation → atomic data/processed JSON → validated promotion → frontend/public/data → catalogue → runtime guard → specialised React component"
+        "Official source or data/raw replay → typed source models → typed calculated metrics → final payload builders → complete-set validation → per-file atomic processed/public JSON → catalogue → runtime guard → specialised React component"
     )
     doc.add_callout(
         "Deployment model",
@@ -762,22 +762,30 @@ def build_technical_guide() -> None:
         ["Location", "CapEx responsibility", "Important invariant"],
         [
             ["scripts/config/capex_analysis.py", "Frozen market definitions, benchmark/control roles, corporate basket, lags and output paths.", "Machine keys and research scope are declared before transforms."],
+            ["scripts/build_capex_pipeline.py", "Sole full and targeted ETL executable.", "Every payload validates before target selection and the first processed or public write."],
+            ["scripts/extractors/capex_sources.py", "Live acquisition and immutable-landed-source replay.", "Extraction returns typed source containers; raw evidence is independent of publication."],
+            ["scripts/extractors/delivery_reference.py", "Validation and typed extraction of transcribed allocation, delivery and IIP observations.", "Reference observations cross the same extraction boundary as downloaded sources."],
+            ["sources/capex_delivery_reference.json", "Version-controlled transcription of official annual tables awaiting automated document parsers.", "Data is source input, never executable builder code."],
+            ["scripts/models/capex_sources.py", "Provider-response and cross-layer source containers.", "Transforms depend on shared models, never extractor implementations."],
+            ["scripts/models/capex_metrics.py", "GovernmentMetrics, PrivateMetrics and FiscalMetrics contracts.", "Intermediate calculations carry CanonicalRecord tuples and provenance, never JSON-shaped payload dictionaries."],
+            ["scripts/transforms/capex_metrics.py", "Explicit construction and validation of typed structural metrics.", "Government metrics feed private metrics directly as records; no intermediate JSON is constructed."],
+            ["scripts/builders/capex_artifacts.py", "Pure dependency ordering and complete artifact assembly.", "No network, processed-file reads or publication side effects."],
             ["scripts/extractors/nifty_indices.py", "Official Nifty TRI sessions, annual request windows and immutable JSON landing.", "Every market must return observations; one common sample is enforced later."],
             ["scripts/extractors/corporate_fundamentals.py", "Company statement extraction and raw landing.", "The basket is frozen; provider field fallbacks are explicit."],
-            ["scripts/build_capex_delivery.py", "Frozen official allocation, physical-delivery and IIP series plus validated payload builders.", "Financial and physical units are published separately."],
-            ["scripts/build_capex_depth.py", "Official project-quality and state-table acquisition plus depth-stage publication.", "Archived publication IDs are frozen; every response is checksum-landed."],
+            ["scripts/builders/fiscal_outputs.py", "Final execution and fiscal-sustainability payloads.", "Each public function constructs exactly one registered output."],
+            ["scripts/builders/market_outputs.py", "Final sector-performance and correlation payloads.", "Correlation support estimates are returned in a typed result for the summary builder."],
+            ["scripts/builders/real_economy_outputs.py", "Final allocation, delivery, production, private-response and corporate payloads.", "Each public function constructs exactly one registered output."],
+            ["scripts/builders/evaluation_outputs.py", "Final quality, state, crowding-in and summary payloads.", "Each public function constructs exactly one registered output."],
             ["scripts/transforms/capex_depth.py", "Project blocks, state panel, fixed effects and crowding-in gates.", "Causal language is prohibited; sample eligibility is explicit."],
             ["scripts/transforms/capex_analysis.py", "Market wealth, lead/lag alignment, correlations and deterministic hypotheses.", "No causal claim; fixed windows; missing pairs are not imputed."],
             ["scripts/transforms/corporate_fundamentals.py", "Within-company growth and group medians.", "Aggregate after company-level growth."],
-            ["scripts/build_capex_analysis.py", "Main orchestration over structural inputs, markets, firms and all thirteen outputs.", "One command can regenerate the complete lens."],
             ["scripts/validators/", "Draft 2020-12 schema validation and semantic evidence checks.", "Reject a candidate before replacement."],
-            ["scripts/exporters/json_export.py", "Strict JSON and atomic filesystem replacement.", "No NaN or partial file reaches processed data."],
-            ["scripts/promote_processed_data.py", "Contract registry and processed-to-public promotion.", "Every CapEx output has an explicit route."],
+            ["scripts/exporters/json_export.py", "Strict JSON and per-file atomic filesystem replacement.", "No NaN or partially written JSON file reaches either output directory."],
             ["scripts/sync_focused_catalogue.py", "Asset definitions, stage order, views and adapter names.", "Catalogue is the presentation contract."],
             ["frontend/src/data/", "TypeScript payload types, static client and runtime guards.", "Declared schema must match detected payload and component."],
             ["frontend/src/components/", "General and specialised CapEx visualisations.", "Research statistics are not recomputed except interactive scenario arithmetic and chart-only fitted lines."],
-            ["frontend/public/data/", "Browser-facing artifacts and schemas.", "Promoted copies match validated processed artifacts."],
-            ["tests/", "CapEx transforms, upstream parser contracts and publication-boundary tests.", "Regression tests protect registered windows, source semantics and CapEx-only promotion."],
+            ["frontend/public/data/", "Browser-facing artifacts and schemas.", "Published copies match validated processed artifacts."],
+            ["tests/", "CapEx transforms, source parser contracts and publication-boundary tests.", "Regression tests protect registered windows, source semantics and CapEx-only public routing."],
         ],
         widths=[2500, 4300, 2200],
         font_size=15,
@@ -787,30 +795,29 @@ def build_technical_guide() -> None:
     doc.table(
         ["Source", "Data used", "Acquisition path", "Raw/provenance behaviour"],
         [
-            ["Union Budget — Budget at a Glance", "Central CapEx actual, BE, RE, total expenditure and execution inputs.", "Upstream government-investment builder parses multiple editions.", "PDFs and edition metadata are retained by the focused pipeline."],
-            ["Union Budget — Expenditure Profile Statement 3", "Roads and Railways central-budget capital BE.", "Four frozen, reconciled statement vintages support eight fiscal years.", "Source URLs and retrieval time are embedded; refresh is currently manual."],
-            ["MoRTH Annual Report", "National-highway kilometres constructed.", "Frozen official fiscal-year series.", "Metadata records official report and limitation."],
-            ["Indian Railways Annual Report", "Route kilometres electrified.", "Frozen official fiscal-year series.", "Metadata records official report and limitation."],
+            ["Union Budget — Budget at a Glance", "Central CapEx actual, BE, RE, total expenditure and execution inputs.", "capex_sources acquires and parses every edition from 2018 onward.", "PDFs are checksum-landed directly under data/raw/union-budget/."],
+            ["Union Budget — Expenditure Profile Statement 3", "Roads and Railways central-budget capital BE.", "delivery_reference extracts a version-controlled transcription of four reconciled statement vintages.", "Source URLs, retrieval times and observations live in sources/capex_delivery_reference.json."],
+            ["MoRTH Annual Report", "National-highway kilometres constructed.", "delivery_reference extracts the transcribed official fiscal-year series.", "Metadata and observations live in the tracked reference source."],
+            ["Indian Railways Annual Report", "Route kilometres electrified.", "delivery_reference extracts the transcribed official fiscal-year series.", "Metadata and observations live in the tracked reference source."],
             ["Nifty Indices", "Five daily total-return indices.", "Session GET then provider POST in annual windows; responses normalised into pandas series.", "Each index is landed under data/raw/nifty-indices/<retrieval-date>/ with a content hash."],
             ["Yahoo Finance statements", "Revenue, EBITDA, CapEx, net PPE, debt, EBIT, assets and current liabilities for ten firms.", "yfinance annual statement tables.", "Each company’s extracted observations are checksum-landed under data/raw/corporate-fundamentals/."],
-            ["MoSPI national accounts", "Private corporate GFCF, total GFCF and nominal GDP.", "Validated private-investment upstream bundle.", "Base-year-compatible series and statuses are preserved."],
-            ["RBI OBICUS", "Unadjusted manufacturing capacity utilisation.", "Validated private-investment upstream bundle.", "Quarterly status and source metadata are retained."],
-            ["RBI fiscal tables", "Debt/GDP, primary deficit, revenue, interest and expenditure ratios.", "Validated fiscal-capacity upstream bundle.", "Actual, revised and budget status remain attached."],
-            ["RBI Handbook / NSO IIP", "Fiscal-year capital-goods IIP.", "Frozen official Table 30 values.", "Source URL and retrieval time embedded; refresh is manual."],
+            ["MoSPI national accounts", "Private corporate GFCF, total GFCF and nominal GDP.", "NationalAccountsExtractor in the extraction layer.", "Base-year-compatible series and statuses are preserved."],
+            ["RBI OBICUS", "Unadjusted manufacturing capacity utilisation.", "Stable publication ID 23808; HTML parser in the extraction layer.", "Quarterly status and source metadata are retained."],
+            ["RBI fiscal tables", "Debt/GDP, primary deficit, revenue, interest and expenditure ratios.", "Stable publication IDs 23413 and 23410.", "Actual, revised and budget status remain attached."],
+            ["RBI Handbook / NSO IIP", "Fiscal-year capital-goods IIP.", "delivery_reference extracts transcribed official Table 30 values.", "Source URL, retrieval time and observations live in the tracked reference source."],
             ["RBI Handbook 2022–23 / MoSPI", "Central-sector project status and cost overrun, 2009–2023.", "Stable archived publication IDs 21841 and 21842 parsed as sector/year blocks.", "HTML is checksum-landed under data/raw/rbi-handbook/<date>/."],
             ["RBI Handbook of Statistics on Indian States", "Current/constant GSDP and state capital outlay.", "Stable publication IDs 23470, 23471 and 23623 parsed as state/year matrices.", "Actual/revised/budget labels are retained; only actual outlay enters the panel."],
         ],
         widths=[2200, 2600, 2700, 1700],
         font_size=14,
     )
-    doc.add_heading("Source-boundary exception", 2)
+    doc.add_heading("Manual-source acquisition", 2)
     doc.add_paragraph(
-        "The allocation, physical-delivery and capital-goods IIP series are reproducible frozen observations in "
-        "build_capex_delivery.py. They enter the same validation, publication and promotion pipeline as every "
-        "other artifact, but they do not yet have automated PDF/HTML extractors or repository-visible immutable "
-        "raw snapshots. This is a lower-layer exception, not a change to the high-level build flow. A future "
-        "extractor should land each source document, parse exact tables and preserve checksums before calling the "
-        "existing pure payload builders."
+        "Statement 3, physical-delivery and capital-goods IIP observations are manually transcribed from official "
+        "documents into sources/capex_delivery_reference.json until automated document parsers exist. "
+        "extract_delivery_sources reads, checksums and validates that file during Extract and returns typed "
+        "DeliverySources. The builder receives only those typed values. Manual acquisition changes how a source "
+        "is obtained, not the abstract pipeline or the extraction/transform boundary."
     )
 
     doc.add_heading("4. Canonical models and period semantics", 1)
@@ -826,7 +833,7 @@ def build_technical_guide() -> None:
             ["status", "actual, provisional, revised, estimate or budget", "Distinguishes out-turns from fiscal plans and model starting points."],
             ["period_label", "Human-readable FY/reporting label", "Prevents 31 March dates from being read as calendar-year observations."],
             ["source_url / retrieved_at / vintage", "Provenance", "Supports audit of changing institutional publications."],
-            ["period_start / period_end", "Inclusive non-calendar bounds", "Used by fiscal-period-safe upstream joins."],
+            ["period_start / period_end", "Inclusive non-calendar bounds", "Used by fiscal-period-safe structural joins."],
         ],
         widths=[1900, 2900, 4200],
         font_size=15,
@@ -834,8 +841,8 @@ def build_technical_guide() -> None:
     doc.add_paragraph(
         "The shared FiscalPeriod model represents an Indian fiscal year from 1 April through 31 March. "
         "ObservationStatus is an enum, so budget and estimate cannot be silently treated as actual. The CapEx "
-        "orchestrator also consumes already validated chart-contract payloads directly; corporate extraction uses "
-        "a dedicated immutable CorporateFundamental dataclass before aggregation."
+        "orchestrator passes typed source containers from models/capex_sources.py into builders. Corporate "
+        "extraction uses an immutable CorporateFundamental model before aggregation."
     )
 
     doc.add_heading("5. Artifact contracts and inventory", 1)
@@ -863,7 +870,7 @@ def build_technical_guide() -> None:
     doc.add_heading("capex_analysis_summary", 2)
     doc.add_paragraph(
         "The summary contract requires a research question, classification method and four structured hypotheses. "
-        "Each hypothesis carries a stable key, claim, status, interpretation and caveat. The artifact is promoted "
+        "Each hypothesis carries a stable key, claim, status, interpretation and caveat. The artifact is published "
         "and schema-validated but is loaded directly by CapexVerdict rather than through a catalogue asset."
     )
     doc.add_heading("Catalogue presentation contract", 2)
@@ -877,19 +884,19 @@ def build_technical_guide() -> None:
     doc.table(
         ["Output", "Inputs", "Core transform", "Validation and consumer"],
         [
-            ["capex-execution.json", "Validated government-investment bundle", "Scope from FY2017–18; retain ratios/vintages; derive nominal growth", "dated_multi_series → general line charts"],
-            ["sector-capex-allocation.json", "Frozen Statement 3 capital BE", "Map FY label to 31 March; budget status; separate Roads/Railways series", "dated_multi_series → allocation line view"],
-            ["physical-delivery.json", "Frozen MoRTH and Railways reports", "Map annual km outputs; actual status", "dated_multi_series → physical-delivery line view"],
-            ["capital-goods-production.json", "RBI/NSO Table 30", "Map fiscal average IIP; preserve pandemic observation", "dated_multi_series → 2D production view"],
+            ["capex-execution.json", "GovernmentMetrics canonical records", "Scope from FY2017–18; retain ratios/vintages; derive nominal growth; build JSON once", "dated_multi_series → general line charts"],
+            ["sector-capex-allocation.json", "Typed Statement 3 observations from DeliverySources", "Map FY label to 31 March; budget status; separate Roads/Railways series", "dated_multi_series → allocation line view"],
+            ["physical-delivery.json", "Typed MoRTH and Railways observations from DeliverySources", "Map annual km outputs; actual status", "dated_multi_series → physical-delivery line view"],
+            ["capital-goods-production.json", "Typed RBI/NSO Table 30 observations from DeliverySources", "Map fiscal average IIP; preserve pandemic observation", "dated_multi_series → 2D production view"],
             ["sector-performance.json", "Official daily TRI matrix", "Common-date drop; month-end sampling; total/excess returns; rebasing; risk summaries", "market_performance → ChartView"],
-            ["capex-sector-correlations.json", "Actual CapEx plus market/private artifacts", "Fixed forward/reverse windows; pair by fiscal end; Pearson/Spearman; pandemic sensitivity", "dated_multi_series metadata → CapexCorrelationView"],
+            ["capex-sector-correlations.json", "GovernmentMetrics, PrivateMetrics and market calculations", "Fixed forward/reverse windows; pair by fiscal end; Pearson/Spearman; pandemic sensitivity", "dated_multi_series metadata → CapexCorrelationView"],
             ["corporate-fundamentals.json", "Ten CorporateFundamental histories", "Within-company growth; unweighted group median; coverage metadata", "dated_multi_series → CorporateFundamentalsView"],
-            ["private-investment-response.json", "Validated private-investment bundle", "Scope GFCF, utilisation and one-year public-CapEx lag", "dated_multi_series → general line chart"],
+            ["private-investment-response.json", "PrivateMetrics canonical records", "Scope GFCF, utilisation and one-year public-CapEx lag; build JSON once", "dated_multi_series → general line chart"],
             ["investment-quality.json", "RBI/MoSPI project status and cost tables", "Parse sector blocks; derive schedule, delay and cost-overrun shares; retain sector histories", "dated_multi_series metadata → InvestmentQualityView"],
-            ["crowding-in-evidence.json", "Execution, private-investment and IIP artifacts", "Fixed 0–3 year alignment; Pearson/Spearman; eight-observation eligibility gate", "dated_multi_series metadata → CrowdingInView"],
+            ["crowding-in-evidence.json", "GovernmentMetrics, PrivateMetrics and typed IIP source observations", "Fixed 0–3 year alignment; Pearson/Spearman; eight-observation eligibility gate", "dated_multi_series metadata → CrowdingInView"],
             ["state-capex-evaluation.json", "RBI state outlay and current/constant GSDP", "Scale outlay; pair next-year growth; two-way demean; state-clustered SE", "dated_multi_series metadata → StateCapexEvaluationView"],
-            ["fiscal-sustainability.json", "Validated fiscal and execution bundles", "Scope debt/burden/primary balance; add CapEx share and allocation ratio; attach verdict chain", "dated_multi_series → FiscalBridgeView and ScenarioLab"],
-            ["analysis-summary.json", "Execution/private/fiscal outputs plus forward correlations", "Deterministic directional classification; reverse leads and Nifty 50 excluded from H2", "capex_analysis_summary → CapexVerdict"],
+            ["fiscal-sustainability.json", "FiscalMetrics plus GovernmentMetrics", "Join typed records; add CapEx share and allocation ratio; attach verdict chain; build JSON once", "dated_multi_series → FiscalBridgeView and ScenarioLab"],
+            ["analysis-summary.json", "GovernmentMetrics, PrivateMetrics, FiscalMetrics and correlation estimates", "Deterministic directional classification; reverse leads and Nifty 50 excluded from H2", "capex_analysis_summary → CapexVerdict"],
         ],
         widths=[2300, 2300, 3100, 1300],
         font_size=13,
@@ -920,48 +927,115 @@ def build_technical_guide() -> None:
     )
     doc.add_heading("Fiscal bridge", 2)
     doc.add_paragraph(
-        "The execution artifact’s actual CapEx expenditure share is copied into the fiscal payload. It is joined "
-        "by exact fiscal-end date to interest payments as a share of expenditure. The allocation ratio divides "
+        "The actual CapEx expenditure-share CanonicalRecord in GovernmentMetrics is joined by exact fiscal-end "
+        "date to the interest-expenditure CanonicalRecord in FiscalMetrics. The allocation ratio divides "
         "the two shares; a zero or missing interest denominator is omitted. Observation status is conservatively "
-        "propagated from the non-actual input when applicable."
+        "propagated from the non-actual input when applicable. Only then does build_fiscal_sustainability_payload "
+        "construct the final JSON dictionary."
     )
 
-    doc.add_heading("8. Main build orchestration", 1)
-    doc.add_code("PYTHONPATH=scripts venv/bin/python scripts/build_capex_analysis.py")
+    doc.add_heading("8. Full pipeline and analysis orchestration", 1)
+    doc.add_heading("Central ETL command", 2)
+    doc.add_code("PYTHONPATH=scripts venv/bin/python scripts/build_capex_pipeline.py")
     doc.add_paragraph(
-        "The main build first loads and schema-validates three structural inputs: government investment, private "
-        "investment and fiscal capacity. It then requests official Nifty TRI histories unless a reproducible "
-        "--prices-json file is provided. Corporate statements are refreshed unless --skip-corporate is supplied. "
-        "build_all returns the core artifacts plus corporate when records are available. The same command then "
-        "refreshes the official investment-quality, state-panel and crowding-in outputs through build_capex_depth. "
-        "Every payload is mapped to its explicit schema and passed to publish_json."
+        "The central orchestrator runs one visible sequence: Extract, Transform, Validate, Load and Verify. "
+        "Validation and verification are control gates around ETL rather than additional data layers. The central "
+        "script is the only analytical executable for both full and targeted runs."
     )
-    doc.add_heading("Reproducible/offline verification", 2)
-    doc.add_code("PYTHONPATH=scripts venv/bin/python scripts/build_capex_analysis.py --prices-json /path/to/prices.json --skip-corporate --skip-depth-refresh")
+    doc.add_heading("Step 1 — Extract", 2)
     doc.add_paragraph(
-        "The price file contains dates and row objects keyed by the frozen market keys. This path avoids a live "
-        "market and RBI depth refresh while exercising the deterministic core transformation and publication chain. "
-        "Skipping either refresh does not delete the last valid artifact."
+        "run_pipeline selects live or offline acquisition. Live mode calls acquire_capex_sources with data/raw as "
+        "the landing root. Provider-specific extractors download source documents, retain checksum- or date-based "
+        "filenames, parse the relevant tables and return StructuralSources, AnalysisSources and DepthSources. "
+        "extract_delivery_sources separately parses the tracked sources/capex_delivery_reference.json into "
+        "DeliverySources. All four containers are placed inside one CapexSources object before Transform begins. "
+        "Offline mode calls load_landed_capex_sources, selects the latest registered files "
+        "already under data/raw and reruns the same PDF, HTML and JSON parsers in place. Raw files are evidence: "
+        "they remain available if a later transform or validation step fails."
     )
-    doc.add_heading("Targeted allocation/delivery refresh", 2)
-    doc.add_code("PYTHONPATH=scripts venv/bin/python scripts/build_capex_delivery.py")
+    doc.add_heading("Step 2 — Transform", 2)
     doc.add_paragraph(
-        "The targeted builder publishes the three frozen official-series artifacts. These functions are also "
-        "called by the main CapEx build, so the targeted entry point is an operational convenience rather than a "
-        "second required pipeline."
+        "build_capex_artifacts receives CapexSources and performs no network or filesystem access. It directly "
+        "calls calculate_government_metrics, calculate_private_metrics and calculate_fiscal_metrics. These return "
+        "GovernmentMetrics, PrivateMetrics and FiscalMetrics: frozen dataclasses containing CanonicalRecord tuples "
+        "and provenance. calculate_private_metrics reads GovernmentMetrics records to build the lagged public-CapEx "
+        "record. No intermediate metadata/series dictionary exists. build_capex_artifacts then directly calls all "
+        "thirteen final builders: execution, allocation, delivery, production, sectors, correlations, private, "
+        "summary, fiscal, corporate, quality, states and crowding-in. Downstream correlation, summary, fiscal-bridge and crowding-in calculations consume "
+        "typed metrics or typed source observations directly. "
+        "build_capex_artifacts returns exactly thirteen final-output dictionaries and performs no I/O."
+    )
+    doc.add_heading("Step 3 — Validate before loading", 2)
+    doc.add_paragraph(
+        "_validate_all_artifacts first requires exactly the thirteen keys in OUTPUTS. _artifact_entries assigns "
+        "each final payload its registered relative path and schema. "
+        "validate_payload checks every complete dictionary against its Draft 2020-12 schema. json.dumps then performs "
+        "a strict serialisation preflight with allow_nan=False. If any payload fails, no processed or public JSON is "
+        "written; newly acquired immutable raw evidence is retained. Only after all thirteen pass does "
+        "_select_artifact_entries apply --target."
+    )
+    doc.add_heading("Step 4 — Load", 2)
+    doc.add_paragraph(
+        "With --target all, _publish_artifacts writes all thirteen validated payloads under data/processed and "
+        "writes identical copies under frontend/public/data. An output target writes one processed file and its "
+        "public copy. write_json_atomic "
+        "serialises to a temporary sibling file, flushes it, calls fsync and replaces the destination with os.replace. "
+        "Each JSON file is individually atomic, but a multi-file run is not a transaction and has no cross-file rollback."
+    )
+    doc.add_heading("Step 5 — Verify after loading", 2)
+    doc.add_paragraph(
+        "_verify_written_artifacts reopens every selected processed file and validates it again. For selected final "
+        "outputs it also compares the processed SHA-256 digest with the browser-facing copy. A mismatch or missing "
+        "file fails the run visibly. Verification detects publication problems; it does not roll earlier writes back."
+    )
+    doc.add_heading("Layer boundary", 2)
+    doc.add_paragraph(
+        "extractors/capex_sources.py contains network and landed-file parsing. models/capex_sources.py defines "
+        "the typed values crossing into the calculation layer. models/capex_metrics.py defines the typed calculation "
+        "boundary and transforms/capex_metrics.py constructs those metrics. builders/fiscal_outputs.py, "
+        "market_outputs.py, real_economy_outputs.py and evaluation_outputs.py each expose one function per final "
+        "output. capex_artifacts.py calls all thirteen functions explicitly. "
+        "build_capex_pipeline.py owns validation and publication; json_export.py owns one-file atomic replacement."
+    )
+    doc.add_heading("Explicit call-graph rule", 2)
+    doc.add_paragraph(
+        "Pipeline orchestration functions accept data and configuration values, not behavior. run_pipeline calls "
+        "acquire_capex_sources or load_landed_capex_sources by name, then directly calls build_capex_artifacts, "
+        "_validate_all_artifacts, _select_artifact_entries, _publish_artifacts and _verify_written_artifacts. "
+        "_publish_artifacts directly calls "
+        "write_json_atomic. Tests exercise these concrete stages with artifact data rather than injecting replacement "
+        "functions. The production Python contains no lambdas, Callable dependencies or callback configuration."
+    )
+    doc.add_heading("Immutable-source replay", 2)
+    doc.add_code("PYTHONPATH=scripts venv/bin/python scripts/build_capex_pipeline.py --offline")
+    doc.add_paragraph(
+        "Offline mode selects the latest immutable file for every registered source under data/raw, reads it in "
+        "place, reruns the production parsers and executes the same transform, validation, load and verification "
+        "path. It does not treat processed JSON as source input."
+    )
+    doc.add_heading("Targeted execution", 2)
+    doc.add_code("PYTHONPATH=scripts venv/bin/python scripts/build_capex_pipeline.py --target output:execution")
+    doc.add_code("PYTHONPATH=scripts venv/bin/python scripts/build_capex_pipeline.py --offline --target output:quality")
+    doc.add_paragraph(
+        "The only target namespace is output:<key>; the default is all. Target selection does not create "
+        "a shorter or different calculation path: every source dependency is acquired, the complete artifact graph "
+        "is built, and all thirteen payloads validate. It limits only the Load and Verify steps. This preserves one "
+        "call graph and prevents existing processed JSON from becoming a hidden transformation input."
     )
 
-    doc.add_heading("9. Validation and atomic publication", 1)
-    doc.add_number(1, "publish_json validates the complete candidate against the named Draft 2020-12 schema.")
-    doc.add_number(2, "Strict json.dump uses allow_nan=False, rejecting NaN and infinity.")
-    doc.add_number(3, "A temporary file is created beside the destination.")
-    doc.add_number(4, "The file is flushed and fsync is called.")
-    doc.add_number(5, "os.replace atomically replaces the prior valid artifact.")
-    doc.add_number(6, "On any exception, the temporary file is removed and the prior artifact remains.")
+    doc.add_heading("9. Validation-first, per-file atomic publication", 1)
+    doc.add_number(1, "Raw acquisition writes immutable source evidence directly under data/raw.")
+    doc.add_number(2, "All transforms and payload assembly finish in memory before output publication begins.")
+    doc.add_number(3, "The builder must return exactly all thirteen registered final CapEx keys.")
+    doc.add_number(4, "Every payload is schema-validated and strictly serialisation-tested with allow_nan=False.")
+    doc.add_number(5, "Each processed and public JSON uses temporary-file, fsync and os.replace publication.")
+    doc.add_number(6, "There is no backup tree or run-level rollback; a failure between files may leave a mixed output generation.")
+    doc.add_number(7, "The operator reruns the complete idempotent ETL after correcting any publication failure.")
+    doc.add_number(8, "Every final processed/public pair is revalidated and checked for equal SHA-256 content.")
     doc.add_paragraph(
-        "Promotion repeats validation against the route’s contract before copying into frontend/public/data. "
-        "All thirteen CapEx output paths are registered. The current processed and public copies have matching SHA-256 "
-        "content, so the browser is serving the same payloads that passed backend validation."
+        "This design deliberately favours an understandable validation gate and safe individual files over a "
+        "filesystem approximation of a database transaction. Full and targeted publication both use the same "
+        "write_json_atomic implementation in the central ETL."
     )
 
     doc.add_heading("10. Catalogue and frontend integration", 1)
@@ -1032,7 +1106,7 @@ def build_technical_guide() -> None:
     doc.table(
         ["Check", "Command", "What it protects"],
         [
-            ["Backend suite", "PYTHONPATH=scripts venv/bin/python -m unittest discover -s tests -p 'test_*.py'", "Tests cover CapEx transforms, registered lag windows, retained upstream parsers, schemas and the CapEx-only publication boundary."],
+            ["Backend suite", "PYTHONPATH=scripts venv/bin/python -m unittest discover -s tests -p 'test_*.py'", "Tests cover CapEx transforms, registered lag windows, source parsers, schemas and the CapEx-only publication boundary."],
             ["Static-data validation", "cd frontend && npm run validate:data", "Catalogue schema, all referenced assets, adapter/schema compatibility, metadata coverage and duplicates."],
             ["Type checking", "cd frontend && npx tsc --noEmit", "TypeScript component and payload compatibility."],
             ["Lint", "cd frontend && npm run lint", "Frontend correctness and dead-code checks."],
@@ -1043,9 +1117,9 @@ def build_technical_guide() -> None:
         font_size=14,
     )
     doc.add_paragraph(
-        "At generation time all 65 backend tests pass, 31 static assets and 14 catalogue sections validate, "
+        "At generation time all 35 backend tests pass, 12 static assets and one catalogue section validate, "
         "TypeScript and lint pass, and the Vite production build succeeds. The remaining notice is a bundle-size "
-        "warning: the main JavaScript chunk is approximately 714 KB minified and 210 KB gzip."
+        "warning: the main JavaScript chunk is approximately 653 KB minified and 196 KB gzip."
     )
 
     doc.add_heading("13. Build and deployment runbook", 1)
@@ -1054,26 +1128,23 @@ def build_technical_guide() -> None:
         "Python environment with dependencies from requirements/requirements.txt.",
         "Node dependencies installed in frontend/.",
         "pdftotext available for the broader official-PDF extraction pipeline.",
-        "Network access for live Nifty and corporate refreshes.",
-        "Validated upstream government-investment, private-investment and fiscal-capacity processed bundles.",
+        "Network access for live mode, or a complete immutable data/raw landing for --offline mode.",
     ]:
         doc.add_bullet(item)
     doc.add_heading("Recommended full refresh", 2)
-    doc.add_code("PYTHONPATH=scripts venv/bin/python scripts/build_government_investment.py\nPYTHONPATH=scripts venv/bin/python scripts/build_private_investment.py\nPYTHONPATH=scripts venv/bin/python scripts/build_fiscal_capacity.py")
-    doc.add_code("PYTHONPATH=scripts venv/bin/python scripts/build_capex_analysis.py")
-    doc.add_code("PYTHONPATH=scripts venv/bin/python scripts/promote_processed_data.py")
+    doc.add_code("PYTHONPATH=scripts venv/bin/python scripts/build_capex_pipeline.py")
     doc.add_code("PYTHONPATH=scripts venv/bin/python scripts/sync_focused_catalogue.py")
     doc.add_code("cd frontend && npm run validate:data && npx tsc --noEmit && npm run lint && npm run build")
     doc.add_paragraph(
-        "The first command refreshes the structural dependencies in order. The CapEx build then refreshes live "
-        "markets and companies and publishes all CapEx outputs. Promotion without arguments promotes every existing "
-        "registered artifact. Catalogue synchronisation updates versions and availability before the frontend build."
+        "The pipeline command performs live acquisition by default. Use --offline for a deterministic replay of "
+        "the immutable raw landing. Both modes use the same pure builders, validation and publication functions. "
+        "Catalogue synchronisation updates versions and availability after successful publication."
     )
     doc.add_heading("Static deployment", 2)
     doc.add_number(1, "Deploy the complete frontend/dist directory to a static host.")
     doc.add_number(2, "Configure unknown application routes such as /research/capex-transmission to fall back to index.html.")
     doc.add_number(3, "Preserve /data paths and JSON MIME types.")
-    doc.add_number(4, "Do not deploy frontend/src or data/processed as runtime dependencies; the browser needs only compiled assets and promoted public data.")
+    doc.add_number(4, "Do not deploy frontend/src or data/processed as runtime dependencies; the browser needs only compiled assets and published public data.")
     doc.add_number(5, "Run a smoke test against the production URL: load the CapEx lens, switch every view, change correlation controls and move every scenario slider.")
     doc.add_callout(
         "No platform is currently encoded",
@@ -1089,8 +1160,8 @@ def build_technical_guide() -> None:
             ["Official Nifty endpoint changes", "Extractor raises on HTTP or unexpected response type; no processed replacement.", "Inspect landed/request contract; update extractor without weakening required-market checks."],
             ["Corporate provider missing a line item", "Fallback labels are tried; absent values remain null and coverage may shrink.", "Compare against company annual reports; do not substitute unrelated metrics."],
             ["Budget table definition changes", "Frozen series remains last valid; manual refresh must reconcile the capital column.", "Add a new source vintage and regression assertion."],
-            ["Schema validation fails", "publish_json stops before writing.", "Correct metadata, units, statuses or transform output; never hand-edit public JSON."],
-            ["Promotion fails", "Existing public artifact remains.", "Validate processed file against its registered route contract."],
+            ["Schema validation fails", "No processed or public JSON is written; any newly landed raw evidence remains available.", "Correct metadata, units, statuses or transform output; never hand-edit public JSON."],
+            ["JSON replacement fails", "The current file remains valid, but files published earlier in the loop are not rolled back.", "Inspect filesystem permissions, correct the failure and rerun the complete ETL."],
             ["Catalogue references wrong adapter", "Frontend validator and runtime guard fail.", "Update types, schema enum, validator map and MetricPanel dispatch together."],
             ["Browser cache serves older data", "Asset version normally changes with catalogue generation.", "Verify catalogue version and host cache headers; invalidate static cache if required."],
             ["Scenario result looks implausible", "No backend failure occurs because inputs are user assumptions.", "Review every assumption, especially multiplier, lag, financing and nominal growth; treat as a scenario."],
@@ -1101,13 +1172,13 @@ def build_technical_guide() -> None:
 
     doc.add_heading("15. Technical debt and recommended next work", 1)
     recommendations = [
-        ("Automate frozen source extraction", "Create Statement 3, MoRTH, Railways and IIP extractors with dated raw landing and table-identity checks."),
+        ("Automate reference-source acquisition", "Replace the manual Statement 3, MoRTH, Railways and IIP transcriptions with document extractors, dated raw landing and table-identity checks while retaining the same typed boundary."),
         ("Version the scenario model", "Move the implemented parameters, uncertainty ranges and formulas into a schema-valid model definition and a pure calculation module shared by tests and UI."),
         ("Test frontend interactions", "Add component tests for direction switching, series colour stability, unit separation and preset/custom model transitions."),
         ("Catalogue the summary", "Register analysis-summary as an explicit asset and load it through the static client instead of a direct fetch."),
         ("Code-split specialised views", "Lazy-load correlation, corporate, fiscal and scenario components to address the Vite bundle warning."),
         ("Add deployment configuration", "Choose a static host, encode SPA fallback/cache policy and add production smoke checks."),
-        ("Improve provenance granularity", "Attach raw snapshot/checksum references to new frozen-series metadata and, where useful, individual observations."),
+        ("Improve provenance granularity", "Attach source-document snapshot/checksum references to manually transcribed metadata and, where useful, individual observations."),
         ("Extend statistical governance", "Pre-register any inferential extension; avoid choosing lags or exclusions after viewing coefficients."),
     ]
     doc.table(["Recommendation", "Implementation direction"], recommendations, widths=[3000, 6000])
@@ -1117,13 +1188,21 @@ def build_technical_guide() -> None:
         ["File", "Reason to inspect it"],
         [
             ["scripts/config/capex_analysis.py", "Frozen research entities, roles, lags and output paths."],
-            ["scripts/build_capex_analysis.py", "Complete orchestration and schema routing."],
-            ["scripts/build_capex_delivery.py", "Allocation, delivery and IIP values, source metadata and payloads."],
-            ["scripts/build_capex_depth.py", "Official project-quality/state acquisition and publication."],
+            ["scripts/build_capex_pipeline.py", "Sole full and targeted ETL entry point."],
+            ["scripts/extractors/capex_sources.py", "Live acquisition and immutable raw replay."],
+            ["scripts/extractors/delivery_reference.py", "Typed extraction and validation of tracked manual source observations."],
+            ["sources/capex_delivery_reference.json", "Version-controlled source input for allocation, delivery and IIP."],
+            ["scripts/models/capex_sources.py", "Typed extraction-to-builder boundary."],
+            ["scripts/models/capex_metrics.py", "Typed calculation-to-final-builder boundary."],
+            ["scripts/transforms/capex_metrics.py", "Government, private and fiscal metric construction without JSON shaping."],
+            ["scripts/builders/capex_artifacts.py", "Explicit direct call graph for all thirteen final artifacts."],
+            ["scripts/builders/fiscal_outputs.py", "Execution and fiscal final payload builders."],
+            ["scripts/builders/market_outputs.py", "Sector-performance and correlation final payload builders."],
+            ["scripts/builders/real_economy_outputs.py", "Allocation, delivery, production, private and corporate final payload builders."],
+            ["scripts/builders/evaluation_outputs.py", "Quality, state, crowding-in and summary final payload builders."],
             ["scripts/transforms/capex_analysis.py", "Market, correlation, fiscal-summary and alignment logic."],
             ["scripts/transforms/capex_depth.py", "Project-quality parsing, state fixed effects and crowding-in gates."],
             ["scripts/transforms/corporate_fundamentals.py", "Company growth and group medians."],
-            ["scripts/promote_processed_data.py", "Promotion registry."],
             ["scripts/sync_focused_catalogue.py", "Full narrative order and presentation configuration."],
             ["schemas/dated_multi_series.schema.json", "Primary chart-data contract."],
             ["schemas/market_performance.schema.json", "Market-data contract."],
@@ -1140,7 +1219,8 @@ def build_technical_guide() -> None:
             ["frontend/scripts/validate-public-data.mjs", "Build-time catalogue and asset validation."],
             ["tests/test_capex_analysis.py", "Market, timing, summary and company regression tests."],
             ["tests/test_capex_delivery.py", "Unit separation, exact source observations and output registration."],
-            ["tests/test_capex_depth.py", "Quality/state/crowding-in contracts, evidence gates and promotion routes."],
+            ["tests/test_capex_depth.py", "Quality/state/crowding-in contracts, evidence gates and public routes."],
+            ["tests/test_capex_pipeline.py", "Layer boundaries, complete-set prevalidation, publication and processed/public parity."],
         ],
         widths=[3900, 5100],
         font_size=14,

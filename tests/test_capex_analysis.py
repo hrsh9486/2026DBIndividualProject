@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date, datetime
 import sys
 import unittest
 from pathlib import Path
@@ -13,7 +13,13 @@ from transforms.capex_analysis import (  # noqa: E402
     build_sector_performance_payload,
     classify_summary,
 )
-from extractors.corporate_fundamentals import CorporateFundamental  # noqa: E402
+from models import CanonicalRecord  # noqa: E402
+from models.capex_metrics import (  # noqa: E402
+    FiscalMetrics,
+    GovernmentMetrics,
+    PrivateMetrics,
+)
+from models.capex_sources import CorporateFundamental  # noqa: E402
 from transforms.corporate_fundamentals import build_corporate_fundamentals_payload  # noqa: E402
 from validators import validate_payload  # noqa: E402
 
@@ -46,17 +52,23 @@ class CapexMarketTests(unittest.TestCase):
 
     def test_lag_analysis_has_fixed_registered_windows(self):
         market = build_sector_performance_payload(self.prices, self.definitions)
-        execution = {
-            "series": {
-                "capex_actual": {
-                    "values": [
-                        {"date": f"{year}-03-31", "value": value}
-                        for year, value in zip(range(2018, 2025), [100, 110, 125, 150, 190, 240, 300])
-                    ]
-                }
-            }
-        }
-        payload, estimates = build_lag_analysis(execution, market)
+        records = tuple(
+            CanonicalRecord(
+                date=date(year, 3, 31),
+                entity="IND",
+                indicator="capex_actual",
+                value=value,
+                unit="INR_crore",
+                frequency="annual",
+                source="test",
+            )
+            for year, value in zip(
+                range(2018, 2025),
+                [100, 110, 125, 150, 190, 240, 300],
+            )
+        )
+        government = GovernmentMetrics(records=records, sources=())
+        payload, estimates = build_lag_analysis(government, market)
         validate_payload(payload, "dated_multi_series.schema.json")
         self.assertEqual(len(payload["series"]), 43)
         self.assertIn("nifty_50_lead_3m", payload["series"])
@@ -83,18 +95,22 @@ class CorporateFundamentalsTests(unittest.TestCase):
 
 class CapexSummaryTests(unittest.TestCase):
     def test_reverse_market_leads_do_not_drive_sector_transmission_verdict(self):
-        execution = {"series": {
-            "actual_capex_pct_gdp": {"values": [{"value": 1}, {"value": 2}]},
-            "actual_capex_pct_total_expenditure": {"values": [{"value": 4}, {"value": 8}]},
-        }}
-        private = {"series": {
-            "private_corporate_gfcf_pct_gdp": {"values": [{"value": 10}, {"value": 11}]},
-            "manufacturing_capacity_utilisation": {"values": [{"value": 70}, {"value": 72}]},
-        }}
-        fiscal = {"series": {
-            "general_government_debt_pct_gdp": {"values": [{"value": 82}]},
-            "interest_payments_pct_revenue": {"values": [{"value": 37}]},
-        }}
+        government = GovernmentMetrics(records=(
+            self._record("actual_capex_pct_gdp", 2023, 1),
+            self._record("actual_capex_pct_gdp", 2024, 2),
+            self._record("actual_capex_pct_total_expenditure", 2023, 4),
+            self._record("actual_capex_pct_total_expenditure", 2024, 8),
+        ), sources=())
+        private = PrivateMetrics(records=(
+            self._record("private_corporate_gfcf_pct_gdp", 2023, 10),
+            self._record("private_corporate_gfcf_pct_gdp", 2024, 11),
+            self._record("manufacturing_capacity_utilisation", 2023, 70),
+            self._record("manufacturing_capacity_utilisation", 2024, 72),
+        ), sources=())
+        fiscal = FiscalMetrics(records=(
+            self._record("general_government_debt_pct_gdp", 2024, 82),
+            self._record("interest_payments_pct_revenue", 2024, 37),
+        ), sources=())
         estimates = {
             "capital_goods_lead_6m": {
                 "pearson": 0.9, "n": 6, "direction": "market_leads",
@@ -109,9 +125,21 @@ class CapexSummaryTests(unittest.TestCase):
                 "outcome_type": "market", "label": "Nifty Capital Goods",
             },
         }
-        summary = classify_summary(execution, private, fiscal, estimates)
+        summary = classify_summary(government, private, fiscal, estimates)
         sector = next(item for item in summary["hypotheses"] if item["key"] == "sector_transmission")
         self.assertEqual(sector["status"], "inconclusive")
+
+    @staticmethod
+    def _record(indicator: str, year: int, value: float) -> CanonicalRecord:
+        return CanonicalRecord(
+            date=date(year, 3, 31),
+            entity="IND",
+            indicator=indicator,
+            value=value,
+            unit="percent",
+            frequency="annual",
+            source="test",
+        )
 
 
 if __name__ == "__main__":

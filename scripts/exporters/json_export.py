@@ -8,9 +8,6 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-from validators import validate_payload
-
-
 def write_json_atomic(payload: Any, output_path: str | Path) -> Path:
     """Write strict JSON beside the target, then atomically replace it."""
     destination = Path(output_path)
@@ -36,9 +33,3 @@ def write_json_atomic(payload: Any, output_path: str | Path) -> Path:
             temporary_path.unlink(missing_ok=True)
         raise
     return destination
-
-
-def publish_json(payload: Any, output_path: str | Path, schema_name: str) -> Path:
-    """Validate a complete payload before atomically publishing it."""
-    validate_payload(payload, schema_name)
-    return write_json_atomic(payload, output_path)

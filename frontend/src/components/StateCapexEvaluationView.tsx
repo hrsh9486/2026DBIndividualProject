@@ -33,11 +33,46 @@ type PanelEstimate = {
   limitation: string;
 };
 
+type StateDotProps = {
+  cx?: number;
+  cy?: number;
+  payload?: PanelRow;
+  selectedState: string;
+  selectedYear: string;
+};
+
+function StateDot({ cx, cy, payload, selectedState, selectedYear }: StateDotProps) {
+  if (cx === undefined || cy === undefined || !payload) return null;
+  const inYear = selectedYear === "all" || payload.year === Number(selectedYear);
+  const highlighted = selectedState !== "all" && payload.state === selectedState;
+  const opacity = inYear ? (selectedState === "all" ? .72 : highlighted ? 1 : .32) : 0;
+
+  return <circle
+    cx={cx}
+    cy={cy}
+    r={4.5}
+    fill={highlighted ? "#a53f2b" : "#b7afa3"}
+    opacity={opacity}
+    pointerEvents={inYear ? "auto" : "none"}
+    style={{ transition: "opacity 220ms ease-in-out" }}
+  />;
+}
+
+function fixedDomain(values: number[]): [number, number] | undefined {
+  if (!values.length) return undefined;
+  const minimum = Math.min(...values);
+  const maximum = Math.max(...values);
+  const padding = (maximum - minimum || Math.abs(maximum) || 1) * 0.05;
+  return [minimum - padding, maximum + padding];
+}
+
 export default function StateCapexEvaluationView({ payload }: { payload: DatedPayload }) {
   const observations = (payload.metadata.panel_observations as PanelRow[] | undefined) ?? [];
   const estimate = payload.metadata.panel_estimate as PanelEstimate | undefined;
   const states = useMemo(() => [...new Set(observations.map((row) => row.state))], [observations]);
   const years = useMemo(() => [...new Set(observations.map((row) => row.year))].sort(), [observations]);
+  const xDomain = useMemo(() => fixedDomain(observations.map((row) => row.capex_pct_gsdp)), [observations]);
+  const yDomain = useMemo(() => fixedDomain(observations.map((row) => row.next_year_real_gsdp_growth)), [observations]);
   const [state, setState] = useState("all");
   const [year, setYear] = useState("all");
   const selected = observations.filter((row) => (state === "all" || row.state === state) && (year === "all" || row.year === Number(year)));
@@ -45,8 +80,6 @@ export default function StateCapexEvaluationView({ payload }: { payload: DatedPa
     x: selected.reduce((sum, row) => sum + row.capex_pct_gsdp, 0) / selected.length,
     y: selected.reduce((sum, row) => sum + row.next_year_real_gsdp_growth, 0) / selected.length,
   } : null;
-  const highlighted = state === "all" ? [] : selected;
-  const background = state === "all" ? selected : observations.filter((row) => year === "all" || row.year === Number(year));
   const interval = estimate?.confidence_interval_95;
 
   return <div className="depth-view">
@@ -64,12 +97,16 @@ export default function StateCapexEvaluationView({ payload }: { payload: DatedPa
       <ResponsiveContainer width="100%" height="100%">
         <ScatterChart margin={{ top: 18, right: 24, bottom: 18, left: 10 }}>
           <CartesianGrid stroke="#ded9cf" strokeDasharray="2 5" />
-          <XAxis type="number" dataKey="capex_pct_gsdp" name="Capital outlay/GSDP" unit="%" label={{ value: "Capital outlay / GSDP (%)", position: "insideBottom", offset: -10 }} />
-          <YAxis type="number" dataKey="next_year_real_gsdp_growth" name="Next-year real GSDP growth" unit="%" width={62} label={{ value: "Next-year real growth (%)", angle: -90, position: "insideLeft" }} />
+          <XAxis type="number" dataKey="capex_pct_gsdp" domain={xDomain} tickFormatter={(value) => Number(value).toFixed(0)} name="Capital outlay/GSDP" unit="%" label={{ value: "Capital outlay / GSDP (%)", position: "insideBottom", offset: -10 }} />
+          <YAxis type="number" dataKey="next_year_real_gsdp_growth" domain={yDomain} tickFormatter={(value) => Number(value).toFixed(0)} name="Next-year real GSDP growth" unit="%" width={62} label={{ value: "Next-year real growth (%)", angle: -90, position: "insideLeft" }} />
           {means && <><ReferenceLine x={means.x} stroke="#928b80" strokeDasharray="3 5" /><ScatterReferenceLine y={means.y} stroke="#928b80" strokeDasharray="3 5" /></>}
-          <Tooltip cursor={{ strokeDasharray: "3 3" }} formatter={(value, name) => [`${Number(value).toFixed(2)}%`, name]} labelFormatter={(_, items) => `${items?.[0]?.payload?.state ?? ""} · ${items?.[0]?.payload?.period_label ?? ""}`} />
-          <Scatter data={background} fill="#b7afa3" fillOpacity={state === "all" ? .72 : .32} name="State-years" />
-          {highlighted.length > 0 && <Scatter data={highlighted} fill="#a53f2b" name={state} />}
+          <Tooltip cursor={{ strokeDasharray: "3 3" }} formatter={(value, name) => [`${Number(value).toFixed(3)}%`, name]} labelFormatter={(_, items) => `${items?.[0]?.payload?.state ?? ""} · ${items?.[0]?.payload?.period_label ?? ""}`} />
+          <Scatter
+            data={observations}
+            isAnimationActive={false}
+            name="State-years"
+            shape={<StateDot selectedState={state} selectedYear={year} />}
+          />
         </ScatterChart>
       </ResponsiveContainer>
     </div>

@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "generated_at": "2026-08-03T12:57:39.570845+00:00",
+    "generated_at": "2026-08-06T13:19:00.855188+00:00",
     "source": [
       {
-        "name": "Validated central-government CapEx artifact"
+        "name": "Calculated GovernmentMetrics"
       },
       {
-        "name": "Validated private-investment and capacity artifact"
+        "name": "Calculated PrivateMetrics"
       },
       {
-        "name": "Validated capital-goods production artifact"
+        "name": "Typed capital-goods production source observations"
       }
     ],
     "frequency": "annual",

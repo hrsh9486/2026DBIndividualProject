@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="2250" viewBox="0 0 2400 2250">
+  <defs>
+    <style>
+      text{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;fill:#18212b}.title{font:700 29px system-ui,sans-serif}.sub{font:16px system-ui,sans-serif;fill:#394b59}.h{font:700 17px system-ui,sans-serif}.b{font-size:14px}.m{font-size:13px}.small{font-size:12px;fill:#455766}.section{fill:#263746}.sectionText{font:700 15px system-ui,sans-serif;fill:white}.source{fill:#edf5ff;stroke:#296aa3;stroke-width:2}.model{fill:#f4efff;stroke:#7353a6;stroke-width:2}.transform{fill:#eef8f1;stroke:#28764a;stroke-width:2}.gate{fill:#fff7e6;stroke:#b06d00;stroke-width:2}.output{fill:#f4f6f8;stroke:#4d5e6c;stroke-width:2}.side{fill:#fff;stroke:#8a99a5;stroke-width:1.5;stroke-dasharray:6 4}.line{stroke:#7b8b97;stroke-width:1}.arrow{fill:none;stroke:#263746;stroke-width:2;marker-end:url(#a)}.dash{fill:none;stroke:#637786;stroke-width:1.5;stroke-dasharray:7 5;marker-end:url(#a)}
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#263746"/></marker>
+  </defs>
+  <rect width="2400" height="2250" fill="white"/>
+  <text class="title" x="60" y="54">One statistic: actual_capex_pct_gdp from official sources to published JSON</text>
+  <text class="sub" x="60" y="84">Production path for one FY observation. Boxes list every repository file and named function that creates, carries, validates, copies or serialises it.</text>
+
+  <rect class="section" x="60" y="112" width="2280" height="36" rx="4"/><text class="sectionText" x="78" y="137">1  SOURCE ACQUISITION — TWO INPUT VALUES ARE REQUIRED</text>
+  <rect class="source" x="60" y="172" width="1080" height="310" rx="5"/>
+  <text class="h" x="80" y="201">1A  Numerator: actual central-government capital expenditure</text>
+  <text class="m" x="80" y="229">Official Budget at a Glance bag6.pdf</text>
+  <text class="m" x="80" y="255">scripts/extractors/capex_sources.py::acquire_structural_sources()</text>
+  <text class="m" x="100" y="281">→ scripts/extractors/union_budget.py::UnionBudgetExtractor.fetch_expenditure_snapshots()</text>
+  <text class="m" x="120" y="307">→ current_edition_start_year() → fetch_expenditure_snapshot()</text>
+  <text class="m" x="140" y="333">→ _edition_roots() → _get() → SHA-256 → raw_path.write_bytes()</text>
+  <text class="m" x="140" y="359">→ pdftotext -layout → parse_expenditure_pdf_text()</text>
+  <text class="m" x="160" y="385">→ _four_amounts_for_any() → _four_amounts() → _amount()</text>
+  <line class="line" x1="80" y1="405" x2="1120" y2="405"/>
+  <text class="small" x="80" y="432">landing: data/raw/union-budget/FY&lt;edition&gt;/budget-at-a-glance-expenditure-&lt;hash&gt;.pdf</text>
+  <text class="small" x="80" y="456">model: scripts/models/capex_sources.py::UnionBudgetSnapshot.actual_capex</text>
+
+  <rect class="source" x="1260" y="172" width="1080" height="310" rx="5"/>
+  <text class="h" x="1280" y="201">1B  Denominator: fiscal-year nominal GDP</text>
+  <text class="m" x="1280" y="229">RBI publication 23175, Table 1 (NSO current-price GDP)</text>
+  <text class="m" x="1280" y="255">scripts/extractors/capex_sources.py::acquire_structural_sources()</text>
+  <text class="m" x="1300" y="281">→ scripts/extractors/rbi_handbook.py::RbiHandbookExtractor.fetch_publication()</text>
+  <text class="m" x="1320" y="307">→ HTTP response → SHA-256 → data/raw/rbi-handbook/&lt;date&gt;/publication-23175-&lt;hash&gt;.html</text>
+  <text class="m" x="1320" y="333">→ read_html_tables() → _TableParser → _html_value()</text>
+  <line class="line" x1="1280" y1="357" x2="2320" y2="357"/>
+  <text class="small" x="1280" y="385">model: scripts/models/capex_sources.py::RbiHandbookResponse</text>
+  <text class="small" x="1280" y="409">contains tuple[WorkbookSheet, ...], source URL, retrieved_at, raw_path and checksum</text>
+  <text class="small" x="1280" y="447">Offline branch: capex_sources.py::_latest() → _landed_rbi_response() → read_html_tables().</text>
+  <text class="small" x="1280" y="469">It reads the immutable landing; it never reads processed JSON.</text>
+
+  <rect class="model" x="400" y="525" width="1600" height="105" rx="5"/>
+  <text class="h" x="420" y="555">scripts/models/capex_sources.py::StructuralSources → CapexSources</text>
+  <text class="m" x="420" y="583">budget_snapshots: tuple[UnionBudgetSnapshot, ...]  |  nominal_gdp: RbiHandbookResponse</text>
+  <text class="small" x="420" y="611">scripts/extractors/capex_sources.py::acquire_capex_sources() returns the complete typed source object before Transform starts.</text>
+  <path class="arrow" d="M600 482 V510 H850 V519"/><path class="arrow" d="M1800 482 V510 H1550 V519"/>
+
+  <rect class="section" x="60" y="670" width="2280" height="36" rx="4"/><text class="sectionText" x="78" y="695">2  STRUCTURAL TRANSFORM — THE STATISTIC IS CALCULATED ONCE</text>
+  <rect class="transform" x="60" y="730" width="700" height="350" rx="5"/>
+  <text class="h" x="80" y="759">2.1 Direct orchestration</text>
+  <text class="m" x="80" y="787">scripts/build_capex_pipeline.py::run_pipeline()</text>
+  <text class="m" x="80" y="813">→ scripts/builders/capex_artifacts.py::build_capex_artifacts(sources)</text>
+  <text class="m" x="100" y="839">→ scripts/transforms/capex_metrics.py::calculate_government_metrics(</text>
+  <text class="m" x="120" y="865">sources.structural.budget_snapshots,</text>
+  <text class="m" x="120" y="891">sources.structural.nominal_gdp)</text>
+  <line class="line" x1="80" y1="914" x2="740" y2="914"/>
+  <text class="small" x="80" y="941">directly calls parse_nominal_gdp_by_fiscal_year(),</text>
+  <text class="small" x="80" y="965">build_government_investment_records() and validate_records().</text>
+  <text class="small" x="80" y="1001">No source values come from config or builder constants.</text>
+  <text class="small" x="80" y="1025">Returns GovernmentMetrics, not a JSON-shaped payload.</text>
+
+  <rect class="transform" x="820" y="730" width="740" height="350" rx="5"/>
+  <text class="h" x="840" y="759">2.2 Parse GDP and create CanonicalRecord</text>
+  <text class="m" x="840" y="787">scripts/transforms/government_investment.py</text>
+  <text class="m" x="860" y="813">parse_nominal_gdp_by_fiscal_year(gdp_response)</text>
+  <text class="small" x="880" y="837">selects “Item/Year” and “Gross Domestic Product” rows</text>
+  <text class="small" x="880" y="859">maps FY start year → (nominal_gdp, ObservationStatus)</text>
+  <text class="m" x="860" y="891">build_government_investment_records(snapshots, nominal_gdp...)</text>
+  <text class="small" x="880" y="915">aligns actual from edition year − 2 with GDP for the same FY</text>
+  <line class="line" x1="840" y1="936" x2="1540" y2="936"/>
+  <text class="m" x="840" y="965">value = actual_capex / nominal_gdp * 100</text>
+  <text class="small" x="840" y="991">→ models/canonical.py::CanonicalRecord(</text>
+  <text class="small" x="860" y="1013">indicator="actual_capex_pct_gdp", unit="percent",</text>
+  <text class="small" x="860" y="1035">date=FiscalPeriod.end_date, status=GDP status, is_derived=True)</text>
+
+  <rect class="transform" x="1620" y="730" width="720" height="350" rx="5"/>
+  <text class="h" x="1640" y="759">2.3 Typed calculation boundary</text>
+  <text class="m" x="1640" y="787">scripts/validators/quality.py::validate_records()</text>
+  <text class="m" x="1640" y="813">scripts/models/capex_metrics.py::GovernmentMetrics</text>
+  <text class="m" x="1660" y="839">records: tuple[CanonicalRecord, ...]</text>
+  <text class="m" x="1660" y="865">sources: tuple[MetricSource, ...]</text>
+  <text class="small" x="1660" y="891">frozen dataclass; no metadata/series keys</text>
+  <text class="m" x="1640" y="923">record selector:</text>
+  <text class="m" x="1660" y="949">record.indicator == "actual_capex_pct_gdp"</text>
+  <text class="small" x="1660" y="975">Downstream transforms read value, date and status</text>
+  <text class="small" x="1660" y="997">from the typed CanonicalRecord directly.</text>
+  <text class="small" x="1640" y="1035">No intermediate JSON is constructed or parsed.</text>
+  <path class="arrow" d="M1200 630 V715 H410 V724"/><path class="arrow" d="M760 905 H814"/><path class="arrow" d="M1560 905 H1614"/>
+
+  <rect class="section" x="60" y="1120" width="2280" height="36" rx="4"/><text class="sectionText" x="78" y="1145">3  FINAL-ARTIFACT ASSEMBLY — COPY, DO NOT RECALCULATE</text>
+  <rect class="transform" x="60" y="1180" width="1110" height="265" rx="5"/>
+  <text class="h" x="80" y="1209">3.1 Create capex-execution payload</text>
+  <text class="m" x="80" y="1237">builders/capex_artifacts.py::build_capex_artifacts()</text>
+  <text class="m" x="100" y="1263">→ builders/fiscal_outputs.py::build_execution_payload(GovernmentMetrics)</text>
+  <text class="m" x="120" y="1289">→ builders/dated_multi_series.py::select_metric_records()</text>
+  <text class="small" x="140" y="1313">selects typed records by indicator and date ≥ 2018-03-31</text>
+  <text class="m" x="120" y="1341">→ _nominal_growth_records() → build_dated_multi_series_payload()</text>
+  <text class="small" x="140" y="1365">first and only grouping into metadata/series JSON structure</text>
+  <line class="line" x1="80" y1="1386" x2="1150" y2="1386"/>
+  <text class="small" x="80" y="1414">result: CapexArtifacts.outputs["execution"]</text>
+
+  <rect class="side" x="1230" y="1180" width="1110" height="265" rx="5"/>
+  <text class="h" x="1250" y="1209">Other in-memory readers of the same structural statistic</text>
+  <text class="m" x="1250" y="1237">transforms/capex_metrics.py::calculate_private_metrics()</text>
+  <text class="m" x="1270" y="1263">→ transforms/private_investment.py::build_lagged_public_capex_records()</text>
+  <text class="small" x="1290" y="1287">reads actual_capex_pct_gdp and shifts its date forward one FY</text>
+  <text class="m" x="1250" y="1319">transforms/capex_analysis.py::classify_summary()</text>
+  <text class="small" x="1270" y="1343">reads first/last non-null values for the capex_intensity hypothesis</text>
+  <line class="line" x1="1250" y1="1364" x2="2320" y2="1364"/>
+  <text class="small" x="1250" y="1391">These create separate derived/final results. They do not overwrite the statistic.</text>
+  <text class="small" x="1250" y="1415">No intermediate JSON is read or written.</text>
+  <path class="arrow" d="M1980 1080 V1100 H615 V1174"/><path class="dash" d="M1980 1080 V1174"/>
+
+  <rect class="section" x="60" y="1485" width="2280" height="36" rx="4"/><text class="sectionText" x="78" y="1510">4  COMPLETE-SET VALIDATION, PUBLICATION AND VERIFICATION</text>
+  <rect class="gate" x="60" y="1545" width="720" height="340" rx="5"/>
+  <text class="h" x="80" y="1574">4.1 Validate in memory</text>
+  <text class="m" x="80" y="1602">scripts/build_capex_pipeline.py</text>
+  <text class="m" x="100" y="1628">::_validate_all_artifacts(artifacts)</text>
+  <text class="m" x="120" y="1654">→ _require_complete_artifacts()</text>
+  <text class="small" x="140" y="1678">requires exactly all 13 OUTPUTS keys</text>
+  <text class="m" x="120" y="1706">→ _artifact_entries()</text>
+  <text class="small" x="140" y="1730">execution path from config/capex_analysis.py::OUTPUTS</text>
+  <text class="small" x="140" y="1752">schema from OUTPUT_SCHEMAS["execution"]</text>
+  <text class="m" x="120" y="1780">→ validators/schema.py::validate_payload()</text>
+  <text class="small" x="140" y="1804">reads schemas/dated_multi_series.schema.json</text>
+  <text class="m" x="120" y="1832">→ json.dumps(allow_nan=False)</text>
+  <text class="small" x="80" y="1863">No output file exists yet in this run.</text>
+
+  <rect class="gate" x="840" y="1545" width="720" height="340" rx="5"/>
+  <text class="h" x="860" y="1574">4.2 Load selected final artifact</text>
+  <text class="m" x="860" y="1602">build_capex_pipeline.py::_select_artifact_entries()</text>
+  <text class="small" x="880" y="1626">target all or output:execution</text>
+  <text class="m" x="860" y="1654">build_capex_pipeline.py::_publish_artifacts()</text>
+  <text class="m" x="880" y="1680">→ exporters/json_export.py::write_json_atomic()</text>
+  <text class="small" x="900" y="1704">json.dump(indent=2, allow_nan=False)</text>
+  <text class="small" x="900" y="1726">temporary sibling → flush → fsync → os.replace</text>
+  <line class="line" x1="860" y1="1748" x2="1540" y2="1748"/>
+  <text class="m" x="860" y="1776">data/processed/capex-analysis/capex-execution.json</text>
+  <text class="m" x="860" y="1802">frontend/public/data/capex-analysis/capex-execution.json</text>
+  <text class="small" x="860" y="1838">Both files receive the same payload. There is no structural</text>
+  <text class="small" x="860" y="1860">checkpoint file between calculation and final output.</text>
+
+  <rect class="output" x="1620" y="1545" width="720" height="340" rx="5"/>
+  <text class="h" x="1640" y="1574">4.3 Verify written copies</text>
+  <text class="m" x="1640" y="1602">build_capex_pipeline.py::_verify_written_artifacts()</text>
+  <text class="small" x="1660" y="1628">require processed file</text>
+  <text class="small" x="1660" y="1652">json.loads(processed.read_text())</text>
+  <text class="small" x="1660" y="1676">validators/schema.py::validate_payload()</text>
+  <text class="small" x="1660" y="1700">require public file</text>
+  <text class="small" x="1660" y="1724">SHA-256(processed bytes) == SHA-256(public bytes)</text>
+  <line class="line" x1="1640" y1="1748" x2="2320" y2="1748"/>
+  <text class="m" x="1640" y="1776">Published selector:</text>
+  <text class="m" x="1660" y="1802">.series.actual_capex_pct_gdp.values[]</text>
+  <text class="small" x="1640" y="1838">Example row fields: date, period_label, value, status.</text>
+  <text class="small" x="1640" y="1862">The value is not recalculated during validation or copying.</text>
+  <path class="arrow" d="M615 1445 V1539"/><path class="arrow" d="M780 1715 H834"/><path class="arrow" d="M1560 1715 H1614"/>
+
+  <rect class="section" x="60" y="1925" width="2280" height="36" rx="4"/><text class="sectionText" x="78" y="1950">5  FILE AND FUNCTION CHECKLIST FOR THIS STATISTIC</text>
+  <rect class="output" x="60" y="1985" width="2280" height="198" rx="5"/>
+  <text class="m" x="80" y="2015">Extract: build_capex_pipeline.py::run_pipeline → extractors/capex_sources.py::{acquire_capex_sources, acquire_structural_sources}</text>
+  <text class="m" x="80" y="2043">→ extractors/union_budget.py::{fetch_expenditure_snapshots, fetch_expenditure_snapshot, parse_expenditure_pdf_text}</text>
+  <text class="m" x="80" y="2071">→ extractors/rbi_handbook.py::{fetch_publication, read_html_tables} → models/capex_sources.py</text>
+  <text class="m" x="80" y="2099">Transform: builders/capex_artifacts.py::build_capex_artifacts → transforms/capex_metrics.py::calculate_government_metrics</text>
+  <text class="m" x="80" y="2127">→ transforms/government_investment.py::{parse_nominal_gdp_by_fiscal_year, build_government_investment_records}</text>
+  <text class="m" x="80" y="2155">→ models/capex_metrics.py::GovernmentMetrics → builders/fiscal_outputs.py::{build_execution_payload, _nominal_growth_records}</text>
+  <text class="small" x="80" y="2177">Load/verify: build_capex_pipeline.py → validators/schema.py → exporters/json_export.py. No other active script changes the published value.</text>
+</svg>

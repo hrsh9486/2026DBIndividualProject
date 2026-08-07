@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-30T08:31:26.941955+00:00",
+    "generated_at": "2026-08-06T13:19:00.809874+00:00",
     "source": [
       {
         "name": "Company annual financial statements via Yahoo Finance"
@@ -430,7 +430,7 @@
         {
           "date": "2026-03-31",
           "period_label": "Reporting year 2026",
-          "value": 5.6617,
+          "value": 7.7076,
           "status": "actual"
         }
       ]
@@ -458,13 +458,13 @@
         {
           "date": "2025-03-31",
           "period_label": "Reporting year 2025",
-          "value": 12.2917,
+          "value": 12.4735,
           "status": "actual"
         },
         {
           "date": "2026-03-31",
           "period_label": "Reporting year 2026",
-          "value": 10.9699,
+          "value": 11.1545,
           "status": "actual"
         }
       ]

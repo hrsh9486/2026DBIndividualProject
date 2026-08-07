@@ -1,19 +1,19 @@
 {
   "metadata": {
-    "generated_at": "2026-07-22T14:55:24.666246+00:00",
+    "generated_at": "2026-08-06T13:19:00.770463+00:00",
     "source": [
       {
         "name": "MoSPI new-series GDP estimates — Statement 7.1B",
         "url": "https://mospi.gov.in/uploads/release_calendar/1772190058170_Press_Note_on_New_Series_of_GDP_Estimates_with_Base_Year_2022-23_27022026.pdf",
-        "retrieved_at": "2026-07-22T14:55:22.148111+00:00"
+        "retrieved_at": "2026-08-06T13:18:36.513987+00:00"
       },
       {
-        "name": "Validated government investment artifact"
+        "name": "Calculated GovernmentMetrics"
       },
       {
         "name": "RBI OBICUS — Table 1 Capacity Utilisation",
         "url": "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23808",
-        "retrieved_at": "2026-07-22T14:55:24.649965+00:00"
+        "retrieved_at": "2026-08-06T13:18:36.013014+00:00"
       }
     ],
     "frequency": "mixed",

@@ -7,8 +7,8 @@ from datetime import datetime, timezone
 import numpy as np
 import pandas as pd
 
-from extractors.corporate_fundamentals import CorporateFundamental
 from helper import clean_float
+from models.capex_sources import CorporateFundamental
 
 
 GROWTH_FIELDS = ("revenue", "ebitda", "capex", "net_ppe", "debt")

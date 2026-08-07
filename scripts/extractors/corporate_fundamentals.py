@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -14,20 +13,7 @@ import yfinance as yf
 from config import RAW_DATA_DIR
 from config.capex_analysis import CorporateCase
 from exporters import write_json_atomic
-
-
-@dataclass(frozen=True, slots=True)
-class CorporateFundamental:
-    company_key: str
-    company_label: str
-    group: str
-    fiscal_end: pd.Timestamp
-    revenue: float | None
-    ebitda: float | None
-    capex: float | None
-    net_ppe: float | None
-    debt: float | None
-    roce_proxy: float | None
+from models.capex_sources import CorporateFundamental
 
 
 def _value(statement: pd.DataFrame, column, *labels: str) -> float | None:

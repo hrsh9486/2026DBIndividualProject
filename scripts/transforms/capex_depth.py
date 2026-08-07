@@ -9,7 +9,9 @@ from datetime import datetime, timezone
 import numpy as np
 import pandas as pd
 
-from extractors.rbi_handbook import RbiHandbookResponse
+from models import CanonicalRecord
+from models.capex_metrics import GovernmentMetrics, PrivateMetrics
+from models.capex_sources import AnnualSourceDataset, RbiHandbookResponse
 from helper import clean_float
 
 
@@ -341,44 +343,85 @@ def build_state_capex_evaluation_payload(
     }
 
 
-def _annual_series(payload: dict, key: str, *, fiscalise_quarters: bool = False) -> pd.Series:
-    rows = payload["series"][key]["values"]
+def _annual_record_series(
+    records: tuple[CanonicalRecord, ...],
+    key: str,
+    *,
+    fiscalise_quarters: bool = False,
+) -> pd.Series:
     values = pd.Series(
-        {pd.Timestamp(row["date"]): row["value"] for row in rows if row.get("value") is not None},
+        {
+            pd.Timestamp(record.date): record.value
+            for record in records
+            if record.indicator == key and record.value is not None
+        },
         dtype=float,
     ).sort_index()
     if fiscalise_quarters:
-        fiscal_end = values.index.map(lambda date: date.year + 1 if date.month > 3 else date.year)
+        fiscal_end = pd.Index([
+            date.year + 1 if date.month > 3 else date.year
+            for date in values.index
+        ])
         values = values.groupby(fiscal_end).mean()
         values.index = pd.DatetimeIndex([f"{year}-03-31" for year in values.index])
     return values
 
 
-def build_crowding_in_payload(execution: dict, private: dict, production: dict) -> dict:
+def _annual_source_series(dataset: AnnualSourceDataset, key: str) -> pd.Series:
+    for series in dataset.series:
+        if series.key != key:
+            continue
+        return pd.Series(
+            {
+                pd.Timestamp(
+                    f"{int(observation.fiscal_period[:4]) + 1}-03-31"
+                ): observation.value
+                for observation in series.observations
+            },
+            dtype=float,
+        ).sort_index()
+    raise KeyError(f"Source dataset {dataset.key!r} has no series {key!r}")
+
+
+def build_crowding_in_payload(
+    government: GovernmentMetrics,
+    private: PrivateMetrics,
+    production: AnnualSourceDataset,
+) -> dict:
     """Create a distributed-lag evidence ladder with explicit sample gates."""
-    capex = _annual_series(execution, "capex_actual").pct_change(fill_method=None) * 100
+    capex = _annual_record_series(
+        government.records,
+        "capex_actual",
+    ).pct_change(fill_method=None) * 100
     outcomes = {
         "private_gfcf": (
             "Private corporate GFCF/GDP",
-            _annual_series(private, "private_corporate_gfcf_pct_gdp"),
+            _annual_record_series(private.records, "private_corporate_gfcf_pct_gdp"),
             "level",
             "Direct private-investment outcome",
         ),
         "private_gfcf_share": (
             "Private corporate share of total GFCF",
-            _annual_series(private, "private_share_total_gfcf"),
+            _annual_record_series(private.records, "private_share_total_gfcf"),
             "level",
             "Direct private-investment composition outcome",
         ),
         "capacity_utilisation": (
             "Manufacturing capacity utilisation",
-            _annual_series(private, "manufacturing_capacity_utilisation", fiscalise_quarters=True),
+            _annual_record_series(
+                private.records,
+                "manufacturing_capacity_utilisation",
+                fiscalise_quarters=True,
+            ),
             "level",
             "Operating-capacity outcome",
         ),
         "capital_goods_iip_growth": (
             "Capital-goods production growth",
-            _annual_series(production, "capital_goods_iip").pct_change(fill_method=None) * 100,
+            _annual_source_series(
+                production,
+                "capital_goods_iip",
+            ).pct_change(fill_method=None) * 100,
             "growth",
             "Upstream real-economy outcome; not direct private investment",
         ),
@@ -436,9 +479,9 @@ def build_crowding_in_payload(execution: dict, private: dict, production: dict) 
         "metadata": {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "source": [
-                {"name": "Validated central-government CapEx artifact"},
-                {"name": "Validated private-investment and capacity artifact"},
-                {"name": "Validated capital-goods production artifact"},
+                {"name": "Calculated GovernmentMetrics"},
+                {"name": "Calculated PrivateMetrics"},
+                {"name": "Typed capital-goods production source observations"},
             ],
             "frequency": "annual",
             "start_date": min(dates),

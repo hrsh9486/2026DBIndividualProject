@@ -6,7 +6,6 @@ import hashlib
 import posixpath
 import re
 import zipfile
-from dataclasses import dataclass
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from io import BytesIO
@@ -18,6 +17,7 @@ from xml.etree import ElementTree
 import requests
 
 from config import RAW_DATA_DIR, REQUEST_TIMEOUT
+from models.capex_sources import RbiHandbookResponse, WorkbookSheet
 
 
 HANDBOOK_URL = (
@@ -28,23 +28,6 @@ _USER_AGENT = "India-research-pipeline/1.0 (+academic research)"
 _SPREADSHEET_NS = "http://schemas.openxmlformats.org/spreadsheetml/2006/main"
 _DOCUMENT_REL_NS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 _PACKAGE_REL_NS = "http://schemas.openxmlformats.org/package/2006/relationships"
-
-
-@dataclass(frozen=True, slots=True)
-class WorkbookSheet:
-    name: str
-    rows: tuple[tuple[Any, ...], ...]
-
-
-@dataclass(frozen=True, slots=True)
-class RbiHandbookResponse:
-    table_number: int
-    table_label: str
-    sheets: tuple[WorkbookSheet, ...]
-    source_url: str
-    retrieved_at: str
-    raw_path: Path
-    checksum: str
 
 
 class _AnchorParser(HTMLParser):
@@ -150,7 +133,12 @@ def read_html_tables(content: str, *, table_label: str) -> tuple[WorkbookSheet, 
 
 def read_html_table(content: str, *, table_label: str) -> WorkbookSheet:
     """Select the largest substantive table for simple single-table publications."""
-    return max(read_html_tables(content, table_label=table_label), key=lambda sheet: len(sheet.rows))
+    sheets = read_html_tables(content, table_label=table_label)
+    largest = sheets[0]
+    for sheet in sheets[1:]:
+        if len(sheet.rows) > len(largest.rows):
+            largest = sheet
+    return largest
 
 def _column_index(reference: str) -> int:
     letters = re.match(r"[A-Z]+", reference.upper())

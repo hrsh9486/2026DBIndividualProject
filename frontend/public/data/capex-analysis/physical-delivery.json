@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-31T10:16:22.260884+00:00",
+    "generated_at": "2026-08-06T13:19:00.552996+00:00",
     "source": [
       {
         "name": "MoRTH Annual Report 2024-25 — year-wise NH construction",
@@ -39,37 +39,37 @@
         {
           "date": "2019-03-31",
           "period_label": "FY2018-19",
-          "value": 10855,
+          "value": 10855.0,
           "status": "actual"
         },
         {
           "date": "2020-03-31",
           "period_label": "FY2019-20",
-          "value": 10237,
+          "value": 10237.0,
           "status": "actual"
         },
         {
           "date": "2021-03-31",
           "period_label": "FY2020-21",
-          "value": 13327,
+          "value": 13327.0,
           "status": "actual"
         },
         {
           "date": "2022-03-31",
           "period_label": "FY2021-22",
-          "value": 10457,
+          "value": 10457.0,
           "status": "actual"
         },
         {
           "date": "2023-03-31",
           "period_label": "FY2022-23",
-          "value": 10331,
+          "value": 10331.0,
           "status": "actual"
         },
         {
           "date": "2024-03-31",
           "period_label": "FY2023-24",
-          "value": 12349,
+          "value": 12349.0,
           "status": "actual"
         }
       ]
@@ -85,37 +85,37 @@
         {
           "date": "2019-03-31",
           "period_label": "FY2018-19",
-          "value": 5276,
+          "value": 5276.0,
           "status": "actual"
         },
         {
           "date": "2020-03-31",
           "period_label": "FY2019-20",
-          "value": 4378,
+          "value": 4378.0,
           "status": "actual"
         },
         {
           "date": "2021-03-31",
           "period_label": "FY2020-21",
-          "value": 6015,
+          "value": 6015.0,
           "status": "actual"
         },
         {
           "date": "2022-03-31",
           "period_label": "FY2021-22",
-          "value": 6366,
+          "value": 6366.0,
           "status": "actual"
         },
         {
           "date": "2023-03-31",
           "period_label": "FY2022-23",
-          "value": 6565,
+          "value": 6565.0,
           "status": "actual"
         },
         {
           "date": "2024-03-31",
           "period_label": "FY2023-24",
-          "value": 4644,
+          "value": 4644.0,
           "status": "actual"
         }
       ]

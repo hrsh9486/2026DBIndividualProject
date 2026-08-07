@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-08-05T09:53:11.071476+00:00",
+  "generated_at": "2026-08-05T15:23:54.702166+00:00",
   "public_data_root": "/data",
   "assets": {
     "capex-execution": {
@@ -146,24 +146,27 @@
           "id": "capex-policy-input",
           "title": "1. Public CapEx intensity and execution",
           "summary": "Has central-government capital expenditure increased relative to GDP and total spending, and were original budgets delivered?",
-          "default_view": "intensity",
+          "default_view": "vintages",
           "views": [
             {
-              "id": "intensity",
-              "label": "CapEx intensity",
+              "id": "vintages",
+              "label": "BE, RE and actual",
               "asset_id": "capex-execution",
               "presentation": {
                 "component": "multi-series-line",
                 "chart_type": "line",
                 "x_axis": "date",
                 "default_visible": [
-                  "actual_capex_pct_gdp",
-                  "actual_capex_pct_total_expenditure"
+                  "capex_budget_estimate",
+                  "capex_revised_estimate",
+                  "capex_actual"
                 ],
                 "value_format": {
-                  "style": "percent",
+                  "style": "number",
                   "scale": 1,
-                  "decimals": 1
+                  "decimals": 0,
+                  "prefix": "₹",
+                  "suffix": " cr"
                 },
                 "controls": {
                   "date_range": true,
@@ -191,37 +194,6 @@
                   "style": "percent",
                   "scale": 1,
                   "decimals": 1
-                },
-                "controls": {
-                  "date_range": true,
-                  "entity_toggle": false,
-                  "series_toggle": false
-                },
-                "zero_line": false,
-                "show_source": true,
-                "show_methodology": true
-              },
-              "note": "Descriptive evidence; common movements do not identify a causal effect of public CapEx."
-            },
-            {
-              "id": "vintages",
-              "label": "BE, RE and actual",
-              "asset_id": "capex-execution",
-              "presentation": {
-                "component": "multi-series-line",
-                "chart_type": "line",
-                "x_axis": "date",
-                "default_visible": [
-                  "capex_budget_estimate",
-                  "capex_revised_estimate",
-                  "capex_actual"
-                ],
-                "value_format": {
-                  "style": "number",
-                  "scale": 1,
-                  "decimals": 0,
-                  "prefix": "₹",
-                  "suffix": " cr"
                 },
                 "controls": {
                   "date_range": true,

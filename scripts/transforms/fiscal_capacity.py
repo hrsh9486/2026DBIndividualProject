@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from datetime import datetime
 
-from extractors.rbi_handbook import RbiHandbookResponse
+from models.capex_sources import RbiHandbookResponse
 from models import CanonicalRecord, FiscalPeriod, ObservationStatus
 
 

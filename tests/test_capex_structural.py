@@ -1,4 +1,4 @@
-"""Contracts for the structural source parsers retained by the CapEx build."""
+"""Contracts for structural source parsers and in-memory transformations."""
 
 from datetime import date
 from io import BytesIO
@@ -10,13 +10,13 @@ import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from build_government_investment import build_payload as build_government_payload  # noqa: E402
 from extractors.national_accounts import parse_national_accounts_pdf_text  # noqa: E402
 from extractors.rbi_handbook import read_html_table, read_xlsx_sheets  # noqa: E402
 from extractors.rbi_obicus import ObicusResponse, parse_obicus_html  # noqa: E402
 from extractors.union_budget import UnionBudgetSnapshot, parse_expenditure_pdf_text  # noqa: E402
 from models import FiscalPeriod  # noqa: E402
 from transforms.private_investment import build_capacity_utilisation_records  # noqa: E402
+from transforms.government_investment import build_government_investment_records  # noqa: E402
 from validators import validate_payload  # noqa: E402
 
 
@@ -81,11 +81,11 @@ class GovernmentInvestmentTests(unittest.TestCase):
             self.snapshot(2025, actual_capex=80, prior_budget_capex=100, prior_revised_capex=110, current_budget_capex=120, actual_total=900),
             self.snapshot(2026, actual_capex=90, prior_budget_capex=120, prior_revised_capex=115, current_budget_capex=130, actual_total=1_000),
         )
-        payload = build_government_payload(snapshots)
-        validate_payload(payload, "dated_multi_series.schema.json")
+        records = build_government_investment_records(snapshots)
         execution = {
-            row["period_label"]: row["value"]
-            for row in payload["series"]["capex_execution_ratio"]["values"]
+            record.period_label: record.value
+            for record in records
+            if record.indicator == "capex_execution_ratio"
         }
         self.assertAlmostEqual(execution["FY2024-25"], 90.0)
 

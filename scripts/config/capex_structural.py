@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 
 @dataclass(frozen=True, slots=True)
-class CapexUpstreamSeries:
+class CapexStructuralSeries:
     key: str
     label: str
     unit: str
@@ -20,33 +20,31 @@ class CapexUpstreamSeries:
 
 
 @dataclass(frozen=True, slots=True)
-class CapexUpstreamBundle:
+class CapexStructuralBundle:
     key: str
     label: str
     research_question: str
-    output_path: str
     frequency: str
     primary_series: tuple[str, ...]
     supporting_series: tuple[str, ...]
     limitation: str
-    series: tuple[CapexUpstreamSeries, ...]
+    series: tuple[CapexStructuralSeries, ...]
 
 
 def _series(key, label, unit, frequency, source, source_field, definition, transformation, limitation, *, derived=False):
-    return CapexUpstreamSeries(
+    return CapexStructuralSeries(
         key, label, unit, frequency, source, source_field, definition,
         transformation, limitation, derived,
     )
 
 
-CAPEX_UPSTREAM_BUNDLES: dict[str, CapexUpstreamBundle] = {
+CAPEX_STRUCTURAL_BUNDLES: dict[str, CapexStructuralBundle] = {
     bundle.key: bundle
     for bundle in (
-        CapexUpstreamBundle(
+        CapexStructuralBundle(
             key="government_investment",
             label="Government investment and execution",
             research_question="Is central-government spending shifting toward productive assets, and are budget plans delivered?",
-            output_path="government-investment/capex-and-execution.json",
             frequency="annual",
             primary_series=("actual_capex_pct_gdp", "actual_capex_pct_total_expenditure"),
             supporting_series=("capex_execution_ratio", "capex_budget_estimate", "capex_revised_estimate", "capex_actual"),
@@ -60,11 +58,10 @@ CAPEX_UPSTREAM_BUNDLES: dict[str, CapexUpstreamBundle] = {
                 _series("capex_actual", "Capital expenditure — Actual", "INR_crore", "fiscal_year", "Union Budget", "Actual capital expenditure", "Out-turn central-government capital expenditure.", None, "Latest actuals lag budget estimates."),
             ),
         ),
-        CapexUpstreamBundle(
+        CapexStructuralBundle(
             key="private_investment",
             label="Private investment and crowding-in",
             research_question="Is public infrastructure investment associated with firms expanding productive capacity?",
-            output_path="private-investment/investment-and-capacity.json",
             frequency="mixed",
             primary_series=("private_corporate_gfcf_pct_gdp", "manufacturing_capacity_utilisation"),
             supporting_series=("private_share_total_gfcf", "public_capex_lagged"),
@@ -76,11 +73,10 @@ CAPEX_UPSTREAM_BUNDLES: dict[str, CapexUpstreamBundle] = {
                 _series("public_capex_lagged", "Public CapEx, lagged one year", "percent", "annual", "Union Budget + MoSPI", "Actual CapEx/GDP", "Actual central-government CapEx/GDP shifted forward one year for visual comparison.", "lag(actual_capex_pct_gdp, 1 year)", "A chosen lag is descriptive and not a causal estimate.", derived=True),
             ),
         ),
-        CapexUpstreamBundle(
+        CapexStructuralBundle(
             key="fiscal_capacity",
             label="Fiscal capacity and debt sustainability",
             research_question="Can general-government investment be sustained without debt service crowding out future spending?",
-            output_path="fiscal-capacity/debt-and-interest-burden.json",
             frequency="annual",
             primary_series=("general_government_debt_pct_gdp", "interest_payments_pct_revenue"),
             supporting_series=("interest_payments_pct_expenditure", "primary_balance_pct_gdp", "central_government_debt_pct_gdp"),
@@ -97,8 +93,8 @@ CAPEX_UPSTREAM_BUNDLES: dict[str, CapexUpstreamBundle] = {
 }
 
 
-def get_capex_upstream_bundle(key: str) -> CapexUpstreamBundle:
+def get_capex_structural_bundle(key: str) -> CapexStructuralBundle:
     try:
-        return CAPEX_UPSTREAM_BUNDLES[key]
+        return CAPEX_STRUCTURAL_BUNDLES[key]
     except KeyError as exc:
         raise KeyError(f"Unknown CapEx structural bundle {key!r}") from exc

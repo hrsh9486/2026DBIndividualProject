@@ -7,8 +7,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from build_capex_pipeline import TARGET_CHOICES  # noqa: E402
 from config.capex_analysis import OUTPUTS  # noqa: E402
-from promote_processed_data import artifact_routes  # noqa: E402
 from validators import validate_payload  # noqa: E402
 
 
@@ -43,10 +43,9 @@ class CapexDepthArtifactTests(unittest.TestCase):
             if not estimate["eligible"]:
                 self.assertEqual(estimate["status"], "insufficient_data")
 
-    def test_new_artifacts_use_registered_promotion_routes(self):
-        routes = artifact_routes()
+    def test_new_artifacts_use_registered_central_targets(self):
         for key in ("quality", "states", "crowding_in"):
-            self.assertIn(Path(OUTPUTS[key]), routes)
+            self.assertIn(f"output:{key}", TARGET_CHOICES)
 
 
 if __name__ == "__main__":

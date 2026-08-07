@@ -5,7 +5,6 @@ from __future__ import annotations
 import hashlib
 import re
 import subprocess
-from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urljoin
@@ -13,27 +12,11 @@ from urllib.parse import urljoin
 import requests
 
 from config import RAW_DATA_DIR, REQUEST_TIMEOUT
+from models.capex_sources import UnionBudgetSnapshot
 
 
 BUDGET_ROOT = "https://www.indiabudget.gov.in/"
 _USER_AGENT = "India-research-pipeline/1.0 (+academic research)"
-
-
-@dataclass(frozen=True, slots=True)
-class UnionBudgetSnapshot:
-    edition_start_year: int
-    actual_capex: float
-    prior_budget_capex: float
-    prior_revised_capex: float
-    current_budget_capex: float
-    actual_total_expenditure: float
-    prior_budget_total_expenditure: float
-    prior_revised_total_expenditure: float
-    current_budget_total_expenditure: float
-    source_url: str
-    retrieved_at: str
-    raw_path: Path
-    checksum: str
 
 
 def _amount(value: str) -> float:

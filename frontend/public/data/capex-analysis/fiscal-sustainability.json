@@ -1,16 +1,16 @@
 {
   "metadata": {
-    "generated_at": "2026-07-21T16:32:41.750001+00:00",
+    "generated_at": "2026-08-06T13:19:00.772298+00:00",
     "source": [
       {
         "name": "Table 239 : Select Debt Indicators of Central and State Governments (As Percentage to GDP)",
         "url": "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23413",
-        "retrieved_at": "2026-07-21T16:32:40.149539+00:00"
+        "retrieved_at": "2026-08-06T13:18:36.618783+00:00"
       },
       {
         "name": "Table 236 : Select Fiscal Indicators of the Central Government (As Percentage to GDP)",
         "url": "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23410",
-        "retrieved_at": "2026-07-21T16:32:41.747009+00:00"
+        "retrieved_at": "2026-08-06T13:18:37.679610+00:00"
       }
     ],
     "frequency": "annual",
@@ -534,58 +534,58 @@
       "entity": "IND",
       "unit": "ratio",
       "is_derived": true,
-      "methodology": "Actual CapEx share of total expenditure divided by interest payments share of total expenditure.",
-      "source_note": "This is an expenditure-allocation ratio, not a benefit-cost ratio or debt-sustainability threshold.",
       "values": [
         {
           "date": "2018-03-31",
-          "period_label": "FY2017-18",
           "value": 0.49654916435725677,
-          "status": "actual"
+          "status": "actual",
+          "period_label": "FY2017-18"
         },
         {
           "date": "2019-03-31",
-          "period_label": "FY2018-19",
           "value": 0.5286405026450113,
-          "status": "actual"
+          "status": "actual",
+          "period_label": "FY2018-19"
         },
         {
           "date": "2020-03-31",
-          "period_label": "FY2019-20",
           "value": 0.5482540998557787,
-          "status": "actual"
+          "status": "actual",
+          "period_label": "FY2019-20"
         },
         {
           "date": "2021-03-31",
-          "period_label": "FY2020-21",
           "value": 0.6279166246710689,
-          "status": "actual"
+          "status": "actual",
+          "period_label": "FY2020-21"
         },
         {
           "date": "2022-03-31",
-          "period_label": "FY2021-22",
           "value": 0.7369186093800782,
-          "status": "actual"
+          "status": "actual",
+          "period_label": "FY2021-22"
         },
         {
           "date": "2023-03-31",
-          "period_label": "FY2022-23",
           "value": 0.7959682883326332,
-          "status": "actual"
+          "status": "actual",
+          "period_label": "FY2022-23"
         },
         {
           "date": "2024-03-31",
-          "period_label": "FY2023-24",
           "value": 0.892591511422189,
-          "status": "actual"
+          "status": "actual",
+          "period_label": "FY2023-24"
         },
         {
           "date": "2025-03-31",
-          "period_label": "FY2024-25",
           "value": 0.9372097129251357,
-          "status": "revised"
+          "status": "revised",
+          "period_label": "FY2024-25"
         }
-      ]
+      ],
+      "methodology": "Actual CapEx share of total expenditure divided by interest payments share of total expenditure.",
+      "source_note": "This is an expenditure-allocation ratio, not a benefit-cost ratio or debt-sustainability threshold."
     }
   }
 }

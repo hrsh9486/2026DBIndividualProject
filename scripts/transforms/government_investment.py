@@ -5,8 +5,7 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Mapping, Sequence
 
-from extractors.rbi_handbook import RbiHandbookResponse
-from extractors.union_budget import UnionBudgetSnapshot
+from models.capex_sources import RbiHandbookResponse, UnionBudgetSnapshot
 from models import CanonicalRecord, FiscalPeriod, ObservationStatus
 
 
@@ -19,7 +18,11 @@ def build_government_investment_records(
     budget: dict[int, tuple[float, UnionBudgetSnapshot]] = {}
     revised: dict[int, tuple[float, UnionBudgetSnapshot]] = {}
     actual: dict[int, tuple[float, float, UnionBudgetSnapshot]] = {}
-    for snapshot in sorted(snapshots, key=lambda item: item.edition_start_year):
+    ordered_snapshots = sorted(
+        (snapshot.edition_start_year, index, snapshot)
+        for index, snapshot in enumerate(snapshots)
+    )
+    for _edition_start_year, _index, snapshot in ordered_snapshots:
         budget[snapshot.edition_start_year] = (snapshot.current_budget_capex, snapshot)
         revised[snapshot.edition_start_year - 1] = (snapshot.prior_revised_capex, snapshot)
         actual[snapshot.edition_start_year - 2] = (

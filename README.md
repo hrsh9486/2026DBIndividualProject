@@ -28,52 +28,102 @@ forecast or causal multiplier.
 ## Active pipeline
 
 ```text
-official sources / frozen raw inputs
-  -> provider-specific extractors
-  -> canonical records
-  -> deterministic CapEx and upstream transforms
-  -> schema-valid processed JSON
-  -> validated atomic promotion
-  -> static React frontend
+build_capex_pipeline.py                         orchestration only
+  -> extractors/capex_sources.py               network acquisition or raw replay
+       -> data/raw/                            immutable source landings
+  -> transforms/capex_metrics.py               typed calculated metrics
+       -> GovernmentMetrics / PrivateMetrics / FiscalMetrics
+  -> builders/capex_artifacts.py               final artifact assembly
+  -> validators/                               complete-set and schema gates
+  -> exporters/json_export.py                  per-file atomic JSON publication
+       -> data/processed/                      13 final CapEx JSON files
+       -> frontend/public/data/                13 identical public copies
 ```
 
-The three retained structural upstream builders are required by the CapEx
-story:
+The full run extracts every source before transformation, builds thirteen final
+payloads in memory and validates the complete set before writing the first processed or
+public output. Raw source files are immutable evidence and are retained even if
+a later transform fails. Publication then replaces each JSON file atomically;
+there is no run-level transaction, backup tree or rollback mechanism.
 
-- `scripts/build_government_investment.py` reconstructs Union Budget vintages
+The orchestration call graph is explicit. `run_pipeline()` accepts only data and
+configuration values and directly calls the named extraction, build, validation,
+publication and verification functions. Production behavior is not supplied as
+function-valued parameters, and the Python pipeline contains no lambda-based
+dispatch or callback configuration.
+
+Three typed metric sets exist only in memory as explicit transform results:
+
+- `scripts/transforms/capex_metrics.py::calculate_government_metrics` reconstructs Union Budget vintages
   and execution ratios;
-- `scripts/build_private_investment.py` combines national-accounts private GFCF
+- `scripts/transforms/capex_metrics.py::calculate_private_metrics` combines national-accounts private GFCF
   with RBI OBICUS capacity utilisation;
-- `scripts/build_fiscal_capacity.py` produces the debt, interest-burden and
+- `scripts/transforms/capex_metrics.py::calculate_fiscal_metrics` produces the debt, interest-burden and
   primary-balance inputs.
 
-CapEx-specific construction is handled by:
+Each contains immutable `CanonicalRecord` values plus source provenance—never
+JSON-shaped `metadata` or `series` dictionaries. They are dependencies of final
+artifacts and are never read from or written to JSON. Allocation, physical-delivery and
+IIP observations follow the same boundary: `sources/capex_delivery_reference.json`
+is parsed by `scripts/extractors/delivery_reference.py` into typed source models,
+then passed to pure builders.
 
-- `scripts/build_capex_analysis.py` for execution, markets, correlations,
-  private response, fiscal bridge, summary and corporate fundamentals;
-- `scripts/build_capex_delivery.py` for sector allocation, physical delivery
-  and capital-goods production;
-- `scripts/build_capex_depth.py` for investment quality, the state evaluation
-  and the registered crowding-in lag grid.
+CapEx-specific payload construction is handled by:
 
-Refresh the upstream inputs first when their sources change, then build and
-publish the CapEx product:
+- `scripts/builders/fiscal_outputs.py` for execution and fiscal sustainability;
+- `scripts/builders/market_outputs.py` for sector performance and correlations;
+- `scripts/builders/real_economy_outputs.py` for allocation, delivery,
+  production, private response and corporate fundamentals;
+- `scripts/builders/evaluation_outputs.py` for investment quality, state
+  evaluation, crowding-in evidence and the summary.
+
+`scripts/builders/capex_artifacts.py` directly calls all thirteen named output
+builders and then constructs the thirteen-key `CapexArtifacts.outputs` map. No
+bulk `build_core_*` or `build_depth_*` function hides output creation.
+
+Run the complete ETL pipeline with one command:
 
 ```bash
-python3 scripts/build_government_investment.py
-python3 scripts/build_private_investment.py
-python3 scripts/build_fiscal_capacity.py
-python3 scripts/build_capex_analysis.py
-python3 scripts/build_capex_delivery.py
-python3 scripts/build_capex_depth.py
-python3 scripts/promote_processed_data.py
-python3 scripts/sync_public_schemas.py
-python3 scripts/sync_focused_catalogue.py
+PYTHONPATH=scripts venv/bin/python scripts/build_capex_pipeline.py
 ```
 
-Each builder validates before replacing a processed artifact. Promotion accepts
-only paths registered in `scripts/config/capex_analysis.py`; unrelated legacy
-outputs cannot be copied into the live frontend accidentally.
+The orchestrator owns extraction, transformation, complete-set validation,
+processed publication and public publication. It is the only analytical
+executable; there are no separate `build_*.py` or promotion entry points.
+
+Target one registered artifact through the same ETL call graph:
+
+```bash
+PYTHONPATH=scripts venv/bin/python scripts/build_capex_pipeline.py --target output:execution
+PYTHONPATH=scripts venv/bin/python scripts/build_capex_pipeline.py --offline --target output:quality
+```
+
+The only target namespace is `output:<key>`. A targeted run still extracts, transforms and
+validates the complete dependency graph; `--target` limits only which validated
+artifact is written and verified. The default is `--target all`.
+
+Replay the latest immutable source landing without network access with:
+
+```bash
+PYTHONPATH=scripts venv/bin/python scripts/build_capex_pipeline.py --offline
+```
+
+Offline mode reads immutable files in `data/raw/` in place, reruns the production
+parsers and follows the same transform, validation and publication path. It does
+not use existing processed JSON as source input.
+
+Schema and catalogue synchronisation remain separate because they change
+frontend metadata rather than analytical payloads:
+
+```bash
+PYTHONPATH=scripts venv/bin/python scripts/sync_public_schemas.py
+PYTHONPATH=scripts venv/bin/python scripts/sync_focused_catalogue.py
+```
+
+The central validation gate checks every registered artifact before replacing
+any processed or public JSON. Only paths registered in
+`scripts/config/capex_analysis.py` receive public copies, so unrelated legacy
+outputs cannot enter the live frontend accidentally.
 
 ## Data contracts and publication
 
@@ -119,7 +169,7 @@ Generate the two maintained CapEx guides with:
 PYTHONPATH=scripts venv/bin/python scripts/generate_capex_documentation.py
 ```
 
-The generated documents are written to `docs/capex/`.
+The generated documents are written to `docs/`.
 
 ## Archives
 

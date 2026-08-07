@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generated_at": "2026-07-31T10:16:23.428138+00:00",
+    "generated_at": "2026-08-06T13:19:00.632006+00:00",
     "source": "NSE Indices historical total-return index",
     "start_date": "2018-04-30",
-    "end_date": "2026-07-30",
+    "end_date": "2026-08-06",
     "base_value": 100,
     "risk_free_rate": 0,
     "interval": "monthly",
@@ -16,10 +16,10 @@
       "ticker": "NIFTY 50",
       "currency": "INR",
       "summary": {
-        "total_return": 1.5057,
-        "cagr": 0.1178,
-        "annualized_volatility": 0.1691,
-        "sharpe_ratio": 0.7478,
+        "total_return": 1.541,
+        "cagr": 0.1184,
+        "annualized_volatility": 0.1683,
+        "sharpe_ratio": 0.754,
         "max_drawdown": -0.2911,
         "excess_total_return": 0.0,
         "excess_max_drawdown": 0.0
@@ -1115,12 +1115,23 @@
           "rolling_12m_excess_return": 0.0
         },
         {
-          "date": "2026-07-30",
-          "price": 36891.81,
-          "normalized_value": 250.5672,
+          "date": "2026-07-31",
+          "price": 37000.72,
+          "normalized_value": 251.3069,
           "relative_to_nifty50": 100.0,
           "return": 0.0,
-          "raw_return": 0.0206,
+          "raw_return": 0.0236,
+          "drawdown": 0.0,
+          "rolling_volatility": 0.0,
+          "rolling_12m_excess_return": 0.0
+        },
+        {
+          "date": "2026-08-06",
+          "price": 37412.02,
+          "normalized_value": 254.1004,
+          "relative_to_nifty50": 100.0,
+          "return": 0.0,
+          "raw_return": 0.0111,
           "drawdown": 0.0,
           "rolling_volatility": 0.0,
           "rolling_12m_excess_return": 0.0
@@ -1132,12 +1143,12 @@
       "ticker": "NIFTY CAPITAL GOODS",
       "currency": "INR",
       "summary": {
-        "total_return": 3.4341,
-        "cagr": 0.1978,
-        "annualized_volatility": 0.2496,
-        "sharpe_ratio": 0.8548,
+        "total_return": 3.6598,
+        "cagr": 0.2028,
+        "annualized_volatility": 0.2477,
+        "sharpe_ratio": 0.8763,
         "max_drawdown": -0.464,
-        "excess_total_return": 0.7696,
+        "excess_total_return": 0.8338,
         "excess_max_drawdown": -0.3319
       },
       "series": [
@@ -2231,15 +2242,26 @@
           "rolling_12m_excess_return": 0.1762
         },
         {
-          "date": "2026-07-30",
-          "price": 20449.87,
-          "normalized_value": 443.4114,
-          "relative_to_nifty50": 176.9631,
-          "return": -0.079,
-          "raw_return": -0.0584,
-          "drawdown": -0.0781,
-          "rolling_volatility": 0.1774,
-          "rolling_12m_excess_return": 0.1234
+          "date": "2026-07-31",
+          "price": 20857.04,
+          "normalized_value": 452.2401,
+          "relative_to_nifty50": 179.9553,
+          "return": -0.0633,
+          "raw_return": -0.0396,
+          "drawdown": -0.0626,
+          "rolling_volatility": 0.1693,
+          "rolling_12m_excess_return": 0.1391
+        },
+        {
+          "date": "2026-08-06",
+          "price": 21490.78,
+          "normalized_value": 465.9813,
+          "relative_to_nifty50": 183.3847,
+          "return": 0.0193,
+          "raw_return": 0.0304,
+          "drawdown": -0.0447,
+          "rolling_volatility": 0.1653,
+          "rolling_12m_excess_return": 0.1804
         }
       ]
     },
@@ -2248,12 +2270,12 @@
       "ticker": "NIFTY INFRASTRUCTURE",
       "currency": "INR",
       "summary": {
-        "total_return": 1.9843,
-        "cagr": 0.1417,
-        "annualized_volatility": 0.1915,
-        "sharpe_ratio": 0.792,
+        "total_return": 2.0189,
+        "cagr": 0.1418,
+        "annualized_volatility": 0.1905,
+        "sharpe_ratio": 0.7955,
         "max_drawdown": -0.2975,
-        "excess_total_return": 0.191,
+        "excess_total_return": 0.1881,
         "excess_max_drawdown": -0.1417
       },
       "series": [
@@ -3347,15 +3369,26 @@
           "rolling_12m_excess_return": 0.0659
         },
         {
-          "date": "2026-07-30",
-          "price": 12331.91,
-          "normalized_value": 298.4345,
-          "relative_to_nifty50": 119.1036,
-          "return": -0.0233,
-          "raw_return": -0.0026,
-          "drawdown": -0.0335,
-          "rolling_volatility": 0.0693,
-          "rolling_12m_excess_return": 0.0493
+          "date": "2026-07-31",
+          "price": 12416.58,
+          "normalized_value": 300.4835,
+          "relative_to_nifty50": 119.5683,
+          "return": -0.0194,
+          "raw_return": 0.0042,
+          "drawdown": -0.0297,
+          "rolling_volatility": 0.0677,
+          "rolling_12m_excess_return": 0.0531
+        },
+        {
+          "date": "2026-08-06",
+          "price": 12474.76,
+          "normalized_value": 301.8915,
+          "relative_to_nifty50": 118.8079,
+          "return": -0.0064,
+          "raw_return": 0.0047,
+          "drawdown": -0.0359,
+          "rolling_volatility": 0.0674,
+          "rolling_12m_excess_return": 0.0547
         }
       ]
     },
@@ -3364,12 +3397,12 @@
       "ticker": "NIFTY INDIA MANUFACTURING",
       "currency": "INR",
       "summary": {
-        "total_return": 2.1401,
-        "cagr": 0.1488,
-        "annualized_volatility": 0.1951,
-        "sharpe_ratio": 0.8133,
+        "total_return": 2.2293,
+        "cagr": 0.151,
+        "annualized_volatility": 0.1942,
+        "sharpe_ratio": 0.8264,
         "max_drawdown": -0.4102,
-        "excess_total_return": 0.2532,
+        "excess_total_return": 0.2709,
         "excess_max_drawdown": -0.2346
       },
       "series": [
@@ -4463,15 +4496,26 @@
           "rolling_12m_excess_return": 0.1548
         },
         {
-          "date": "2026-07-30",
-          "price": 21165.91,
-          "normalized_value": 314.0073,
-          "relative_to_nifty50": 125.3186,
-          "return": -0.0023,
-          "raw_return": 0.0183,
-          "drawdown": -0.0177,
-          "rolling_volatility": 0.0791,
-          "rolling_12m_excess_return": 0.1447
+          "date": "2026-07-31",
+          "price": 21425.12,
+          "normalized_value": 317.8528,
+          "relative_to_nifty50": 126.4799,
+          "return": 0.0072,
+          "raw_return": 0.0308,
+          "drawdown": -0.0086,
+          "rolling_volatility": 0.0778,
+          "rolling_12m_excess_return": 0.1542
+        },
+        {
+          "date": "2026-08-06",
+          "price": 21767.49,
+          "normalized_value": 322.932,
+          "relative_to_nifty50": 127.0883,
+          "return": 0.0049,
+          "raw_return": 0.016,
+          "drawdown": -0.0038,
+          "rolling_volatility": 0.0782,
+          "rolling_12m_excess_return": 0.1444
         }
       ]
     },
@@ -4480,13 +4524,13 @@
       "ticker": "NIFTY FMCG",
       "currency": "INR",
       "summary": {
-        "total_return": 0.9828,
-        "cagr": 0.0865,
-        "annualized_volatility": 0.1551,
-        "sharpe_ratio": 0.6132,
+        "total_return": 0.9741,
+        "cagr": 0.085,
+        "annualized_volatility": 0.1543,
+        "sharpe_ratio": 0.6068,
         "max_drawdown": -0.2889,
-        "excess_total_return": -0.2087,
-        "excess_max_drawdown": -0.3389
+        "excess_total_return": -0.2231,
+        "excess_max_drawdown": -0.3462
       },
       "series": [
         {
@@ -5579,15 +5623,26 @@
           "rolling_12m_excess_return": -0.0474
         },
         {
-          "date": "2026-07-30",
-          "price": 82251.06,
-          "normalized_value": 198.2755,
-          "relative_to_nifty50": 79.1307,
-          "return": -0.0018,
-          "raw_return": 0.0188,
-          "drawdown": -0.334,
+          "date": "2026-07-31",
+          "price": 81479.42,
+          "normalized_value": 196.4154,
+          "relative_to_nifty50": 78.1576,
+          "return": -0.0144,
+          "raw_return": 0.0093,
+          "drawdown": -0.3422,
           "rolling_volatility": 0.0883,
-          "rolling_12m_excess_return": -0.0945
+          "rolling_12m_excess_return": -0.1071
+        },
+        {
+          "date": "2026-08-06",
+          "price": 81891.82,
+          "normalized_value": 197.4095,
+          "relative_to_nifty50": 77.6896,
+          "return": -0.0061,
+          "raw_return": 0.0051,
+          "drawdown": -0.3462,
+          "rolling_volatility": 0.0828,
+          "rolling_12m_excess_return": -0.1327
         }
       ]
     }

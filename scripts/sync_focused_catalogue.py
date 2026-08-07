@@ -67,11 +67,10 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
                 "id": "capex-policy-input",
                 "title": "1. Public CapEx intensity and execution",
                 "summary": "Has central-government capital expenditure increased relative to GDP and total spending, and were original budgets delivered?",
-                "default_view": "intensity",
+                "default_view": "vintages",
                 "views": [
-                    _capex_view("intensity", "CapEx intensity", "capex-execution", ["actual_capex_pct_gdp", "actual_capex_pct_total_expenditure"], "percent"),
-                    _capex_view("execution", "Execution", "capex-execution", ["capex_execution_ratio"], "percent"),
                     _capex_view("vintages", "BE, RE and actual", "capex-execution", ["capex_budget_estimate", "capex_revised_estimate", "capex_actual"], "crore"),
+                    _capex_view("execution", "Execution", "capex-execution", ["capex_execution_ratio"], "percent"),
                 ],
             },
             {
@@ -278,10 +277,18 @@ def build_catalogue(catalogue: dict, *, public_data_dir: Path) -> dict:
         "capex-fiscal-constraint",
         "capex-scenario-lab",
     )
-    capex_section["indicators"] = sorted(
-        capex_section["indicators"],
-        key=lambda indicator: capex_indicator_order.index(indicator["id"]),
-    )
+    indicator_by_id = {
+        indicator["id"]: indicator
+        for indicator in capex_section["indicators"]
+    }
+    unexpected_ids = set(indicator_by_id) - set(capex_indicator_order)
+    if unexpected_ids:
+        raise ValueError(f"Unregistered CapEx indicators: {sorted(unexpected_ids)}")
+    capex_section["indicators"] = [
+        indicator_by_id[indicator_id]
+        for indicator_id in capex_indicator_order
+        if indicator_id in indicator_by_id
+    ]
     catalogue["sections"] = [capex_section]
     catalogue["generated_at"] = datetime.now(timezone.utc).isoformat()
     catalogue["roadmap_total"] = sum(len(section["indicators"]) for section in catalogue["sections"])
